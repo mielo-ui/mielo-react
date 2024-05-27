@@ -1,0 +1,54 @@
+.adw.headerbar {
+    border-bottom: 0.1rem solid var(--adw-headerbar-border-color);
+    background-color: var(--adw-headerbar-bg);
+    position: relative;
+    
+    justify-content: space-between;
+    align-items: center;
+    
+    flex-direction: row;
+    display: flex;
+    
+    padding: 0 var(--adw-headerbar-padding-h);
+    height: var(--adw-headerbar-height);
+    width: 100%;
+
+    &.transparent {
+        background-color: transparent;
+    }
+
+    &.borderless {
+        border-bottom: none;
+    }
+
+    .left, .right {
+        align-items: center;
+        display: flex;
+        flex: 1;
+    }
+
+    .left {
+        justify-content: flex-start;
+    }
+
+    .right {
+        justify-content: flex-end;
+    }
+
+    >.center {
+        max-width: 20rem;
+        width: 20rem;
+
+        justify-content: center;
+        align-items: center;
+        display: flex;
+
+        .adw.header.attached {
+            margin: 0;
+
+            .subtitle {
+                margin-top: 0.2rem;
+            }
+        }
+    }
+}

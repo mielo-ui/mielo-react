@@ -1,0 +1,38 @@
+.adw.button {
+    transition: all 0.3s ease;
+    text-decoration: none;
+    user-select: none;
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;
+    border: none;
+
+    padding: var(--adw-button-padding-v) var(--adw-button-padding-h);
+    display: inline-flex;
+    position: relative;
+
+    font-size: var(--adw-button-font-size);
+    color: var(--adw-button-text);
+    font-weight: 700;
+
+    border-radius: var(--adw-button-rounded);
+    background-color: var(--adw-button-bg);
+
+    &:hover {
+        background-color: var(--adw-button-hover-bg) !important;
+    }
+
+    &:active {
+        background-color: var(--adw-button-active-bg) !important;
+    }
+
+    &:disabled,
+    &.disabled {
+        opacity: 0.8;
+
+        &:hover,
+        &:active {
+            background-color: var(--adw-button-bg) !important;
+        }
+    }
+}

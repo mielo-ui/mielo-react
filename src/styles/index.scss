@@ -1,0 +1,86 @@
+@import "../../dist/adwaita.css";
+@import "./fonts.css";
+
+body,
+#root {
+    height: 100vh;
+    width: 100%;
+}
+
+.page {
+    .adw.clamp {
+        padding-top: 6rem;
+
+        >.content {
+            >.adw.header {
+                margin-bottom: 1.6rem;
+                margin-top: 2.6rem;
+
+                &:first-child {
+                    margin-top: 0;
+                }
+            }
+
+            .adw.segment {
+                .inline-flex {
+                    justify-content: center;
+                    align-items: center;
+
+                    flex-direction: row;
+                    display: flex;
+
+                    >.adw.button,
+                    >.adw.buttons {
+                        margin-right: 1.2rem;
+
+                        &:last-child {
+                            margin-right: 0;
+                        }
+                    }
+                }
+
+                .column-flex {
+                    justify-content: center;
+                    align-items: center;
+
+                    flex-direction: column;
+                    display: flex;
+
+                    >.adw.select,
+                    >.adw.checkbox,
+                    >.adw.radio {
+                        margin-bottom: 1.6rem;
+
+                        &:last-child {
+                            margin-bottom: 0;
+                        }
+                    }
+
+                    >.adw.headerbar {
+                        border-radius: 0.6rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.typography.page {
+    .adw.segment.placeholder {
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            margin-bottom: 2rem;
+        }
+
+        .adw.text {
+            margin-bottom: 1.2rem;
+        }
+
+        .capture.heading {
+            margin-top: 1.2rem;
+        }
+    }
+}

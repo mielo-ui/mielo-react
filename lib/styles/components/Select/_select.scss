@@ -1,0 +1,12 @@
+.adw.select {
+    border: 0.1rem solid var(--adw-select-border-color);
+    border-radius: var(--adw-select-border-radius);
+    background-color: var(--adw-select-bg);
+    background-clip: padding-box;
+    position: relative;
+    margin: 0;
+
+    min-width: 14rem;
+    height: 5.4rem;
+    width: 100%;
+}

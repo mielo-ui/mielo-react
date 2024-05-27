@@ -1,0 +1,26 @@
+// Default accent colors
+.adw.button {
+    &.transparent {
+        --adw-button-bg: rgba(var(--adw-button-color), 0.0);
+    }
+
+    &.filled {
+        --adw-button-active-bg: color-mix(in srgb, rgb(var(--adw-button-color)) 80%, #000);
+        --adw-button-hover-bg: color-mix(in srgb, rgb(var(--adw-button-color)) 90%, #000);
+        --adw-button-bg: rgb(var(--adw-button-color));
+        --adw-button-text: rgba(0, 0, 0, 0.8);
+    }
+
+    // Declare base colors
+    $colors: "red", "green", "purple", "blue";
+
+    @each $color in $colors {
+        &.#{$color} {
+            --adw-button-color: var(--adw-color-#{$color});
+            
+            &.filled {
+                --adw-button-text: rgba(255, 255, 255, 1.0);
+            }
+        }
+    }
+}

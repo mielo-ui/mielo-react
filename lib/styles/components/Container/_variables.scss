@@ -1,0 +1,47 @@
+:root,
+[data-theme="light"] {
+    --adw-container-default-bg: 255, 255, 255;
+    
+    // Segment
+    --adw-segment-dev-bg: rgb(212, 212, 212);
+    --adw-segment-dev-line: rgba(0, 0, 0, 0.05);
+
+    // SplitView
+    --adw-split-view-sidebar-bg: rgb(var(--adw-color-white-cream));
+    --adw-split-view-content-bg: rgb(var(--adw-color-white-cloud));
+    --adw-split-view-divider-color: rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="dark"] {
+    --adw-container-default-bg: 53, 53, 53;
+    
+    // Segment
+    --adw-segment-dev-bg: rgb(27, 27, 27);
+    --adw-segment-dev-line: rgba(255, 255, 255, 0.05);
+
+    // SplitView
+    --adw-split-view-sidebar-bg: rgb(var(--adw-color-light-gray));
+    --adw-split-view-content-bg: rgb(var(--adw-color-dark-gray));
+    --adw-split-view-divider-color: rgba(255, 255, 255, 0.05);
+}
+
+:root,
+[data-theme="light"],
+[data-theme="dark"] {
+    // Clamp
+    --adw-clamp-bg: rgba(var(--adw-container-default-bg), 0.2);
+
+    --adw-clamp-container-padding-h: 1.2rem;
+    --adw-clamp-container-padding-v: 1.2rem;
+    --adw-clamp-box-padding-h: 1.6rem;
+    --adw-clamp-box-padding-v: 2.2rem;
+    --adw-clamp-rounded: 1.2rem;
+    --adw-clamp-size: 55rem;
+
+    // Segment
+    --adw-segment-bg: rgba(var(--adw-container-default-bg), 0.2);
+
+    --adw-segment-padding-h: 1.2rem;
+    --adw-segment-padding-v: 1.2rem;
+    --adw-segment-rounded: 1.2rem;
+}

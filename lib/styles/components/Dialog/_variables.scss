@@ -1,0 +1,18 @@
+:root,
+[data-theme="light"] {
+    --adw-dialog-default-color: 0, 0, 0;
+
+    --adw-dialog-bg: rgb(var(--adw-color-white-cream));
+}
+
+[data-theme="dark"] {
+    --adw-dialog-default-color: 255, 255, 255;
+
+    --adw-dialog-bg: rgb(var(--adw-color-light-gray));
+}
+
+:root,
+[data-theme="light"],
+[data-theme="dark"] {
+
+}

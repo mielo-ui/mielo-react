@@ -1,0 +1,60 @@
+{
+  "name": "adwaita-ui",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "main": "dist/main.js",
+  "types": "dist/main.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build:styles": "sass --load-path=node_modules ./lib/styles/main.scss ./dist/adwaita.css",
+    "build": "tsc --p ./tsconfig.build.json && vite build && npm run build:styles",
+    "preview": "vite preview",
+    "style:fix": "prettier --config .prettierrc 'src/**/*.{ts,tsx,scss,css}' --write",
+    "lint:fix": "eslint '*/**/*.{ts,tsx}' --quiet --fix && stylelint '**/*.scss'",
+    "fix:all": "npm run style:fix && npm run lint:fix"
+  },
+  "dependencies": {
+    "clsx": "^2.1.1",
+    "lodash.isequal": "^4.5.0",
+    "prop-types": "^15.8.1",
+    "react-custom-scroll": "^7.0.0",
+    "react-hook-form": "^7.51.4",
+    "react-tooltip": "^5.26.4",
+    "react-transition-group": "^4.4.5",
+    "reseter.css": "^2.0.0"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-toastify": "^10.0.5"
+  },
+  "devDependencies": {
+    "@types/lodash.isequal": "^4.5.8",
+    "@types/react": "^18.2.66",
+    "@types/react-dom": "^18.2.22",
+    "@types/react-transition-group": "^4.4.10",
+    "@typescript-eslint/eslint-plugin": "^7.2.0",
+    "@typescript-eslint/parser": "^7.2.0",
+    "@vitejs/plugin-react": "^4.2.1",
+    "copyfiles": "^2.4.1",
+    "eslint": "^8.57.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.6",
+    "postcss-scss": "^4.0.9",
+    "prettier": "^3.2.5",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "sass": "^1.77.0",
+    "stylelint": "^16.5.0",
+    "stylelint-scss": "^6.3.0",
+    "typescript": "^5.2.2",
+    "vite": "^5.2.0",
+    "vite-plugin-dts": "^3.9.1",
+    "vite-plugin-static-copy": "^1.0.4",
+    "wouter": "^3.1.3"
+  }
+}

@@ -1,0 +1,45 @@
+:root,
+[data-theme="light"] {
+    --adw-list-default-color: 0, 0, 0;
+    --adw-list-bg: 255, 255, 255;
+    
+    --adw-list-border-color: rgb(230, 230, 230);
+}
+
+[data-theme="dark"] {
+    --adw-list-default-color: 255, 255, 255;
+    --adw-list-bg: var(--adw-color-light-gray);
+    
+    --adw-list-border-color: rgb(36, 36, 36);
+}
+
+:root,
+[data-theme="light"],
+[data-theme="dark"] {
+    // List
+    --adw-list-rows-border-radius: 1.2rem;
+    --adw-list-margin-h: 0.8rem;
+    --adw-list-margin-v: 0.8rem;
+
+    // Item variables
+
+    // Calculated background color
+    --adw-list-item-bg-color: var(--adw-list-default-color);
+    
+    // Detailed background by state
+    --adw-list-item-active-bg: rgba(var(--adw-list-item-bg-color), 0.15);
+    --adw-list-item-hover-bg: rgba(var(--adw-list-item-bg-color), 0.1);
+    --adw-list-item-bg: rgba(var(--adw-list-item-bg-color), 0);
+
+    // Content
+    --adw-list-item-description-color: rgba(var(--adw-list-default-color), 0.6);
+    --adw-list-item-header-color: rgba(var(--adw-list-default-color), 0.8);
+    --adw-list-item-description: var(--adw-size-14); 
+    --adw-list-item-header: var(--adw-size-14);
+
+    // Layout
+    --adw-list-item-padding-v: 0.856665rem;
+    --adw-list-item-padding-h: 1rem;
+    --adw-list-item-margin: 0.1rem;
+    --adw-list-item-rounded: 0.6rem;
+}

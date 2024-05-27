@@ -1,0 +1,24 @@
+:root,
+[data-theme="light"] {
+    --adw-header-default-color: 0, 0, 0;
+}
+
+[data-theme="dark"] {
+    --adw-header-default-color: 255, 255, 255;
+}
+
+:root,
+[data-theme="light"],
+[data-theme="dark"] {
+    --adw-header-title-color: rgba(var(--adw-header-default-color), 0.8);
+    --adw-header-subtitle-color: rgba(var(--adw-header-default-color), 0.6);
+
+    --adw-header-large-title: var(--adw-size-26);
+    --adw-header-large-subtitle: var(--adw-size-14);
+
+    --adw-header-medium-title: var(--adw-size-14);
+    --adw-header-medium-subtitle: var(--adw-size-12);
+
+    --adw-header-small-title: var(--adw-size-12);
+    --adw-header-small-subtitle: var(--adw-size-10);
+}

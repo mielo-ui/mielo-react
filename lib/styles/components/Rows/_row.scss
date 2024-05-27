@@ -1,0 +1,46 @@
+// Common row for use with custom components
+.adw.rows > .row.property {
+    padding: var(--adw-rows-item-padding-v) var(--adw-rows-item-padding-h);
+    border-bottom: 0.1rem solid var(--adw-rows-border-color);
+    height: 5.6rem;
+
+    align-items: center;
+    flex-direction: row;
+    display: flex;
+
+    &:last-child {
+        border-bottom: none;
+    }
+
+    > .adw.icon {
+        margin-right: 1.2rem;
+    }
+
+    > .content {
+        flex-direction: column;
+        display: flex;
+        flex: 1;
+
+        // Centered by default
+        justify-content: center;
+
+        > .header {
+            color: var(--adw-rows-content-header-color);
+            font-size: var(--adw-rows-content-header);
+            font-weight: 400;
+        }
+
+        > .description {
+            color: var(--adw-rows-content-description-color);
+            font-size: var(--adw-rows-content-description);
+            font-weight: 400;
+        }
+    }
+
+    > .right {
+        flex-direction: row;
+        display: flex;
+
+        margin-left: 0.8rem;
+    }    
+}

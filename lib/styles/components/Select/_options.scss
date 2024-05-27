@@ -1,0 +1,61 @@
+.adw.select .options {
+    position: absolute;
+    list-style: none;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+
+    flex-direction: column;
+    display: flex;
+
+    box-sizing: border-box;
+    z-index: 10;
+
+    .option {
+        @include flex(column, center, flex-start);
+        transition: all 0.3 ease;
+        user-select: none;
+        font-weight: 400;
+        cursor: pointer;
+
+        // &[aria-selected="true"] {
+        //   background-color: red;
+        // }
+    }
+}
+
+// Default layout
+.adw.select {
+    .options .option {
+        font-size: var(--adw-select-option-label-size);
+
+        padding: 0 1.6rem;
+        height: 3.6rem;
+    }
+}
+
+// Default styles
+.adw.select {
+    .options {
+        border-radius: 0 0 var(--adw-select-border-radius) var(--adw-select-border-radius);
+        border-top: 0.1rem solid var(--adw-select-border-color);
+        background-color: var(--adw-select-bg);
+    }
+
+    .options .option {
+        color: rgba(var(--adw-select-option-default-color), 0.8);
+        background-color: var(--adw-select-option-bg);
+
+        &:hover, &:focus, .selected {
+            background-color: var(--adw-select-option-hover-bg);
+        }
+    }
+
+    &.opened {
+        .options {
+            box-shadow: -0.2rem 0 0 var(--adw-select-focus-shadow),
+                0 0.25rem 0 var(--adw-select-focus-shadow),
+                0.2rem 0 0 var(--adw-select-focus-shadow);
+        }
+    }
+}

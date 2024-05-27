@@ -1,0 +1,37 @@
+.adw.rows>.row.select {
+    &:first-child {
+        >.adw.select {
+            border-top-left-radius: var(--adw-rows-border-radius);
+            border-top-right-radius: var(--adw-rows-border-radius);
+    
+            .input {
+                border-top-left-radius: var(--adw-rows-border-radius);
+                border-top-right-radius: var(--adw-rows-border-radius);
+            }
+        }
+    }
+
+    &:last-child {
+        >.adw.select {
+            border-bottom-right-radius: var(--adw-rows-border-radius);
+            border-bottom-left-radius: var(--adw-rows-border-radius);
+            border-bottom-width: 0;
+    
+            .input {
+                border-bottom-right-radius: var(--adw-rows-border-radius);
+                border-bottom-left-radius: var(--adw-rows-border-radius);
+            }
+        }
+    }
+
+    >.adw.select {
+        border-radius: 0;
+        border-width: 0;
+
+        border-bottom-width: 0.1rem;
+
+        .input {
+            border-radius: 0;
+        }
+    }
+}

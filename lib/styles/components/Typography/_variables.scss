@@ -1,0 +1,33 @@
+:root,
+[data-theme="light"] {
+    --adw-text-default-color: 0, 0, 0
+}
+
+[data-theme="dark"] {
+    --adw-text-default-color: 255, 255, 255
+}
+
+:root,
+[data-theme="light"],
+[data-theme="dark"] {
+    --adw-header-color: rgba(var(--adw-text-default-color), 0.8);
+    --adw-h1-size: var(--adw-size-26);
+    --adw-h2-size: var(--adw-size-20);
+    --adw-h3-size: var(--adw-size-20);
+    --adw-h4-size: var(--adw-size-17);
+    
+    --adw-text-color: rgba(var(--adw-text-default-color), 0.8);
+    --adw-text-size: var(--adw-size-14);
+
+    --adw-heading-size: var(--adw-size-14);
+    --adw-paragraph-size: var(--adw-size-14);
+
+    --adw-caption-heading-size: var(--adw-size-12);
+    --adw-caption-paragraph-size: var(--adw-size-12);
+
+    // Colors
+    --adw-text-accent: rgb(var(--adw-color-blue));
+    --adw-text-success: rgb(var(--adw-color-green));
+    --adw-text-warning: rgb(var(--adw-color-yellow));
+    --adw-text-error: rgb(var(--adw-color-red));
+}

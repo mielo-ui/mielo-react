@@ -1,0 +1,38 @@
+.adw.entry .adw.tooltip {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+
+    position: absolute;
+    right: 1.4rem;
+    top: 1.4rem;
+
+    >.indicator {
+        border: 1px solid var(--adw-entry-border-color);
+        background-color: var(--adw-entry-tooltip-bg);
+        border-radius: 50%;
+        user-select: none;
+        cursor: pointer;
+        height: 2.4rem;
+        width: 2.4rem;
+
+        color: var(--adw-entry-tooltip-indicator-color);
+        font-weight: 700;
+        font-size: 1.2rem;
+
+        justify-content: center;
+        align-items: center;
+        display: flex;
+    }
+
+    >.react-tooltip {
+        border: 1px solid var(--adw-entry-border-color);
+        background-color: var(--adw-entry-tooltip-bg);
+        color: var(--adw-entry-tooltip-color);
+
+        .adw.tooltip-content {
+            flex-direction: column;
+            display: flex;
+        }
+    }
+}

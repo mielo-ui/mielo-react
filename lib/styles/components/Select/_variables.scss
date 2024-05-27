@@ -1,0 +1,60 @@
+@use "sass:color";
+
+:root,
+[data-theme="light"] {
+    --adw-select-default-color: 0, 0, 0;
+
+    --adw-select-bg: rgb(255, 255, 255);
+    --adw-select-border-color: rgb(230, 230, 230);
+}
+
+[data-theme="dark"] {
+    --adw-select-default-color: 255, 255, 255;
+    
+    --adw-select-bg: rgb(var(--adw-color-light-gray));
+    --adw-select-border-color: rgb(36, 36, 36);
+}
+
+:root,
+[data-theme="light"],
+[data-theme="dark"] {
+    // Common Colors
+    --adw-select-active-color: rgba(var(--adw-select-default-color), 0.8);
+    --adw-select-muted-color: rgba(var(--adw-select-default-color), 0.6);
+
+    // Sizes
+    --adw-select-label-size: var(--adw-size-12);
+    --adw-select-value-size: var(--adw-size-14);
+    --adw-select-border-radius: 1.2rem;
+
+    // Select options
+    --adw-select-option-default-color: var(--adw-select-default-color);
+    --adw-select-option-bg: rgba(var(--adw-select-option-default-color), 0);
+    --adw-select-option-hover-bg: rgba(var(--adw-select-option-default-color), 0.1);
+    
+    --adw-select-option-label-size: var(--adw-size-14);
+
+    // Tooltip
+    --adw-select-tooltip-indicator-color: rgb(var(--adw-select-default-color));
+    --adw-select-tooltip-color: rgba(var(--adw-select-default-color), 0.8);
+    --adw-select-tooltip-bg: var(--adw-select-bg);
+
+    // Outline error
+    --adw-select-error-color: 224, 27, 36;
+    
+    --adw-select-error-bg: #{lighten(#E01B24, 50%)};
+    --adw-select-error-shadow: #{lighten(#E01B24, 30%)};
+
+    --adw-select-error-label: #{lighten(#E01B24, 15%)};
+    --adw-select-error-value: #{lighten(#E01B24, 1%)};
+
+    --adw-select-error-option: var(--adw-select-error-value);
+    --adw-select-error-selected: rgba(var(--adw-select-error-color), 0.1);
+
+    // Outline focused
+    --adw-select-focus-shadow: #{lighten(#3584E4, 20%)};
+
+    // Compact Version
+    --adw-select-compact-value-size: var(--adw-size-14);
+    --adw-select-compact-border-radius: 0.6rem;
+}

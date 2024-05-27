@@ -1,0 +1,98 @@
+@use "sass:color";
+
+.adw.entry {
+    border: 0.1rem solid var(--adw-entry-border-color);
+    border-radius: var(--adw-entry-border-radius);
+    background-color: var(--adw-entry-bg);
+    background-clip: padding-box;
+    position: relative;
+    margin: 0;
+
+    min-width: 10rem;
+    height: 5.4rem;
+    width: 100%;
+
+    textarea {
+        resize: none;
+    }
+
+    >input,
+    textarea {
+        color: var(--adw-entry-input-color);
+        background: none;
+        display: block;
+
+        font-size: var(--adw-entry-value-size);
+        padding: 2.5rem 1.6rem 0.7rem 1.6rem;
+        height: 100%;
+        width: 100%;
+
+        border-radius: var(--adw-entry-border-radius);
+        border: none;
+
+        &:focus {
+            outline: none;
+
+            box-shadow: -2px 0 2px var(--adw-entry-focus-shadow),
+                0 -2px 2px var(--adw-entry-focus-shadow),
+                2px 0 2px var(--adw-entry-focus-shadow),
+                0 2px 2px var(--adw-entry-focus-shadow);
+
+            color: var(--adw-entry-input-color);
+        }
+
+        &:focus~label,
+        &.filled~label {
+            color: var(--adw-entry-placeholder-color);
+            font-size: var(--adw-entry-label-size);
+
+            left: 1.6rem;
+            top: 0.9rem;
+        }
+
+        &[type="password"] {
+            letter-spacing: 0.1rem;
+        }
+    }
+
+    &.error {
+        background-color: var(--adw-entry-error-bg);
+
+        input,
+        textarea {
+            color: var(--adw-entry-error-value);
+            outline: none;
+
+            box-shadow: -2px 0 2px var(--adw-entry-error-shadow),
+                0 -2px 2px var(--adw-entry-error-shadow),
+                2px 0 2px var(--adw-entry-error-shadow),
+                0 2px 2px var(--adw-entry-error-shadow);
+
+            &:focus~label,
+            &.filled~label {
+                color: var(--adw-entry-error-label);
+            }
+        }
+
+        label {
+            color: var(--adw-entry-error-label);
+        }
+    }
+
+    &.disabled {
+        opacity: 0.65;
+    }
+
+    label {
+        color: var(--adw-entry-placeholder-color);
+        transition: 300ms ease all;
+        pointer-events: none;
+        position: absolute;
+
+        font-size: var(--adw-entry-value-size);
+        font-weight: normal;
+
+        left: 1.6rem;
+        top: 1.6rem;
+    }
+}

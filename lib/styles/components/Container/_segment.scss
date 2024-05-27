@@ -1,0 +1,44 @@
+.adw.segment {
+    background-color: var(--adw-segment-bg);
+
+    justify-content: center;
+    flex-direction: column;
+    display: flex;
+
+    align-items: stretch;
+    max-width: initial;
+    animation: none;
+    overflow: visible;
+    
+    padding: var(--adw-segment-padding-v) var(--adw-segment-padding-h);
+    border-radius: var(--adw-segment-rounded);
+    min-height: 18rem;
+}
+
+// Style States
+.adw.segment.placeholder {
+    box-shadow: 0 2px 25px 0 rgba(0, 0, 0, .05) inset;
+
+    &.dev {
+        background:
+            linear-gradient(-90deg, var(--adw-segment-dev-line) 1px, transparent 1px),
+            linear-gradient(var(--adw-segment-dev-line) 1px, transparent 1px),
+            linear-gradient(-90deg, var(--adw-segment-dev-line) 1px, transparent 1px),
+            linear-gradient(var(--adw-segment-dev-line) 1px, transparent 1px),
+            linear-gradient(transparent 3px, var(--adw-segment-dev-bg) 3px, var(--adw-segment-dev-bg) 78px, transparent 78px),
+            linear-gradient(-90deg, var(--adw-segment-dev-bg) 1px, transparent 1px),
+            linear-gradient(-90deg, transparent 3px, var(--adw-segment-dev-bg) 3px, var(--adw-segment-dev-bg) 78px, transparent 78px),
+            linear-gradient(var(--adw-segment-dev-bg) 1px, transparent 1px),
+            var(--adw-segment-dev-bg);
+
+        background-size:
+            4px 4px,
+            4px 4px,
+            80px 80px,
+            80px 80px,
+            80px 80px,
+            80px 80px,
+            80px 80px,
+            80px 80px;
+    }
+}

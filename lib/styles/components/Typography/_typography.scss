@@ -1,0 +1,71 @@
+h1, h2, h3, h4 {
+    color: var(--adw-header-color);
+    font-weight: 800;
+
+    margin-bottom: 1.2rem;
+    margin-top: 0;
+}
+
+h1, .adw.title-1 {
+    font-size: var(--adw-h1-size);
+}
+
+h2, .adw.title-2 {
+    font-size: var(--adw-h2-size);
+}
+
+h3, .adw.title-3 {
+    font-size: var(--adw-h3-size);
+}
+
+h4, .adw.title-4 {
+    font-size: var(--adw-h4-size);
+}
+
+.adw.heading {
+    font-size: var(--adw-heading-size);
+    color: var(--adw-text-color);
+    font-weight: 700;
+
+    margin-bottom: 1.2rem;
+    margin-top: 0;
+
+    &.caption {
+        font-size: var(--adw-caption-heading-size);
+    }
+}
+
+.adw.paragraph {
+    font-size: var(--adw-paragraph-size);
+    color: var(--adw-text-color);
+    font-weight: 400;
+
+    margin-bottom: 1.2rem;
+    margin-top: 0;
+
+    &.caption {
+        font-size: var(--adw-caption-paragraph-size);
+    }
+}
+
+.adw.text {
+    font-size: var(--adw-text-size);
+    color: var(--adw-text-color);
+    font-weight: 400;
+
+    &.accent {
+        color: var(--adw-text-accent);
+    }
+    
+    &.success {
+        color: var(--adw-text-success);
+    }
+    
+    &.warning {
+        color: var(--adw-text-warning);
+    }
+
+    &.error {
+        color: var(--adw-text-error);
+    }
+}

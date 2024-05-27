@@ -1,0 +1,26 @@
+.adw.clamp {
+    flex-direction: column;
+    align-items: center;
+    display: flex;
+
+    padding: var(--adw-clamp-container-padding-v) var(--adw-clamp-container-padding-h);
+
+    >.header {
+        flex-direction: column;
+        display: flex;
+
+        max-width: var(--adw-clamp-size);
+        width: var(--adw-clamp-size);
+
+        margin-bottom: 2.5rem;
+    }
+
+    >.content {
+        border-radius: var(--adw-clamp-rounded);
+        background-color: var(--adw-clamp-bg);
+
+        padding: var(--adw-clamp-box-padding-v) var(--adw-clamp-box-padding-h);
+        max-width: var(--adw-clamp-size);
+        width: var(--adw-clamp-size);
+    }
+}

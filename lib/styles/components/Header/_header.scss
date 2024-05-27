@@ -1,0 +1,84 @@
+.adw.header {
+    flex-direction: column;
+    display: flex;
+
+    margin: 1.2rem 0;
+
+    >.title,
+    >.content .title {
+        color: var(--adw-header-title-color);
+        font-size: var(--adw-header-large-title);
+        font-weight: 700;
+        margin: 0rem;
+    }
+
+    .subtitle,
+    >.content .subtitle {
+        color: var(--adw-header-title-color);
+        font-size: var(--adw-header-large-subtitle);
+        font-weight: 400;
+
+        margin: 1.2rem 0 0 0;
+    }
+
+    >.icon,
+    >.content .icon {
+        margin-bottom: 1rem;
+        @include flex-center();
+
+        svg {
+            color: var(--adw-header-title-color);
+            height: 6.4rem;
+            width: 6.4rem;
+        }
+    }
+
+    &.actions {
+        @include flex(row, space-between, center);
+
+        >.content {
+            @include flex(column);
+        }
+
+        >.actions {
+            @include flex(row);
+        }
+    }
+
+    // States
+    &.center {
+        &>.title,
+        &>.content .title,
+        &>.subtitle,
+        &>.content .subtitle {
+            text-align: center;
+        }
+    }
+
+    // Sizes
+    &.medium {
+        >.title,
+        >.content .title {
+            font-size: var(--adw-header-medium-title);
+        }
+
+        .subtitle,
+        >.content .subtitle {
+            font-size: var(--adw-header-medium-subtitle);
+            margin: 0.8rem 0 0 0;
+        }
+    }
+
+    &.small {
+        >.title,
+        >.content .title {
+            font-size: var(--adw-header-small-title);
+        }
+
+        .subtitle,
+        >.content .subtitle {
+            font-size: var(--adw-header-small-subtitle);
+            margin: 0.4rem 0 0 0;
+        }
+    }
+}

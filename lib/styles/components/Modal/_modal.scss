@@ -1,0 +1,36 @@
+.adw.modal {
+    background-color: var(--adw-modal-overlay-bg);
+    position: absolute;
+
+    justify-content: center;
+    align-items: center;
+
+    flex-direction: column;
+    display: flex;
+
+    height: 100%;
+    width: 100%;
+    z-index: 5;
+    left: 0;
+    top: 0;
+
+    >.fade {
+        &-enter {
+            opacity: 0;
+        }
+
+        &-enter-active {
+            opacity: 1;
+            transition: opacity 300ms;
+        }
+
+        &-exit {
+            opacity: 1;
+        }
+
+        &-exit-active {
+            opacity: 0;
+            transition: opacity 300ms;
+        }
+    }
+}

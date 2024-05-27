@@ -1,0 +1,34 @@
+:root,
+[data-theme="light"] {
+    --adw-button-default-color: 0, 0, 0;
+}
+
+[data-theme="dark"] {
+    --adw-button-default-color: 255, 255, 255;
+}
+
+:root,
+[data-theme="light"],
+[data-theme="dark"] {
+    --adw-button-font-size: var(--adw-size-14);
+    --adw-button-padding-v: 0.856665rem;
+    --adw-button-padding-h: 1.2rem;
+    --adw-button-rounded: 0.6rem; 
+    
+    --adw-button-icon-block-size: calc(var(--adw-button-icon-size) + (var(--adw-button-icon-padding-h) * 2));
+    --adw-button-icon-block-left: calc(var(--adw-button-icon-block-size) + 0.4rem);  
+    --adw-button-icon-padding-v: 0.8rem;
+    --adw-button-icon-padding-h: 0.9rem;
+    --adw-button-icon-size: 1.6rem;
+}
+
+/* Default button layout */
+.adw.button {
+    --adw-button-color: var(--adw-button-default-color);
+    --adw-button-text: rgba(var(--adw-button-color), 0.8);
+
+    // Base Color Formula
+    --adw-button-active-bg: rgba(var(--adw-button-color), 0.3);
+    --adw-button-hover-bg: rgba(var(--adw-button-color), 0.2);
+    --adw-button-bg: rgba(var(--adw-button-color), 0.1);
+}

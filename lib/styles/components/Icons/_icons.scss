@@ -1,0 +1,24 @@
+.adw.icon:not(.button) {
+    height: var(--adw-icon-size);
+    width: var(--adw-icon-size);
+
+    justify-content: center;
+    align-items: center;
+    display: flex;
+
+    svg {
+        max-height: var(--adw-icon-size);
+        max-width: var(--adw-icon-size);
+
+        color: var(--adw-icon-color);
+    }
+
+    &.filled {
+        border-radius: var(--adw-icon-rounded);
+        background-color: var(--adw-icon-bg);
+
+        &.circular {
+            border-radius: 50%;
+        }
+    }
+}

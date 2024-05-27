@@ -1,0 +1,21 @@
+:root,
+[data-theme="light"] {
+    --adw-headerbar-default-color: 0, 0, 0;
+    
+    --adw-headerbar-bg: rgb(246, 245, 244);
+    --adw-headerbar-border-color: rgba(0, 0, 0, 0.05);
+}
+
+[data-theme="dark"] {
+    --adw-headerbar-default-color: 255, 255, 255;
+    
+    --adw-headerbar-bg: rgb(var(--adw-color-light-gray));
+    --adw-headerbar-border-color: rgba(255, 255, 255, 0.05);
+}
+
+:root,
+[data-theme="light"],
+[data-theme="dark"] {
+    --adw-headerbar-padding-h: 0.8rem;
+    --adw-headerbar-height: 4.6rem;
+}
