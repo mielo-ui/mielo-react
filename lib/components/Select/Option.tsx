@@ -11,7 +11,10 @@ interface OptionProps {
   option: Option
 }
 
-export function OptionEl({ option: { value, label: title }, onClick }: OptionProps) {
+export function OptionEl({
+  option: { value, label: title },
+  onClick,
+}: OptionProps) {
   const optionRef = useRef<HTMLLIElement>(null)
 
   const onClickSelected =
@@ -31,7 +34,7 @@ export function OptionEl({ option: { value, label: title }, onClick }: OptionPro
     }
 
     option.addEventListener("keydown", handleEnterKeyDown)
-    
+
     return () => {
       option.removeEventListener("keydown", handleEnterKeyDown)
     }

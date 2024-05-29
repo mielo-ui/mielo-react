@@ -1,42 +1,42 @@
-import { useEffect, useState } from "react"
 import { createPortal } from "react-dom"
 
 export interface PortalProps {
   children: React.ReactNode
-  id: string
+  onRequestClose?: () => void
+  isOpen?: boolean
 }
 
-export function createContainer(
+function makePortal(
   id: string,
   parent: HTMLElement = document.body,
-) {
-  if (document.getElementById(id)) {
-    return
+): HTMLElement {
+  const exists = document.getElementById(id)
+  if (exists) {
+    return exists
   }
 
   const container = document.createElement("div")
   container.setAttribute("id", id)
+
   parent.appendChild(container)
+  return container
 }
 
-function Portal({ id, children }: PortalProps) {
-  const [container, setContainer] = useState<HTMLElement>()
-
-  useEffect(() => {
-    if (id) {
-      const portalContainer = document.getElementById(id)
-
-      if (!portalContainer) {
-        throw new Error(`Parent container '${id}' not found.`)
-      }
-
-      setContainer(portalContainer)
-    }
-  }, [id])
-
-  return container ? createPortal(children, container) : null
+function Overlay({ isOpen, onRequestClose }: Omit<PortalProps, "children">) {
+  return isOpen && <div className="adw overlay" onClick={onRequestClose}></div>
 }
 
-export default Object.assign(Portal, {
-  createContainer,
-})
+const OVERLAY_ID = "overlay-root"
+const ROOT_ID = "modal-root"
+
+export function Portal({ children, ...props }: PortalProps) {
+  const backdrop = createPortal(<Overlay {...props} />, makePortal(OVERLAY_ID))
+  const modal = createPortal(children, makePortal(ROOT_ID))
+
+  return (
+    <div>
+      {backdrop}
+      {modal}
+    </div>
+  )
+}

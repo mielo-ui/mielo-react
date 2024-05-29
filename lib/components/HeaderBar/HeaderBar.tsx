@@ -23,7 +23,7 @@ export function HeaderBar({
   right,
 }: HeaderBarProps) {
   const attachedClassName = attached && `attached attached-${attached}`
-  
+
   const className = clsx(
     "adw headerbar",
     { transparent, borderless },

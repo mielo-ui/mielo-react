@@ -1,11 +1,13 @@
 import clsx from "clsx"
 
-export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+export interface ButtonProps
+  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   label?: string
   iconLabeled?: boolean
   icon?: JSX.Element
   pilled?: boolean
   transparent?: boolean
+  center?: boolean
   accent?: "red" | "green" | "blue" | "purple"
   filled?: boolean
   circular?: boolean
@@ -17,6 +19,7 @@ export function Button({
   pilled,
   transparent,
   iconLabeled,
+  center,
   filled,
   accent,
   circular,
@@ -30,6 +33,7 @@ export function Button({
       transparent,
       labeled: icon && iconLabeled,
       content: icon && label,
+      center,
       pilled,
       filled,
       circular,

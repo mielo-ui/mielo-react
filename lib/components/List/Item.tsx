@@ -12,7 +12,7 @@ export interface ListItemProps {
   header?: string
   description?: string
 
-  icon?: JSX.Element  
+  icon?: JSX.Element
   iconStyle?: "filled" | "circular"
 
   right?: JSX.Element | JSX.Element[]
@@ -61,7 +61,10 @@ export function ListItem({
   )
 
   return (
-    <li onClick={onClick} className={clsx("item", { activatable, active, link })}>
+    <li
+      onClick={onClick}
+      className={clsx("item", { activatable, active, link })}
+    >
       {link ? (
         <a href={link} onClick={onClickLink} className="link">
           {content}

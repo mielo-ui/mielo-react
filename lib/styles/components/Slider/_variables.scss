@@ -1,0 +1,27 @@
+:root,
+[data-theme="light"] {
+    --adw-slider-default-color: 0, 0, 0;
+
+    --adw-slider-bg: rgb(222, 221, 218);
+    --adw-slider-range-bg: rgb(53, 132, 228);
+    --adw-slider-thumb-bg: rgb(255,255,255);
+    --adw-slider-thumb-border: rgb(193, 186, 181);
+}
+
+[data-theme="dark"] {
+    --adw-slider-default-color: 255, 255, 255;
+
+    --adw-slider-bg: rgb(40, 40, 40);
+    --adw-slider-range-bg: rgb(21, 83, 158);
+
+    --adw-slider-thumb-bg: rgb(56, 56, 56);
+    --adw-slider-thumb-border: rgb(27, 27, 27);
+}
+
+:root,
+[data-theme="light"],
+[data-theme="dark"] {
+    --adw-slider-thumb-size: 2rem;
+    --adw-slider-height: 0.4rem; // 0.4rem;
+    --adw-slider-padding-v: calc((--adw-slider-thumb-size - var(--adw-slider-height)) / 2);
+}

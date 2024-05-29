@@ -34,11 +34,17 @@ export { Dialog } from "./components/Dialog"
 export type { ProgressProps } from "./components/Progress"
 export { Progress } from "./components/Progress"
 
+export type { SliderProps, RangeSliderProps } from "./components/Slider"
+export { Slider, RangeSlider } from "./components/Slider"
+
 export type { ModalProps } from "./components/Modal"
 export { Modal } from "./components/Modal"
 
 export type { PortalProps } from "./components/Modal"
 export { Portal } from "./components/Modal"
+
+export type { ParagraphProps, TextProps } from "./components/Text"
+export { Paragraph, Text } from "./components/Text"
 
 export type {
   FormSelectProps,

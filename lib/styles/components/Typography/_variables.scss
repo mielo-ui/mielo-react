@@ -19,15 +19,9 @@
     --adw-text-color: rgba(var(--adw-text-default-color), 0.8);
     --adw-text-size: var(--adw-size-14);
 
-    --adw-heading-size: var(--adw-size-14);
-    --adw-paragraph-size: var(--adw-size-14);
-
-    --adw-caption-heading-size: var(--adw-size-12);
-    --adw-caption-paragraph-size: var(--adw-size-12);
-
     // Colors
-    --adw-text-accent: rgb(var(--adw-color-blue));
-    --adw-text-success: rgb(var(--adw-color-green));
-    --adw-text-warning: rgb(var(--adw-color-yellow));
-    --adw-text-error: rgb(var(--adw-color-red));
+    --adw-text-accent-color: rgb(var(--adw-color-blue));
+    --adw-text-success-color: rgb(var(--adw-color-green));
+    --adw-text-warning-color: rgb(var(--adw-color-yellow));
+    --adw-text-error-color: rgb(var(--adw-color-red));
 }

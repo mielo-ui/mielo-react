@@ -8,7 +8,11 @@ export function EntryPage() {
     <div className="page entries">
       <Adw.Clamp
         header={
-          <Adw.Header title="Entry" subtitle="Example with input fields" center />
+          <Adw.Header
+            title="Entry"
+            subtitle="Example with input fields"
+            center
+          />
         }
       >
         <Adw.Header title="Default" size="medium" />

@@ -3,7 +3,9 @@ import { ReactNode, cloneElement, isValidElement } from "react"
 import { isCorrectChildrenType, isPlainObject } from "../../utils"
 import { Header, HeaderProps } from "../Header"
 
-export type HeaderProp = ReactNode | Pick<HeaderProps, "title" | "subtitle" | "icon">
+export type HeaderProp =
+  | ReactNode
+  | Pick<HeaderProps, "title" | "subtitle" | "icon">
 
 export interface InnerHeaderProps {
   header?: HeaderProp
@@ -31,7 +33,7 @@ export function InnerHeader({ header }: InnerHeaderProps) {
     if (isPlainObject(header)) {
       return <Header {...(header as any)} {...overrideProps} />
     } else {
-        return undefined
+      return undefined
     }
   }
 }

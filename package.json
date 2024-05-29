@@ -13,8 +13,8 @@
     "build:styles": "sass --load-path=node_modules ./lib/styles/main.scss ./dist/adwaita.css",
     "build": "tsc --p ./tsconfig.build.json && vite build && npm run build:styles",
     "preview": "vite preview",
-    "style:fix": "prettier --config .prettierrc 'src/**/*.{ts,tsx,scss,css}' --write",
-    "lint:fix": "eslint '*/**/*.{ts,tsx}' --quiet --fix && stylelint '**/*.scss'",
+    "style:fix": "prettier --config .prettierrc '{src,lib}/**/*.{ts,tsx,scss,css}' --write",
+    "lint:fix": "eslint '*/**/*.{ts,tsx}' --quiet --fix && stylelint 'lib/**/*.scss'",
     "fix:all": "npm run style:fix && npm run lint:fix"
   },
   "dependencies": {
@@ -23,6 +23,7 @@
     "prop-types": "^15.8.1",
     "react-custom-scroll": "^7.0.0",
     "react-hook-form": "^7.51.4",
+    "react-range-slider-input": "^3.0.7",
     "react-tooltip": "^5.26.4",
     "react-transition-group": "^4.4.5",
     "reseter.css": "^2.0.0"

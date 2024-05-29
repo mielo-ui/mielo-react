@@ -26,7 +26,7 @@ function Rows({ children }: RowsProps) {
 Rows.displayName = "Adw.Rows"
 
 export default Object.assign(Rows, {
-    Select: SelectRow,
-    Entry: EntryRow,
-    Row: Row,
+  Select: SelectRow,
+  Entry: EntryRow,
+  Row: Row,
 })

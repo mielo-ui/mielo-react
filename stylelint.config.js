@@ -8,7 +8,7 @@ export default {
   ],
   extends: [],
   rules: {
-    "block-no-empty": true,
+    "block-no-empty": null,
     "at-rule-no-unknown": null,
     "scss/at-rule-no-unknown": true,
   },

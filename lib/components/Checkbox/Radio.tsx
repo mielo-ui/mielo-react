@@ -35,7 +35,7 @@ export function Radio({
 
       <label className="label" htmlFor={radioId}>
         <div className="indicator" />
-        
+
         {(children || label) && (
           <div className="content">{children ? children : label}</div>
         )}

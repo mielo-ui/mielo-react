@@ -24,6 +24,7 @@
 
 /* Default button layout */
 .adw.button {
+    --adw-button-border-color: rgba(var(--adw-button-default-color), 0.08);
     --adw-button-color: var(--adw-button-default-color);
     --adw-button-text: rgba(var(--adw-button-color), 0.8);
 

@@ -1,4 +1,7 @@
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
     color: var(--adw-header-color);
     font-weight: 800;
 
@@ -6,19 +9,23 @@ h1, h2, h3, h4 {
     margin-top: 0;
 }
 
-h1, .adw.title-1 {
+h1,
+.adw.title-1 {
     font-size: var(--adw-h1-size);
 }
 
-h2, .adw.title-2 {
+h2,
+.adw.title-2 {
     font-size: var(--adw-h2-size);
 }
 
-h3, .adw.title-3 {
+h3,
+.adw.title-3 {
     font-size: var(--adw-h3-size);
 }
 
-h4, .adw.title-4 {
+h4,
+.adw.title-4 {
     font-size: var(--adw-h4-size);
 }
 
@@ -35,37 +42,33 @@ h4, .adw.title-4 {
     }
 }
 
-.adw.paragraph {
-    font-size: var(--adw-paragraph-size);
-    color: var(--adw-text-color);
-    font-weight: 400;
-
-    margin-bottom: 1.2rem;
-    margin-top: 0;
-
-    &.caption {
-        font-size: var(--adw-caption-paragraph-size);
-    }
-}
-
 .adw.text {
     font-size: var(--adw-text-size);
     color: var(--adw-text-color);
     font-weight: 400;
 
-    &.accent {
-        color: var(--adw-text-accent);
-    }
-    
-    &.success {
-        color: var(--adw-text-success);
-    }
-    
-    &.warning {
-        color: var(--adw-text-warning);
+    &.center {
+        text-align: center;
     }
 
-    &.error {
-        color: var(--adw-text-error);
+    &.adw.paragraph {
+        margin-bottom: 1.2rem;
+        margin-top: 0;
+    }
+
+    &.accent {
+        color: var(--adw-text-accent);
+
+        &.success {
+            color: var(--adw-text-success);
+        }
+
+        &.warning {
+            color: var(--adw-text-warning);
+        }
+
+        &.error {
+            color: var(--adw-text-error);
+        }
     }
 }

@@ -64,7 +64,7 @@ export function CheckboxPage() {
                 indicator: {
                   unchecked: <Adw.Icons.WeatherClearNight />,
                   checked: <Adw.Icons.WeatherClear />,
-                }
+                },
               }}
             />
 
@@ -76,7 +76,7 @@ export function CheckboxPage() {
                 layout: {
                   unchecked: <Adw.Icons.WeatherClearNight />,
                   checked: <Adw.Icons.WeatherClear />,
-                }
+                },
               }}
             />
           </div>

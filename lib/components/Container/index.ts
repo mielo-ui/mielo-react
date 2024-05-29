@@ -10,8 +10,4 @@ export type {
   SplitViewContentProps,
 } from "./SplitView"
 
-export {
-  SplitView,
-  SplitViewSidebar,
-  SplitViewContent,
-} from "./SplitView"
+export { SplitView, SplitViewSidebar, SplitViewContent } from "./SplitView"

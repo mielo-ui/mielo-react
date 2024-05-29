@@ -5,7 +5,7 @@ import { SplitViewContent } from "./Content"
 import { SplitViewSidebar } from "./Sidebar"
 
 export interface SplitViewProps {
-  theme?: "light" | "dark" | string 
+  theme?: "light" | "dark" | string
   children?: ReactNode
 }
 

@@ -50,7 +50,7 @@ export function Checkbox({
   style,
   name,
 }: CheckboxProps) {
-  let [checked, setChecked] = useState(_checked)
+  const [checked, setChecked] = useState(_checked)
 
   useEffect(() => {
     setChecked(_checked)

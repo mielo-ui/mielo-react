@@ -11,13 +11,7 @@ export interface RowProps {
   right?: JSX.Element | JSX.Element[]
 }
 
-export function Row({
-  header,
-  description,
-  icon,
-  iconStyle,
-  right,
-}: RowProps) {
+export function Row({ header, description, icon, iconStyle, right }: RowProps) {
   const onClickRight = useCallback((event: MouseEvent<HTMLElement>) => {
     event.stopPropagation()
   }, [])

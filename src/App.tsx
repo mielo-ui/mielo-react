@@ -90,7 +90,7 @@ function App() {
           />
 
           <div className="divider"></div>
-          
+
           {linksDemo}
         </Adw.List>
       </Adw.SplitView.Sidebar>
@@ -141,7 +141,10 @@ function App() {
           <Route path="container" component={ComponentPages.ContainerPage} />
           <Route path="button" component={ComponentPages.ButtonPage} />
           <Route path="dialog" component={ComponentPages.DialogPage} />
-          <Route path="notification" component={ComponentPages.NotificationPage} />
+          <Route
+            path="notification"
+            component={ComponentPages.NotificationPage}
+          />
           <Route path="entry" component={ComponentPages.EntryPage} />
           <Route path="list" component={ComponentPages.ListPage} />
           <Route path="card" component={ComponentPages.CardPage} />

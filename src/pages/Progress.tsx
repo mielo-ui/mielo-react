@@ -15,9 +15,7 @@ export function ProgressPage() {
         <Adw.Header title="Default" size="medium" />
 
         <Adw.Segment placeholder="dev">
-          <div className="inline-flex">
-
-          </div>
+          <div className="inline-flex"></div>
         </Adw.Segment>
       </Adw.Clamp>
     </div>

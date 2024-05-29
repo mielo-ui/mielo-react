@@ -7,7 +7,10 @@ export interface SplitViewContentProps {
   headerbar?: ReactNode
 }
 
-export function SplitViewContent({ children, headerbar }: SplitViewContentProps) {
+export function SplitViewContent({
+  children,
+  headerbar,
+}: SplitViewContentProps) {
   return (
     <div className="content">
       {headerbar}

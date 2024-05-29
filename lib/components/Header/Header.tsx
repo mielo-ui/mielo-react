@@ -8,7 +8,7 @@ export interface HeaderProps {
   size?: "small" | "medium"
   actions?: JSX.Element | JSX.Element[]
 
-  attached?: "headerbar" | "list"
+  attached?: "headerbar" | "list" | "dialog"
 }
 
 export function Header({
@@ -22,7 +22,7 @@ export function Header({
 }: HeaderProps) {
   const attachedClassName = attached && `attached attached-${attached}`
   const className = clsx("adw header", size, { center }, attachedClassName)
-  
+
   const header = (
     <>
       {icon && <div className="icon">{icon}</div>}

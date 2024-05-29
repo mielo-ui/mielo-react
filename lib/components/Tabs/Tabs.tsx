@@ -24,10 +24,7 @@ function Tab(props: TabProps) {
   const active = name === props.selected
 
   return (
-    <div
-    className={clsx("tab", { active })}
-    onClick={onClick}
-    >
+    <div className={clsx("tab", { active })} onClick={onClick}>
       {icon && <div className="icon">{icon}</div>}
       <div className="title">{title}</div>
     </div>
