@@ -8,6 +8,7 @@ export function BasicDemoPage() {
           <Adw.Header
             title="Basic Demo"
             subtitle="Simple apps using adwaita components"
+            size="large"
             center
           />
         }

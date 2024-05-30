@@ -8,6 +8,7 @@ export function CheckboxPage() {
           <Adw.Header
             title="Checkbox"
             subtitle="Example of different checkbox & radio variants"
+            size="large"
             center
           />
         }

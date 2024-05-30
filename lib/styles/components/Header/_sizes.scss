@@ -1,0 +1,27 @@
+.adw.header {
+    // Default
+    >.heading {
+        >.title {
+            font-size: var(--adw-header-medium-title);
+            margin-bottom: var(--adw-header-medium-margin-v);
+        }
+
+        >.subtitle {
+            font-size: var(--adw-header-medium-subtitle);
+        }
+    }
+
+    // Each Size
+    @each $size, $values in $adw-header-sizes {
+        &.#{$size}>.heading {
+            >.title {
+                font-size: var(--adw-header-#{$size}-title);
+                margin-bottom: var(--adw-header-#{$size}-margin-v);
+            }
+
+            >.subtitle {
+                font-size: var(--adw-header-#{$size}-subtitle);
+            }
+        }
+    }
+}

@@ -8,6 +8,7 @@ export function ContainerPage() {
           <Adw.Header
             title="Container"
             subtitle="Example of container variants"
+            size="large"
             center
           />
         }

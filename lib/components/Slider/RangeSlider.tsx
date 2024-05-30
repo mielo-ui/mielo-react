@@ -44,3 +44,5 @@ export function RangeSlider({
     </div>
   )
 }
+
+RangeSlider.displayName = "Adw.Slider.Range"

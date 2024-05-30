@@ -31,6 +31,7 @@ export function SelectPage() {
           <Adw.Header
             title="Select"
             subtitle="Example of different select variants"
+            size="large"
             center
           />
         }

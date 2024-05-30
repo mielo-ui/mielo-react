@@ -21,6 +21,7 @@ export function InnerHeader({ header }: InnerHeaderProps) {
     actions: undefined,
     size: "medium",
     center: true,
+    flattened: true,
   }
 
   if (isValidElement(header)) {

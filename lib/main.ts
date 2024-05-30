@@ -25,14 +25,20 @@ export { Header } from "./components/Header"
 export type { ListItemProps, ListProps } from "./components/List"
 export { ListItem, List } from "./components/List"
 
-export type { ToastProps } from "./components/Notification"
-export { Notification } from "./components/Notification"
+export type { NotificationProps, AlertProps } from "./components/Notification"
+export { Notification, Alert } from "./components/Notification"
+
+export type { MessageProps } from "./components/Message"
+export { Message } from "./components/Message"
+
+export type { CardProps } from "./components/Card"
+export { Card } from "./components/Card"
 
 export type { DialogProps } from "./components/Dialog"
 export { Dialog } from "./components/Dialog"
 
-export type { ProgressProps } from "./components/Progress"
-export { Progress } from "./components/Progress"
+export type { ProgressProps, ProgressBarProps } from "./components/Progress"
+export { Progress, ProgressBar } from "./components/Progress"
 
 export type { SliderProps, RangeSliderProps } from "./components/Slider"
 export { Slider, RangeSlider } from "./components/Slider"

@@ -31,6 +31,7 @@ export function RowPage() {
           <Adw.Header
             title="Rows"
             subtitle="Example of different row variants"
+            size="large"
             center
           />
         }

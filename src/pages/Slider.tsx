@@ -15,6 +15,7 @@ export function SliderPage() {
           <Adw.Header
             title="Slider"
             subtitle="Example of slider variants"
+            size="large"
             center
           />
         }

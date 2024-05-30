@@ -8,6 +8,7 @@ export function NotificationPage() {
           <Adw.Header
             title="Toast"
             subtitle="Example of notification variants"
+            size="large"
             center
           />
         }

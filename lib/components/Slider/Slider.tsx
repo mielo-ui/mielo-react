@@ -2,6 +2,8 @@ import ReactSlider, { ReactRangeSliderProps } from "react-range-slider-input"
 import { useCallback } from "react"
 import clsx from "clsx"
 
+import { RangeSlider } from "./RangeSlider"
+
 export interface SliderProps
   extends Omit<
     ReactRangeSliderProps,
@@ -12,7 +14,7 @@ export interface SliderProps
   value?: number
 }
 
-export function Slider({
+function Slider({
   defaultValue: _defaultValue,
   className: _className,
   onChange: _onChange,
@@ -32,10 +34,8 @@ export function Slider({
     <div className={className}>
       <ReactSlider
         {...props}
-        
         thumbsDisabled={[true, false]}
         rangeSlideDisabled={true}
-
         defaultValue={defaultValue}
         onInput={onChange}
         value={value}
@@ -43,3 +43,9 @@ export function Slider({
     </div>
   )
 }
+
+Slider.displayName = "Adw.Slider"
+
+export default Object.assign(Slider, {
+  Range: RangeSlider,
+})

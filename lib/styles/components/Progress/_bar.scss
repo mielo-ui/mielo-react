@@ -1,0 +1,67 @@
+.adw.progress>.bar {
+    background-color: var(--adw-progress-bar-bg);
+    transition: width 0.3s ease;
+    
+    position: relative;
+    overflow: hidden;
+
+    align-items: center;
+    display: flex;
+    height: 100%;
+
+    &:first-child {
+        border-bottom-left-radius: var(--adw-progress-rounded);
+        border-top-left-radius: var(--adw-progress-rounded);
+    }
+
+    &:last-child {
+        border-bottom-right-radius: var(--adw-progress-rounded);
+        border-top-right-radius: var(--adw-progress-rounded);
+    }
+
+    >.progress {
+        justify-content: flex-end;
+        align-items: center;
+        display: flex;
+        flex: 1;
+
+        text-shadow: 0 0 2px rgba(0,0,0, 0.5);
+        box-sizing: border-box;
+        padding: 0 0.8rem;
+        z-index: 10;
+
+        font-size: var(--adw-progress-bar-font-size);
+        color: var(--adw-progress-bar-color);
+        font-weight: 700;
+
+        transition: opacity 0.3s ease;
+        opacity: 0;
+        
+        &.visible {
+            opacity: 1;
+        }
+    }
+
+    // Accent colors
+    &.accent {
+        &.red {
+            background-color: var(--adw-progress-accent-red);
+        }
+
+        &.purple {
+            background-color: var(--adw-progress-accent-purple);
+        }
+
+        &.green {
+            background-color: var(--adw-progress-accent-green);
+        }
+
+        &.blue {
+            background-color: var(--adw-progress-accent-blue);
+        }
+
+        &.yellow {
+            background-color: var(--adw-progress-accent-yellow);
+        }
+    }
+}

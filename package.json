@@ -49,6 +49,7 @@
     "prettier": "^3.2.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-syntax-highlighter": "^15.5.0",
     "sass": "^1.77.0",
     "stylelint": "^16.5.0",
     "stylelint-scss": "^6.3.0",

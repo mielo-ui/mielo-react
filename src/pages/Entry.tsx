@@ -11,6 +11,7 @@ export function EntryPage() {
           <Adw.Header
             title="Entry"
             subtitle="Example with input fields"
+            size="large"
             center
           />
         }

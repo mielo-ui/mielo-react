@@ -1,0 +1,20 @@
+.adw.header {
+    // States
+    &.center {
+        >.heading {
+            align-items: center;
+            text-align: center;
+        }
+    }
+
+    // Heading fit without margins
+    &.flattened {
+        margin: 0;
+
+        .heading {
+            .title {
+                margin-bottom: 0;
+            }
+        }
+    }
+}

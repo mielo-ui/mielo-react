@@ -8,6 +8,7 @@ export function ButtonPage() {
           <Adw.Header
             title="Buttons"
             subtitle="Example of different button variants"
+            size="large"
             center
           />
         }

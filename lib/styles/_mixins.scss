@@ -1,3 +1,7 @@
+@use "sass:list";
+@use "sass:map";
+@use "sass:meta";
+
 @mixin box($width: "", $height: "") {
     @if $width !="" {
         width: $width;
@@ -24,6 +28,11 @@
     }
 }
 
-@mixin flex-center() {
-    @include flex(row, center, center);
+@function map-deep-get($map, $keys...) {
+   $scope: $map; $i: 1;
+   @while (meta.type-of($scope) == map) and ($i <= list.length($keys)) {
+      $scope: map.get($scope, list.nth($keys, $i));
+      $i: $i + 1;
+   }
+   @return $scope;
 }

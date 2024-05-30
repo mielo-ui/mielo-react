@@ -8,6 +8,7 @@ export function ListPage() {
           <Adw.Header
             title="List"
             subtitle="Example of different list variants"
+            size="large"
             center
           />
         }

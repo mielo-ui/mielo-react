@@ -8,6 +8,7 @@ export function HeaderBarPage() {
           <Adw.Header
             subtitle="Example of different headerbar variants"
             title="HeaderBar"
+            size="large"
             center
           />
         }

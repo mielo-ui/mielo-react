@@ -8,6 +8,7 @@ export function TypographyPage() {
           <Adw.Header
             title="Typography"
             subtitle="Example of typography text styles"
+            size="large"
             center
           />
         }

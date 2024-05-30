@@ -1,7 +1,10 @@
 @import "../../node_modules/reseter.css/css/reseter";
 
+
 @import "fonts";
 @import "mixins";
+
+@import "colors";
 @import "variables";
 
 @import "components/Typography";
@@ -13,6 +16,7 @@
 @import "components/Entry";
 @import "components/Select";
 @import "components/Slider";
+@import "components/Progress";
 
 @import "components/HeaderBar";
 @import "components/Scrollbar";

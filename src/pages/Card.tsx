@@ -5,7 +5,12 @@ export function CardPage() {
     <div className="page card">
       <Adw.Clamp
         header={
-          <Adw.Header title="Card" subtitle="Example of card variants" center />
+          <Adw.Header
+            title="Card"
+            subtitle="Example of card variants"
+            size="large"
+            center
+          />
         }
       >
         <Adw.Header title="Default" size="medium" />

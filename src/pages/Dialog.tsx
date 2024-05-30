@@ -11,6 +11,7 @@ export function DialogPage() {
           <Adw.Header
             title="Dialog"
             subtitle="Example of dialog variants"
+            size="large"
             center
           />
         }

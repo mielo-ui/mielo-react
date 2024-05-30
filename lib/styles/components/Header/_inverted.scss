@@ -1,0 +1,27 @@
+.adw.header {
+    // Default
+    &.inverted>.heading {
+        >.title {
+            font-size: var(--adw-header-medium-subtitle);
+            font-weight: 400;
+        }
+
+        >.subtitle {
+            font-size: var(--adw-header-medium-title);
+            font-weight: 700;
+        }
+    }
+
+    // Each sizes
+    @each $size, $values in $adw-header-sizes {
+        &.#{$size}.inverted>.heading {
+            >.title {
+                font-size: var(--adw-header-#{$size}-subtitle);
+            }
+
+            >.subtitle {
+                font-size: var(--adw-header-#{$size}-title);
+            }
+        }
+    }
+}

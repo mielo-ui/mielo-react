@@ -4,40 +4,45 @@ export interface HeaderProps {
   title: string
   subtitle?: string
   icon?: JSX.Element
+  iconSided?: boolean
+  inverted?: boolean
+  flattened?: boolean
   center?: boolean
-  size?: "small" | "medium"
-  actions?: JSX.Element | JSX.Element[]
-
+  
   attached?: "headerbar" | "list" | "dialog"
+  size?: "small" | "medium" | "large"
 }
 
 export function Header({
-  title,
+  inverted,
+  iconSided,
   subtitle,
+  flattened,
+  attached,
+  center,
+  title,
   size,
   icon,
-  center,
-  actions,
-  attached,
 }: HeaderProps) {
   const attachedClassName = attached && `attached attached-${attached}`
-  const className = clsx("adw header", size, { center }, attachedClassName)
 
-  const header = (
-    <>
-      {icon && <div className="icon">{icon}</div>}
-      <div className="title">{title}</div>
-      {subtitle && <div className="subtitle">{subtitle}</div>}
-    </>
+  const className = clsx(
+    "adw header",
+    size && `size ${size}`,
+    { center, inverted, flattened },
+    attachedClassName,
   )
 
-  return actions ? (
+  return (
     <div className={className}>
-      <div className="content">{header}</div>
-      <div className="actions">{actions}</div>
+      {icon && iconSided && <div className="icon">{icon}</div>}
+
+      <div className="heading">
+        {icon && !iconSided && <div className="icon">{icon}</div>}
+        <div className="title">{title}</div>
+        {subtitle && <div className="subtitle">{subtitle}</div>}
+      </div>
     </div>
-  ) : (
-    <div className={className}>{header}</div>
   )
 }
 
