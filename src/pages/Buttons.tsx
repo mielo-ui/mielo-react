@@ -17,11 +17,38 @@ export function ButtonPage() {
 
         <Adw.Segment placeholder="dev">
           <div className="inline-flex">
-            <Adw.Button label="Label" />
-            <Adw.Button label="Label" accent="red" />
-            <Adw.Button label="Label" accent="green" />
-            <Adw.Button label="Label" accent="blue" />
-            <Adw.Button label="Label" accent="purple" />
+            <Adw.Button label="Default" />
+          </div>
+
+          <Adw.Header title="Status Colors" size="small" />
+
+          <div className="inline-flex">
+            <Adw.Button label="Accent" accent />
+            <Adw.Button label="Success" accent="success" />
+            <Adw.Button label="Warning" accent="warning" />
+            <Adw.Button label="Error" accent="error" />
+          </div>
+
+          <Adw.Header title="Simple colored" size="small" />
+
+          <div className="inline-flex">
+            <Adw.Button label="Orange" color="orange" />
+            <Adw.Button label="Purple" color="purple" />
+            <Adw.Button label="Pink" color="pink" />
+            <Adw.Button label="Deeppurple" color="deeppurple" />
+            <Adw.Button label="Indigo" color="indigo" />
+            <Adw.Button label="Lightgreen" color="lightgreen" />
+            <Adw.Button label="Deeporange" color="deeporange" />
+          </div>
+        </Adw.Segment>
+
+        <Adw.Header title="Sizes" size="medium" />
+
+        <Adw.Segment placeholder="dev">
+          <div className="inline-flex">
+            <Adw.Button label="Small" size="small" />
+            <Adw.Button label="Medium Default" />
+            <Adw.Button label="Large" size="large" />
           </div>
         </Adw.Segment>
 
@@ -29,11 +56,11 @@ export function ButtonPage() {
 
         <Adw.Segment placeholder="dev">
           <div className="inline-flex">
-            <Adw.Button label="Label" transparent />
-            <Adw.Button label="Label" transparent accent="red" />
-            <Adw.Button label="Label" transparent accent="green" />
-            <Adw.Button label="Label" transparent accent="blue" />
-            <Adw.Button label="Label" transparent accent="purple" />
+            <Adw.Button label="Transparent" transparent />
+            <Adw.Button label="Accent" transparent accent />
+            <Adw.Button label="Success" transparent accent="success" />
+            <Adw.Button label="Warning" transparent accent="warning" />
+            <Adw.Button label="Error" transparent accent="error" />
           </div>
         </Adw.Segment>
 
@@ -41,11 +68,11 @@ export function ButtonPage() {
 
         <Adw.Segment placeholder="dev">
           <div className="inline-flex">
-            <Adw.Button label="Label" filled transparent />
-            <Adw.Button label="Label" filled transparent accent="red" />
-            <Adw.Button label="Label" filled transparent accent="green" />
-            <Adw.Button label="Label" filled transparent accent="blue" />
-            <Adw.Button label="Label" filled transparent accent="purple" />
+            <Adw.Button label="Filled" filled />
+            <Adw.Button label="Accent" filled accent />
+            <Adw.Button label="Success" filled accent="success" />
+            <Adw.Button label="Warning" filled accent="warning" />
+            <Adw.Button label="Error" filled accent="error" />
           </div>
         </Adw.Segment>
 
@@ -53,11 +80,11 @@ export function ButtonPage() {
 
         <Adw.Segment placeholder="dev">
           <div className="inline-flex">
-            <Adw.Button label="Label" pilled />
-            <Adw.Button label="Label" pilled accent="red" />
-            <Adw.Button label="Label" pilled accent="green" />
-            <Adw.Button label="Label" pilled accent="blue" />
-            <Adw.Button label="Label" pilled accent="purple" />
+            <Adw.Button label="Pilled" pilled />
+            <Adw.Button label="Accent" pilled accent />
+            <Adw.Button label="Success" pilled accent="success" />
+            <Adw.Button label="Warning" pilled accent="warning" />
+            <Adw.Button label="Error" pilled accent="error" />
           </div>
         </Adw.Segment>
 
@@ -76,15 +103,15 @@ export function ButtonPage() {
             <Adw.Button
               icon={<Adw.Icons.FolderNew />}
               iconLabeled
-              accent="blue"
               label="Label"
+              accent
             />
             <Adw.Button
               icon={<Adw.Icons.FolderNew />}
               iconLabeled
-              filled
-              accent="blue"
               label="Label"
+              filled
+              accent
             />
           </div>
         </Adw.Segment>

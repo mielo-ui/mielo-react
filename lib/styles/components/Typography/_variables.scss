@@ -20,8 +20,8 @@
     --adw-text-size: var(--adw-size-14);
 
     // Colors
-    --adw-text-accent-color: rgb(var(--adw-color-blue));
-    --adw-text-success-color: rgb(var(--adw-color-green));
-    --adw-text-warning-color: rgb(var(--adw-color-yellow));
-    --adw-text-error-color: rgb(var(--adw-color-red));
+    --adw-text-accent-color: rgb($adw-color-blue-4);
+    --adw-text-success-color: rgb($adw-color-green-5);
+    --adw-text-warning-color: rgb($adw-color-yellow-4);
+    --adw-text-error-color: rgb($adw-color-red-2);
 }

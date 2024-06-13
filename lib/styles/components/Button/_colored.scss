@@ -1,26 +1,79 @@
-// Default accent colors
-.adw.button {
-    &.transparent {
-        --adw-button-bg: rgba(var(--adw-button-color), 0.0);
+@use "sass:map";
+
+@mixin adw_button_color_vars($accent, $theme: null) {
+    $props: null;
+
+    @if ($theme) {
+        $themes: map-get($adw-accents, $accent);
+        $props: map-get($themes, $theme);
+    }
+    
+    @else {
+        $props: map-get($adw-accents-colors, $accent);
     }
 
-    &.filled {
-        --adw-button-active-bg: color-mix(in srgb, rgb(var(--adw-button-color)) 80%, #000);
-        --adw-button-hover-bg: color-mix(in srgb, rgb(var(--adw-button-color)) 90%, #000);
-        --adw-button-bg: rgb(var(--adw-button-color));
-        --adw-button-text: rgba(0, 0, 0, 0.8);
-    }
+    $bg: map-get($props, "bg");
+    $fg: map-get($props, "fg");
 
-    // Declare base colors
-    $colors: "red", "green", "purple", "blue";
+    $colorClassExt: if($accent == 'default', '', $accent);
+    
+    .adw.button.#{$colorClassExt} {
+        --adw-button-bg-active: #{rgba($bg, 0.5)};
+        --adw-button-bg-hover: #{rgba($bg, 0.4)};
+        --adw-button-bg: #{rgba($bg, 0.3)};
 
-    @each $color in $colors {
-        &.#{$color} {
-            --adw-button-color: var(--adw-color-#{$color});
-            
-            &.filled {
-                --adw-button-text: rgba(255, 255, 255, 1.0);
-            }
+        &.transparent {
+            --adw-button-bg: #{rgba($bg, 0.0)};
         }
+
+        &.filled {
+            --adw-button-bg-active: #{darken($bg, 15%)};
+            --adw-button-bg-hover: #{darken($bg, 10%)};
+            --adw-button-bg: #{$bg};
+            --adw-button-fg: #FFF;
+        }
+    }
+}
+
+:root,
+[data-theme="light"] {
+    // Universal color styles
+    @each $accent in map-keys($adw-accents-colors) {
+        @include adw_button_color_vars($accent);
+    }
+
+    // Colors for accented status
+    @each $accent in map-keys($adw-accents) {
+        @include adw_button_color_vars($accent, "light");
+    }
+
+    .adw.button.transparent {
+        --adw-button-bg: #{rgba(#000, 0.0)};
+    }
+
+    .adw.button.filled {
+        --adw-button-bg-active: #{darken(#FFF, 15%)};
+        --adw-button-bg-hover: #{darken(#FFF, 10%)};
+        --adw-button-bg: #FFF;
+
+        --adw-button-fg: #{rgba(#000, 0.8)};
+    }
+}
+
+[data-theme="dark"] {
+    @each $accent in map-keys($adw-accents) {
+        @include adw_button_color_vars($accent, "dark");
+    }
+
+    .adw.button.transparent {
+        --adw-button-bg: #{rgba(#FFF, 0.0)};
+    }
+
+    .adw.button.filled {
+        --adw-button-bg-active: #{lighten(#000, 15%)};
+        --adw-button-bg-hover: #{lighten(#000, 10%)};
+        --adw-button-bg: #000;
+
+        --adw-button-fg: #{rgba(#FFF, 0.8)};
     }
 }

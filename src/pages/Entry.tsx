@@ -30,16 +30,73 @@ export function EntryPage() {
           </div>
         </Adw.Segment>
 
-        <Adw.Header title="Error" size="medium" />
+        <Adw.Header title="Accent & Status" size="medium" />
 
         <Adw.Segment placeholder="dev">
-          <div className="inline-flex">
+          <div className="column-flex">
             <Adw.Entry
-              error="Error message"
+              message="Error message"
+              accent="error"
               placeholder="Username"
               value="Sample text"
-              name="username"
+              name="username-a-1"
               type="text"
+            />
+            
+            <Adw.Entry
+              message="Warning message"
+              accent="warning"
+              placeholder="Username"
+              value="Sample text"
+              name="username-a-2"
+              type="text"
+            />
+
+            <Adw.Entry
+              message="Success message"
+              accent="success"
+              placeholder="Username"
+              value="Sample text"
+              name="username-a-3"
+              type="text"
+            />
+          </div>
+        </Adw.Segment>
+
+        <Adw.Header title="Sizes" size="medium" />
+
+        <Adw.Segment placeholder="dev">
+          <div className="column-flex">
+            <Adw.Entry
+              placeholder="Field name"
+              value="Small entry size"
+              name="username-s-1"
+              size="small"
+              type="text"
+
+              message="Small entry message"
+              accent="success"
+            />
+            
+            <Adw.Entry
+              placeholder="Field name"
+              value="Small entry size"
+              name="username-s-2"
+              type="text"
+
+              message="Default medium entry message"
+              accent="warning"
+            />
+
+            <Adw.Entry
+              placeholder="Field name"
+              value="Small entry size"
+              name="username-s-3"
+              size="large"
+              type="text"
+
+              message="Large entry message"
+              accent="error"
             />
           </div>
         </Adw.Segment>

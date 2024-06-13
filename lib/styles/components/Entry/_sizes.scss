@@ -1,0 +1,78 @@
+@use "sass:list";
+@use "sass:map";
+
+$adw-entry-sizes: (
+    "medium": (
+        "padding": 2.5rem 1.6rem 0.7rem 1.6rem,
+        "min-width": 10rem,
+        "height": 5.4rem,
+
+        "label-top-active": 0.9rem,
+        "label-top-empty": 1.6rem,
+        "label-ph": 1.6rem,
+
+        "indicator-top": 1rem,
+        "indicator-right": 1.2rem,
+
+        "label-fs": var(--adw-size-12),
+        "value-fs": var(--adw-size-14),
+    ),
+    "small": (
+        "padding": 1.4rem 1rem 0.4rem 1rem,
+        "min-width": 8rem,
+        "height": 3.4rem,
+
+        "label-top-active": 0.3rem,
+        "label-top-empty": 1rem,
+        "label-ph": 1rem,
+
+        "indicator-top": 0.3rem,
+        "indicator-right": 0.6rem,
+
+        "label-fs": var(--adw-size-8),
+        "value-fs": var(--adw-size-12),
+    ),
+    "large": (
+        "padding": 2.6rem 1.8rem 0.6rem 1.8rem,
+        "min-width": 14rem,
+        "height": 6.4rem,
+
+        "label-top-active": 1rem,
+        "label-top-empty": 2.1rem,
+        "label-ph": 1.8rem,
+
+        "indicator-top": 1rem,
+        "indicator-right": 1.2rem,
+
+        "label-fs": var(--adw-size-14),
+        "value-fs": var(--adw-size-16),
+    )
+);
+
+:root,
+[data-theme="light"],
+[data-theme="dark"] {
+    @each $size, $props in $adw-entry-sizes {
+        @each $prop, $value in $props {
+            --adw-entry-#{$size}-#{$prop}: #{$value};
+        }
+    }
+}
+
+@each $size in map-keys($adw-entry-sizes) {
+    // Exclude class ext for default values
+    $sizeClassExt: if($size != 'medium', '.'+$size, '');
+
+    .adw.entry#{$sizeClassExt} {
+        --adw-entry-padding: var(--adw-entry-#{$size}-padding);
+        --adw-entry-min-width: var(--adw-entry-#{$size}-min-width);
+        --adw-entry-height: var(--adw-entry-#{$size}-height);
+        --adw-entry-indicator-top: var(--adw-entry-#{$size}-indicator-top);
+        --adw-entry-indicator-right: var(--adw-entry-#{$size}-indicator-right);
+        --adw-entry-label-top-active: var(--adw-entry-#{$size}-label-top-active);
+        --adw-entry-label-top-empty: var(--adw-entry-#{$size}-label-top-empty);
+        --adw-entry-label-ph: var(--adw-entry-#{$size}-label-ph);
+        --adw-entry-label-fs: var(--adw-entry-#{$size}-label-fs);
+        --adw-entry-value-fs: var(--adw-entry-#{$size}-value-fs);
+    }
+}

@@ -1,0 +1,49 @@
+// Icon Buttons
+.adw.button.icon {
+    svg {
+        max-height: var(--adw-button-icon-size);
+        max-width: var(--adw-button-icon-size);
+
+        height: var(--adw-button-icon-size);
+        width: var(--adw-button-icon-size);
+    }
+
+    &.circular:not(.content) {
+        height: var(--adw-button-size);
+        width: var(--adw-button-size);
+
+        border-radius: 50%;
+        padding: 0;
+    }
+
+    .icon {
+        @include flex(row, center, center);
+    }
+
+    &.content {
+        .icon {
+            margin-right: 0.8rem;
+        }
+    }
+
+    &:not(.content) {
+        .icon {
+            margin-right: 0;
+        }
+    }
+
+    &.labeled {
+        justify-content: flex-start;
+        padding-left: 0;
+
+        .icon {
+            background-color: rgba(#000, 0.05);
+            height: var(--adw-button-size);
+            width: var(--adw-button-size);
+        }
+
+        &.filled .icon {
+            background-color: rgba(#000, 0.15);
+        }
+    }
+}

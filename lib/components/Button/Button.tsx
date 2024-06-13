@@ -1,14 +1,29 @@
+import { ButtonHTMLAttributes } from "react"
 import clsx from "clsx"
 
-export interface ButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+export type ButtonColor =
+  | "orange"
+  | "purple"
+  | "pink"
+  | "deeppurple"
+  | "indigo"
+  | "lightgreen"
+  | "deeporange"
+
+export type ButtonAccent = true | "success" | "warning" | "error"
+export type ButtonSize = "small" | "medium" | "large"
+
+export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+  id?: string 
+  size?: ButtonSize
+  accent?: ButtonAccent
+  color?: ButtonColor
   label?: string
   iconLabeled?: boolean
   icon?: JSX.Element
   pilled?: boolean
   transparent?: boolean
   center?: boolean
-  accent?: "red" | "green" | "blue" | "purple"
   filled?: boolean
   circular?: boolean
 }
@@ -22,23 +37,27 @@ export function Button({
   center,
   filled,
   accent,
+  color,
   circular,
+  size,
   className: _className,
   ...props
 }: ButtonProps) {
   const className = clsx(
     "adw button",
     {
-      icon: !!icon,
-      transparent,
       labeled: icon && iconLabeled,
       content: icon && label,
+      icon: !!icon,
+      transparent,
+      circular,
       center,
       pilled,
       filled,
-      circular,
     },
-    accent,
+    typeof accent === "boolean" && accent ? "accent" : accent,
+    color,
+    size,
     _className,
   )
 

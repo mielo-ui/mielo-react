@@ -5,11 +5,6 @@
     // Segment
     --adw-segment-dev-bg: rgb(212, 212, 212);
     --adw-segment-dev-line: rgba(0, 0, 0, 0.05);
-
-    // SplitView
-    --adw-split-view-sidebar-bg: rgb(var(--adw-color-white-cream));
-    --adw-split-view-content-bg: rgb(var(--adw-color-white-cloud));
-    --adw-split-view-divider-color: rgba(0, 0, 0, 0.1);
 }
 
 [data-theme="dark"] {
@@ -18,11 +13,6 @@
     // Segment
     --adw-segment-dev-bg: rgb(27, 27, 27);
     --adw-segment-dev-line: rgba(255, 255, 255, 0.05);
-
-    // SplitView
-    --adw-split-view-sidebar-bg: rgb(var(--adw-color-light-gray));
-    --adw-split-view-content-bg: rgb(var(--adw-color-dark-gray));
-    --adw-split-view-divider-color: rgba(255, 255, 255, 0.05);
 }
 
 :root,

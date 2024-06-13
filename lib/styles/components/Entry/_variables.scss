@@ -1,43 +1,14 @@
-@use "sass:color";
-
 :root,
 [data-theme="light"] {
-    --adw-entry-default-color: 0, 0, 0;
-    --adw-entry-default-bg: 255, 255, 255;
-    
-    --adw-entry-border-color: rgb(230, 230, 230);
+    // @TODO
 }
 
 [data-theme="dark"] {
-    --adw-entry-default-color: 255, 255, 255;
-    --adw-entry-default-bg: var(--adw-color-light-gray);
-
-    --adw-entry-border-color: rgb(36, 36, 36);
+    // @TODO
 }
 
 :root,
 [data-theme="light"],
 [data-theme="dark"] {
-    --adw-entry-placeholder-color: rgba(var(--adw-entry-default-color), 0.6);
-    --adw-entry-input-color: rgb(var(--adw-entry-default-color));
-    --adw-entry-bg: rgb(var(--adw-entry-default-bg));
-
-    // Tooltip
-    --adw-entry-tooltip-indicator-color: rgb(var(--adw-entry-default-color));
-    --adw-entry-tooltip-color: rgba(var(--adw-entry-default-color), 0.8);
-    --adw-entry-tooltip-bg: var(--adw-entry-bg);
-
-    // Error State
-    --adw-entry-error-bg: #{lighten(#E01B24, 50%)};
-    --adw-entry-error-label: #{lighten(#E01B24, 15%)};
-    --adw-entry-error-value: #{lighten(#E01B24, 1%)};
-    --adw-entry-error-shadow: #{lighten(#E01B24, 30%)};
-
-    // Focused
-    --adw-entry-focus-shadow: #{lighten(#3584E4, 20%)};
-
-    // Sizes
-    --adw-entry-label-size: var(--adw-size-12);
-    --adw-entry-value-size: var(--adw-size-14);
-    --adw-entry-border-radius: 1.2rem;
+    --adw-entry-rounded: 0.6rem;
 }

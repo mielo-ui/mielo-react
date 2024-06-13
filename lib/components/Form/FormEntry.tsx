@@ -1,43 +1,45 @@
 import { Control, Controller, RegisterOptions } from "react-hook-form"
-import { Entry } from "../Entry"
+import { Entry, EntryProps } from "../Entry"
 
-export interface FormEntryProps {
+type AllowedEntryProps = Omit<
+  EntryProps,
+  "onChange" | "value" | "accent" | "messageIcon" | "message"
+>
+
+export interface FormEntryProps extends AllowedEntryProps {
+  control: Control<any, any>
+
   rules?: Omit<
     RegisterOptions<any, string>,
     "valueAsNumber" | "valueAsDate" | "setValueAs" | "disabled"
   >
-
-  control: Control<any, any>
-  type: "text" | "password" | "number"
-  placeholder: string
-  disabled?: boolean
-  name: string
 }
 
-export function FormEntry({
-  placeholder,
-  disabled,
-  control,
-  rules,
-  name,
-  type,
-}: FormEntryProps) {
+export function FormEntry({ control, rules, name, ...props }: FormEntryProps) {
   return (
     <Controller
       control={control}
       rules={rules}
       name={name}
-      render={({ field: { onChange, value }, fieldState: { error } }) => (
-        <Entry
-          placeholder={placeholder}
-          error={error?.message}
-          disabled={disabled}
-          onChange={onChange}
-          value={value}
-          name={name}
-          type={type}
-        />
-      )}
+      render={({ field: { onChange, value }, fieldState: { error } }) => {
+        const entryProps = {
+          onChange: onChange,
+          value: value,
+          name: name,
+          ...props,
+        }
+
+        if (error) {
+          Object.assign(entryProps, {
+            accent: "error",
+            message: error,
+          })
+        }
+
+        return (
+          <Entry {...entryProps} />
+        )
+      }}
     />
   )
 }

@@ -1,0 +1,32 @@
+@use "sass:map";
+@use "sass:list";
+
+// Pallete
+// Default gnome color pallete
+
+$adw-colors: (
+    // Gnome colors
+    "blue"       : (#99c1f1, #62a0ea, #3584e4, #1c71d8, #1a5fb4),
+    "green"      : (#8ff0a4, #57e389, #33d17a, #2ec27e, #26a269),
+    "yellow"     : (#f9f06b, #f8e45c, #f6d32d, #f5c211, #e5a50a),
+    "orange"     : (#ffbe6f, #ffa348, #ff7800, #e66100, #c64600),
+    "red"        : (#f66151, #ed333b, #e01b24, #c01c28, #a51d2d),
+    "purple"     : (#dc8add, #c061cb, #9141ac, #813d9c, #613583),
+    "brown"      : (#cdab8f, #b5835a, #986a44, #865e3c, #63452c),
+    
+    // Extended color pallete
+    "pink"       : (#F06292, #EC407A, #D81B60, #C2185B, #AD1457),
+    "deeppurple" : (#9575CD, #7E57C2, #673AB7, #5E35B1, #512DA8),
+    "indigo"     : (#7986CB, #5C6BC0, #3F51B5, #3949AB, #303F9F),
+    "lightgreen" : (#AED581, #9CCC65, #8BC34A, #7CB342, #689F38),
+    "deeporange" : (#FF8A65, #FF7043, #FF5722, #F4511E, #E64A19),
+    
+    // Core
+    "light"      : (#ffffff, #f6f5f4, #deddda, #c0bfbc, #9a9996),
+    "dark"       : (#77767b, #5e5c64, #3d3846, #241f31, #000000)
+);
+
+@function adw-color($name, $level) {
+    $color: map-get($adw-colors, $name);
+    @return list.nth($color, $level);
+}

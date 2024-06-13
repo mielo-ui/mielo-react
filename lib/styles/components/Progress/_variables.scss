@@ -25,11 +25,11 @@
     --adw-progress-indeterminate-bg: rgb(0,0,0, 0.3);
 
     // Accent
-    --adw-progress-accent-red: rgb(var(--adw-color-red));
-    --adw-progress-accent-purple: rgb(var(--adw-color-purple));
-    --adw-progress-accent-green: rgb(var(--adw-color-green));
-    --adw-progress-accent-blue: rgb(var(--adw-color-blue));
-    --adw-progress-accent-yellow: rgb(var(--adw-color-yellow));
+    --adw-progress-accent-red: rgb($adw-color-red-2);
+    --adw-progress-accent-purple: rgb($adw-color-purple-2);
+    --adw-progress-accent-green: rgb($adw-color-green-5);
+    --adw-progress-accent-blue: rgb($adw-color-blue-4);
+    --adw-progress-accent-yellow: rgb($adw-color-yellow-4);
 
     // Sizes
     --adw-progress-size-small: 0.4rem;

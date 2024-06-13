@@ -1,25 +1,45 @@
+import { ReactNode, createElement, useCallback } from "react"
 import { Tooltip } from "react-tooltip"
-import { useCallback } from "react"
-
 import clsx from "clsx"
+
+import { Button } from "../Button"
+
+import { DialogQuestion} from "../Icons/DialogQuestion"
+import { DialogWarning} from "../Icons/DialogWarning"
+import { DialogError} from "../Icons/DialogError"
+import { EmblemOk} from "../Icons/EmblemOk"
 
 export interface EntryProps {
   onChange?: (value: string) => void
-  error?: string[] | string | false
   type?: "text" | "password" | "number"
+  size?: "small" | "large"
   placeholder: string
   disabled?: boolean
   value?: string
   name: string
   id?: string
+
+  accent?: "error" | "warning" | "success"
+  messageIcon?: JSX.Element
+  message?: ReactNode
+}
+
+const MessageIcons = {
+  question: DialogQuestion,
+  warning: DialogWarning,
+  error: DialogError,
+  success: EmblemOk,
 }
 
 export function Entry({
   onChange: _onChange,
   placeholder,
+  messageIcon,
   disabled,
-  error,
+  message,
+  accent,
   value,
+  size,
   type,
   name,
   id,
@@ -35,29 +55,27 @@ export function Entry({
     [_onChange],
   )
 
-  const errorTooltip = !!error && (
-    <div className="adw tooltip">
-      <div id={tooltipId} className="indicator">
-        ?
-      </div>
-      <Tooltip anchorSelect={`#${tooltipId}`}>
-        <div className="adw tooltip-content">
-          {Array.isArray(error) ? (
-            error.map((msg, idx) => (
-              <div key={idx} className="message">
-                {msg}
-              </div>
-            ))
-          ) : (
-            <div className="message">{error}</div>
-          )}
-        </div>
-      </Tooltip>
-    </div>
+  const messageIndicatorIcon = !messageIcon
+    ? createElement(MessageIcons[accent ? accent : "question"])
+    : messageIcon
+
+  const tooltip = !!message && (
+    <>
+      <Button
+        icon={messageIndicatorIcon}
+        className="indicator"
+        id={tooltipId}
+        size={size}
+        transparent
+        circular
+      />
+
+      <Tooltip anchorSelect={"#" + tooltipId}>{message}</Tooltip>
+    </>
   )
 
   return (
-    <div id={id} className={clsx("adw entry", { disabled, error: !!error })}>
+    <div id={id} className={clsx("adw entry", accent, size, { disabled })}>
       <input
         className={clsx({ filled: value && value.length > 0 })}
         onChange={onChange}
@@ -70,7 +88,7 @@ export function Entry({
 
       <label htmlFor={inputId}>{placeholder}</label>
 
-      {errorTooltip}
+      {tooltip}
     </div>
   )
 }

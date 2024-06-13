@@ -49,6 +49,7 @@ function App() {
     tab: { title: "Tab", page: "tab" },
     card: { title: "Card", page: "card" },
     dialog: { title: "Dialog", page: "dialog" },
+    message: { title: "Message", page: "message"},
     notification: { title: "Notification", page: "notification" },
   }
 
@@ -141,6 +142,7 @@ function App() {
           <Route path="container" component={ComponentPages.ContainerPage} />
           <Route path="button" component={ComponentPages.ButtonPage} />
           <Route path="dialog" component={ComponentPages.DialogPage} />
+          <Route path="message" component={ComponentPages.MessagePage} />
           <Route
             path="notification"
             component={ComponentPages.NotificationPage}

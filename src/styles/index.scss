@@ -48,9 +48,12 @@ body,
                     flex-direction: row;
                     display: flex;
 
+                    flex-wrap: wrap;
+
                     >.adw.button,
                     >.adw.buttons {
-                        margin-right: 1.2rem;
+                        margin: 0 0.6rem;
+                        margin-bottom: 1rem;
 
                         &:last-child {
                             margin-right: 0;
@@ -86,7 +89,8 @@ body,
                     >.adw.select,
                     >.adw.checkbox,
                     >.adw.radio,
-                    >.adw.progress {
+                    >.adw.progress,
+                    >.adw.entry {
                         margin-bottom: 1.6rem;
 
                         &:last-child {

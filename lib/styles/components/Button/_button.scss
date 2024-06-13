@@ -7,23 +7,28 @@
     outline: none;
     border: none;
 
-    padding: var(--adw-button-padding-v) var(--adw-button-padding-h);
+    padding: 0 var(--adw-button-ph);
+    height: var(--adw-button-size);
+
+    justify-content: center;
+    align-items: center;
+    
     display: inline-flex;
     position: relative;
 
-    font-size: var(--adw-button-font-size);
-    color: var(--adw-button-text);
+    font-size: var(--adw-button-fs);
+    color: var(--adw-button-fg);
     font-weight: 700;
 
     border-radius: var(--adw-button-rounded);
     background-color: var(--adw-button-bg);
 
     &:hover {
-        background-color: var(--adw-button-hover-bg) !important;
+        background-color: var(--adw-button-bg-hover) !important;
     }
 
     &:active {
-        background-color: var(--adw-button-active-bg) !important;
+        background-color: var(--adw-button-bg-active) !important;
     }
 
     &:disabled,

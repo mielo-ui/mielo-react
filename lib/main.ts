@@ -1,3 +1,6 @@
+export type { TooltipProps } from "./components/Tooltip"
+export { Tooltip } from "./components/Tooltip"
+
 export type { EntryProps } from "./components/Entry"
 export { Entry } from "./components/Entry"
 
@@ -28,8 +31,8 @@ export { ListItem, List } from "./components/List"
 export type { NotificationProps, AlertProps } from "./components/Notification"
 export { Notification, Alert } from "./components/Notification"
 
-export type { MessageProps } from "./components/Message"
-export { Message } from "./components/Message"
+export type { MessageProps, MessageContentProps } from "./components/Message"
+export { Message, MessageContent } from "./components/Message"
 
 export type { CardProps } from "./components/Card"
 export { Card } from "./components/Card"

@@ -1,0 +1,107 @@
+$adw-core-accents: (
+    // The main accent color and the matching text value
+    "accent": (
+        "light": (
+            "color": adw-color("blue", 4),
+            "bg": adw-color("blue", 3),
+            "fg": white,
+        ),
+        "dark": (
+            "color": #78aeed,
+            "bg": adw-color("blue", 3),
+            "fg": white,
+        )
+    ),
+
+    // destructive-action buttons
+    "destructive": (
+        "light": (
+            "color": adw-color("red", 4),
+            "bg": adw-color("red", 3),
+            "fg": white,
+        ),
+        "dark": (
+            "color": #ff7b63,
+            "bg": adw-color("red", 4),
+            "fg": white,
+        )
+    ),    
+);
+
+$adw-accents: (
+    // The main accent color and the matching text value
+    "accent": (
+        "light": (
+            "color": adw-color("blue", 4),
+            "bg": adw-color("blue", 3),
+            "fg": white,
+        ),
+        "dark": (
+            "color": #78aeed,
+            "bg": adw-color("blue", 3),
+            "fg": white,
+        )
+    ),
+    
+    // Levelbars, entries, labels and infobars.
+    // These don't need text colors
+    "success": (
+        "light": (
+            "color": #1b8553,
+            "bg": adw-color("green", 4),
+            "fg": white,
+        ),
+        "dark": (
+            "color": adw-color("green", 1),
+            "bg": adw-color("green", 5),
+            "fg": white,
+        )
+    ),
+
+    "warning": (
+        "light": (
+            "color": #9c6e03,
+            "bg": adw-color("yellow", 5),
+            "fg": rgb(#000, .8),
+        ),
+        "dark": (
+            "color": adw-color("yellow", 2),
+            "bg": #cd9309,
+            "fg": rgba(#000, 0.8),
+        )
+    ),
+
+    "error": (
+        "light": (
+            "color": adw-color("red", 4),
+            "bg": adw-color("red", 3),
+            "fg": white,
+        ),
+        "dark": (
+            "color": #ff7b63,
+            "bg": adw-color("red", 4),
+            "fg": white,
+        )
+    )
+);
+
+@function adw-accent($accent, $color_type, $theme: 'light') {
+    $themes: map-get($adw-button-accents, $accent);
+    $colors: map-get($themes, $theme);
+    
+    @return map-get($colors, $color_type);
+}
+
+// @each $accent, $values in $adw-accents {
+//     :root, [data-theme="light"] {
+//         @each $prop, $color in map-get($values, "light") {
+//             --adw-#{$accent}-#{$prop}: #{$color};
+//         }
+//     }
+
+//     [data-theme="dark"] {
+//         @each $prop, $color in map-get($values, "dark") {
+//             --adw-#{$accent}-#{$prop}: #{$color};
+//         }
+//     }
+// }
