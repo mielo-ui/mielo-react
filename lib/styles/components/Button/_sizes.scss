@@ -27,30 +27,4 @@ $adw-button-sizes: (
     )
 );
 
-:root,
-[data-theme="light"],
-[data-theme="dark"] {
-    // Declare sizes as runtime variables
-    @each $size, $props in $adw-button-sizes {
-        @each $prop, $value in $props {
-            --adw-button-#{$size}-#{$prop}: #{$value};
-        }
-    }
-
-    // Default button size
-    --adw-button-rounded: var(--adw-button-medium-rounded);
-    --adw-button-icon-size: var(--adw-button-icon-size);
-    --adw-button-size: var(--adw-button-medium-size);
-    --adw-button-ph: var(--adw-button-medium-ph);
-    --adw-button-fs: var(--adw-button-medium-fs);
-}
-
-@each $size, $props in $adw-button-sizes {
-    .adw.button.#{$size} {
-        --adw-button-icon-size: var(--adw-button-#{$size}-icon-size);
-        --adw-button-rounded: var(--adw-button-#{$size}-rounded);
-        --adw-button-size: var(--adw-button-#{$size}-size);
-        --adw-button-ph: var(--adw-button-#{$size}-ph);
-        --adw-button-fs: var(--adw-button-#{$size}-fs);
-    }
-}
+@include variants-map-to-component("button", $adw-button-sizes, "medium");

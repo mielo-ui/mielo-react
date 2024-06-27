@@ -1,0 +1,13 @@
+@mixin button_activatable_bg_vars($component, $bg, $mode: "darken") {
+  --adw-#{$component}-bg-active: #{if($mode == "darken", darken($bg, 15%), lighten($bg, 15%))};
+  --adw-#{$component}-bg-hover: #{if($mode == "darken", darken($bg, 10%), lighten($bg, 10%))};
+  --adw-#{$component}-bg: $bg;
+}
+
+@function button-bg-states($bg, $mode: "darken", $transparent: false) {
+  @return (
+    "active": if($mode == "darken", darken($bg, 15%), lighten($bg, 15%)),
+    "hover": if($mode == "darken", darken($bg, 10%), lighten($bg, 10%)),
+    "main": if($transparent, rgba($bg, 0), $bg),
+  )
+} 

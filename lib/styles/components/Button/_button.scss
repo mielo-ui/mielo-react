@@ -21,7 +21,7 @@
     font-weight: 700;
 
     border-radius: var(--adw-button-rounded);
-    background-color: var(--adw-button-bg);
+    background-color: var(--adw-button-bg-main);
 
     &:hover {
         background-color: var(--adw-button-bg-hover) !important;
@@ -37,7 +37,7 @@
 
         &:hover,
         &:active {
-            background-color: var(--adw-button-bg) !important;
+            background-color: var(--adw-button-bg-main) !important;
         }
     }
 }

@@ -13,10 +13,47 @@ export function ContainerPage() {
           />
         }
       >
-        <Adw.Header title="Default" size="medium" />
+        <Adw.Header title="Item" size="medium" />
 
         <Adw.Segment placeholder="dev">
-          <div className="inline-flex"></div>
+          <div className="column-flex">
+            <Adw.Header size="small" title="Basic" />
+
+            <Adw.Item title="Item Title" description="Description line" />
+
+            <Adw.Header size="small" title="With Icon" />
+
+            <Adw.Item
+              icon={<Adw.Icon icon={<Adw.Icons.FolderNew />} />}
+              title="Item Title"
+            />
+
+            <Adw.Header size="small" title="Vertical" />
+
+            <Adw.Item
+              icon={<Adw.Icon icon={<Adw.Icons.FolderNew />} />}
+              title="Vertical Item Title"
+              description="Description message"
+              vertical
+              center
+            />
+
+            <Adw.Header size="small" title="Complex" />
+
+            <Adw.Item
+              icon={<Adw.Icon icon={<Adw.Icons.FolderNew />} />}
+              description="Some description text"
+              title="Item Title"
+              side={
+                <Adw.Button
+                  icon={<Adw.Icons.UserTrash />}
+                  accent="error"
+                  size="small"
+                  circular
+                />
+              }
+            />
+          </div>
         </Adw.Segment>
       </Adw.Clamp>
     </div>

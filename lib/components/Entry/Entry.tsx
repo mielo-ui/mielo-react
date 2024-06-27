@@ -4,10 +4,10 @@ import clsx from "clsx"
 
 import { Button } from "../Button"
 
-import { DialogQuestion} from "../Icons/DialogQuestion"
-import { DialogWarning} from "../Icons/DialogWarning"
-import { DialogError} from "../Icons/DialogError"
-import { EmblemOk} from "../Icons/EmblemOk"
+import { DialogQuestion} from "../Icons/icons/DialogQuestion"
+import { DialogWarning} from "../Icons/icons/DialogWarning"
+import { DialogError} from "../Icons/icons/DialogError"
+import { EmblemOk} from "../Icons/icons/EmblemOk"
 
 export interface EntryProps {
   onChange?: (value: string) => void

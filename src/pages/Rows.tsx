@@ -42,17 +42,15 @@ export function RowPage() {
           <div className="inline-flex">
             <Adw.Rows>
               <Adw.Rows.Row
-                header="My header"
+                title="My header"
                 description="Some description text..."
-                icon={<Adw.Icons.FolderNew />}
-                iconStyle="circular"
+                icon={<Adw.Icon icon={<Adw.Icons.FolderNew />} />}
                 right={
                   <>
                     <Adw.Button
                       icon={<Adw.Icons.FolderNew />}
-                      iconLabeled
-                      accent="blue"
                       label="Label"
+                      accent
                     />
                   </>
                 }
@@ -68,7 +66,8 @@ export function RowPage() {
 
               <Adw.Rows.Select
                 onChange={option => setSecond(option)}
-                placeholder="Please select option"
+                label="Please select option"
+                name="custom-select"
                 options={options}
                 value={second}
               />

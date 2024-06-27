@@ -1,61 +1,41 @@
-.adw.select .options {
-    position: absolute;
-    list-style: none;
-    width: 100%;
-    padding: 0;
-    margin: 0;
-
-    flex-direction: column;
-    display: flex;
-
-    box-sizing: border-box;
-    z-index: 10;
-
-    .option {
-        @include flex(column, center, flex-start);
-        transition: all 0.3 ease;
-        user-select: none;
-        font-weight: 400;
-        cursor: pointer;
-
-        // &[aria-selected="true"] {
-        //   background-color: red;
-        // }
-    }
-}
-
-// Default layout
 .adw.select {
-    .options .option {
-        font-size: var(--adw-select-option-label-size);
+    $menu-height: 12rem;
+    $menu-offset: 3rem;
 
-        padding: 0 1.6rem;
-        height: 3.6rem;
-    }
-}
+    > .menu {
+        // prettier-ignore
+        background-image:
+            linear-gradient(
+                var(--adw-select-bg-overlay),
+                var(--adw-select-bg-overlay)
+            ),
+            linear-gradient(
+                var(--adw-select-bg-main),
+                var(--adw-select-bg-main)
+            );
 
-// Default styles
-.adw.select {
-    .options {
-        border-radius: 0 0 var(--adw-select-border-radius) var(--adw-select-border-radius);
-        border-top: 0.1rem solid var(--adw-select-border-color);
-        background-color: var(--adw-select-bg);
-    }
+        transition:
+            height 0.2s ease,
+            top 0.2s ease;
 
-    .options .option {
-        color: rgba(var(--adw-select-option-default-color), 0.8);
-        background-color: var(--adw-select-option-bg);
+        border-radius: var(--adw-select-rounded);
+        overflow: hidden;
 
-        &:hover, &:focus, .selected {
-            background-color: var(--adw-select-option-hover-bg);
+        position: absolute;
+        height: 0;
+        top: 0;
+
+        z-index: 5;
+
+        > .content {
+            max-height: $menu-height;
+            overflow: hidden;
         }
-    }
 
-    &.opened {
-        .options {
-            box-shadow: -0.2rem 0 0 var(--adw-select-focus-shadow),
-                0 0.25rem 0 var(--adw-select-focus-shadow),
-                0.2rem 0 0 var(--adw-select-focus-shadow);
+        &.opened {
+            top: calc(var(--adw-select-height) - $menu-offset);
+            height: $menu-height+$menu-offset;
+            padding-top: $menu-offset;
         }
     }
 }

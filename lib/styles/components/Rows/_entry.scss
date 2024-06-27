@@ -1,4 +1,6 @@
 .adw.rows>.row.entry {
+    border-bottom: 0.1rem solid var(--adw-rows-border);
+    
     &:first-child {
         >.adw.entry {
             border-top-left-radius: var(--adw-rows-border-radius);
@@ -29,8 +31,6 @@
     >.adw.entry {
         border-radius: 0;
         border-width: 0;
-
-        border-bottom-width: 0.1rem;
 
         input,
         textarea {

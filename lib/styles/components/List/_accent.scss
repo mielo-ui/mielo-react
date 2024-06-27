@@ -1,0 +1,18 @@
+$adw-list-item-default-colors: (
+    "dark": (
+        "bg": button-bg-states(rgba(#FFF, 0.2), "darken", true),
+    ),
+    "light": (
+        "bg": button-bg-states(rgba(#000, 0.2), "darken", true),
+    )
+);
+
+@function map-accents-to-list-item($theme, $accent, $colors) {
+    $bg: _get($colors, "bg");
+
+    @return (
+        "bg": button-bg-states(rgba($bg, 0.2), "darken", true),
+    )
+}
+
+@include accents-map-to-component("list.item", $adw-list-item-default-colors, map-accents-to-list-item);

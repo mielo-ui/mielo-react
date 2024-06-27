@@ -1,167 +1,112 @@
-import { useState, useEffect, useRef, useCallback } from "react"
+import { useState, useEffect, useRef, useCallback, ReactNode } from "react"
 import { Tooltip } from "react-tooltip"
 import isEqual from "lodash.isequal"
 import clsx from "clsx"
 
-import { Option, OptionEl } from "./Option"
-import { ChevronDown } from "./Icons"
+import { Dropdown, DropdownContentProps, DropdownHandles } from "./Dropdown"
+import { BasicMenu, OptionValue } from "./BasicMenu"
+import { SelectButton } from "./LikeButton"
 
 export interface SelectProps {
-  error?: string | string[]
-  placeholder?: string
-  options: Option[]
+  options: OptionValue[]
+  value?: OptionValue
+  label?: string
+  name: string
+
+  size?: "small" | "large"
   disabled?: boolean
-  value?: Option
-  name?: string
   compact?: boolean
   opened?: boolean
 
-  onChange?: (option: Option) => void
+  accent?: "error" | "warning" | "success"
+  messageIcon?: JSX.Element
+  message?: ReactNode
+
+  onChange: (option: OptionValue) => void
   onClose?: () => void
+  onOpen?: () => void
 }
 
 export function Select({
-  placeholder,
-  disabled,
   options,
-  compact,
-  opened,
-  error,
+  label,
   value,
   name,
 
+  disabled,
+  compact,
+  opened,
+
+  accent,
+  messageIcon,
+  message,
+
   onChange,
   onClose,
+  onOpen,
+  size,
 }: SelectProps) {
-  const [isOpen, setIsOpen] = useState<boolean>(false)
-  const placeholderRef = useRef<HTMLDivElement>(null)
-  const rootRef = useRef<HTMLDivElement>(null)
+  const dropdownRef = useRef<DropdownHandles>(null)
 
-  const inputId = `entry_${name}`
-  const tooltipId = `${inputId}_tooltip`
+  const dropdownProps = {
+    ref: dropdownRef,
 
-  useEffect(() => {
-    const handleClick = (event: MouseEvent) => {
-      const { target } = event
+    onClose: onClose,
+    onOpen: onOpen,
+    opened,
 
-      if (target instanceof Node && !rootRef.current?.contains(target)) {
-        isOpen && onClose?.()
-        setIsOpen(false)
+    content: (props: DropdownContentProps) => {
+      const buttonProps = {
+        messageIcon,
+        message,
+        accent,
+
+        selected: value,
+        label,
+        size,
+        name,
+
+        ...props,
       }
-    }
 
-    window.addEventListener("click", handleClick)
-
-    return () => {
-      window.removeEventListener("click", handleClick)
-    }
-  }, [onClose])
-
-  useEffect(() => {
-    const inputElement = placeholderRef.current
-    if (!inputElement) return
-
-    const onEnterKeyDown = (event: KeyboardEvent) => {
-      if (event.key === "Enter") {
-        setIsOpen(prev => !prev)
-      }
-    }
-
-    inputElement.addEventListener("keydown", onEnterKeyDown)
-
-    return () => {
-      inputElement.removeEventListener("keydown", onEnterKeyDown)
-    }
-  }, [])
-
-  const onSelectOption = useCallback(
-    (value: Option["value"]) => {
-      const option = options.find(opt => isEqual(opt.value, value))
-      setIsOpen(false)
-
-      if (option) {
-        onChange?.(option)
-      }
+      return (
+        <SelectButton {...buttonProps} />
+      )
     },
-    [options],
-  )
+    menu: (props: DropdownContentProps) => {
+      const menuProps = {
+        onSelect: onChange,
+        options,
+        ...props,
+      }
 
-  const onInputClick = useCallback(() => {
-    if (!disabled) {
-      setIsOpen(prev => !prev)
-    }
-  }, [disabled])
+      return (
+        <BasicMenu {...menuProps} />
+      )
+    },
 
-  const errorTooltip = !!error && (
-    <div className="adw tooltip">
-      <div id={tooltipId} className="indicator">
-        ?
-      </div>
-      <Tooltip anchorSelect={`#${tooltipId}`}>
-        <div className="adw tooltip-content">
-          {Array.isArray(error) ? (
-            error.map((msg, idx) => (
-              <div key={idx} className="message">
-                {msg}
-              </div>
-            ))
-          ) : (
-            <div className="message">{error}</div>
-          )}
-        </div>
-      </Tooltip>
-    </div>
-  )
+    className: {
+      container: clsx("select", size, accent, {
+        selected: !!value?.value,
+        disabled,
+        compact,
+      }),
+    },
 
-  const containerProps = {
-    "data-is-active": isOpen,
-    "data-name": name,
-    ref: rootRef,
-
-    className: clsx("adw select", {
-      selected: !!value?.value,
-      opened: isOpen || opened,
-      error: !!error,
-      disabled,
-      compact,
-    }),
+    props: {
+      container: {
+        "data-name": name,
+      },
+      content: {
+        "data-selected": !!value?.value,
+      },
+      menu: {
+        // @TODO
+      },
+    },
   }
 
-  const inputProps = {
-    "data-selected": !!value?.value,
-    onClick: onInputClick,
-    ref: placeholderRef,
-    className: "input",
-    role: "button",
-    tabIndex: 0,
-  }
-
-  return (
-    <div {...containerProps}>
-      <div {...inputProps}>
-        <div className="placeholder">{placeholder}</div>
-        <div className="value">{value?.label}</div>
-
-        {errorTooltip}
-
-        <div className="arrow">
-          <ChevronDown strokeWidth={2.5} size={18} />
-        </div>
-      </div>
-
-      {(isOpen || opened) && (
-        <ul className="options">
-          {options.map(option => (
-            <OptionEl
-              onClick={onSelectOption}
-              key={option.value}
-              option={option}
-            />
-          ))}
-        </ul>
-      )}
-    </div>
-  )
+  return <Dropdown {...dropdownProps} />
 }
 
 Select.displayName = "Adw.Select"

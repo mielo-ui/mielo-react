@@ -24,22 +24,23 @@ export function FormSelect({
   name,
 }: FormSelectProps) {
   return (
-    <Controller
-      control={control}
-      rules={rules}
-      name={name}
-      render={({ field: { onChange, value }, fieldState: { error } }) => (
-        <Select
-          placeholder={placeholder}
-          error={error?.message}
-          disabled={disabled}
-          onChange={onChange}
-          options={options}
-          value={value}
-          name={name}
-        />
-      )}
-    />
+    <div></div>
+    // <Controller
+    //   control={control}
+    //   rules={rules}
+    //   name={name}
+    //   render={({ field: { onChange, value }, fieldState: { error } }) => (
+    //     <Select
+    //       placeholder={placeholder}
+    //       error={error?.message}
+    //       disabled={disabled}
+    //       onChange={onChange}
+    //       options={options}
+    //       value={value}
+    //       name={name}
+    //     />
+    //   )}
+    // />
   )
 }
 

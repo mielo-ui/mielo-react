@@ -1,13 +1,13 @@
 import * as Adw from "../../"
 
-export function NotificationPage() {
+export function IconsPage() {
   return (
-    <div className="page notification">
+    <div className="page message">
       <Adw.Clamp
         header={
           <Adw.Header
-            title="Toast"
-            subtitle="Example of notification variants"
+            title="Message"
+            subtitle="Example of message variants"
             size="large"
             center
           />
@@ -16,7 +16,9 @@ export function NotificationPage() {
         <Adw.Header title="Default" size="medium" />
 
         <Adw.Segment placeholder="dev">
-          <div className="inline-flex"></div>
+          <div className="inline-flex">
+
+          </div>
         </Adw.Segment>
       </Adw.Clamp>
     </div>

@@ -10,7 +10,7 @@ function PageListItem({ title, page }: { title: string; page: string }) {
   const [isActive] = useRoute(`/${page}`)
 
   const onClickLink = useCallback(
-    (event: MouseEvent<HTMLAnchorElement>) => {
+    (event: MouseEvent<any>) => {
       event.preventDefault()
       event.stopPropagation()
       navigate(`/${page}`)
@@ -20,10 +20,10 @@ function PageListItem({ title, page }: { title: string; page: string }) {
 
   return (
     <Adw.ListItem
-      onClickLink={onClickLink}
+      onClick={onClickLink}
       active={isActive}
       link={`/${page}`}
-      header={title}
+      title={title}
       activatable
     />
   )
@@ -40,7 +40,9 @@ function App() {
     button: { title: "Button", page: "button" },
     entry: { title: "Entry", page: "entry" },
     checkbox: { title: "Checkbox", page: "checkbox" },
+    toggle: { title: "Toggle", page: "toggle" },
     select: { title: "Select", page: "select" },
+    radio: { title: "Radio", page: "radio" },
     slider: { title: "Slider", page: "slider" },
     progress: { title: "Progress", page: "progress" },
     container: { title: "Container", page: "container" },
@@ -49,7 +51,7 @@ function App() {
     tab: { title: "Tab", page: "tab" },
     card: { title: "Card", page: "card" },
     dialog: { title: "Dialog", page: "dialog" },
-    message: { title: "Message", page: "message"},
+    message: { title: "Message", page: "message" },
     notification: { title: "Notification", page: "notification" },
   }
 
@@ -118,7 +120,7 @@ function App() {
                 onChange={event => setDarkThemeEnabled(event.target.checked)}
                 checked={darkThemeEnabled}
                 label="Dark Theme"
-                style="toggle"
+                toggle
                 icon={{
                   indicator: {
                     unchecked: <Adw.Icons.WeatherClear />,
@@ -136,6 +138,8 @@ function App() {
           <Route path="header" component={ComponentPages.HeaderPage} />
           <Route path="headerbar" component={ComponentPages.HeaderBarPage} />
           <Route path="checkbox" component={ComponentPages.CheckboxPage} />
+          <Route path="toggle" component={ComponentPages.TogglePage} />
+          <Route path="radio" component={ComponentPages.RadioPage} />
           <Route path="select" component={ComponentPages.SelectPage} />
           <Route path="slider" component={ComponentPages.SliderPage} />
           <Route path="progress" component={ComponentPages.ProgressPage} />
@@ -143,10 +147,7 @@ function App() {
           <Route path="button" component={ComponentPages.ButtonPage} />
           <Route path="dialog" component={ComponentPages.DialogPage} />
           <Route path="message" component={ComponentPages.MessagePage} />
-          <Route
-            path="notification"
-            component={ComponentPages.NotificationPage}
-          />
+          <Route path="notify" component={ComponentPages.NotifyPage} />
           <Route path="entry" component={ComponentPages.EntryPage} />
           <Route path="list" component={ComponentPages.ListPage} />
           <Route path="card" component={ComponentPages.CardPage} />

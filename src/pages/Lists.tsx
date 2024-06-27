@@ -18,10 +18,22 @@ export function ListPage() {
         <Adw.Segment placeholder="dev">
           <div className="inline-flex">
             <ul className="adw list">
-              <Adw.List.Item header="Some text..." activatable />
-              <Adw.List.Item header="Some text..." activatable />
-              <Adw.List.Item header="Some text..." activatable />
-            </ul>
+              <Adw.List.Item title="Some text..." activatable />
+              <Adw.List.Item title="Some text..." activatable />
+              <Adw.List.Item title="Some text..." activatable />
+            </ul> 
+          </div>
+        </Adw.Segment>
+
+        <Adw.Header title="Accent" size="medium" />
+
+        <Adw.Segment placeholder="dev">
+          <div className="inline-flex">
+            <ul className="adw list">
+              <Adw.List.Item accent="warning" title="Some text..." activatable />
+              <Adw.List.Item accent="error" title="Some text..." activatable />
+              <Adw.List.Item accent="success" title="Some text..." activatable />
+            </ul> 
           </div>
         </Adw.Segment>
 
@@ -31,18 +43,18 @@ export function ListPage() {
           <div className="inline-flex">
             <ul className="adw list">
               <Adw.List.Item
-                header="Some text..."
-                icon={<Adw.Icons.FolderNew />}
+                title="Some text..."
+                icon={<Adw.Icon icon={<Adw.Icons.FolderNew />} />}
                 activatable
               />
               <Adw.List.Item
-                header="Some text..."
-                icon={<Adw.Icons.FolderNew />}
+                title="Some text..."
+                icon={<Adw.Icon icon={<Adw.Icons.FolderNew />} />}
                 activatable
               />
               <Adw.List.Item
-                header="Some text..."
-                icon={<Adw.Icons.FolderNew />}
+                title="Some text..."
+                icon={<Adw.Icon icon={<Adw.Icons.FolderNew />} />}
                 activatable
               />
             </ul>
@@ -55,21 +67,21 @@ export function ListPage() {
           <div className="inline-flex">
             <ul className="adw list">
               <Adw.List.Item
-                header="My header"
+                title="My header"
                 description="Some description text..."
-                icon={<Adw.Icons.FolderNew />}
+                icon={<Adw.Icon icon={<Adw.Icons.FolderNew />} />}
                 activatable
               />
               <Adw.List.Item
-                header="My header"
+                title="My header"
                 description="Some description text..."
-                icon={<Adw.Icons.FolderNew />}
+                icon={<Adw.Icon icon={<Adw.Icons.FolderNew />} />}
                 activatable
               />
               <Adw.List.Item
-                header="My header"
+                title="My header"
                 description="Some description text..."
-                icon={<Adw.Icons.FolderNew />}
+                icon={<Adw.Icon icon={<Adw.Icons.FolderNew />} />}
                 activatable
               />
             </ul>
@@ -82,34 +94,33 @@ export function ListPage() {
           <div className="inline-flex">
             <ul className="adw list">
               <Adw.List.Item
-                header="My header"
+                title="My header"
                 description="Some description text..."
-                icon={<Adw.Icons.FolderNew />}
+                icon={<Adw.Icon icon={<Adw.Icons.FolderNew />} />}
                 activatable
-                right={
+                side={
                   <>
                     <Adw.Button
-                      icon={<Adw.Icons.FolderNew />}
-                      iconLabeled
-                      accent="blue"
+                      icon={<Adw.Icon icon={<Adw.Icons.FolderNew />} />}
                       label="Label"
+                      size="small"
+                      accent
                     />
                   </>
                 }
               />
               <Adw.List.Item
-                header="My header"
+                title="My header"
                 description="Some description text..."
-                icon={<Adw.Icons.FolderNew />}
-                iconStyle="circular"
+                icon={<Adw.Icon circular filled icon={<Adw.Icons.FolderNew />} />}
                 activatable
-                right={
+                side={
                   <>
                     <Adw.Button
-                      icon={<Adw.Icons.FolderNew />}
-                      iconLabeled
-                      accent="blue"
+                      icon={<Adw.Icon icon={<Adw.Icons.FolderNew />} />}
                       label="Label"
+                      size="small"
+                      accent
                     />
                   </>
                 }

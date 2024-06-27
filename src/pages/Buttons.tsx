@@ -42,13 +42,16 @@ export function ButtonPage() {
           </div>
         </Adw.Segment>
 
-        <Adw.Header title="Sizes" size="medium" />
+
+        <Adw.Header title="Filled" size="medium" />
 
         <Adw.Segment placeholder="dev">
           <div className="inline-flex">
-            <Adw.Button label="Small" size="small" />
-            <Adw.Button label="Medium Default" />
-            <Adw.Button label="Large" size="large" />
+            <Adw.Button label="Filled" filled />
+            <Adw.Button label="Accent" filled accent />
+            <Adw.Button label="Success" filled accent="success" />
+            <Adw.Button label="Warning" filled accent="warning" />
+            <Adw.Button label="Error" filled accent="error" />
           </div>
         </Adw.Segment>
 
@@ -64,17 +67,28 @@ export function ButtonPage() {
           </div>
         </Adw.Segment>
 
-        <Adw.Header title="Filled" size="medium" />
+        <Adw.Header title="Tertiary" size="medium" />
 
         <Adw.Segment placeholder="dev">
           <div className="inline-flex">
-            <Adw.Button label="Filled" filled />
-            <Adw.Button label="Accent" filled accent />
-            <Adw.Button label="Success" filled accent="success" />
-            <Adw.Button label="Warning" filled accent="warning" />
-            <Adw.Button label="Error" filled accent="error" />
+            <Adw.Button label="Transparent" transparent tertiary />
+            <Adw.Button label="Accent" transparent tertiary accent />
+            <Adw.Button label="Success" transparent tertiary accent="success" />
+            <Adw.Button label="Warning" transparent tertiary accent="warning" />
+            <Adw.Button label="Error" transparent tertiary accent="error" />
           </div>
         </Adw.Segment>
+
+        <Adw.Header title="Sizes" size="medium" />
+
+        <Adw.Segment placeholder="dev">
+          <div className="inline-flex">
+            <Adw.Button label="Small" size="small" />
+            <Adw.Button label="Medium Default" />
+            <Adw.Button label="Large" size="large" />
+          </div>
+        </Adw.Segment>
+
 
         <Adw.Header title="Pilled" size="medium" />
 

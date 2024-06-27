@@ -7,11 +7,20 @@ export { Entry } from "./components/Entry"
 export type { ButtonProps } from "./components/Button"
 export { Button } from "./components/Button"
 
-export type { CheckboxProps, RadioProps } from "./components/Checkbox"
-export { Checkbox, Radio } from "./components/Checkbox"
+export type { CheckboxProps } from "./components/Checkbox"
+export { Checkbox } from "./components/Checkbox"
+
+export type { RadioProps } from "./components/Radio"
+export { Radio } from "./components/Radio"
 
 export type { ScrollbarProps } from "./components/Scrollbar"
 export { Scrollbar } from "./components/Scrollbar"
+
+export type { DropdownProps, DropdownHandles } from "./components/Select"
+export { Dropdown } from "./components/Select"
+
+export type { ItemProps } from "./components/Item"
+export { Item } from "./components/Item"
 
 export type { Option, SelectProps } from "./components/Select"
 export { Select } from "./components/Select"
@@ -94,5 +103,8 @@ export type {
 
 export { Rows, Row, SelectRow, EntryRow } from "./components/Rows"
 
-import * as Icons from "./components/Icons"
+export type { IconProps } from "./components/Icons"
+export { Icon } from "./components/Icons"
+
+import * as Icons from "./components/Icons/icons"
 export { Icons }

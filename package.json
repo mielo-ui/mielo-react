@@ -10,7 +10,7 @@
   ],
   "scripts": {
     "dev": "vite",
-    "build:styles": "sass --load-path=node_modules ./lib/styles/main.scss ./dist/adwaita.css",
+    "build:styles": "sass --load-path=node_modules --quiet-deps  --silence-deprecation=css-function-mixin,new-global ./lib/styles/main.scss ./dist/adwaita.css",
     "build": "tsc --p ./tsconfig.build.json && vite build && npm run build:styles",
     "preview": "vite preview",
     "style:fix": "prettier --config .prettierrc '{src,lib}/**/*.{ts,tsx,scss,css}' --write",
@@ -51,6 +51,7 @@
     "react-dom": "^18.2.0",
     "react-syntax-highlighter": "^15.5.0",
     "sass": "^1.77.0",
+    "sassdash": "^0.9.0",
     "stylelint": "^16.5.0",
     "stylelint-scss": "^6.3.0",
     "typescript": "^5.2.2",

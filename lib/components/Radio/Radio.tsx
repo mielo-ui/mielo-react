@@ -2,6 +2,10 @@ import { ChangeEventHandler, ReactNode } from "react"
 import clsx from "clsx"
 
 export interface RadioProps {
+  accent?: "warning" | "error" | "success"
+  size?: "large" | "small"
+  className?: string
+
   label?: string | ReactNode
   children?: string | ReactNode
 
@@ -13,17 +17,22 @@ export interface RadioProps {
 }
 
 export function Radio({
+  className: _className,
   children,
-  label,
-  checked,
   disabled,
-  name,
   onChange,
+  checked,
+  accent,
+  label,
+  size,
+  name,
 }: RadioProps) {
   const radioId = `radio_${name}`
 
+  const className = clsx("adw radio", accent, size, { disabled }, _className)
+
   return (
-    <div className={clsx("adw radio", { disabled })}>
+    <div className={className}>
       <input
         onChange={onChange}
         disabled={disabled}

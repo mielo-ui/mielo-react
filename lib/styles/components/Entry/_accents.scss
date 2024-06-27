@@ -1,51 +1,36 @@
-@mixin adw_entry_accent_vars($theme: null) {
-    @each $accent, $themes in $adw-accents {
-        $props: map-get($themes, $theme);
-    
-        $color: map-get($props, "color");
-        $bg: map-get($props, "bg");
-        $fg: map-get($props, "fg");
+$adw-entry-default-colors: (
+    "dark": (
+        "label-fg": #{rgba(#FFF, 0.6)},
+        "value-fg": #{rgba(#FFF, 1.0)},
+        "bg": (
+            "outline": #78aeed,
+            "overlay": transparent,
+            "main": #383838,
+        )
+    ),
+    "light": (
+        "label-fg": #{rgba(#000, 0.6)},
+        "value-fg": #{rgba(#000, 0.8)},
+        "bg": (
+            "outline": adw-color("blue", 4),
+            "overlay": transparent,
+            "main": #FFF,
+        )
+    )
+);
 
-        // Type "accent" is apply only for focus,
-        @if $accent != "accent" {
-            --adw-entry-#{$accent}-bg-overlay: #{rgba($bg, 0.08)};
-            --adw-entry-#{$accent}-outline-bg: #{$color};
-            --adw-entry-#{$accent}-label-fg: #{rgba($color, 0.6)};
-            --adw-entry-#{$accent}-value-fg: #{rgba($color, 0.8)};
-        }
-    }
+@function map-accents-to-entry($theme, $accent, $colors) {
+    $color: _get($colors, "color");
+    $bg: _get($colors, "bg");
+
+    @return (
+        "label-fg": #{rgba($color, 0.6)},
+        "value-fg": #{rgba($color, 0.8)},
+        "bg": (
+            "overlay": #{rgba($bg, 0.08)},
+            "outline": #{$color},
+        )
+    )
 }
 
-:root,
-[data-theme="light"] {
-    --adw-entry-outline-bg: adw-color("blue", 4);
-    --adw-entry-label-fg: #{rgba(#000, 0.6)};
-    --adw-entry-value-fg: #{rgba(#000, 0.8)};
-
-    --adw-entry-bg-overlay: transparent;
-    --adw-entry-bg: #FFF;
-
-    @include adw_entry_accent_vars("light");
-}
-
-[data-theme="dark"] {
-    --adw-entry-outline-bg: #78aeed;
-    --adw-entry-label-fg: #{rgba(#FFF, 0.6)};
-    --adw-entry-value-fg: #{rgba(#FFF, 1.0)};
-
-    --adw-entry-bg-overlay: transparent;
-    --adw-entry-bg: #383838;
-
-    @include adw_entry_accent_vars("dark");
-}
-
-@each $accent in map-keys($adw-accents) {
-    @if $accent != "accent" {
-        .adw.entry.#{$accent} {
-            --adw-entry-outline-bg: var(--adw-entry-#{$accent}-outline-bg);
-            --adw-entry-label-fg: var(--adw-entry-#{$accent}-label-fg);
-            --adw-entry-value-fg: var(--adw-entry-#{$accent}-value-fg);
-            --adw-entry-bg-overlay: var(--adw-entry-#{$accent}-bg-overlay);
-        }
-    }
-}
+@include accents-map-to-component("entry", $adw-entry-default-colors, map-accents-to-entry);

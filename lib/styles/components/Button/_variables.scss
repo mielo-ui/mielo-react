@@ -1,22 +1,10 @@
 :root,
 [data-theme="light"] {
-    --adw-button-border-color: #{rgba(#000, 0.08)};
 
-    --adw-button-bg-active: #{rgba(#000, 0.3)};
-    --adw-button-bg-hover: #{rgba(#000, 0.2)};
-    --adw-button-bg: #{rgba(#000, 0.1)};
-
-    --adw-button-fg: #{rgba(#000, 0.8)};
 }
 
 [data-theme="dark"] {
-    --adw-button-border-color: #{rgba(#000, 0.36)};
-
-    --adw-button-bg-active: #{rgba(#FFF, 0.3)};
-    --adw-button-bg-hover: #{rgba(#FFF, 0.2)};
-    --adw-button-bg: #{rgba(#FFF, 0.1)};
-
-    --adw-button-fg: #FFF;
+    
 }
 
 // @NOTE: Part of variables was declared in "sizes" module

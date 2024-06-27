@@ -1,0 +1,36 @@
+$adw-select-default-colors: (
+    "dark": (
+        "label-fg": #{rgba(#FFF, 0.6)},
+        "value-fg": #{rgba(#FFF, 1.0)},
+        "bg": (
+            "outline": #78aeed,
+            "overlay": transparent,
+            "main": #383838,
+        )
+    ),
+    "light": (
+        "label-fg": #{rgba(#000, 0.6)},
+        "value-fg": #{rgba(#000, 0.8)},
+        "bg": (
+            "outline": adw-color("blue", 4),
+            "overlay": transparent,
+            "main": #FFF,
+        )
+    )
+);
+
+@function map-accents-to-select($theme, $accent, $colors) {
+    $color: _get($colors, "color");
+    $bg: _get($colors, "bg");
+
+    @return (
+        "label-fg": #{rgba($color, 0.6)},
+        "value-fg": #{rgba($color, 0.8)},
+        "bg": (
+            "overlay": #{rgba($bg, 0.08)},
+            "outline": #{$color},
+        )
+    )
+}
+
+@include accents-map-to-component("select", $adw-select-default-colors, map-accents-to-select);

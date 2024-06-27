@@ -1,0 +1,37 @@
+$adw-select-sizes: (
+    "medium": (
+        "min-width": 10rem,
+        "padding": 1.6rem,
+        "height": 5.4rem,
+
+        "value-margin": 0.2rem,
+        "indicator-right": 0.6rem,
+
+        "label-fs": var(--adw-size-12),
+        "value-fs": var(--adw-size-14)
+    ),
+    "small": (
+        "min-width": 8rem,
+        "padding": 1.4rem,
+        "height": 3.4rem,
+
+        "value-margin": 0.2rem,
+        "indicator-right": 0.4rem,
+
+        "label-fs": var(--adw-size-8),
+        "value-fs": var(--adw-size-12)
+    ),
+    "large": (
+        "min-width": 14rem,
+        "padding": 1.4rem,
+        "height": 6.4rem,
+
+        "value-margin": 0.2rem,
+        "indicator-right": 0.8rem,
+
+        "label-fs": var(--adw-size-14),
+        "value-fs": var(--adw-size-16)
+    )
+);
+
+@include variants-map-to-component("select", $adw-select-sizes, "medium");

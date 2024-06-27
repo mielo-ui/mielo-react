@@ -1,28 +1,6 @@
-// Default list item
-.adw.list>.item {
-    &:not(.link) {
-        padding: var(--adw-list-item-padding-v) 0;
-        margin: var(--adw-list-item-margin) 0;
-    
-        align-items: center;
-        flex-direction: row;
-        display: flex;
-    }
-
-    &.link {
-        display: block;
-
-        a {
-            padding: var(--adw-list-item-padding-v) 0;
-            margin: var(--adw-list-item-margin) 0;
-        
-            align-items: center;
-            flex-direction: row;
-            display: flex;
-
-            text-decoration: none;
-        }
-    }
+.adw.list.item {
+    padding: var(--adw-list-item-padding-v) 0;
+    margin: var(--adw-list-item-margin) 0;
 
     &:first-child {
         margin-top: 0;
@@ -31,65 +9,27 @@
     &:last-child {
         margin-bottom: 0;
     }
-
-    &, &>a {
-        >.adw.icon {
-            margin-right: 1.2rem;
-        }
-    
-        >.content {
-            flex-direction: column;
-            display: flex;
-            flex: 1;
-    
-            // Centered by default
-            justify-content: center;
-    
-            >.header {
-                color: var(--adw-list-item-header-color);
-                font-size: var(--adw-list-item-header);
-                font-weight: 400;
-            }
-    
-            >.description {
-                color: var(--adw-list-item-description-color);
-                font-size: var(--adw-list-item-description);
-                font-weight: 400;
-            }
-        }
-    
-        >.right {
-            flex-direction: row;
-            display: flex;
-    
-            margin-left: 0.8rem;
-        }
-    }
-
 }
 
 // States
 .adw.list>.item.activatable {
-    background-color: var(--adw-list-item-bg);
+    padding: var(--adw-list-item-padding-v) var(--adw-list-item-padding-h);
     border-radius: var(--adw-list-item-rounded);
+    background-color: var(--adw-list-item-bg-main);
     transition: all 0.4s ease;
 
     user-select: none;
     cursor: pointer;
 
-    &:not(.link), &.link>a {
-        padding: var(--adw-list-item-padding-v) var(--adw-list-item-padding-h);
-    }
-
     &:hover {
-        background-color: var(--adw-list-item-hover-bg) !important;
+        background-color: var(--adw-list-item-bg-hover) !important;
     }
 
     &:active {
-        background-color: var(--adw-list-item-active-bg) !important;
+        background-color: var(--adw-list-item-bg-active) !important;
     }
 }
 
 .adw.list>.item.active {
-    background-color: var(--adw-list-item-hover-bg) !important;
+    background-color: var(--adw-list-item-bg-hover) !important;
 }

@@ -1,0 +1,22 @@
+$adw-item-sizes: (
+    "medium": (
+        "margin-between": 1.2rem,
+
+        "description-fs": var(--adw-size-12),
+        "title-fs": var(--adw-size-14)
+    ),
+    "small": (
+        "margin-between": 0.8rem,
+
+        "description-fs": var(--adw-size-8),
+        "title-fs": var(--adw-size-12)
+    ),
+    "large": (
+        "margin-between": 1.6rem,
+
+        "description-fs": var(--adw-size-14),
+        "title-fs": var(--adw-size-16)
+    )
+);
+
+@include variants-map-to-component("item", $adw-item-sizes, "medium");

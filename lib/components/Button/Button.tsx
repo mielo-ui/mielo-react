@@ -15,30 +15,35 @@ export type ButtonSize = "small" | "medium" | "large"
 
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   id?: string 
-  size?: ButtonSize
+  
   accent?: ButtonAccent
   color?: ButtonColor
+  size?: ButtonSize
   label?: string
+  
   iconLabeled?: boolean
   icon?: JSX.Element
-  pilled?: boolean
+  
   transparent?: boolean
-  center?: boolean
-  filled?: boolean
   circular?: boolean
+  tertiary?: boolean
+  filled?: boolean
+  center?: boolean
+  pilled?: boolean
 }
 
 export function Button({
-  label,
-  icon,
-  pilled,
   transparent,
   iconLabeled,
-  center,
-  filled,
-  accent,
-  color,
+  tertiary,
   circular,
+  pilled,
+  filled,
+  center,
+  accent,
+  label,
+  color,
+  icon,
   size,
   className: _className,
   ...props
@@ -50,6 +55,7 @@ export function Button({
       content: icon && label,
       icon: !!icon,
       transparent,
+      tertiary,
       circular,
       center,
       pilled,

@@ -14,20 +14,20 @@
         display: flex;
 
         >.content {
-            font-size: var(--adw-checkbox-label-size);
-            color: var(--adw-checkbox-label-color);
+            font-size: var(--adw-checkbox-label-fs);
+            color: var(--adw-checkbox-label-fg);
             font-weight: 400;
 
-            margin-left: 0.8rem;
+            margin-left: var(--adw-checkbox-content-margin);
         }
     }
 }
 
 // Default checkbox style
-.adw.checkbox:not(.toggle) {
+.adw.checkbox {
     >.label {
         >.indicator {
-            border: 0.2rem solid var(--adw-checkbox-border-color);
+            border: 0.2rem solid var(--adw-checkbox-border);
             border-radius: var(--adw-checkbox-rounded);
             background-color: rgba(0, 0, 0, 0);
 
@@ -39,14 +39,12 @@
 
             >.icon {
                 >svg {
-                    color: var(--adw-checkbox-icon-color);
+                    color: var(--adw-checkbox-icon-fg);
                     transition: color 0.2s ease;
 
-                    margin-left: 0.1rem;
-                    margin-top: 0.1rem;
-                    
-                    height: 1.4rem;
-                    width: 1.4rem;
+                    margin: var(--adw-checkbox-icon-offset);
+                    height: var(--adw-checkbox-icon-size);
+                    width: var(--adw-checkbox-icon-size);
 
                     opacity: 0;
                 }
@@ -57,7 +55,7 @@
     // When checked
     .input:checked+.label {
         >.indicator {
-            border-color: var(--adw-checkbox-active-border-color);
+            border-color: var(--adw-checkbox-border-active);
             background-color: var(--adw-checkbox-bg);
 
             >.icon {

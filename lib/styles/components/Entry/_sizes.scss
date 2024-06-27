@@ -1,6 +1,3 @@
-@use "sass:list";
-@use "sass:map";
-
 $adw-entry-sizes: (
     "medium": (
         "padding": 2.5rem 1.6rem 0.7rem 1.6rem,
@@ -49,30 +46,4 @@ $adw-entry-sizes: (
     )
 );
 
-:root,
-[data-theme="light"],
-[data-theme="dark"] {
-    @each $size, $props in $adw-entry-sizes {
-        @each $prop, $value in $props {
-            --adw-entry-#{$size}-#{$prop}: #{$value};
-        }
-    }
-}
-
-@each $size in map-keys($adw-entry-sizes) {
-    // Exclude class ext for default values
-    $sizeClassExt: if($size != 'medium', '.'+$size, '');
-
-    .adw.entry#{$sizeClassExt} {
-        --adw-entry-padding: var(--adw-entry-#{$size}-padding);
-        --adw-entry-min-width: var(--adw-entry-#{$size}-min-width);
-        --adw-entry-height: var(--adw-entry-#{$size}-height);
-        --adw-entry-indicator-top: var(--adw-entry-#{$size}-indicator-top);
-        --adw-entry-indicator-right: var(--adw-entry-#{$size}-indicator-right);
-        --adw-entry-label-top-active: var(--adw-entry-#{$size}-label-top-active);
-        --adw-entry-label-top-empty: var(--adw-entry-#{$size}-label-top-empty);
-        --adw-entry-label-ph: var(--adw-entry-#{$size}-label-ph);
-        --adw-entry-label-fs: var(--adw-entry-#{$size}-label-fs);
-        --adw-entry-value-fs: var(--adw-entry-#{$size}-value-fs);
-    }
-}
+@include variants-map-to-component("entry", $adw-entry-sizes, "medium");

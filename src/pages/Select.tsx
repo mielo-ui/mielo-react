@@ -42,40 +42,92 @@ export function SelectPage() {
           <div className="column-flex">
             <Adw.Select
               onChange={option => setFirst(option)}
-              placeholder="Please select option"
+              label="Select..."
               options={options}
               value={first}
-            />
-
-            <Adw.Select
-              onChange={option => setSecond(option)}
-              placeholder="Please select option"
-              options={options}
-              value={second}
-              error="Some error status"
+              name="default"
             />
           </div>
         </Adw.Segment>
 
-        <Adw.Header title="Compact" size="medium" />
+        <Adw.Header title="Accents" size="medium" />
 
         <Adw.Segment placeholder="dev">
           <div className="column-flex">
             <Adw.Select
-              onChange={option => setFirst(option)}
-              placeholder="Please select option"
+              onChange={option => setSecond(option)}
+              label="Select..."
               options={options}
-              value={first}
-              compact
+              value={second}
+              name="a-1"
+
+              message="Some warning status"
+              accent="warning"
             />
 
             <Adw.Select
               onChange={option => setSecond(option)}
-              placeholder="Please select option"
+              label="Select..."
               options={options}
               value={second}
-              error="Some error status"
-              compact
+              name="a-2"
+
+              message="Some error status"
+              accent="error"
+            />
+
+            <Adw.Select
+              onChange={option => setSecond(option)}
+              label="Select..."
+              options={options}
+              value={second}
+              name="a-3"
+
+              message="Some success status"
+              accent="success"
+            />
+          </div>
+        </Adw.Segment>
+
+        <Adw.Header title="Sizes" size="medium" />
+
+        <Adw.Segment placeholder="dev">
+          <div className="column-flex">
+            <Adw.Select
+              onChange={option => setSecond(option)}
+              label="Select..."
+              options={options}
+              value={second}
+              name="c-1"
+
+              message="Some warning status"
+              accent="warning"
+
+              size="small"
+            />
+
+            <Adw.Select
+              onChange={option => setSecond(option)}
+              label="Select..."
+              options={options}
+              value={second}
+              name="c-2"
+
+              message="Some error status"
+              accent="error"
+            />
+
+            <Adw.Select
+              onChange={option => setSecond(option)}
+              label="Select..."
+              options={options}
+              value={second}
+              name="c-3"
+
+              message="Some success status"
+              accent="success"
+
+              size="large"
             />
           </div>
         </Adw.Segment>

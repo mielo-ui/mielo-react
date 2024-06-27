@@ -1,48 +1,14 @@
 :root,
 [data-theme="light"] {
-    --adw-checkbox-default-color: 0, 0, 0;
+    // @TODO
 }
 
 [data-theme="dark"] {
-    --adw-checkbox-default-color: 255, 255, 255;
+    // @TODO
 }
 
 :root,
 [data-theme="light"],
-[data-theme="dark"] {
-    // Checkbox Default
-    --adw-checkbox-border-color: rgba(var(--adw-checkbox-default-color), 0.2);
-    --adw-checkbox-active-border-color: rgba(53, 132, 228, 1);
-    --adw-checkbox-label-color: rgba(var(--adw-checkbox-default-color), 0.8);
-    --adw-checkbox-icon-color: rgb(255, 255, 255);
-    --adw-checkbox-bg: rgba(53, 132, 228, 1);
-    
-    --adw-checkbox-label-size: var(--adw-size-14);
+[data-theme="dark"] {    
     --adw-checkbox-rounded: 0.6rem;
-    --adw-checkbox-size: 2rem;
-    
-    // Radio Button
-    --adw-radio-label-color: rgba(var(--adw-checkbox-default-color), 0.8);
-    --adw-radio-active-border-color: rgba(26, 95, 180, 1);
-    --adw-radio-border-color: rgb(0, 0, 0);
-    --adw-radio-bg: rgb(53, 132, 228);
-    
-    --adw-radio-size: 2rem;
-
-    // Toggle Checkbox
-    --adw-toggle-inactive-bg: rgb(190, 190, 190);
-    --adw-toggle-active-bg: rgb(53, 132, 228);
-
-    --adw-toggle-rounded: 3.4rem;
-    --adw-toggle-height: 2.4rem;
-    --adw-toggle-width: 4rem;
-
-    --adw-toggle-indicator-icon-color: rgba(0,0,0, 0.4);
-    --adw-toggle-indicator-icon-size: 1.2rem;
-    --adw-toggle-indicator-height: 2rem;
-    --adw-toggle-indicator-width: 2rem;
-
-    --adw-toggle-indicator-active-offset: 1.6rem;
-    --adw-toggle-indicator-offset-v: 0.2rem;
-    --adw-toggle-indicator-offset-h: 0.2rem;
 }

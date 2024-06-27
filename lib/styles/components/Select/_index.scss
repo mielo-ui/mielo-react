@@ -1,11 +1,6 @@
 @import "variables";
-@import "input";
-@import "options";
-@import "tooltip";
+@import "accents";
+@import "sizes";
 @import "select";
-
-// Other variants
-@import "compact";
-
-// States
-@import "states";
+@import "button";
+@import "options";

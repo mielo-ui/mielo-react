@@ -8,7 +8,7 @@ import {
 
 import clsx from "clsx"
 
-import { EmblemOk } from "../Icons/EmblemOk"
+import { EmblemOk } from "../Icons/icons/EmblemOk"
 
 export interface CheckboxIndicatorIcon {
   indicator?: {
@@ -27,8 +27,13 @@ export interface LayoutIconProps {
 }
 
 export interface CheckboxProps {
-  style?: "toggle" | "circular"
+  accent?: "warning" | "error" | "success"
+  size?: "large" | "small"
+  className?: string
+
   icon?: CheckboxIndicatorIcon
+  cicrular?: boolean
+  toggle?: boolean
 
   children?: string | ReactNode
   label?: string | ReactNode
@@ -41,13 +46,17 @@ export interface CheckboxProps {
 }
 
 export function Checkbox({
+  className: _className,
   onChange: _onChange,
   checked: _checked,
   icon: _icon,
   children,
+  cicrular,
   disabled,
+  toggle,
+  accent,
+  size,
   label,
-  style,
   name,
 }: CheckboxProps) {
   const [checked, setChecked] = useState(_checked)
@@ -66,7 +75,7 @@ export function Checkbox({
   const toggleId = `toggle_${name}`
   let indicatorIcon
 
-  if (style === "toggle") {
+  if (toggle) {
     indicatorIcon = checked
       ? _icon?.indicator?.checked
       : _icon?.indicator?.unchecked
@@ -74,8 +83,20 @@ export function Checkbox({
     indicatorIcon = <EmblemOk />
   }
 
+  const className = clsx(
+    "adw",
+    toggle ? "toggle" : "checkbox",
+    size,
+    accent,
+    {
+      disabled,
+      cicrular,
+    },
+    _className,
+  )
+
   return (
-    <div className={clsx("adw checkbox", style, { disabled })}>
+    <div className={className}>
       <input
         onChange={onChange}
         disabled={disabled}
@@ -87,7 +108,7 @@ export function Checkbox({
 
       <label className="label" htmlFor={toggleId}>
         <div className={clsx("indicator", { checked })}>
-          {style === "toggle" ? (
+          {toggle ? (
             <>
               <div className="dot">
                 <div className="icon">{indicatorIcon}</div>

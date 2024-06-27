@@ -1,6 +1,6 @@
 import { ReactNode } from "react"
 
-import { WindowClose } from "../Icons"
+import { WindowClose } from "../Icons/icons/WindowClose"
 import { Button } from "../Button"
 
 export interface MessageContentProps {
