@@ -1,4 +1,45 @@
+import { ComponentGroup } from "../components"
 import * as Adw from "../../"
+
+const HEADER_TYPESCRIPT = `
+import * as Adw from "adwaita-ui"
+
+<Adw.Header
+  title="Union Header"
+  subtitle="Example of big header"
+  center
+/>
+`.trim()
+
+const HEADER_HTML = `
+<div class="adw header center">
+  <div class="heading">
+    <div class="title">Union Header</div>
+    <div class="subtitle">Example of big header</div>
+  </div>
+</div>
+`.trim()
+
+const TITLES_HTML = `
+<h1 className="adw text title">Title 1</h1>
+<h2 className="adw text title">Title 2</h2>
+<h3 className="adw text title">Title 3</h3>
+<h4 className="adw text title">Title 4</h4>
+`.trim()
+
+const TEXT_TYPESCRIPT = `
+<Adw.Text accent>Accent</Adw.Text>
+<Adw.Text accent="success">Success</Adw.Text>
+<Adw.Text accent="warning">Warning</Adw.Text>
+<Adw.Text accent="error">Error</Adw.Text>
+`.trim()
+
+const TEXT_HTML = `
+<div className="adw text accent">Accent</div>
+<div className="adw text success">Success</div>
+<div className="adw text warning">Warning</div>
+<div className="adw text error">Error</div>
+`.trim()
 
 export function TypographyPage() {
   return (
@@ -7,57 +48,53 @@ export function TypographyPage() {
         header={
           <Adw.Header
             title="Typography"
-            subtitle="Example of typography text styles"
+            subtitle="Example of different checkbox & radio variants"
             size="large"
             center
           />
         }
       >
-        <Adw.Header title="Stack Header" size="medium" />
+        <ComponentGroup
+          description="For full description open Header component docs"
+          title="Stack Header"
+          code={{
+            jsx: HEADER_TYPESCRIPT,
+            html: HEADER_HTML,
+          }}
+        >
+          <Adw.Header
+            title="Union Header"
+            subtitle="Example of big header"
+            center
+          />
+        </ComponentGroup>
 
-        <Adw.Segment placeholder="dev">
-          <div className="column-flex">
-            <Adw.Header
-              title="Union Header"
-              subtitle="Example of big header"
-              center
-            />
-          </div>
-        </Adw.Segment>
+        <ComponentGroup
+          containerColumn
+          title="Titles"
+          code={{
+            html: TITLES_HTML,
+          }}
+        >
+          <h1 className="adw text title">Title 1</h1>
+          <h2 className="adw text title">Title 2</h2>
+          <h3 className="adw text title">Title 3</h3>
+          <h4 className="adw text title">Title 4</h4>
+        </ComponentGroup>
 
-        <Adw.Header title="Default Headers" size="medium" />
-
-        <Adw.Segment placeholder="dev">
-          <div className="column-flex">
-            <h1>Title 1</h1>
-            <h2>Title 2</h2>
-            <h3>Title 3</h3>
-            <h4>Title 4</h4>
-          </div>
-        </Adw.Segment>
-
-        <Adw.Header title="Colored Text" size="medium" />
-
-        <Adw.Segment placeholder="dev">
-          <div className="column-flex">
-            <div className="adw text accent">Accent</div>
-            <div className="adw text success">Success</div>
-            <div className="adw text warning">Warning</div>
-            <div className="adw text error">Error</div>
-          </div>
-        </Adw.Segment>
-
-        <Adw.Header title="Headings" size="medium" />
-
-        <Adw.Segment placeholder="dev">
-          <div className="column-flex">
-            <div className="adw heading">Heading</div>
-            <p className="adw paragraph">Sample text paragraph</p>
-
-            <div className="adw capture heading">Capture Heading</div>
-            <p className="adw capture paragraph">Caption body text</p>
-          </div>
-        </Adw.Segment>
+        <ComponentGroup
+          containerColumn
+          title="Text (with accents)"
+          code={{
+            jsx: TEXT_TYPESCRIPT,
+            html: TEXT_HTML,
+          }}
+        >
+          <Adw.Text accent>Accent</Adw.Text>
+          <Adw.Text accent="success">Success</Adw.Text>
+          <Adw.Text accent="warning">Warning</Adw.Text>
+          <Adw.Text accent="error">Error</Adw.Text>
+        </ComponentGroup>
       </Adw.Clamp>
     </div>
   )

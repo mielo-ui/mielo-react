@@ -1,4 +1,21 @@
 import * as Adw from "../../"
+import { ComponentGroup } from "../components"
+
+const VIEW_TYPESCRIPT = `
+
+`.trim()
+
+const VIEW_HTML = `
+
+`.trim()
+
+const ITEM_TYPESCRIPT = `
+
+`.trim()
+
+const ITEM_HTML = `
+
+`.trim()
 
 export function ContainerPage() {
   return (
@@ -13,23 +30,33 @@ export function ContainerPage() {
           />
         }
       >
-        <Adw.Header title="Item" size="medium" />
+        <ComponentGroup
+          title="View"
+          code={{
+            jsx: VIEW_TYPESCRIPT,
+            html: VIEW_HTML,
+          }}
+        >
+          <Adw.View bg="transparent" flex flex1 column>
+            <div className="adw view padding flex column rounded"></div>
+            <div className="adw view view-bg container-bg padding flex column rounded"></div>
+            <div className="adw view container-bg padding flex column rounded"></div>
+          </Adw.View>
+        </ComponentGroup>
 
-        <Adw.Segment placeholder="dev">
-          <div className="column-flex">
-            <Adw.Header size="small" title="Basic" />
-
+        <ComponentGroup
+          title="Item"
+          code={{
+            jsx: ITEM_TYPESCRIPT,
+            html: ITEM_HTML,
+          }}
+        >
+          <Adw.View bg="transparent" flex flex1 column>
             <Adw.Item title="Item Title" description="Description line" />
-
-            <Adw.Header size="small" title="With Icon" />
-
             <Adw.Item
               icon={<Adw.Icon icon={<Adw.Icons.FolderNew />} />}
               title="Item Title"
             />
-
-            <Adw.Header size="small" title="Vertical" />
-
             <Adw.Item
               icon={<Adw.Icon icon={<Adw.Icons.FolderNew />} />}
               title="Vertical Item Title"
@@ -37,9 +64,6 @@ export function ContainerPage() {
               vertical
               center
             />
-
-            <Adw.Header size="small" title="Complex" />
-
             <Adw.Item
               icon={<Adw.Icon icon={<Adw.Icons.FolderNew />} />}
               description="Some description text"
@@ -53,8 +77,8 @@ export function ContainerPage() {
                 />
               }
             />
-          </div>
-        </Adw.Segment>
+          </Adw.View>
+        </ComponentGroup>
       </Adw.Clamp>
     </div>
   )

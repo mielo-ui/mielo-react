@@ -1,5 +1,6 @@
 .adw.item {
   @include flex(row, "", center);
+  text-decoration: none;
 
   &.vertical {
     justify-content: center;

@@ -25,31 +25,20 @@
 //   $name: string                               | component name in kebab-case
 //   $theme-vars-map: map<accent_name, vars_map> | component variables by accent
 // out: component css variables by accent
-@mixin accents-expand-mapped-vars($name, $theme-vars-map) {
-  @each $accent, $vars in $theme-vars-map {
-    $flat: map-flatten($vars);
-
-    @each $item in $flat {
-      $key: _join(_get($item, 1), "-");
-      $value: _get($item, 2);
-
-      --adw-#{$name}-#{$accent}-#{$key}: #{$value};
-    }
-  }
-}
-
-@mixin accents-assign-to-component($class, $theme-vars-map) {
+@mixin accents-expand-mapped-vars($class, $theme-vars-map) {
   $name: _kebab-case($class);
 
   @each $accent, $vars in $theme-vars-map {
     $class-ext: if($accent != "default", "." + $accent, "");
-    $flat: map-flatten-keys($vars);
+    $flat: map-flatten($vars);
 
     .adw.#{$class}#{$class-ext} {
-      @each $key in $flat {
-        $key: _join($key, "-");
+      @each $item in $flat {
+        $value: _get($item, 2);
+        $keys: _get($item, 1);
+        $key: _join($keys, "-");
 
-        --adw-#{$name}-#{$key}: var(--adw-#{$name}-#{$accent}-#{$key});
+        --adw-#{$name}-#{$key}: #{$value};
       }
     }
   }
@@ -61,19 +50,15 @@
 //   $cb: ($theme, $accent, $colors) -> vars_map | callback that returns appearance variables
 // out: declare accent vars for component, and apperance
 @mixin accents-map-to-component($class, $default, $cb, $accents-by-theme: $adw-accents-by-theme) {
-  $name: _kebab-case($class);
-
   $light: accents-map-to-vars($accents-by-theme, "light", _get($default, "light"), $cb);
   $dark: accents-map-to-vars($accents-by-theme, "dark", _get($default, "dark"), $cb);
 
   :root,
   [data-theme="light"] {
-    @include accents-expand-mapped-vars($name, $light);
+    @include accents-expand-mapped-vars($class, $light);    
   }
 
   [data-theme="dark"] {
-    @include accents-expand-mapped-vars($name, $dark);
+    @include accents-expand-mapped-vars($class, $dark);
   }
-
-  @include accents-assign-to-component($class, $light);
 }

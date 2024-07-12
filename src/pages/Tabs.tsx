@@ -1,23 +1,42 @@
+import { ComponentGroup } from "../components"
 import * as Adw from "../../"
+
+const DEFAULT_TYPESCRIPT = `
+import * as Adw from "adwaita-ui"
+
+// ...
+
+<Adw.Button label="Button" />
+`.trim()
+
+const DEFAULT_HTML = `
+<div class="adw button">
+  Button
+</div>
+`.trim()
 
 export function TabPage() {
   return (
-    <div className="page typography">
+    <div className="page tabs">
       <Adw.Clamp
         header={
           <Adw.Header
             title="Tabs"
-            subtitle="Example of tabs variants"
+            subtitle="Example of different tabs"
             size="large"
             center
           />
         }
       >
-        <Adw.Header title="Stack Header" size="medium" />
-
-        <Adw.Segment placeholder="dev">
-          <div className="column-flex"></div>
-        </Adw.Segment>
+        <ComponentGroup
+          title="Default"
+          code={{
+            jsx: DEFAULT_TYPESCRIPT,
+            html: DEFAULT_HTML,
+          }}
+        >
+          <Adw.Button label="Button" />
+        </ComponentGroup>
       </Adw.Clamp>
     </div>
   )

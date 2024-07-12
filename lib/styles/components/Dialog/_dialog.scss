@@ -1,10 +1,10 @@
 .adw.dialog {
+    border-radius: var(--adw-dialog-rounded);
     background-color: var(--adw-dialog-bg);
-    border-radius: 1.2rem;
 
-    min-height: 16rem;
-    max-width: 35rem;
-    width: 35rem;
+    min-height: var(--adw-dialog-min-height);
+    max-width: var(--adw-dialog-width);
+    width: var(--adw-dialog-width);
 
     justify-content: space-between;
     flex-direction: column;
@@ -28,25 +28,24 @@
         display: flex;
 
         padding: 0 var(--adw-dialog-padding-h);
-        margin-bottom: 2rem;
-
         flex: 1;
     }
 
     > .adw.buttons.actions {
-        border-top: 0.1rem solid var(--adw-dialog-action-border-color);
+        border-top: 0.1rem solid var(--adw-dialog-action-border);
 
         > .adw.button {
-            padding: var(--adw-dialog-action-padding-v) var(--adw-dialog-action-padding-h);
-            border-color: var(--adw-dialog-action-border-color);
-            font-size: var(--adw-dialog-action-font-size);
+            border-right: 0.1rem solid var(--adw-dialog-action-border);
 
             &:first-child {
+                border-bottom-left-radius: var(--adw-dialog-rounded);
                 border-top-left-radius: 0;
             }
 
             &:last-child {
+                border-bottom-right-radius: var(--adw-dialog-rounded);
                 border-top-right-radius: 0;
+                border-right: none;
             }
         }
     }

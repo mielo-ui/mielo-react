@@ -38,6 +38,7 @@ function App() {
     header: { title: "Header", page: "header" },
     headerbar: { title: "HeaderBar", page: "headerbar" },
     button: { title: "Button", page: "button" },
+    icons: { title: "Icons", page: "icons" },
     entry: { title: "Entry", page: "entry" },
     checkbox: { title: "Checkbox", page: "checkbox" },
     toggle: { title: "Toggle", page: "toggle" },
@@ -88,7 +89,7 @@ function App() {
           <Adw.Header
             title="Demo Apps"
             subtitle="Complex demo app pages"
-            size="medium"
+            size="large"
             attached="list"
           />
 
@@ -153,6 +154,7 @@ function App() {
           <Route path="card" component={ComponentPages.CardPage} />
           <Route path="row" component={ComponentPages.RowPage} />
           <Route path="tab" component={ComponentPages.TabPage} />
+          <Route path="icons" component={ComponentPages.IconsPage} />
 
           {/* Demo */}
           <Route path="basic" component={DemoPages.BasicDemoPage} />

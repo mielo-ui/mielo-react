@@ -1,23 +1,42 @@
+import { ComponentGroup } from "../components"
 import * as Adw from "../../"
+
+const DEFAULT_TYPESCRIPT = `
+import * as Adw from "adwaita-ui"
+
+// ...
+
+<Adw.Button label="Button" />
+`.trim()
+
+const DEFAULT_HTML = `
+<div class="adw button">
+  Button
+</div>
+`.trim()
 
 export function CardPage() {
   return (
-    <div className="page card">
+    <div className="page cards">
       <Adw.Clamp
         header={
           <Adw.Header
             title="Card"
-            subtitle="Example of card variants"
+            subtitle="Example of different cards"
             size="large"
             center
           />
         }
       >
-        <Adw.Header title="Default" size="medium" />
+        <ComponentGroup
+          title="Default"
+          code={{
+            jsx: DEFAULT_TYPESCRIPT,
+            html: DEFAULT_HTML,
+          }}
+        >
 
-        <Adw.Segment placeholder="dev">
-          <div className="inline-flex"></div>
-        </Adw.Segment>
+        </ComponentGroup>
       </Adw.Clamp>
     </div>
   )

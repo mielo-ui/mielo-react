@@ -9,10 +9,10 @@
             &:before {
                 border-radius: var(--adw-slider-height);
                 background: var(--adw-slider-range-bg);
-                width: 6%;
                 height: var(--adw-slider-height);
                 position: absolute;
                 content: "";
+                width: 6%;
                 left: 0;
                 top: 0;
             }
@@ -30,15 +30,19 @@
         position: relative;
         display: block;
         
+        min-width: var(--adw-slider-min-length);
         height: var(--adw-slider-height);
+        min-height: auto;
         width: 100%;
         
         border-radius: var(--adw-slider-height);
-        background: var(--adw-slider-bg);
+        background: var(--adw-slider-bg-slider);
 
         &[data-vertical] {
+            min-height: var(--adw-slider-min-length);
+            width: var(--adw-slider-height);
+            min-width: auto;
             height: 100%;
-            width: 8px;
 
             .range-slider__thumb {
                 left: 50%;
@@ -57,7 +61,7 @@
 
         .range-slider__thumb {
             border: 0.1rem solid var(--adw-slider-thumb-border);
-            background: var(--adw-slider-thumb-bg);
+            background: var(--adw-slider-bg-thumb);
             border-radius: 50%;
 
             transform: translate(-50%, -50%);
@@ -85,7 +89,7 @@
         }
 
         .range-slider__range {
-            background: var(--adw-slider-range-bg);
+            background: var(--adw-slider-bg-range);
             transform: translate(0, -50%);
             position: absolute;
             z-index: 1;

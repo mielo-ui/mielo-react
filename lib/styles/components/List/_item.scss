@@ -1,6 +1,7 @@
 .adw.list.item {
     padding: var(--adw-list-item-padding-v) 0;
     margin: var(--adw-list-item-margin) 0;
+    text-decoration: none;
 
     &:first-child {
         margin-top: 0;

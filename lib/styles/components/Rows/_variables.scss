@@ -1,12 +1,10 @@
 :root,
 [data-theme="light"] {
-    --adw-rows-border: #{rgba(#000, 0.07)};
-    --adw-rows-bg: #ebebeb;
+    // @TODO
 }
 
 [data-theme="dark"] {
-    --adw-rows-border: #{rgba(#000, 0.37)};
-    --adw-rows-bg: #383838;
+    // @TODO
 }
 
 :root,
@@ -14,6 +12,6 @@
 [data-theme="dark"] {
     --adw-rows-border-radius: 1.2rem;
 
-    --adw-rows-item-padding-v: 0.856665rem;
-    --adw-rows-item-padding-h: 1.6rem;
+    --adw-row-item-padding-v: 0.856665rem;
+    --adw-row-item-padding-h: 1.6rem;
 }

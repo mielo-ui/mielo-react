@@ -20,6 +20,10 @@
   "dependencies": {
     "clsx": "^2.1.1",
     "lodash.isequal": "^4.5.0",
+    "lodash.omit": "^4.5.0",
+    "lodash.pairs": "^3.0.1",
+    "lodash.pick": "^4.4.0",
+    "lodash.topairs": "^4.3.0",
     "prop-types": "^15.8.1",
     "react-custom-scroll": "^7.0.0",
     "react-hook-form": "^7.51.4",
@@ -35,8 +39,12 @@
   },
   "devDependencies": {
     "@types/lodash.isequal": "^4.5.8",
+    "@types/lodash.omit": "^4.5.9",
+    "@types/lodash.pick": "^4.4.9",
+    "@types/lodash.topairs": "^4.3.9",
     "@types/react": "^18.2.66",
     "@types/react-dom": "^18.2.22",
+    "@types/react-syntax-highlighter": "^15.5.13",
     "@types/react-transition-group": "^4.4.10",
     "@typescript-eslint/eslint-plugin": "^7.2.0",
     "@typescript-eslint/parser": "^7.2.0",

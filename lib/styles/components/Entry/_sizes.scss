@@ -11,8 +11,8 @@ $adw-entry-sizes: (
         "indicator-top": 1rem,
         "indicator-right": 1.2rem,
 
-        "label-fs": var(--adw-size-12),
-        "value-fs": var(--adw-size-14),
+        "label-fs": adw-text-fs(small),
+        "value-fs": adw-text-fs(medium),
     ),
     "small": (
         "padding": 1.4rem 1rem 0.4rem 1rem,
@@ -26,8 +26,8 @@ $adw-entry-sizes: (
         "indicator-top": 0.3rem,
         "indicator-right": 0.6rem,
 
-        "label-fs": var(--adw-size-8),
-        "value-fs": var(--adw-size-12),
+        "label-fs": adw-text-fs(mini),
+        "value-fs": adw-text-fs(small),
     ),
     "large": (
         "padding": 2.6rem 1.8rem 0.6rem 1.8rem,
@@ -41,8 +41,8 @@ $adw-entry-sizes: (
         "indicator-top": 1rem,
         "indicator-right": 1.2rem,
 
-        "label-fs": var(--adw-size-14),
-        "value-fs": var(--adw-size-16),
+        "label-fs": adw-text-fs(medium),
+        "value-fs": adw-text-fs(large),
     )
 );
 

@@ -1,42 +1,49 @@
 import { ReactNode } from "react"
 import clsx from "clsx"
 
-import { Modal } from "../Modal"
-
 import { DialogAction } from "./Action"
-import { DialogActions } from "./Actions"
-import { DialogContent } from "./Content"
+import { Modal } from "../Modal"
 
 export interface DialogProps {
   onRequestClose?: () => void
   isOpen?: boolean
 
+  accent?: boolean | "warning" | "error" | "success"
+  size?: "small" | "large"
+
   theme?: "dark" | "light"
   attached?: "modal"
 
   children?: ReactNode
+  actions?: ReactNode
 }
 
 function Dialog({
-  theme,
+  onRequestClose,
   attached,
   children,
+  actions,
   isOpen,
-  onRequestClose,
+  accent,
+  theme,
+  size,
 }: DialogProps) {
   const attachedClassName = attached && `attached attached-${attached}`
-  const className = clsx("adw dialog", attachedClassName)
+  const accentClassName = accent && accent === true ? "accent" : accent
+
+  const className = clsx("adw dialog", size, accentClassName, attachedClassName)
 
   const content = (
-    <div data-theme={theme || "light"} className={className}>
-      {children}
+    <div className={className}>
+      <div className="content">{children}</div>
+      {actions && <div className="adw buttons relaxed actions">{actions}</div>}
     </div>
   )
 
   return attached !== "modal" ? (
     content
   ) : (
-    <Modal isOpen={isOpen} onRequestClose={onRequestClose}>
+    <Modal theme={theme} isOpen={isOpen} onRequestClose={onRequestClose}>
       {content}
     </Modal>
   )
@@ -45,7 +52,5 @@ function Dialog({
 Dialog.displayName = "Adw.Dialog"
 
 export default Object.assign(Dialog, {
-  Content: DialogContent,
-  Actions: DialogActions,
   Action: DialogAction,
 })

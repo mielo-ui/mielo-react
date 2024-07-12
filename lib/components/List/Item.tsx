@@ -20,6 +20,8 @@ export interface ListItemProps
   className?: string
 
   accent?: "error" | "warning" | "success"
+  size?: "small" | "large"
+
   activatable?: boolean
   active?: boolean
 
@@ -41,6 +43,7 @@ export const ListItem = forwardRef(function ListItem(
     active,
     accent,
     title,
+    size,
     side,
     icon,
     link,
@@ -64,6 +67,7 @@ export const ListItem = forwardRef(function ListItem(
     onClick,
     accent,
     title,
+    size,
     link,
     icon,
     side,

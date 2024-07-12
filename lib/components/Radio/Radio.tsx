@@ -7,6 +7,7 @@ export interface RadioProps {
   className?: string
 
   label?: string | ReactNode
+  value?: string
   children?: string | ReactNode
 
   disabled?: boolean
@@ -23,6 +24,7 @@ export function Radio({
   onChange,
   checked,
   accent,
+  value,
   label,
   size,
   name,
@@ -38,11 +40,13 @@ export function Radio({
         disabled={disabled}
         checked={checked}
         className="input"
+        value={value}
+        name={name}
         id={radioId}
         type="radio"
       />
 
-      <label className="label" htmlFor={radioId}>
+      <label className="label" htmlFor={`#${radioId}`}>
         <div className="indicator" />
 
         {(children || label) && (

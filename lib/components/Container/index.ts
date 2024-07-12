@@ -1,8 +1,8 @@
 export type { ClampProps } from "./Clamp"
 export { Clamp } from "./Clamp"
 
-export type { SegmentProps } from "./Segment"
-export { Segment } from "./Segment"
+export type { ViewProps } from "./View"
+export { View } from "./View" 
 
 export type {
   SplitViewProps,

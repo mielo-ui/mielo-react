@@ -1,50 +1,33 @@
-h1,
-h2,
-h3,
-h4 {
-    color: var(--adw-header-color);
+h1.adw.text.title,
+h2.adw.text.title,
+h3.adw.text.title,
+h4.adw.text.title {
+    color: var(--adw-text-fg);
     font-weight: 800;
 
     margin-bottom: 1.2rem;
     margin-top: 0;
 }
 
-h1,
-.adw.title-1 {
-    font-size: var(--adw-h1-size);
+h1, h1.adw.title, .adw.title.h1 {
+    font-size: var(--adw-h1-fs);
 }
 
-h2,
-.adw.title-2 {
-    font-size: var(--adw-h2-size);
+h2, h2.adw.title, .adw.title.h2 {
+    font-size: var(--adw-h2-fs);
 }
 
-h3,
-.adw.title-3 {
-    font-size: var(--adw-h3-size);
+h3, h3.adw.title, .adw.title.h3 {
+    font-size: var(--adw-h3-fs);
 }
 
-h4,
-.adw.title-4 {
-    font-size: var(--adw-h4-size);
-}
-
-.adw.heading {
-    font-size: var(--adw-heading-size);
-    color: var(--adw-text-color);
-    font-weight: 700;
-
-    margin-bottom: 1.2rem;
-    margin-top: 0;
-
-    &.caption {
-        font-size: var(--adw-caption-heading-size);
-    }
+h4, h4.adw.title, .adw.title.h4 {
+    font-size: var(--adw-h4-fs);
 }
 
 .adw.text {
-    font-size: var(--adw-text-size);
-    color: var(--adw-text-color);
+    font-size: var(--adw-text-fs);
+    color: var(--adw-text-fg);
     font-weight: 400;
 
     &.center {
@@ -54,21 +37,5 @@ h4,
     &.adw.paragraph {
         margin-bottom: 1.2rem;
         margin-top: 0;
-    }
-
-    &.accent {
-        color: var(--adw-text-accent);
-
-        &.success {
-            color: var(--adw-text-success);
-        }
-
-        &.warning {
-            color: var(--adw-text-warning);
-        }
-
-        &.error {
-            color: var(--adw-text-error);
-        }
     }
 }

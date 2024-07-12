@@ -1,49 +1,14 @@
-@use "sass:map";
-
-// Sizes
-$adw-header-sizes: (
-    "large": (
-        "title": var(--adw-size-26),
-        "subtitle": var(--adw-size-14),
-        "margin-v": 1.2rem,
-        "icon-margin-v": 1.2rem,
-        "icon": 6.5rem
-    ),
-    "medium": (
-        "title": var(--adw-size-14),
-        "subtitle": var(--adw-size-12),
-        "margin-v": 0.8rem,
-        "icon-margin-v": 0.8rem,
-        "icon": 3.5rem
-    ),
-    "small": (
-        "title": var(--adw-size-12),
-        "subtitle": var(--adw-size-10),
-        "margin-v": 0.6rem,
-        "icon-margin-v": 0.6rem,
-        "icon": 2rem
-    ),
-);
-
 :root,
 [data-theme="light"] {
-    --adw-header-default-color: 0, 0, 0;
+    // @TODO
 }
 
 [data-theme="dark"] {
-    --adw-header-default-color: 255, 255, 255;
+    // @TODO
 }
 
 :root,
 [data-theme="light"],
 [data-theme="dark"] {
-    --adw-header-subtitle-color: rgba(var(--adw-header-default-color), 0.6);
-    --adw-header-title-color: rgba(var(--adw-header-default-color), 0.8);
-    --adw-header-icon-color: rgb(var(--adw-header-default-color));
-
-    @each $size, $values in $adw-header-sizes {
-        @each $name, $value in $values {
-            --adw-header-#{$size}-#{$name}: #{$value};
-        }
-    }
+    // @TODO
 }

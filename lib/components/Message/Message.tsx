@@ -4,7 +4,8 @@ import clsx from "clsx"
 import { MessageContent } from "./Content"
 
 export interface MessageProps {
-  accent?: "red" | "purple" | "green" | "blue" | "yellow"
+  size?: "tiny" | "small" | "large" | "big" | "huge" | "massive"
+  accent?: boolean | "warning" | "error" | "success"
   marked?: boolean
   banner?: boolean
 
@@ -26,17 +27,21 @@ function Message({
   onClose,
   title,
   description,
+  size,
   icon,
   children,
 }: MessageProps) {
+  const accentClassName = accent === true ? "accent" : accent
+
   const className = clsx(
     "adw message",
-    attached && `attached attached-${attached}`,
+    accentClassName,
+    size,
     {
       banner,
-      accent,
       marked,
     },
+    attached && `attached attached-${attached}`,
   )
 
   const contentProps = {

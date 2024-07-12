@@ -1,25 +1,14 @@
 :root,
 [data-theme="light"] {
-    --adw-dialog-default-color: 0, 0, 0;
-
-    --adw-dialog-bg: rgb(var(--adw-color-white-cream));
+    // @TODO
 }
 
 [data-theme="dark"] {
-    --adw-dialog-default-color: 255, 255, 255;
-
-    --adw-dialog-bg: rgb(var(--adw-color-light-gray));
+    // @TODO
 }
 
 :root,
 [data-theme="light"],
 [data-theme="dark"] {
-    --adw-dialog-padding-h: 1.2rem;
-    --adw-dialog-padding-v: 1.2rem;
-
-    --adw-dialog-action-font-size: var(--adw-size-14);
-    --adw-dialog-action-padding-v: 1.356665rem;
-    --adw-dialog-action-padding-h: 1.2rem;
-    
-    --adw-dialog-action-border-color: rgba(var(--adw-dialog-default-color), 0.08);
+    --adw-dialog-rounded: 1.2rem;
 }

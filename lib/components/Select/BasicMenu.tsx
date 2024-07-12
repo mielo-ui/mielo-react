@@ -7,7 +7,7 @@ import { List, ListItem } from "../List"
 
 export interface OptionValue {
   label: string
-  value: string
+  value: any
 }
 
 export interface CustomItemProps {

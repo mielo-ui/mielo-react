@@ -2,20 +2,20 @@ $adw-item-sizes: (
     "medium": (
         "margin-between": 1.2rem,
 
-        "description-fs": var(--adw-size-12),
-        "title-fs": var(--adw-size-14)
+        "description-fs": adw-text-fs(small),
+        "title-fs": adw-text-fs(medium)
     ),
     "small": (
         "margin-between": 0.8rem,
 
-        "description-fs": var(--adw-size-8),
-        "title-fs": var(--adw-size-12)
+        "description-fs": adw-text-fs(mini),
+        "title-fs": adw-text-fs(small)
     ),
     "large": (
         "margin-between": 1.6rem,
 
-        "description-fs": var(--adw-size-14),
-        "title-fs": var(--adw-size-16)
+        "description-fs": adw-text-fs(medium),
+        "title-fs": adw-text-fs(large)
     )
 );
 

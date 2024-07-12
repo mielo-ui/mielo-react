@@ -1,9 +1,9 @@
 $adw-list-item-default-colors: (
     "dark": (
-        "bg": button-bg-states(rgba(#FFF, 0.2), "darken", true),
+        "bg": opacity-button-bg(#FFF, true, (0.1, 0.15, 0.2)),
     ),
     "light": (
-        "bg": button-bg-states(rgba(#000, 0.2), "darken", true),
+        "bg": opacity-button-bg(#000, true, (0.1, 0.15, 0.2)),
     )
 );
 
@@ -11,7 +11,7 @@ $adw-list-item-default-colors: (
     $bg: _get($colors, "bg");
 
     @return (
-        "bg": button-bg-states(rgba($bg, 0.2), "darken", true),
+        "bg": opacity-button-bg($bg, true, (0.1, 0.15, 0.2)),
     )
 }
 

@@ -46,8 +46,8 @@ export { Message, MessageContent } from "./components/Message"
 export type { CardProps } from "./components/Card"
 export { Card } from "./components/Card"
 
-export type { DialogProps } from "./components/Dialog"
-export { Dialog } from "./components/Dialog"
+export type { DialogProps, ConfirmProps, ConfirmMethods } from "./components/Dialog"
+export { Dialog, Confirm } from "./components/Dialog"
 
 export type { ProgressProps, ProgressBarProps } from "./components/Progress"
 export { Progress, ProgressBar } from "./components/Progress"
@@ -83,7 +83,7 @@ export type {
   SplitViewSidebarProps,
   SplitViewContentProps,
   ClampProps,
-  SegmentProps,
+  ViewProps,
 } from "./components/Container"
 
 export {
@@ -91,7 +91,7 @@ export {
   SplitViewSidebar,
   SplitViewContent,
   Clamp,
-  Segment,
+  View,
 } from "./components/Container"
 
 export type {

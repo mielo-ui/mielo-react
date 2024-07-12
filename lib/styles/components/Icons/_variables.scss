@@ -1,22 +1,14 @@
 :root,
 [data-theme="light"] {
-    --adw-icon-default-color: 0, 0, 0;
-
-    --adw-icon-bg: rgba(255, 255, 255, 0.2);
-    --adw-icon-border-color: rgb(230, 230, 230);
+    // @TODO
 }
 
 [data-theme="dark"] {
-    --adw-icon-default-color: 255, 255, 255;
-    
-    --adw-icon-bg: rgba(var(--adw-color-light-gray), 0.2);
-    --adw-icon-border-color: rgb(36, 36, 36);
+    // @TODO
 }
 
 :root,
 [data-theme="light"],
 [data-theme="dark"] {
-    --adw-icon-color: rgb(var(--adw-icon-default-color));
-    --adw-icon-rounded: 0.6rem;
-    --adw-icon-size: 1.6rem;
+    // @TODO
 }

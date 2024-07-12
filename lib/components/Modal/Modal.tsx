@@ -13,11 +13,12 @@ import { Portal } from "./Portal"
 export interface ModalProps {
   onRequestClose?: () => void
   isOpen?: boolean
-
+  
+  theme?: "light" | "dark"
   children?: ReactNode
 }
 
-export function Modal({ children, ...props }: ModalProps) {
+export function Modal({ children, theme, ...props }: ModalProps) {
   useEffect(() => {
     const onPressEscape = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
@@ -54,7 +55,7 @@ export function Modal({ children, ...props }: ModalProps) {
           If change className with multiple names like "adw modal"
           CssTransition failed to change animation-state
         */}
-        <div className="adw modal">
+        <div className="adw modal" data-theme={theme || "light"}>
           <div className="window" onClick={onClickWindow}>
             {children}
           </div>

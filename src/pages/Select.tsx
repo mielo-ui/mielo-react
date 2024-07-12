@@ -1,8 +1,129 @@
 import { useState } from "react"
+
+import { ComponentGroup } from "../components"
 import * as Adw from "../../"
 
+const DEFAULT_TYPESCRIPT = `
+import * as Adw from "adwaita-ui"
+
+const [times, setTimes] = useState({
+  label: "Day",
+  value: "day",
+})
+
+const options = [
+  {
+    label: "Morning",
+    value: "morning",
+  },
+  {
+    label: "Day",
+    value: "day",
+  },
+  {
+    label: "Night",
+    value: "night",
+  },
+]
+
+<Adw.Select
+  onChange={option => setTimes(option)}
+  options={options}
+  label="Times"
+  value={times}
+  name="times"
+/>
+`.trim()
+
+const ACCENTS_TYPESCRIPT = `
+<Adw.Select
+  onChange={option => setSecond(option)}
+  label="Select..."
+  options={options}
+  value={second}
+  name="a-1"
+
+  message="Some warning status"
+  accent="warning"
+/>
+
+<Adw.Select
+  onChange={option => setSecond(option)}
+  label="Select..."
+  options={options}
+  value={second}
+  name="a-2"
+
+  message="Some error status"
+  accent="error"
+/>
+
+<Adw.Select
+  onChange={option => setSecond(option)}
+  label="Select..."
+  options={options}
+  value={second}
+  name="a-3"
+
+  message="Some success status"
+  accent="success"
+/>
+`.trim()
+
+const SIZES_TYPESCRIPT = `
+<Adw.Select
+  onChange={option => setSecond(option)}
+  label="Select..."
+  options={options}
+  value={second}
+  name="c-1"
+  message="Some warning status"
+  accent="warning"
+  size="small"
+/>
+
+<Adw.Select
+  onChange={option => setSecond(option)}
+  label="Select..."
+  options={options}
+  value={second}
+  name="c-2"
+  message="Some error status"
+  accent="error"
+/>
+
+<Adw.Select
+  onChange={option => setSecond(option)}
+  label="Select..."
+  options={options}
+  value={second}
+  name="c-3"
+  message="Some success status"
+  accent="success"
+  size="large"
+/>
+`.trim()
+
 export function SelectPage() {
-  const [first, setFirst] = useState<any>()
+  const [times, setTimes] = useState({
+    label: "Day",
+    value: "day",
+  })
+
+  const optionsTimes = [
+    {
+      label: "Morning",
+      value: "morning",
+    },
+    {
+      label: "Day",
+      value: "day",
+    },
+    {
+      label: "Night",
+      value: "night",
+    },
+  ]
 
   const [second, setSecond] = useState<any>({
     label: "Option First Label",
@@ -25,112 +146,109 @@ export function SelectPage() {
   ]
 
   return (
-    <div className="page selects">
+    <div className="page checkbox">
       <Adw.Clamp
         header={
           <Adw.Header
             title="Select"
-            subtitle="Example of different select variants"
+            subtitle="Different select variants"
             size="large"
             center
           />
         }
       >
-        <Adw.Header title="Default" size="medium" />
+        <ComponentGroup
+          title="Default"
+          code={{
+            jsx: DEFAULT_TYPESCRIPT,
+          }}
+        >
+          <Adw.Select
+            onChange={option => setTimes(option)}
+            options={optionsTimes}
+            label="Times"
+            value={times}
+            name="times"
+          />
+        </ComponentGroup>
 
-        <Adw.Segment placeholder="dev">
-          <div className="column-flex">
-            <Adw.Select
-              onChange={option => setFirst(option)}
-              label="Select..."
-              options={options}
-              value={first}
-              name="default"
-            />
-          </div>
-        </Adw.Segment>
+        <ComponentGroup
+          containerColumn
+          title="Accents"
+          code={{
+            jsx: ACCENTS_TYPESCRIPT,
+          }}
+        >
+          <Adw.Select
+            onChange={option => setSecond(option)}
+            label="Select..."
+            options={options}
+            value={second}
+            name="a-1"
+            message="Some warning status"
+            accent="warning"
+          />
 
-        <Adw.Header title="Accents" size="medium" />
+          <Adw.Select
+            onChange={option => setSecond(option)}
+            label="Select..."
+            options={options}
+            value={second}
+            name="a-2"
+            message="Some error status"
+            accent="error"
+          />
 
-        <Adw.Segment placeholder="dev">
-          <div className="column-flex">
-            <Adw.Select
-              onChange={option => setSecond(option)}
-              label="Select..."
-              options={options}
-              value={second}
-              name="a-1"
+          <Adw.Select
+            onChange={option => setSecond(option)}
+            label="Select..."
+            options={options}
+            value={second}
+            name="a-3"
+            message="Some success status"
+            accent="success"
+          />
+        </ComponentGroup>
 
-              message="Some warning status"
-              accent="warning"
-            />
+        <ComponentGroup
+          containerColumn
+          title="Sizes"
+          code={{
+            jsx: SIZES_TYPESCRIPT,
+          }}
+        >
+          <Adw.Select
+            onChange={option => setSecond(option)}
+            label="Select..."
+            options={options}
+            value={second}
+            name="c-1"
+            message="Some warning status"
+            accent="warning"
+            size="small"
+          />
 
-            <Adw.Select
-              onChange={option => setSecond(option)}
-              label="Select..."
-              options={options}
-              value={second}
-              name="a-2"
+          <Adw.Select
+            onChange={option => setSecond(option)}
+            label="Select..."
+            options={options}
+            value={second}
+            name="c-2"
+            message="Some error status"
+            accent="error"
+          />
 
-              message="Some error status"
-              accent="error"
-            />
-
-            <Adw.Select
-              onChange={option => setSecond(option)}
-              label="Select..."
-              options={options}
-              value={second}
-              name="a-3"
-
-              message="Some success status"
-              accent="success"
-            />
-          </div>
-        </Adw.Segment>
-
-        <Adw.Header title="Sizes" size="medium" />
-
-        <Adw.Segment placeholder="dev">
-          <div className="column-flex">
-            <Adw.Select
-              onChange={option => setSecond(option)}
-              label="Select..."
-              options={options}
-              value={second}
-              name="c-1"
-
-              message="Some warning status"
-              accent="warning"
-
-              size="small"
-            />
-
-            <Adw.Select
-              onChange={option => setSecond(option)}
-              label="Select..."
-              options={options}
-              value={second}
-              name="c-2"
-
-              message="Some error status"
-              accent="error"
-            />
-
-            <Adw.Select
-              onChange={option => setSecond(option)}
-              label="Select..."
-              options={options}
-              value={second}
-              name="c-3"
-
-              message="Some success status"
-              accent="success"
-
-              size="large"
-            />
-          </div>
-        </Adw.Segment>
+          <Adw.Select
+            onChange={option => setSecond(option)}
+            label="Select..."
+            options={options}
+            value={second}
+            name="c-3"
+            message="Some success status"
+            accent="success"
+            size="large"
+          />
+        </ComponentGroup>
       </Adw.Clamp>
     </div>
   )

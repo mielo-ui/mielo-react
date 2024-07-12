@@ -1,29 +1,23 @@
 $adw-button-sizes: (
     "small": (
-        "fs": var(--adw-size-12),
-        "rounded": 0.6rem,
+        "fs": adw-text-fs(small),
+        "icon-ph": 0.4rem,
         "size": 2.8rem,
         "ph": 0.8rem,
-
-        "icon-size": 1.2rem
     ),
 
     "medium": (
-        "fs": var(--adw-size-14),
-        "rounded": 0.6rem,
+        "fs": adw-text-fs(medium),
+        "icon-ph": 0.6rem,
         "size": 3.4rem,
         "ph": 1.2rem,
-
-        "icon-size": 1.6rem
     ),
 
     "large": (
-        "fs": var(--adw-size-17),
-        "rounded": 0.6rem,
+        "fs": adw-text-fs(large),
+        "icon-ph": 0.8rem,
         "size": 4.4rem,
         "ph": 1.6rem,
-
-        "icon-size": 2rem
     )
 );
 

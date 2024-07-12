@@ -1,7 +1,7 @@
 import clsx from "clsx"
 
 export interface HeaderProps {
-  title: string
+  title?: string
   subtitle?: string
   icon?: JSX.Element
   iconSided?: boolean
@@ -9,8 +9,8 @@ export interface HeaderProps {
   flattened?: boolean
   center?: boolean
   
+  size?: "tiny" | "small" | "small" | "large" | "big" | "huge" | "massive"
   attached?: "headerbar" | "list" | "dialog"
-  size?: "small" | "medium" | "large"
 }
 
 export function Header({
@@ -35,11 +35,11 @@ export function Header({
 
   return (
     <div className={className}>
-      {icon && iconSided && <div className="icon">{icon}</div>}
+      {icon && iconSided && icon}
 
       <div className="heading">
-        {icon && !iconSided && <div className="icon">{icon}</div>}
-        <div className="title">{title}</div>
+        {icon && !iconSided && icon}
+        {title && <div className="title">{title}</div>}
         {subtitle && <div className="subtitle">{subtitle}</div>}
       </div>
     </div>

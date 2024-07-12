@@ -1,27 +1,19 @@
 :root,
 [data-theme="light"] {
-    --adw-text-default-color: 0, 0, 0
+    // @TODO
 }
 
 [data-theme="dark"] {
-    --adw-text-default-color: 255, 255, 255
+    // @TODO
 }
 
 :root,
 [data-theme="light"],
 [data-theme="dark"] {
-    --adw-header-color: rgba(var(--adw-text-default-color), 0.8);
-    --adw-h1-size: var(--adw-size-26);
-    --adw-h2-size: var(--adw-size-20);
-    --adw-h3-size: var(--adw-size-20);
-    --adw-h4-size: var(--adw-size-17);
+    --adw-h4-fs: #{adw-text-fs(medium)};
+    --adw-h3-fs: #{adw-text-fs(large)};
+    --adw-h2-fs: #{adw-text-fs(big)};
+    --adw-h1-fs: #{adw-text-fs(large)};
     
-    --adw-text-color: rgba(var(--adw-text-default-color), 0.8);
-    --adw-text-size: var(--adw-size-14);
-
-    // Colors
-    --adw-text-accent-color: rgb($adw-color-blue-4);
-    --adw-text-success-color: rgb($adw-color-green-5);
-    --adw-text-warning-color: rgb($adw-color-yellow-4);
-    --adw-text-error-color: rgb($adw-color-red-2);
+    --adw-text-fs: #{adw-text-fs(medium)};
 }

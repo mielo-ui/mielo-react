@@ -1,6 +1,6 @@
 $adw-toggle-sizes: (
     "medium": (
-      "label-fs": var(--adw-size-14),
+      "label-fs": adw-text-fs(medium),
       "content-margin": 0.8rem,
 
       "rounded": 3.4rem,
@@ -18,7 +18,7 @@ $adw-toggle-sizes: (
       ),
     ),
     "small": (
-      "label-fs": var(--adw-size-12),
+      "label-fs": adw-text-fs(small),
       "content-margin": 0.6rem,
 
       "rounded": 2.4rem,
@@ -36,7 +36,7 @@ $adw-toggle-sizes: (
       ),
     ),
     "large": (
-      "label-fs": var(--adw-size-16),
+      "label-fs": adw-text-fs(large),
       "content-margin": 1rem,
 
       "rounded": 4.4rem,

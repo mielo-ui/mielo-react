@@ -22,6 +22,8 @@ export interface ItemProps {
   center?: boolean
 
   accent?: "error" | "warning" | "success"
+  size?: "small" | "large"
+
   disableSidePropagation?: boolean
   className?: string
 
@@ -44,6 +46,7 @@ export const Item = forwardRef(function Item(
     accent,
     center,
     title,
+    size,
     link,
     icon,
     side,
@@ -60,7 +63,7 @@ export const Item = forwardRef(function Item(
     [disableSidePropagation],
   )
 
-  const className = clsx("adw item", accent, { vertical, center }, _className)
+  const className = clsx("adw item", accent, size, { vertical, center }, _className)
 
   const body = (
     <>

@@ -1,14 +1,15 @@
 :root,
 [data-theme="light"] {
-    --adw-icon-default-color: 0, 0, 0;
+    // @TODO
 }
 
 [data-theme="dark"] {
-    --adw-icon-default-color: 255, 255, 255;
+    // @TODO
 }
 
 :root,
 [data-theme="light"],
 [data-theme="dark"] {
-    
+    --adw-message-rounded: 1.2rem;
+    --adw-message-margin-v: 1.2rem;
 }

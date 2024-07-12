@@ -1,4 +1,104 @@
+import { ComponentGroup } from "../components"
 import * as Adw from "../../"
+
+const DEFAULT_TYPESCRIPT = `
+import * as Adw from "adwaita-ui"
+
+// ...
+
+<Adw.Checkbox
+  name="checkbox-default-1"
+  label="Default"
+  toggle
+/>
+
+<Adw.Checkbox
+  name="checkbox-default-2"
+  label="Default Checked"
+  checked
+  toggle
+/>
+`.trim()
+
+const ICON_TYPESCRIPT = `
+<Adw.Checkbox
+  label="Toggle Indicator Icon"
+  name="toggle-default-3"
+  toggle
+  icon={{
+    indicator: {
+      unchecked: <Adw.Icons.WeatherClearNight />,
+      checked: <Adw.Icons.WeatherClear />,
+    },
+  }}
+/>
+
+<Adw.Checkbox
+  label="Toggle Layout Icon"
+  name="toggle-default-4"
+  toggle
+  icon={{
+    layout: {
+      unchecked: <Adw.Icons.WeatherClearNight />,
+      checked: <Adw.Icons.WeatherClear />,
+    },
+  }}
+/>
+`.trim()
+
+const ACCENTS_TYPESCRIPT = `
+<Adw.Checkbox
+  name="circular-accent-1"
+  label="Warning"
+  accent="warning"
+  checked
+  toggle
+/>
+
+<Adw.Checkbox
+  name="circular-accent-3"
+  label="Success"
+  accent="success"
+  checked
+  toggle
+/>
+
+<Adw.Checkbox
+  name="circular-accent-2"
+  label="Error"
+  accent="error"
+  checked
+  toggle
+/>
+`.trim()
+
+const SIZES_TYPESCRIPT = `
+<Adw.Checkbox
+  name="circular-accent-2"
+  label="Small"
+  accent="warning"
+  size="small"
+  checked
+  toggle
+/>
+
+<Adw.Checkbox
+  name="circular-accent-3"
+  label="Medium"
+  accent="error"
+  checked
+  toggle
+/>
+
+<Adw.Checkbox
+  name="circular-accent-1"
+  label="Large"
+  accent="success"
+  size="large"
+  checked
+  toggle
+/>
+`.trim()
 
 export function TogglePage() {
   return (
@@ -7,117 +107,122 @@ export function TogglePage() {
         header={
           <Adw.Header
             title="Toggle"
-            subtitle="Example of different toggle checkboxes"
+            subtitle="Different toggle variants"
             size="large"
             center
           />
         }
       >
-        <Adw.Header title="Default" size="medium" />
+        <ComponentGroup
+          containerColumn
+          title="Default"
+          code={{
+            jsx: DEFAULT_TYPESCRIPT,
+          }}
+        >
+          <Adw.Checkbox name="checkbox-default-1" label="Default" toggle />
 
-        <Adw.Segment placeholder="dev">
-          <div className="column-flex">
-            <Adw.Checkbox
-              name="checkbox-default-1"
-              label="Default"
-              checked
-              toggle
-            />
-            <Adw.Checkbox
-              name="checkbox-default-2"
-              label="Default Checked"
-              toggle
-            />
-          </div>
-        </Adw.Segment>
+          <Adw.Checkbox
+            name="checkbox-default-2"
+            label="Default Checked"
+            checked
+            toggle
+          />
+        </ComponentGroup>
 
-        <Adw.Header title="Icon" size="medium" />
+        <ComponentGroup
+          containerColumn
+          title="Icon"
+          code={{
+            jsx: ICON_TYPESCRIPT,
+          }}
+        >
+          <Adw.Checkbox
+            label="Toggle Indicator Icon"
+            name="toggle-default-3"
+            toggle
+            icon={{
+              indicator: {
+                unchecked: <Adw.Icons.WeatherClearNight />,
+                checked: <Adw.Icons.WeatherClear />,
+              },
+            }}
+          />
 
-        <Adw.Segment placeholder="dev">
-          <div className="column-flex">
-            <Adw.Checkbox
-              label="Toggle Indicator Icon"
-              name="toggle-default-3"
-              toggle
-              icon={{
-                indicator: {
-                  unchecked: <Adw.Icons.WeatherClearNight />,
-                  checked: <Adw.Icons.WeatherClear />,
-                },
-              }}
-            />
+          <Adw.Checkbox
+            label="Toggle Layout Icon"
+            name="toggle-default-4"
+            toggle
+            icon={{
+              layout: {
+                unchecked: <Adw.Icons.WeatherClearNight />,
+                checked: <Adw.Icons.WeatherClear />,
+              },
+            }}
+          />
+        </ComponentGroup>
 
-            <Adw.Checkbox
-              label="Toggle Layout Icon"
-              name="toggle-default-4"
-              toggle
-              icon={{
-                layout: {
-                  unchecked: <Adw.Icons.WeatherClearNight />,
-                  checked: <Adw.Icons.WeatherClear />,
-                },
-              }}
-            />
-          </div>
-        </Adw.Segment>
+        <ComponentGroup
+          containerColumn
+          title="Accents"
+          code={{
+            jsx: ACCENTS_TYPESCRIPT,
+          }}
+        >
+          <Adw.Checkbox
+            name="circular-accent-1"
+            label="Warning"
+            accent="warning"
+            checked
+            toggle
+          />
+          <Adw.Checkbox
+            name="circular-accent-3"
+            label="Success"
+            accent="success"
+            checked
+            toggle
+          />
+          <Adw.Checkbox
+            name="circular-accent-2"
+            label="Error"
+            accent="error"
+            checked
+            toggle
+          />
+        </ComponentGroup>
 
-        <Adw.Header title="Accent" size="medium" />
-
-        <Adw.Segment placeholder="dev">
-          <div className="column-flex">
-            <Adw.Checkbox
-              name="circular-accent-1"
-              label="Warning"
-              accent="warning"
-              checked
-              toggle
-            />
-            <Adw.Checkbox
-              name="circular-accent-3"
-              label="Success"
-              accent="success"
-              checked
-              toggle
-            />
-            <Adw.Checkbox
-              name="circular-accent-2"
-              label="Error"
-              accent="error"
-              checked
-              toggle
-            />
-          </div>
-        </Adw.Segment>
-
-        <Adw.Header title="Sizes" size="medium" />
-
-        <Adw.Segment placeholder="dev">
-          <div className="column-flex">
-            <Adw.Checkbox
-              name="circular-accent-1"
-              label="Large"
-              accent="warning"
-              size="large"
-              checked
-              toggle
-            />
-            <Adw.Checkbox
-              name="circular-accent-3"
-              label="Medium"
-              accent="success"
-              checked
-              toggle
-            />
-            <Adw.Checkbox
-              name="circular-accent-2"
-              label="Small"
-              accent="error"
-              size="small"
-              checked
-              toggle
-            />
-          </div>
-        </Adw.Segment>
+        <ComponentGroup
+          containerColumn
+          title="SIzes"
+          code={{
+            jsx: SIZES_TYPESCRIPT,
+          }}
+        >
+          <Adw.Checkbox
+            name="circular-accent-2"
+            label="Small"
+            accent="warning"
+            size="small"
+            checked
+            toggle
+          />
+          <Adw.Checkbox
+            name="circular-accent-3"
+            label="Medium"
+            accent="error"
+            checked
+            toggle
+          />
+          <Adw.Checkbox
+            name="circular-accent-1"
+            label="Large"
+            accent="success"
+            size="large"
+            checked
+            toggle
+          />
+        </ComponentGroup>
       </Adw.Clamp>
     </div>
   )

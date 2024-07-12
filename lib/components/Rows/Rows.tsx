@@ -12,13 +12,7 @@ export interface RowsProps {
 function Rows({ children }: RowsProps) {
   return (
     <div className="adw rows">
-      {filterChildrenByType(children, [
-        "Adw.Entry.Row",
-        "Adw.Form.Entry.Row",
-        "Adw.Select.Row",
-        "Adw.Form.Select.Row",
-        "Adw.Row",
-      ])}
+      {children}
     </div>
   )
 }

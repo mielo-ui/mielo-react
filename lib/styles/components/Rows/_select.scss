@@ -1,6 +1,4 @@
 .adw.rows>.row.select {
-    border-bottom: 0.1rem solid var(--adw-rows-border);
-
     &:first-child {
         >.adw.select>.content>.base {
             border-top-left-radius: var(--adw-rows-border-radius);

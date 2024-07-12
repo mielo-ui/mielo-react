@@ -9,6 +9,9 @@ export interface SliderProps
     ReactRangeSliderProps,
     "onChange" | "defaultValue" | "value" | "rangeSlideDisabled"
   > {
+  accent?: "warning" | "error" | "success"
+  size?: "large" | "small"
+
   onChange?: (newValue: number) => void
   defaultValue?: number
   value?: number
@@ -19,9 +22,11 @@ function Slider({
   className: _className,
   onChange: _onChange,
   value: _value,
+  accent,
+  size,
   ...props
 }: SliderProps) {
-  const className = clsx("adw slider", _className)
+  const className = clsx("adw slider", accent, size, _className)
 
   const onChange = useCallback(([min, max]: number[]) => {
     _onChange?.(max)
