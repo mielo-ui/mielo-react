@@ -26,7 +26,7 @@ function Slider({
   size,
   ...props
 }: SliderProps) {
-  const className = clsx("adw slider", accent, size, _className)
+  const className = clsx("mie slider", accent, size, _className)
 
   const onChange = useCallback(([min, max]: number[]) => {
     _onChange?.(max)
@@ -49,7 +49,7 @@ function Slider({
   )
 }
 
-Slider.displayName = "Adw.Slider"
+Slider.displayName = "Mie.Slider"
 
 export default Object.assign(Slider, {
   Range: RangeSlider,

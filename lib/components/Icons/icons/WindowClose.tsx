@@ -15,4 +15,4 @@ export const WindowClose = (props: React.SVGProps<SVGSVGElement>) => (
   </svg>
 )
 
-WindowClose.displayName = "Adw.Icon.WindowClose"
+WindowClose.displayName = "Mie.Icon.WindowClose"

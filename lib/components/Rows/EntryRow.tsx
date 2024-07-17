@@ -10,4 +10,4 @@ export function EntryRow(props: EntryRowProps) {
   )
 }
 
-EntryRow.displayName = "Adw.Entry.Row"
+EntryRow.displayName = "Mie.Entry.Row"

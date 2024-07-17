@@ -44,4 +44,4 @@ export function FormSelect({
   )
 }
 
-FormSelect.displayName = "Adw.Form.Select"
+FormSelect.displayName = "Mie.Form.Select"

@@ -5,7 +5,7 @@ export interface AlertProps {
 }
 
 export function Alert({ children }: AlertProps) {
-  return <div className="adw alert">{children}</div>
+  return <div className="mie alert">{children}</div>
 }
 
-Alert.displayName = "Adw.Alert"
+Alert.displayName = "Mie.Alert"

@@ -19,4 +19,4 @@ export const UserHome = (props: React.SVGProps<SVGSVGElement>) => (
   </svg>
 )
 
-UserHome.displayName = "Adw.Icon.UserHome"
+UserHome.displayName = "Mie.Icon.UserHome"

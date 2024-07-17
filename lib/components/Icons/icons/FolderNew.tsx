@@ -15,4 +15,4 @@ export const FolderNew = (props: React.SVGProps<SVGSVGElement>) => (
   </svg>
 )
 
-FolderNew.displayName = "Adw.Icon.FolderNew"
+FolderNew.displayName = "Mie.Icon.FolderNew"

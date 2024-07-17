@@ -28,7 +28,7 @@ export function ProgressBar({
     <div
       style={progress ? { width: `${progress}%` } : {}}
       className={clsx(
-        "adw progress-bar",
+        "mie progress-bar",
         indeterminateClassName,
         accentClassName,
         { transparent },
@@ -45,4 +45,4 @@ export function ProgressBar({
   )
 }
 
-ProgressBar.displayName = "Adw.Progress.Bar"
+ProgressBar.displayName = "Mie.Progress.Bar"

@@ -15,4 +15,4 @@ export const WindowMaximize = (props: React.SVGProps<SVGSVGElement>) => (
   </svg>
 )
 
-WindowMaximize.displayName = "Adw.Icon.WindowMaximize"
+WindowMaximize.displayName = "Mie.Icon.WindowMaximize"

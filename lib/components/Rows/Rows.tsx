@@ -10,10 +10,10 @@ export interface RowsProps {
 }
 
 function Rows({ children }: RowsProps) {
-  return <div className="adw rows">{children}</div>
+  return <div className="mie rows">{children}</div>
 }
 
-Rows.displayName = "Adw.Rows"
+Rows.displayName = "Mie.Rows"
 
 export default Object.assign(Rows, {
   Select: SelectRow,

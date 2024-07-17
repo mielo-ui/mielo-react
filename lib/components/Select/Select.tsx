@@ -105,4 +105,4 @@ export function Select({
   return <Dropdown {...dropdownProps} />
 }
 
-Select.displayName = "Adw.Select"
+Select.displayName = "Mie.Select"

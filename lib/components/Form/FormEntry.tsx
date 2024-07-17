@@ -42,4 +42,4 @@ export function FormEntry({ control, rules, name, ...props }: FormEntryProps) {
   )
 }
 
-FormEntry.displayName = "Adw.Form.Entry"
+FormEntry.displayName = "Mie.Form.Entry"

@@ -16,4 +16,4 @@ export const WindowNew = (props: React.SVGProps<SVGSVGElement>) => (
   </svg>
 )
 
-WindowNew.displayName = "Adw.Icon.WindowNew"
+WindowNew.displayName = "Mie.Icon.WindowNew"

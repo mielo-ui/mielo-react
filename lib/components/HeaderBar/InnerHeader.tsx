@@ -25,7 +25,7 @@ export function InnerHeader({ header }: InnerHeaderProps) {
   }
 
   if (isValidElement(header)) {
-    if (isCorrectChildrenType(header, "Adw.Header")) {
+    if (isCorrectChildrenType(header, "Mie.Header")) {
       return cloneElement<any, any>(header as any, overrideProps)
     } else {
       return header

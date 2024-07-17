@@ -77,4 +77,4 @@ export const ListItem = forwardRef(function ListItem(
   return <Item {...itemProps} />
 })
 
-ListItem.displayName = "Adw.List.Item"
+ListItem.displayName = "Mie.List.Item"

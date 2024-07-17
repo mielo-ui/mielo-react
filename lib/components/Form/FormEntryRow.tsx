@@ -10,4 +10,4 @@ export function FormEntryRow(props: FormEntryRowProps) {
   )
 }
 
-FormEntryRow.displayName = "Adw.Form.Entry.Row"
+FormEntryRow.displayName = "Mie.Form.Entry.Row"

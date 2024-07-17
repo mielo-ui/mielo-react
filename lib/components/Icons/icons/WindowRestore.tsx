@@ -15,4 +15,4 @@ export const WindowRestore = (props: React.SVGProps<SVGSVGElement>) => (
   </svg>
 )
 
-WindowRestore.displayName = "Adw.Icon.WindowRestore"
+WindowRestore.displayName = "Mie.Icon.WindowRestore"

@@ -11,16 +11,16 @@ export interface SplitViewProps {
 
 function SplitView({ children, theme }: SplitViewProps) {
   return (
-    <div data-theme={theme || "light"} className="adw split-view">
+    <div data-theme={theme || "light"} className="mie split-view">
       {filterChildrenByType(children, [
-        "Adw.SplitView.Sidebar",
-        "Adw.SplitView.Content",
+        "Mie.SplitView.Sidebar",
+        "Mie.SplitView.Content",
       ])}
     </div>
   )
 }
 
-SplitView.displayName = "Adw.SplitView"
+SplitView.displayName = "Mie.SplitView"
 
 export default Object.assign(SplitView, {
   Content: SplitViewContent,

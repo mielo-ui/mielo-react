@@ -27,7 +27,7 @@ export function Scrollbar({
 }: ScrollbarProps) {
   return (
     <CustomScroll
-      className={clsx("adw scrollable-view", className)}
+      className={clsx("mie scrollable-view", className)}
       {...scrollbarProps}
     >
       {children}
@@ -35,4 +35,4 @@ export function Scrollbar({
   )
 }
 
-Scrollbar.displayName = "Adw.Scrollbar"
+Scrollbar.displayName = "Mie.Scrollbar"

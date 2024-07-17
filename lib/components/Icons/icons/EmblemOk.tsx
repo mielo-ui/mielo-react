@@ -15,4 +15,4 @@ export const EmblemOk = (props: React.SVGProps<SVGSVGElement>) => (
   </svg>
 )
 
-EmblemOk.displayName = "Adw.Icon.EmblemOk"
+EmblemOk.displayName = "Mie.Icon.EmblemOk"

@@ -16,7 +16,7 @@ export function TextParagraph({
   return (
     <p
       className={clsx(
-        "adw text paragraph",
+        "mie text paragraph",
         {
           center,
           accent,
@@ -29,4 +29,4 @@ export function TextParagraph({
   )
 }
 
-TextParagraph.displayName = "Adw.Text.Paragraph"
+TextParagraph.displayName = "Mie.Text.Paragraph"

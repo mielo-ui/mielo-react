@@ -15,4 +15,4 @@ export const FocusWindows = (props: React.SVGProps<SVGSVGElement>) => (
   </svg>
 )
 
-FocusWindows.displayName = "Adw.Icon.FocusWindows"
+FocusWindows.displayName = "Mie.Icon.FocusWindows"

@@ -41,7 +41,7 @@ export function Tabs({ tabs, selected, onChange }: TabsProps) {
   )
 
   return (
-    <div className="adw tabs">
+    <div className="mie tabs">
       {tabs.map((tab, idx) => (
         <Tab
           onClick={onChangeTab(idx)}
@@ -55,4 +55,4 @@ export function Tabs({ tabs, selected, onChange }: TabsProps) {
   )
 }
 
-Tabs.displayName = "Adw.Tabs"
+Tabs.displayName = "Mie.Tabs"

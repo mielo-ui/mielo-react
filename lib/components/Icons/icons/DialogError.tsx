@@ -15,4 +15,4 @@ export const DialogError = (props: React.SVGProps<SVGSVGElement>) => (
   </svg>
 )
 
-DialogError.displayName = "Adw.Icon.DialogError"
+DialogError.displayName = "Mie.Icon.DialogError"

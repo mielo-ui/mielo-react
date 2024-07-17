@@ -34,7 +34,7 @@ function Message({
   const accentClassName = accent === true ? "accent" : accent
 
   const className = clsx(
-    "adw message",
+    "mie message",
     accentClassName,
     size,
     {
@@ -58,7 +58,7 @@ function Message({
   )
 }
 
-Message.displayName = "Adw.Message"
+Message.displayName = "Mie.Message"
 
 export default Object.assign(Message, {
   Content: MessageContent,

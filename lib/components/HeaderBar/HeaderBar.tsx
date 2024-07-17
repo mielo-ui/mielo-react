@@ -28,7 +28,7 @@ export function HeaderBar({
   const accentClassName = accent && (accent === true ? "accent" : accent)
 
   const className = clsx(
-    "adw headerbar",
+    "mie headerbar",
     { transparent, bordered },
     accentClassName,
     attachedClassName,
@@ -45,4 +45,4 @@ export function HeaderBar({
   )
 }
 
-HeaderBar.displayName = "Adw.HeaderBar"
+HeaderBar.displayName = "Mie.HeaderBar"

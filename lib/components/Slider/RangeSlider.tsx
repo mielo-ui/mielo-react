@@ -23,7 +23,7 @@ export function RangeSlider({
   value: _value,
   ...props
 }: RangeSliderProps) {
-  const className = clsx("adw slider range", _className)
+  const className = clsx("mie slider range", _className)
 
   const onChange = useCallback(([ min, max ]: number[]) => {
     _onChange?.({ min, max })
@@ -45,4 +45,4 @@ export function RangeSlider({
   )
 }
 
-RangeSlider.displayName = "Adw.Slider.Range"
+RangeSlider.displayName = "Mie.Slider.Range"

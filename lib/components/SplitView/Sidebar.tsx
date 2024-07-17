@@ -23,4 +23,4 @@ export function SplitViewSidebar({
   )
 }
 
-SplitViewSidebar.displayName = "Adw.SplitView.Sidebar"
+SplitViewSidebar.displayName = "Mie.SplitView.Sidebar"

@@ -2,4 +2,4 @@ export interface NotificationProps {}
 
 export function Notification(props: NotificationProps) {}
 
-Notification.displayName = "Adw.Notification"
+Notification.displayName = "Mie.Notification"

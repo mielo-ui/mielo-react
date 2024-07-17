@@ -15,7 +15,7 @@ export default defineConfig({
     lib: {
       entry: resolve(__dirname, "lib/main.ts"),
       formats: ["es"],
-      name: "adwaita-ui",
+      name: "mielo-react",
       fileName: "main",
     },
     rollupOptions: {

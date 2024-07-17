@@ -27,7 +27,7 @@ export function Header({
   const attachedClassName = attached && `attached attached-${attached}`
 
   const className = clsx(
-    "adw header",
+    "mie header",
     size && `size ${size}`,
     { center, inverted, flattened },
     attachedClassName,
@@ -46,4 +46,4 @@ export function Header({
   )
 }
 
-Header.displayName = "Adw.Header"
+Header.displayName = "Mie.Header"

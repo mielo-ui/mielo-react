@@ -18,4 +18,4 @@ export const DialogInformation = (props: React.SVGProps<SVGSVGElement>) => (
   </svg>
 )
 
-DialogInformation.displayName = "Adw.Icon.DialogInformation"
+DialogInformation.displayName = "Mie.Icon.DialogInformation"

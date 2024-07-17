@@ -52,10 +52,10 @@ export function Modal({ children, theme, ...props }: ModalProps) {
         classNames="modal"
       >
         {/*
-          If change className with multiple names like "adw modal"
+          If change className with multiple names like "mie modal"
           CssTransition failed to change animation-state
         */}
-        <div className="adw modal" data-theme={theme || "light"}>
+        <div className="mie modal" data-theme={theme || "light"}>
           <div className="window" onClick={onClickWindow}>
             {children}
           </div>

@@ -15,4 +15,4 @@ export const DialogPassword = (props: React.SVGProps<SVGSVGElement>) => (
   </svg>
 )
 
-DialogPassword.displayName = "Adw.Icon.DialogPassword"
+DialogPassword.displayName = "Mie.Icon.DialogPassword"

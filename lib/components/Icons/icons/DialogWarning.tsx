@@ -15,4 +15,4 @@ export const DialogWarning = (props: React.SVGProps<SVGSVGElement>) => (
   </svg>
 )
 
-DialogWarning.displayName = "Adw.Icon.DialogWarning"
+DialogWarning.displayName = "Mie.Icon.DialogWarning"

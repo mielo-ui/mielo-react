@@ -6,10 +6,10 @@ export interface ListProps {
 }
 
 function List({ children }: ListProps) {
-  return <div className="adw list">{children}</div>
+  return <div className="mie list">{children}</div>
 }
 
-List.displayName = "Adw.List"
+List.displayName = "Mie.List"
 
 export default Object.assign(List, {
   Item: ListItem,

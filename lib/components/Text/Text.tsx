@@ -14,7 +14,7 @@ function Text({ accent, center, children }: TextProps) {
   return (
     <div
       className={clsx(
-        "adw text",
+        "mie text",
         {
           center,
           accent,
@@ -27,7 +27,7 @@ function Text({ accent, center, children }: TextProps) {
   )
 }
 
-Text.displayName = "Adw.Text"
+Text.displayName = "Mie.Text"
 
 export default Object.assign(Text, {
   Paragraph: TextParagraph,

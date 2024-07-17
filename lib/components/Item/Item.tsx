@@ -64,7 +64,7 @@ export const Item = forwardRef(function Item(
   )
 
   const className = clsx(
-    "adw item",
+    "mie item",
     accent,
     size,
     { vertical, center },
@@ -107,4 +107,4 @@ export const Item = forwardRef(function Item(
   return createElement(link ? "a" : "div", itemProps, body)
 })
 
-Item.displayName = "Adw.Item"
+Item.displayName = "Mie.Item"

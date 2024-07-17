@@ -31,7 +31,7 @@ export function Radio({
 }: RadioProps) {
   const radioId = `radio_${name}`
 
-  const className = clsx("adw radio", accent, size, { disabled }, _className)
+  const className = clsx("mie radio", accent, size, { disabled }, _className)
 
   return (
     <div className={className}>
@@ -57,4 +57,4 @@ export function Radio({
   )
 }
 
-Radio.displayName = "Adw.Radio"
+Radio.displayName = "Mie.Radio"

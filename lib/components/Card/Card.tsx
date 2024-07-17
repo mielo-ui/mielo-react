@@ -5,7 +5,7 @@ export interface CardProps {
 }
 
 export function Card({ children }: CardProps) {
-  return <div className="adw alert">{children}</div>
+  return <div className="mie alert">{children}</div>
 }
 
-Card.displayName = "Adw.Card"
+Card.displayName = "Mie.Card"

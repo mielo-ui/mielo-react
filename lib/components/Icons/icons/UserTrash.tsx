@@ -16,4 +16,4 @@ export const UserTrash = (props: React.SVGProps<SVGSVGElement>) => (
   </svg>
 )
 
-UserTrash.displayName = "Adw.Icon.UserTrash"
+UserTrash.displayName = "Mie.Icon.UserTrash"

@@ -84,7 +84,7 @@ export function Checkbox({
   }
 
   const className = clsx(
-    "adw",
+    "mie",
     toggle ? "toggle" : "checkbox",
     size,
     accent,
@@ -134,4 +134,4 @@ export function Checkbox({
   )
 }
 
-Checkbox.displayName = "Adw.Checkbox"
+Checkbox.displayName = "Mie.Checkbox"

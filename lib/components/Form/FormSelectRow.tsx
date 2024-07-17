@@ -10,4 +10,4 @@ export function FormSelectRow(props: FormSelectRowProps) {
   )
 }
 
-FormSelectRow.displayName = "Adw.Form.Select.Row"
+FormSelectRow.displayName = "Mie.Form.Select.Row"

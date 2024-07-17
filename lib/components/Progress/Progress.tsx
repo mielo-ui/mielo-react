@@ -15,13 +15,13 @@ function Progress({ multiple, children, accent, size }: ProgressProps) {
   const accentClassName = accent && (accent === true ? "accent" : accent)
 
   return (
-    <div className={clsx("adw progress", accentClassName, size, { multiple })}>
+    <div className={clsx("mie progress", accentClassName, size, { multiple })}>
       {children}
     </div>
   )
 }
 
-Progress.displayName = "Adw.Progress"
+Progress.displayName = "Mie.Progress"
 
 export default Object.assign(Progress, {
   Bar: ProgressBar,

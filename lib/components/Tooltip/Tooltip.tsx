@@ -20,7 +20,7 @@ export function Tooltip({ className, children, anchor, id }: TooltipProps) {
     <>
       {cloneElement(anchor, { id })}
       <ReactTooltip
-        className={clsx("adw tooltip", className)}
+        className={clsx("mie tooltip", className)}
         anchorSelect={`#${id}`}
       >
         <div className="content">{children}</div>

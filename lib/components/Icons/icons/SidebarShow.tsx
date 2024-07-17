@@ -16,4 +16,4 @@ export const SidebarShow = (props: React.SVGProps<SVGSVGElement>) => (
   </svg>
 )
 
-SidebarShow.displayName = "Adw.Icon.SidebarShow"
+SidebarShow.displayName = "Mie.Icon.SidebarShow"

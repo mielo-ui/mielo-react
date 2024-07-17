@@ -7,4 +7,4 @@ export function DialogAction(props: DialogActionProps) {
   return <Button {...props} transparent tertiary center />
 }
 
-DialogAction.displayName = "Adw.Dialog.Action"  
+DialogAction.displayName = "Mie.Dialog.Action"  

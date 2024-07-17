@@ -58,7 +58,7 @@ export function Button({
     typeof accent === "boolean" && accent ? "accent" : accent
 
   const className = clsx(
-    "adw button",
+    "mie button",
     {
       labeled: icon && iconLabeled,
       content: icon && label,
@@ -97,4 +97,4 @@ export function Button({
   )
 }
 
-Button.displayName = "Adw.Button"
+Button.displayName = "Mie.Button"

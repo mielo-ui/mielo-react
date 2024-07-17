@@ -20,4 +20,4 @@ export function SplitViewContent({
   )
 }
 
-SplitViewContent.displayName = "Adw.SplitView.Content"
+SplitViewContent.displayName = "Mie.SplitView.Content"

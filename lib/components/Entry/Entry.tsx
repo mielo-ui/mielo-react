@@ -75,7 +75,7 @@ export function Entry({
   )
 
   return (
-    <div id={id} className={clsx("adw entry", accent, size, { disabled })}>
+    <div id={id} className={clsx("mie entry", accent, size, { disabled })}>
       <input
         className={clsx({ filled: value && value.length > 0 })}
         onChange={onChange}
@@ -93,4 +93,4 @@ export function Entry({
   )
 }
 
-Entry.displayName = "Adw.Entry"
+Entry.displayName = "Mie.Entry"

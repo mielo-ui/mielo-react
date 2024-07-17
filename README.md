@@ -50,3 +50,15 @@ Internet Explorer is not supported.
 
 ## Documentation
 Browse the [online documentation here.](#todo)
+
+# Development
+For build library from source:
+
+``` sh
+git clone https://github.com/friktor/mielo-react
+cd mielo-react
+
+npm install # or "yarn"
+npm run fmt # format & linting components
+npm build # build module library with .d.ts
+```

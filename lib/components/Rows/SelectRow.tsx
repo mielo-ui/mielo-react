@@ -10,4 +10,4 @@ export function SelectRow(props: SelectRowProps) {
   )
 }
 
-SelectRow.displayName = "Adw.Select.Row"
+SelectRow.displayName = "Mie.Select.Row"

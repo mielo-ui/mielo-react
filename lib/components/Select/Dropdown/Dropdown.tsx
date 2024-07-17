@@ -120,7 +120,7 @@ export const Dropdown = forwardRef<DropdownHandles, DropdownProps>(
 
     const containerProps = Object.assign(
       {
-        className: clsx("adw dropdown", className?.container, {
+        className: clsx("mie dropdown", className?.container, {
           opened: isOpen || opened,
         }),
 
@@ -172,4 +172,4 @@ export const Dropdown = forwardRef<DropdownHandles, DropdownProps>(
   },
 )
 
-Dropdown.displayName = "Adw.Dropdown"
+Dropdown.displayName = "Mie.Dropdown"

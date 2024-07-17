@@ -31,12 +31,12 @@ function Dialog({
   const attachedClassName = attached && `attached attached-${attached}`
   const accentClassName = accent && accent === true ? "accent" : accent
 
-  const className = clsx("adw dialog", size, accentClassName, attachedClassName)
+  const className = clsx("mie dialog", size, accentClassName, attachedClassName)
 
   const content = (
     <div className={className}>
       <div className="content">{children}</div>
-      {actions && <div className="adw buttons relaxed actions">{actions}</div>}
+      {actions && <div className="mie buttons relaxed actions">{actions}</div>}
     </div>
   )
 
@@ -49,7 +49,7 @@ function Dialog({
   )
 }
 
-Dialog.displayName = "Adw.Dialog"
+Dialog.displayName = "Mie.Dialog"
 
 export default Object.assign(Dialog, {
   Action: DialogAction,

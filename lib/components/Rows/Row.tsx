@@ -10,4 +10,4 @@ export function Row({ className, ...props }: RowProps) {
   return <Item className={clsx("row property", className)} {...props} />
 }
 
-Row.displayName = "Adw.Row"
+Row.displayName = "Mie.Row"

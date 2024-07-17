@@ -63,7 +63,7 @@ export function View({
   }
 
   const className = clsx(
-    "adw view",
+    "mie view",
     _className,
     accentClassName,
     shadowClassName,

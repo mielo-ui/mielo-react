@@ -15,4 +15,4 @@ export const WeatherClearNight = (props: React.SVGProps<SVGSVGElement>) => (
   </svg>
 )
 
-WeatherClearNight.displayName = "Adw.Icon.WeatherClearNight"
+WeatherClearNight.displayName = "Mie.Icon.WeatherClearNight"

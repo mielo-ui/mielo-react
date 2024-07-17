@@ -46,7 +46,7 @@ export function Icon({
   const accentClassName = accent === true ? "accent" : accent
 
   const className = clsx(
-    "adw icon",
+    "mie icon",
     _className,
     size,
     accentClassName,
@@ -58,4 +58,4 @@ export function Icon({
   return <div className={className}>{icon}</div>
 }
 
-Icon.displayName = "Adw.Icon"
+Icon.displayName = "Mie.Icon"

@@ -39,7 +39,7 @@ export function FormToggleRow({
             {subtitle && <div className="subtitle">{subtitle}</div>}
           </div>
 
-          <div className="adw toggle">
+          <div className="mie toggle">
             <input
               onChange={onChange}
               checked={value}
@@ -55,4 +55,4 @@ export function FormToggleRow({
   )
 }
 
-FormToggleRow.displayName = "Adw.Form.Toggle.Row"
+FormToggleRow.displayName = "Mie.Form.Toggle.Row"

@@ -12,4 +12,4 @@ export const WindowMinimize = (props: React.SVGProps<SVGSVGElement>) => (
   </svg>
 )
 
-WindowMinimize.displayName = "Adw.Icon.WindowMinimize"
+WindowMinimize.displayName = "Mie.Icon.WindowMinimize"
