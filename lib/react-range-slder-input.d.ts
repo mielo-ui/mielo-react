@@ -10,12 +10,12 @@ declare module "react-range-slider-input" {
     defaultValue?: number[]
     value?: number[]
 
-    onInput?: (value: number[]) => void,
-    
-    onThumbDragStart?: () => void,
-    onRangeDragStart?: () => void,
-    onRangeDragEnd?: () => void,
-    onThumbDragEnd?: () => void,
+    onInput?: (value: number[]) => void
+
+    onThumbDragStart?: () => void
+    onRangeDragStart?: () => void
+    onRangeDragEnd?: () => void
+    onThumbDragEnd?: () => void
 
     rangeSlideDisabled?: boolean
     thumbsDisabled?: boolean[]

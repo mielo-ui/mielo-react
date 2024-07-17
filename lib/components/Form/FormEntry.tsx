@@ -36,9 +36,7 @@ export function FormEntry({ control, rules, name, ...props }: FormEntryProps) {
           })
         }
 
-        return (
-          <Entry {...entryProps} />
-        )
+        return <Entry {...entryProps} />
       }}
     />
   )

@@ -4,15 +4,18 @@ import { ProgressBar } from "./Bar"
 import clsx from "clsx"
 
 export interface ProgressProps {
+  accent?: boolean | "warning" | "error" | "success"
+  size?: "small" | "large"
   multiple?: boolean
-  size?: "small" | "big"
 
   children?: ReactNode
 }
 
-function Progress({ multiple, children, size }: ProgressProps) {
+function Progress({ multiple, children, accent, size }: ProgressProps) {
+  const accentClassName = accent && (accent === true ? "accent" : accent)
+
   return (
-    <div className={clsx("adw progress", size, { multiple })}>
+    <div className={clsx("adw progress", accentClassName, size, { multiple })}>
       {children}
     </div>
   )

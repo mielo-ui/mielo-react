@@ -1,21 +1,37 @@
 {
-  "name": "adwaita-ui",
+  "name": "mielo-react",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
   "main": "dist/main.js",
   "types": "dist/main.d.ts",
+  "bugs": {
+    "url": "https://github.com/friktor/mielo-react/issues"
+  },
+  "keywords": [
+    "gnome",
+    "adwaita",
+    "web",
+    "mielo.ui",
+    "react",
+    "css",
+    "sass",
+    "scss",
+    "flexbox",
+    "grid",
+    "responsive",
+    "framework"
+  ],
   "files": [
+    "README.md",
+    "LICENSE",
     "dist"
   ],
   "scripts": {
-    "dev": "vite",
-    "build:styles": "sass --load-path=node_modules --quiet-deps  --silence-deprecation=css-function-mixin,new-global ./lib/styles/main.scss ./dist/adwaita.css",
-    "build": "tsc --p ./tsconfig.build.json && vite build && npm run build:styles",
-    "preview": "vite preview",
-    "style:fix": "prettier --config .prettierrc '{src,lib}/**/*.{ts,tsx,scss,css}' --write",
-    "lint:fix": "eslint '*/**/*.{ts,tsx}' --quiet --fix && stylelint 'lib/**/*.scss'",
-    "fix:all": "npm run style:fix && npm run lint:fix"
+    "build": "tsc --p ./tsconfig.build.json && vite build",
+    "style": "prettier --config .prettierrc '{src,lib}/**/*.{ts,tsx,scss,css}' --write",
+    "lint": "eslint '*/**/*.{ts,tsx}' --quiet --fix",
+    "fmt": "npm run style && npm run lint"
   },
   "dependencies": {
     "clsx": "^2.1.1",
@@ -24,13 +40,11 @@
     "lodash.pairs": "^3.0.1",
     "lodash.pick": "^4.4.0",
     "lodash.topairs": "^4.3.0",
-    "prop-types": "^15.8.1",
     "react-custom-scroll": "^7.0.0",
     "react-hook-form": "^7.51.4",
     "react-range-slider-input": "^3.0.7",
     "react-tooltip": "^5.26.4",
-    "react-transition-group": "^4.4.5",
-    "reseter.css": "^2.0.0"
+    "react-transition-group": "^4.4.5"
   },
   "peerDependencies": {
     "react": "^18.2.0",
@@ -44,7 +58,6 @@
     "@types/lodash.topairs": "^4.3.9",
     "@types/react": "^18.2.66",
     "@types/react-dom": "^18.2.22",
-    "@types/react-syntax-highlighter": "^15.5.13",
     "@types/react-transition-group": "^4.4.10",
     "@typescript-eslint/eslint-plugin": "^7.2.0",
     "@typescript-eslint/parser": "^7.2.0",
@@ -53,19 +66,12 @@
     "eslint": "^8.57.0",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.6",
-    "postcss-scss": "^4.0.9",
     "prettier": "^3.2.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-syntax-highlighter": "^15.5.0",
-    "sass": "^1.77.0",
-    "sassdash": "^0.9.0",
-    "stylelint": "^16.5.0",
-    "stylelint-scss": "^6.3.0",
+    "terser": "^5.31.3",
     "typescript": "^5.2.2",
     "vite": "^5.2.0",
-    "vite-plugin-dts": "^3.9.1",
-    "vite-plugin-static-copy": "^1.0.4",
-    "wouter": "^3.1.3"
+    "vite-plugin-dts": "^3.9.1"
   }
 }

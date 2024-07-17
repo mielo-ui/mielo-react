@@ -7,12 +7,7 @@ export interface RowProps extends ItemProps {
 }
 
 export function Row({ className, ...props }: RowProps) {
-  return (
-    <Item
-      className={clsx("row property", className)}
-      {...props}
-    />
-  )
+  return <Item className={clsx("row property", className)} {...props} />
 }
 
 Row.displayName = "Adw.Row"

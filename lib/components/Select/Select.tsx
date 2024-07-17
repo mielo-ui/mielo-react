@@ -69,9 +69,7 @@ export function Select({
         ...props,
       }
 
-      return (
-        <SelectButton {...buttonProps} />
-      )
+      return <SelectButton {...buttonProps} />
     },
     menu: (props: DropdownContentProps) => {
       const menuProps = {
@@ -80,9 +78,7 @@ export function Select({
         ...props,
       }
 
-      return (
-        <BasicMenu {...menuProps} />
-      )
+      return <BasicMenu {...menuProps} />
     },
 
     className: {

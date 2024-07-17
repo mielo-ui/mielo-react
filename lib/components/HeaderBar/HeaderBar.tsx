@@ -4,8 +4,9 @@ import clsx from "clsx"
 import { HeaderProp, InnerHeader } from "./InnerHeader"
 
 export interface HeaderBarProps {
+  accent?: boolean | "warning" | "error" | "success"
   transparent?: boolean
-  borderless?: boolean
+  bordered?: boolean
 
   header?: HeaderProp
   left?: ReactNode
@@ -16,17 +17,20 @@ export interface HeaderBarProps {
 
 export function HeaderBar({
   transparent,
-  borderless,
+  bordered,
   attached,
+  accent,
   header,
   left,
   right,
 }: HeaderBarProps) {
   const attachedClassName = attached && `attached attached-${attached}`
+  const accentClassName = accent && (accent === true ? "accent" : accent)
 
   const className = clsx(
     "adw headerbar",
-    { transparent, borderless },
+    { transparent, bordered },
+    accentClassName,
     attachedClassName,
   )
 

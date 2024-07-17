@@ -3,10 +3,11 @@ import clsx from "clsx"
 
 export interface ProgressBarProps {
   indeterminate?: "pulsating" | "filling" | "sliding" | "swinging"
-  accent?: "red" | "purple" | "green" | "blue" | "yellow",
+  accent?: boolean | "warning" | "error" | "success"
 
   progressVisible?: boolean
-  progress: number
+  progress?: number
+  transparent?: boolean
 
   children?: ReactNode
 }
@@ -14,23 +15,29 @@ export interface ProgressBarProps {
 export function ProgressBar({
   progressVisible,
   indeterminate,
+  transparent,
   children,
   progress,
   accent,
 }: ProgressBarProps) {
+  const accentClassName = accent && (accent === true ? "accent" : accent)
+  const indeterminateClassName =
+    indeterminate && `indeterminate ${indeterminate}`
+
   return (
     <div
-      style={{ width: `${progress}%` }}
+      style={progress ? { width: `${progress}%` } : {}}
       className={clsx(
-        "bar",
-        indeterminate && `indeterminate ${indeterminate}`,
-        accent && `accent ${accent}`,
+        "adw progress-bar",
+        indeterminateClassName,
+        accentClassName,
+        { transparent },
       )}
     >
       {children ? (
         children
       ) : (
-        <div className={clsx("progress", { visible: progressVisible })}>
+        <div className={clsx("label", { visible: progressVisible })}>
           {progress}%
         </div>
       )}

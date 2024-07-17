@@ -46,7 +46,11 @@ export { Message, MessageContent } from "./components/Message"
 export type { CardProps } from "./components/Card"
 export { Card } from "./components/Card"
 
-export type { DialogProps, ConfirmProps, ConfirmMethods } from "./components/Dialog"
+export type {
+  DialogProps,
+  ConfirmProps,
+  ConfirmMethods,
+} from "./components/Dialog"
 export { Dialog, Confirm } from "./components/Dialog"
 
 export type { ProgressProps, ProgressBarProps } from "./components/Progress"
@@ -63,6 +67,12 @@ export { Portal } from "./components/Modal"
 
 export type { ParagraphProps, TextProps } from "./components/Text"
 export { Paragraph, Text } from "./components/Text"
+
+export type { ClampProps } from "./components/Clamp"
+export { Clamp } from "./components/Clamp"
+
+export type { ViewProps } from "./components/View"
+export { View } from "./components/View"
 
 export type {
   FormSelectProps,
@@ -82,17 +92,13 @@ export type {
   SplitViewProps,
   SplitViewSidebarProps,
   SplitViewContentProps,
-  ClampProps,
-  ViewProps,
-} from "./components/Container"
+} from "./components/SplitView"
 
 export {
   SplitView,
   SplitViewSidebar,
   SplitViewContent,
-  Clamp,
-  View,
-} from "./components/Container"
+} from "./components/SplitView"
 
 export type {
   RowsProps,

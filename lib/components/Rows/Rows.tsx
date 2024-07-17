@@ -10,11 +10,7 @@ export interface RowsProps {
 }
 
 function Rows({ children }: RowsProps) {
-  return (
-    <div className="adw rows">
-      {children}
-    </div>
-  )
+  return <div className="adw rows">{children}</div>
 }
 
 Rows.displayName = "Adw.Rows"

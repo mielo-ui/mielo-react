@@ -63,7 +63,13 @@ export const Item = forwardRef(function Item(
     [disableSidePropagation],
   )
 
-  const className = clsx("adw item", accent, size, { vertical, center }, _className)
+  const className = clsx(
+    "adw item",
+    accent,
+    size,
+    { vertical, center },
+    _className,
+  )
 
   const body = (
     <>

@@ -17,7 +17,7 @@ export interface SelectButtonProps extends DropdownContentProps {
   selected?: OptionValue
   label?: string
   name?: string
-  
+
   size?: "small" | "large"
 
   accent?: "error" | "warning" | "success"

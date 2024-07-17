@@ -8,7 +8,7 @@ export interface HeaderProps {
   inverted?: boolean
   flattened?: boolean
   center?: boolean
-  
+
   size?: "tiny" | "small" | "small" | "large" | "big" | "huge" | "massive"
   attached?: "headerbar" | "list" | "dialog"
 }

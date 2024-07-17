@@ -51,9 +51,11 @@ function Message({
     onClose,
   }
 
-  return <div className={className}>
-    {children ? children : <MessageContent {...contentProps} />}
-  </div>
+  return (
+    <div className={className}>
+      {children ? children : <MessageContent {...contentProps} />}
+    </div>
+  )
 }
 
 Message.displayName = "Adw.Message"

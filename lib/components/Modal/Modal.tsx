@@ -13,7 +13,7 @@ import { Portal } from "./Portal"
 export interface ModalProps {
   onRequestClose?: () => void
   isOpen?: boolean
-  
+
   theme?: "light" | "dark"
   children?: ReactNode
 }
