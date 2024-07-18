@@ -1,10 +1,9 @@
 {
   "name": "mielo-react",
-  "private": true,
   "version": "1.0.0",
-  "type": "module",
-  "main": "dist/main.js",
-  "types": "dist/main.d.ts",
+  "main": "dist/cjs/index.js",
+  "types": "dist/types.d.ts",
+  "module": "dist/esm/index.js",
   "bugs": {
     "url": "https://github.com/friktor/mielo-react/issues"
   },
@@ -28,9 +27,10 @@
     "dist"
   ],
   "scripts": {
-    "build": "tsc --p ./tsconfig.build.json && vite build",
     "style": "prettier --config .prettierrc '{src,lib}/**/*.{ts,tsx,scss,css}' --write",
     "lint": "eslint '*/**/*.{ts,tsx}' --quiet --fix",
+    "clean": "rimraf dist",
+    "build": "npm run clean && rollup -c --bundleConfigAsCjs",
     "fmt": "npm run style && npm run lint"
   },
   "dependencies": {
@@ -40,38 +40,41 @@
     "lodash.pairs": "^3.0.1",
     "lodash.pick": "^4.4.0",
     "lodash.topairs": "^4.3.0",
-    "react-custom-scroll": "^7.0.0",
-    "react-hook-form": "^7.51.4",
-    "react-range-slider-input": "^3.0.7",
-    "react-tooltip": "^5.26.4",
-    "react-transition-group": "^4.4.5"
+    "react-transition-group": "^4.4.5",
+    "react-tooltip": "^5.26.4"
   },
   "peerDependencies": {
     "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-toastify": "^10.0.5"
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
+    "@babel/preset-env": "^7.24.8",
+    "@babel/preset-react": "^7.24.7",
+    "@babel/preset-typescript": "^7.24.7",
+    "@rollup/plugin-commonjs": "^26.0.1",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-terser": "^0.4.4",
+    "@rollup/plugin-typescript": "^11.1.6",
     "@types/lodash.isequal": "^4.5.8",
     "@types/lodash.omit": "^4.5.9",
     "@types/lodash.pick": "^4.4.9",
     "@types/lodash.topairs": "^4.3.9",
     "@types/react": "^18.2.66",
     "@types/react-dom": "^18.2.22",
+    "@types/react-tooltip": "^4.2.4",
     "@types/react-transition-group": "^4.4.10",
     "@typescript-eslint/eslint-plugin": "^7.2.0",
     "@typescript-eslint/parser": "^7.2.0",
-    "@vitejs/plugin-react": "^4.2.1",
     "copyfiles": "^2.4.1",
     "eslint": "^8.57.0",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.6",
     "prettier": "^3.2.5",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "terser": "^5.31.3",
-    "typescript": "^5.2.2",
-    "vite": "^5.2.0",
-    "vite-plugin-dts": "^3.9.1"
+    "rollup": "^4.18.1",
+    "rollup-plugin-dts": "^6.1.1",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-postcss": "^4.0.2",
+    "tslib": "^2.6.3",
+    "typescript": "^5.2.2"
   }
 }
