@@ -1,44 +1,42 @@
 import { ReactNode } from "react"
+import pick from "lodash.pick"
 import clsx from "clsx"
 
-export interface ViewProps {
+import {
+  viewFlexboxClass,
+  viewIndentClass,
+  ViewIndentProps,
+  ViewFlexProps,
+} from "./common"
+
+export type ViewAccent = boolean | "warning" | "error" | "success"
+export type ViewRounded = boolean | "extra"
+export type ViewShadow = "outer" | "inner"
+
+export interface ViewProps extends ViewFlexProps, ViewIndentProps {
   // Appearance
-  accent?: boolean | "warning" | "error" | "success"
-  shadow?: "outer" | "inner"
-  rounded?: boolean | "extra"
+  rounded?: ViewRounded
+  accent?: ViewAccent
+  shadow?: ViewShadow
 
   className?: string
-  style?: any 
+  style?: any
 
   // Background style
   sidebar?: boolean
   window?: boolean
   content?: boolean
   osd?: boolean
-  scrollable?: boolean
 
   // Content
+  scrollable?: boolean
   children?: ReactNode
-
-  // Layout
-  padding?: boolean
-
-  // Layout Flex
-  flex?: boolean
-  flex1?: boolean
-
-  column?: boolean
-  row?: boolean
-
-  justifyContent?: "start" | "end" | "stretch" | "center"
-  alignItems?: "start" | "end" | "stretch" | "center"
 }
 
-export function View({
+function View({
   className: _className,
   scrollable,
   children,
-  padding,
   accent,
   sidebar,
   window,
@@ -47,25 +45,30 @@ export function View({
   content,
   style,
   osd,
-  ...flexProps
+  ...props
 }: ViewProps) {
+  // prettier-ignore
+  const indentProps = pick(props, [
+    "p", "ph", "pv", "pt", "pr", "pb", "pl",
+    "m", "mh", "mv", "mt", "mr", "mb", "ml",
+  ])
+
+  const flexProps = pick(props, [
+    "justifyContent",
+    "alignItems",
+    "column",
+    "flex1",
+    "flex",
+    "row",
+  ])
+
   const roundedCLassName =
     rounded && (rounded === true ? "rounded" : `rounded-${rounded}`)
 
   const accentClassName = accent === true ? "accent" : accent
   const shadowClassName = shadow && `shadow-${shadow}`
-
-  const flexClassName = []
-
-  if (flexProps?.flex) {
-    const { justifyContent, alignItems, flex1, flex, column, row } = flexProps
-    flex === true && flexClassName.push("flex")
-    flex1 && flexClassName.push("flex-1")
-
-    justifyContent && flexClassName.push(`justify-content-${justifyContent}`)
-    alignItems && flexClassName.push(`align-items-${alignItems}`)
-    flexClassName.push({ column, row })
-  }
+  const indentClassName = viewIndentClass(indentProps)
+  const flexClassName = viewFlexboxClass(flexProps)
 
   const className = clsx(
     "mie view",
@@ -73,10 +76,10 @@ export function View({
     accentClassName,
     shadowClassName,
     roundedCLassName,
+    ...indentClassName,
     ...flexClassName,
     {
       scrollable,
-      padding,
       sidebar,
       window,
       content,
@@ -84,5 +87,16 @@ export function View({
     },
   )
 
-  return <div style={style} className={className}>{children}</div>
+  return (
+    <div style={style} className={className}>
+      {children}
+    </div>
+  )
 }
+
+View.displayName = "Mie.View"
+
+export default Object.assign(View, {
+  viewFlexboxClass,
+  viewIndentClass,
+})

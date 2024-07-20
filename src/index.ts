@@ -68,6 +68,9 @@ export { Clamp } from "./components/Clamp"
 export type { ViewProps } from "./components/View"
 export { View } from "./components/View"
 
+export type { DividerProps } from "./components/Divider"
+export { Divider } from "./components/Divider"
+
 export type {
   SplitViewProps,
   SplitViewSidebarProps,

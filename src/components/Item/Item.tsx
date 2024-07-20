@@ -1,3 +1,4 @@
+import pick from "lodash.pick"
 import clsx from "clsx"
 
 import {
@@ -9,13 +10,25 @@ import {
   ReactNode,
 } from "react"
 
-export interface ItemProps {
+import { View, ViewIndentProps } from "../View"
+
+type OnClick = (
+  event: MouseEvent<HTMLAnchorElement | HTMLDivElement | HTMLLIElement>,
+) => void
+
+export interface ItemProps extends ViewIndentProps {
+  onClick?: OnClick
+
   description?: ReactNode
   content?: ReactNode
   title?: ReactNode
+  link?: string
 
   icon?: ReactNode
   side?: ReactNode
+  
+  activatable?: boolean,
+  active?: boolean
 
   inverted?: boolean
   vertical?: boolean
@@ -27,23 +40,21 @@ export interface ItemProps {
   disableSidePropagation?: boolean
   className?: string
 
-  link?: string
-
-  onClick?: (event: MouseEvent<HTMLDivElement | HTMLAnchorElement>) => void
-
-  [prop: string]: any
+  tabIndex?: number
 }
 
 export const Item = forwardRef(function Item(
   {
+    disableSidePropagation = true,
     className: _className,
-    disableSidePropagation,
     description,
+    activatable,
     inverted,
     vertical,
     onClick,
     content,
     accent,
+    active,
     center,
     title,
     size,
@@ -54,6 +65,14 @@ export const Item = forwardRef(function Item(
   }: ItemProps,
   ref: ForwardedRef<any>,
 ) {
+  // prettier-ignore
+  const indentProps = pick(props, [
+    "p", "ph", "pv", "pt", "pr", "pb", "pl",
+    "m", "mh", "mv", "mt", "mr", "mb", "ml",
+  ])
+
+  const indentClassName = View.viewIndentClass(indentProps)
+
   const onClickSide = useCallback(
     (event: MouseEvent<HTMLElement>) => {
       if (disableSidePropagation) {
@@ -67,7 +86,8 @@ export const Item = forwardRef(function Item(
     "mie item",
     accent,
     size,
-    { vertical, center },
+    { vertical, center, activatable, active },
+    ...indentClassName,
     _className,
   )
 
