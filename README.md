@@ -1,5 +1,14 @@
-# Mielo UI React
-React components & wrappers around [mielo.css](https://github.com/friktor/mielo) framework.
+<p align="center">
+  <img src="https://raw.githubusercontent.com/mielo-ui/mielo.css/main/logo.png" />
+</p>
+
+<h1 align="center">
+  Mielo React
+</h1>
+
+<p align="center">
+  React components & wrappers around mielo.css framework.
+</p>
 
 
 ## Quick install

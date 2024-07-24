@@ -2,8 +2,8 @@ import { ReactNode, useCallback, useEffect, useRef } from "react"
 import isEqual from "lodash.isequal"
 import clsx from "clsx"
 
+import { List, ListItem } from "../../containers/List"
 import { DropdownContentProps } from "./Dropdown"
-import { List, ListItem } from "../List"
 
 export interface OptionValue {
   label: string

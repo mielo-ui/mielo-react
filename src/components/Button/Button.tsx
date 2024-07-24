@@ -1,14 +1,7 @@
-import { ButtonHTMLAttributes, ReactNode } from "react"
+import { ButtonHTMLAttributes, forwardRef, ReactNode } from "react"
 import clsx from "clsx"
 
-export type ButtonColor =
-  | "orange"
-  | "purple"
-  | "pink"
-  | "deeppurple"
-  | "indigo"
-  | "lightgreen"
-  | "deeporange"
+import { ButtonGroup } from "./ButtonGroup"
 
 export type ButtonAccent = boolean | "success" | "warning" | "error"
 export type ButtonSize = "small" | "medium" | "large"
@@ -23,7 +16,7 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   size?: ButtonSize
 
   iconLabeled?: boolean
-  icon?: JSX.Element
+  icon?: ReactNode
 
   transparent?: boolean
   circular?: boolean
@@ -36,45 +29,42 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   hover?: boolean
 }
 
-export function Button({
-  transparent,
-  iconLabeled,
-  children,
-  tertiary,
-  circular,
-  pilled,
-  filled,
-  center,
-  accent,
-  active,
-  hover,
-  label,
-  icon,
-  size,
-  className: _className,
-  ...props
-}: ButtonProps) {
-  const accentClassName =
-    typeof accent === "boolean" && accent ? "accent" : accent
-
-  const className = clsx(
-    "mie button",
-    {
-      labeled: icon && iconLabeled,
-      content: icon && label,
-      transparent,
-      tertiary,
-      circular,
-      center,
-      pilled,
-      filled,
-      active,
-      hover,
-    },
-    accentClassName,
+const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button(
+  {
+    className: _className,
+    transparent,
+    iconLabeled,
+    children,
+    tertiary,
+    circular,
+    pilled,
+    filled,
+    center,
+    accent,
+    active,
+    hover,
+    label,
+    icon,
     size,
-    _className,
-  )
+
+    ...rest
+  },
+  ref,
+) {
+  const accentClassName = accent && (accent === true ? "accent" : accent)
+
+  const className = clsx("mie button", accentClassName, size, _className, {
+    labeled: icon && iconLabeled,
+    content: icon && label,
+    transparent,
+    tertiary,
+    circular,
+    center,
+    pilled,
+    filled,
+    active,
+    hover,
+  })
 
   let content
   if (children) {
@@ -91,10 +81,14 @@ export function Button({
   }
 
   return (
-    <button className={className} {...props}>
+    <button ref={ref} className={className} {...rest}>
       {content}
     </button>
   )
-}
+})
 
 Button.displayName = "Mie.Button"
+
+export default Object.assign(Button, {
+  Group: ButtonGroup,
+})

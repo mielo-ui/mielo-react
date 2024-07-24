@@ -35,13 +35,14 @@
   },
   "dependencies": {
     "clsx": "^2.1.1",
+    "lodash.defaults": "^4.2.0",
     "lodash.isequal": "^4.5.0",
     "lodash.omit": "^4.5.0",
     "lodash.pairs": "^3.0.1",
     "lodash.pick": "^4.4.0",
     "lodash.topairs": "^4.3.0",
-    "react-transition-group": "^4.4.5",
-    "react-tooltip": "^5.26.4"
+    "react-tooltip": "^5.26.4",
+    "react-transition-group": "^4.4.5"
   },
   "peerDependencies": {
     "react": "^18.2.0",
@@ -55,6 +56,7 @@
     "@rollup/plugin-node-resolve": "^15.2.3",
     "@rollup/plugin-terser": "^0.4.4",
     "@rollup/plugin-typescript": "^11.1.6",
+    "@types/lodash.defaults": "^4.2.9",
     "@types/lodash.isequal": "^4.5.8",
     "@types/lodash.omit": "^4.5.9",
     "@types/lodash.pick": "^4.4.9",

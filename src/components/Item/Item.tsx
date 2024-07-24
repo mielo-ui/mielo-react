@@ -1,22 +1,21 @@
-import pick from "lodash.pick"
 import clsx from "clsx"
 
 import {
   createElement,
-  ForwardedRef,
   useCallback,
   forwardRef,
   MouseEvent,
   ReactNode,
 } from "react"
 
-import { View, ViewIndentProps } from "../View"
-
 type OnClick = (
   event: MouseEvent<HTMLAnchorElement | HTMLDivElement | HTMLLIElement>,
 ) => void
 
-export interface ItemProps extends ViewIndentProps {
+export type ItemAccent = boolean | "error" | "warning" | "success"
+export type ItemSize = "small" | "large"
+
+export interface ItemProps {
   onClick?: OnClick
 
   description?: ReactNode
@@ -26,16 +25,16 @@ export interface ItemProps extends ViewIndentProps {
 
   icon?: ReactNode
   side?: ReactNode
-  
-  activatable?: boolean,
+
+  activatable?: boolean
   active?: boolean
 
   inverted?: boolean
   vertical?: boolean
   center?: boolean
 
-  accent?: "error" | "warning" | "success"
-  size?: "small" | "large"
+  accent?: ItemAccent
+  size?: ItemSize
 
   disableSidePropagation?: boolean
   className?: string
@@ -43,7 +42,7 @@ export interface ItemProps extends ViewIndentProps {
   tabIndex?: number
 }
 
-export const Item = forwardRef(function Item(
+export const Item = forwardRef<any, ItemProps>(function Item(
   {
     disableSidePropagation = true,
     className: _className,
@@ -53,25 +52,19 @@ export const Item = forwardRef(function Item(
     vertical,
     onClick,
     content,
-    accent,
     active,
+    accent,
     center,
     title,
     size,
     link,
     icon,
     side,
-    ...props
-  }: ItemProps,
-  ref: ForwardedRef<any>,
+    ...rest
+  },
+  ref,
 ) {
-  // prettier-ignore
-  const indentProps = pick(props, [
-    "p", "ph", "pv", "pt", "pr", "pb", "pl",
-    "m", "mh", "mv", "mt", "mr", "mb", "ml",
-  ])
-
-  const indentClassName = View.viewIndentClass(indentProps)
+  const accentClassName = accent && (accent === true ? "accent" : accent)
 
   const onClickSide = useCallback(
     (event: MouseEvent<HTMLElement>) => {
@@ -84,10 +77,9 @@ export const Item = forwardRef(function Item(
 
   const className = clsx(
     "mie item",
-    accent,
+    accentClassName,
     size,
     { vertical, center, activatable, active },
-    ...indentClassName,
     _className,
   )
 
@@ -116,7 +108,7 @@ export const Item = forwardRef(function Item(
 
   const itemProps: any = Object.assign(
     {
-      ...props,
+      ...rest,
       className,
       onClick,
       ref,

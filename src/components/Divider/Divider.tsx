@@ -6,10 +6,7 @@ export interface DividerProps {
   className?: string
 }
 
-export function Divider({
-  className,
-  children,
-}: DividerProps) {
+export function Divider({ className, children }: DividerProps) {
   return (
     <div className={clsx("mie divider", { content: !!children }, className)}>
       {children}

@@ -1,11 +1,12 @@
-import { useState, useEffect, useRef, useCallback, ReactNode } from "react"
-import { Tooltip } from "react-tooltip"
-import isEqual from "lodash.isequal"
+import { useRef, ReactNode } from "react"
 import clsx from "clsx"
 
 import { Dropdown, DropdownContentProps, DropdownHandles } from "./Dropdown"
 import { BasicMenu, OptionValue } from "./BasicMenu"
-import { SelectButton } from "./LikeButton"
+import { SelectButton } from "./SelectButton"
+
+export type SelectAccent = boolean | "error" | "warning" | "success"
+export type SelectSize = "small" | "large"
 
 export interface SelectProps {
   options: OptionValue[]
@@ -13,12 +14,14 @@ export interface SelectProps {
   label?: string
   name: string
 
-  size?: "small" | "large"
+  className?: string
   disabled?: boolean
   compact?: boolean
   opened?: boolean
 
-  accent?: "error" | "warning" | "success"
+  accent?: SelectAccent
+  size?: SelectSize
+
   messageIcon?: JSX.Element
   message?: ReactNode
 
@@ -28,6 +31,7 @@ export interface SelectProps {
 }
 
 export function Select({
+  className: _className,
   options,
   label,
   value,
@@ -37,9 +41,9 @@ export function Select({
   compact,
   opened,
 
-  accent,
   messageIcon,
   message,
+  accent,
 
   onChange,
   onClose,
@@ -47,6 +51,8 @@ export function Select({
   size,
 }: SelectProps) {
   const dropdownRef = useRef<DropdownHandles>(null)
+
+  const accentClassName = accent && (accent === true ? "accent" : accent)
 
   const dropdownProps = {
     ref: dropdownRef,
@@ -82,11 +88,17 @@ export function Select({
     },
 
     className: {
-      container: clsx("select", size, accent, {
-        selected: !!value?.value,
-        disabled,
-        compact,
-      }),
+      container: clsx(
+        "select",
+        accentClassName,
+        size,
+        {
+          selected: !!value?.value,
+          disabled,
+          compact,
+        },
+        _className,
+      ),
     },
 
     props: {

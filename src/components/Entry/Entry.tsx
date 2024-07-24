@@ -9,29 +9,36 @@ import { DialogWarning } from "../Icons/icons/DialogWarning"
 import { DialogError } from "../Icons/icons/DialogError"
 import { EmblemOk } from "../Icons/icons/EmblemOk"
 
+export type EntryAccent = boolean | "warning" | "error" | "success"
+export type EntryType = "text" | "password" | "number"
+export type EntrySize = "small" | "large"
+
 export interface EntryProps {
   onChange?: (value: string) => void
-  type?: "text" | "password" | "number"
-  size?: "small" | "large"
-  placeholder: string
+  placeholder?: string
+  className?: string
   disabled?: boolean
   value?: string
   name: string
   id?: string
 
-  accent?: "error" | "warning" | "success"
+  accent?: EntryAccent
+  type?: EntryType
+  size?: EntrySize
+
   messageIcon?: JSX.Element
   message?: ReactNode
 }
 
 const MessageIcons = {
-  question: DialogQuestion,
+  accent: DialogQuestion,
   warning: DialogWarning,
   error: DialogError,
   success: EmblemOk,
 }
 
 export function Entry({
+  className: _className,
   onChange: _onChange,
   placeholder,
   messageIcon,
@@ -44,6 +51,8 @@ export function Entry({
   name,
   id,
 }: EntryProps) {
+  const accentClassName = accent && (accent === true ? "accent" : accent)
+
   const inputId = `entry_${name}`
   const tooltipId = `${inputId}_tooltip`
 
@@ -55,8 +64,14 @@ export function Entry({
     [_onChange],
   )
 
+  const _messageIcon = accent
+    ? typeof accent === "boolean"
+      ? MessageIcons.accent
+      : MessageIcons[accent]
+    : false
+
   const messageIndicatorIcon = !messageIcon
-    ? createElement(MessageIcons[accent ? accent : "question"])
+    ? _messageIcon && createElement(_messageIcon)
     : messageIcon
 
   const tooltip = !!message && (
@@ -74,8 +89,16 @@ export function Entry({
     </>
   )
 
+  const className = clsx(
+    "mie entry",
+    accentClassName,
+    size,
+    { disabled },
+    _className,
+  )
+
   return (
-    <div id={id} className={clsx("mie entry", accent, size, { disabled })}>
+    <div id={id} className={className}>
       <input
         className={clsx({ filled: value && value.length > 0 })}
         onChange={onChange}

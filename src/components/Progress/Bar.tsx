@@ -31,7 +31,9 @@ export function ProgressBar({
         "mie progress-bar",
         indeterminateClassName,
         accentClassName,
-        { transparent },
+        {
+          transparent,
+        },
       )}
     >
       {children ? (

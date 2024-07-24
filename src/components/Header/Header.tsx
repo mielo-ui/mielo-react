@@ -1,36 +1,44 @@
 import clsx from "clsx"
 
-export interface HeaderProps {
-  title?: string
-  subtitle?: string
-  icon?: JSX.Element
-  iconSided?: boolean
-  inverted?: boolean
-  flattened?: boolean
-  center?: boolean
+export type HeaderSize =
+  | "tiny"
+  | "small"
+  | "small"
+  | "large"
+  | "big"
+  | "huge"
+  | "massive"
 
-  size?: "tiny" | "small" | "small" | "large" | "big" | "huge" | "massive"
-  attached?: "headerbar" | "list" | "dialog"
+export interface HeaderProps {
+  icon?: JSX.Element
+  subtitle?: string
+  title?: string
+
+  className?: string
+  size?: HeaderSize
+
+  iconSided?: boolean
+  flattened?: boolean
+  inverted?: boolean
+  center?: boolean
 }
 
 export function Header({
+  className: _className,
   inverted,
   iconSided,
   subtitle,
   flattened,
-  attached,
   center,
   title,
   size,
   icon,
 }: HeaderProps) {
-  const attachedClassName = attached && `attached attached-${attached}`
-
   const className = clsx(
     "mie header",
-    size && `size ${size}`,
+    size,
     { center, inverted, flattened },
-    attachedClassName,
+    _className,
   )
 
   return (
