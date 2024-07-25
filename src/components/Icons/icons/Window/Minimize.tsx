@@ -1,6 +1,6 @@
 import * as React from "react"
 
-export const WindowMinimize = (props: React.SVGProps<SVGSVGElement>) => (
+export const Minimize = (props: React.SVGProps<SVGSVGElement>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 16 16"
@@ -12,4 +12,4 @@ export const WindowMinimize = (props: React.SVGProps<SVGSVGElement>) => (
   </svg>
 )
 
-WindowMinimize.displayName = "Mie.Icon.WindowMinimize"
+Minimize.displayName = "Mie.Icon.Window.Minimize"

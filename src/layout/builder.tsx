@@ -6,11 +6,13 @@ import {
   ElementLayoutProps,
   LayoutFlexProps,
   LayoutIndentProps,
+  LayoutSpaceBetweenProps,
   LayoutRoundedProps,
   LayoutShadowProps,
 } from "./ElementLayout"
 
 type ComponentLayoutProps = LayoutRoundedProps &
+  LayoutSpaceBetweenProps &
   LayoutIndentProps &
   LayoutShadowProps &
   LayoutFlexProps

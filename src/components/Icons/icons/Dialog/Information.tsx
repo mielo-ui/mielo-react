@@ -1,6 +1,6 @@
 import * as React from "react"
 
-export const DialogInformation = (props: React.SVGProps<SVGSVGElement>) => (
+export const Information = (props: React.SVGProps<SVGSVGElement>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 16 16"
@@ -18,4 +18,4 @@ export const DialogInformation = (props: React.SVGProps<SVGSVGElement>) => (
   </svg>
 )
 
-DialogInformation.displayName = "Mie.Icon.DialogInformation"
+Information.displayName = "Mie.Icon.Dialog.Information"

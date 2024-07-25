@@ -1,4 +1,5 @@
 export type {
+  LayoutSpaceBetweenProps,
   LayoutClassNameProps,
   LayoutRoundedProps,
   LayoutIndentMargin,

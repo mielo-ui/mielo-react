@@ -1,3 +1,4 @@
+import { LayoutSpaceBetweenProps, spaceBetween } from "./spaceBetween"
 import { LayoutRoundedProps, rounded } from "./rounded"
 import { LayoutShadowProps, shadow } from "./shadow"
 import { LayoutFlexProps, flex } from "./flex"
@@ -13,9 +14,11 @@ interface LayoutClassNameProps
   extends LayoutRoundedProps,
     LayoutIndentProps,
     LayoutShadowProps,
-    LayoutFlexProps {}
+    LayoutFlexProps,
+    LayoutSpaceBetweenProps {}
 
 export type {
+  LayoutSpaceBetweenProps,
   LayoutClassNameProps,
   LayoutRoundedProps,
   LayoutIndentMargin,
@@ -25,4 +28,4 @@ export type {
   LayoutFlexProps,
 }
 
-export { rounded, indent, shadow, flex }
+export { rounded, indent, shadow, flex, spaceBetween }

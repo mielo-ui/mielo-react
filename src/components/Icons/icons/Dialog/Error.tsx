@@ -1,6 +1,6 @@
 import * as React from "react"
 
-export const WindowRestore = (props: React.SVGProps<SVGSVGElement>) => (
+export const Error = (props: React.SVGProps<SVGSVGElement>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 16 16"
@@ -10,9 +10,9 @@ export const WindowRestore = (props: React.SVGProps<SVGSVGElement>) => (
   >
     <path
       fill="currentColor"
-      d="M4.988 4.992v6.012H11V4.992zm2 2H9v2.012H6.988zm0 0"
+      d="M8 1C4.129 1 1 4.129 1 8s3.129 7 7 7 7-3.129 7-7-3.129-7-7-7zM4 7h8v2H4zm0 0"
     />
   </svg>
 )
 
-WindowRestore.displayName = "Mie.Icon.WindowRestore"
+Error.displayName = "Mie.Icon.Dialog.Error"

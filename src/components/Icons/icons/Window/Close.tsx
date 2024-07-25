@@ -1,6 +1,6 @@
 import * as React from "react"
 
-export const WindowClose = (props: React.SVGProps<SVGSVGElement>) => (
+export const Close = (props: React.SVGProps<SVGSVGElement>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 16 16"
@@ -15,4 +15,4 @@ export const WindowClose = (props: React.SVGProps<SVGSVGElement>) => (
   </svg>
 )
 
-WindowClose.displayName = "Mie.Icon.WindowClose"
+Close.displayName = "Mie.Icon.Window.Close"

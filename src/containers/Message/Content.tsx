@@ -1,6 +1,6 @@
 import { ReactNode } from "react"
 
-import { WindowClose } from "../../components/Icons/icons/WindowClose"
+import * as Icons from "../../components/Icons/icons"
 import { Button } from "../../components/Button"
 import { Icon } from "../../components/Icons"
 
@@ -28,7 +28,7 @@ export function MessageContent({
       </div>
 
       <Button
-        icon={<Icon icon={<WindowClose />} />}
+        icon={<Icon icon={<Icons.Window.Close />} />}
         onClick={onClose}
         className="close"
         size="small"

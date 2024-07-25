@@ -2,12 +2,8 @@ import { ReactNode, createElement, useCallback } from "react"
 import { Tooltip } from "react-tooltip"
 import clsx from "clsx"
 
+import * as Icons from "../Icons/icons"
 import { Button } from "../Button"
-
-import { DialogQuestion } from "../Icons/icons/DialogQuestion"
-import { DialogWarning } from "../Icons/icons/DialogWarning"
-import { DialogError } from "../Icons/icons/DialogError"
-import { EmblemOk } from "../Icons/icons/EmblemOk"
 
 export type EntryAccent = boolean | "warning" | "error" | "success"
 export type EntryType = "text" | "password" | "number"
@@ -31,10 +27,10 @@ export interface EntryProps {
 }
 
 const MessageIcons = {
-  accent: DialogQuestion,
-  warning: DialogWarning,
-  error: DialogError,
-  success: EmblemOk,
+  accent: Icons.Dialog.Question,
+  warning: Icons.Dialog.Warning,
+  error: Icons.Dialog.Error,
+  success: Icons.EmblemOk,
 }
 
 export function Entry({

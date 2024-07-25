@@ -1,6 +1,6 @@
 import * as React from "react"
 
-export const WindowMaximize = (props: React.SVGProps<SVGSVGElement>) => (
+export const Maximize = (props: React.SVGProps<SVGSVGElement>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 16 16"
@@ -15,4 +15,4 @@ export const WindowMaximize = (props: React.SVGProps<SVGSVGElement>) => (
   </svg>
 )
 
-WindowMaximize.displayName = "Mie.Icon.WindowMaximize"
+Maximize.displayName = "Mie.Icon.Window.Maximize"

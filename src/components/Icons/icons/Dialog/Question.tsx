@@ -1,6 +1,6 @@
 import * as React from "react"
 
-export const DialogQuestion = (props: React.SVGProps<SVGSVGElement>) => (
+export const Question = (props: React.SVGProps<SVGSVGElement>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 16 16"
@@ -15,4 +15,4 @@ export const DialogQuestion = (props: React.SVGProps<SVGSVGElement>) => (
   </svg>
 )
 
-DialogQuestion.displayName = "Mie.Icon.DialogQuestion"
+Question.displayName = "Mie.Icon.Dialog.Question"

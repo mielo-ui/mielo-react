@@ -4,11 +4,13 @@ export type LayoutProps<T> = Partial<
   cn.LayoutIndentProps &
     cn.LayoutRoundedProps &
     cn.LayoutShadowProps &
-    cn.LayoutFlexProps
+    cn.LayoutFlexProps &
+    cn.LayoutSpaceBetweenProps
 > &
   T
 
 export interface LayoutExtractedProps {
+  spaceBetween: cn.LayoutSpaceBetweenProps
   padding: cn.LayoutIndentPadding
   margin: cn.LayoutIndentMargin
 
@@ -20,28 +22,27 @@ export interface LayoutExtractedProps {
 
 // prettier-ignore
 export function extractProps<T>({
-  justifyContent,
-  alignItems,
-  column,
-  flex1,
-  flex,
-  row,
+  fjc,
+  fai,
+  fc,
+  fw,
+  f1,
+  fr,
+  f,
   
   p, ph, pv, pt, pr, pb, pl,
   m, mh, mv, mt, mr, mb, ml,
   r, rt, rb, rl, rr,
+
+  sbh,
+  sbv,
 
   shadow,
 
   ...props
 }: LayoutProps<T>): LayoutExtractedProps & { props: T } {
   const flexProps = {
-    justifyContent,
-    alignItems,
-    column,
-    flex1,
-    flex,
-    row,
+    fjc, fai, fc, f1, fr, f, fw
   }
 
   const paddingProps = {
@@ -60,7 +61,13 @@ export function extractProps<T>({
     shadow,
   }
 
+  const spaceBetweenProps = {
+    sbh,
+    sbv,
+  }
+
   return {
+    spaceBetween: spaceBetweenProps,
     rounded: roundedProps,
     flex: flexProps,
     

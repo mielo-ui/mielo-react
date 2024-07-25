@@ -6,12 +6,8 @@ import { DropdownContentProps } from "./Dropdown"
 import { OptionValue } from "./BasicMenu"
 import { ChevronDown } from "./Icons"
 
+import * as Icons from "../Icons/icons"
 import { Button } from "../Button"
-
-import { DialogQuestion } from "../Icons/icons/DialogQuestion"
-import { DialogWarning } from "../Icons/icons/DialogWarning"
-import { DialogError } from "../Icons/icons/DialogError"
-import { EmblemOk } from "../Icons/icons/EmblemOk"
 
 export type SelectButtonAccent = boolean | "warning" | "error" | "success"
 export type SelectButtonSize = "small" | "large"
@@ -29,10 +25,10 @@ export interface SelectButtonProps extends DropdownContentProps {
 }
 
 const MessageIcons = {
-  accent: DialogQuestion,
-  warning: DialogWarning,
-  error: DialogError,
-  success: EmblemOk,
+  accent: Icons.Dialog.Question,
+  warning: Icons.Dialog.Warning,
+  error: Icons.Dialog.Error,
+  success: Icons.EmblemOk,
 }
 
 export function SelectButton({

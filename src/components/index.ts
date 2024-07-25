@@ -33,3 +33,6 @@ export { Divider } from "./Divider"
 
 export type { IconProps } from "./Icons"
 export { Icon } from "./Icons"
+
+export type { LabelProps } from "./Label"
+export { Label } from "./Label"

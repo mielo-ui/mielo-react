@@ -28,11 +28,17 @@ export { Scrollbar } from "./Scrollbar"
 export type { ClampProps } from "./Clamp"
 export { Clamp } from "./Clamp"
 
+export type { WindowProps } from "./Window"
+export { Window } from "./Window"
+
 export type { ViewProps } from "./View"
 export { View } from "./View"
 
 export type { RowsProps, RowProps, EntryRowProps, SelectRowProps } from "./Rows"
 export { Rows, Row, SelectRow, EntryRow } from "./Rows"
+
+export type { CollapsibleProps } from "./Collapsible"
+export { Collapsible } from "./Collapsible"
 
 export type {
   SplitViewProps,

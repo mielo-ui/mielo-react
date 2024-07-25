@@ -1,3 +1,5 @@
+import * as Layout from "./layout"
+
 export type {
   EntryProps,
   ButtonProps,
@@ -13,6 +15,7 @@ export type {
   ProgressProps,
   ProgressBarProps,
   ParagraphProps,
+  LabelProps,
   TextProps,
   DividerProps,
   IconProps,
@@ -31,6 +34,7 @@ export {
   Progress,
   ProgressBar,
   Paragraph,
+  Label,
   Text,
   Divider,
   Icon,
@@ -60,10 +64,12 @@ export type {
   SplitViewProps,
   SplitViewSidebarProps,
   SplitViewContentProps,
+  CollapsibleProps,
   RowsProps,
   RowProps,
   EntryRowProps,
   SelectRowProps,
+  WindowProps,
 } from "./containers"
 
 export {
@@ -75,6 +81,7 @@ export {
   Alert,
   Message,
   MessageContent,
+  Collapsible,
   Card,
   Tabs,
   RawTabs,
@@ -92,6 +99,7 @@ export {
   SplitView,
   SplitViewSidebar,
   SplitViewContent,
+  Window,
 } from "./containers"
 
 export * as Icons from "./components/Icons/icons"
@@ -100,3 +108,4 @@ import * as components from "./layout/components"
 import * as containers from "./layout/containers"
 
 export const L = Object.assign({}, components, containers)
+export const Meta = { Layout }

@@ -1,33 +1,27 @@
 export interface LayoutFlexProps {
-  justifyContent?: "start" | "end" | "stretch" | "center"
-  alignItems?: "start" | "end" | "stretch" | "center"
+  fjc?: "start" | "end" | "stretch" | "center"
+  fai?: "start" | "end" | "stretch" | "center"
 
-  flex?: boolean
-  flex1?: boolean
+  f?: boolean
+  f1?: boolean
+  fw?: boolean
 
-  column?: boolean
-  row?: boolean
+  fc?: boolean
+  fr?: boolean
 }
 
-export function flex({
-  justifyContent,
-  alignItems,
-  flex1,
-  flex,
-  column,
-  row,
-}: LayoutFlexProps) {
+export function flex({ fjc, fai, f1, f, fc, fr, fw }: LayoutFlexProps) {
   const names: any[] = []
 
-  if (!flex) {
+  if (!f) {
     return names
   }
 
-  names.push("flex", { column, row })
-  flex1 && names.push("flex-1")
+  names.push("f", { fc, fr, fw })
+  f1 && names.push("f1")
 
-  justifyContent && names.push(`justify-content-${justifyContent}`)
-  alignItems && names.push(`align-items-${alignItems}`)
+  fjc && names.push(`fjc-${fjc}`)
+  fai && names.push(`fai-${fai}`)
 
   return names
 }

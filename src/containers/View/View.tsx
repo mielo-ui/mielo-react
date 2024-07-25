@@ -9,6 +9,7 @@ export interface ViewProps {
   style?: any
 
   // Background style
+  activatable?: boolean
   sidebar?: boolean
   window?: boolean
   content?: boolean
@@ -21,6 +22,7 @@ export interface ViewProps {
 
 export function View({
   className: _className,
+  activatable,
   scrollable,
   children,
   sidebar,
@@ -36,6 +38,7 @@ export function View({
     "mie view",
     accentClassName,
     {
+      activatable,
       scrollable,
       sidebar,
       content,

@@ -1,6 +1,6 @@
 import * as React from "react"
 
-export const DialogPassword = (props: React.SVGProps<SVGSVGElement>) => (
+export const Password = (props: React.SVGProps<SVGSVGElement>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 16 16"
@@ -15,4 +15,4 @@ export const DialogPassword = (props: React.SVGProps<SVGSVGElement>) => (
   </svg>
 )
 
-DialogPassword.displayName = "Mie.Icon.DialogPassword"
+Password.displayName = "Mie.Icon.Dialog.Password"
