@@ -1,9 +1,8 @@
 import { ReactNode, useCallback, useEffect, useRef } from "react"
 import isEqual from "lodash.isequal"
-import clsx from "clsx"
 
-import { List, ListItem } from "../../containers/List"
 import { DropdownContentProps } from "./Dropdown"
+import * as L from "../../layout"
 
 export interface OptionValue {
   label: string
@@ -46,13 +45,17 @@ function BasicListItem({ isSelected, onSelect, option }: CustomItemProps) {
   }, [option, onSelect])
 
   return (
-    <ListItem
+    <L.ListItem
       onClick={() => onSelect(option)}
       title={option.label}
       active={isSelected}
       ref={itemRef}
       tabIndex={0}
       activatable
+      ph="large"
+      mh="small"
+      pv
+      r
     />
   )
 }
@@ -86,7 +89,7 @@ export function BasicMenu({
 
   return (
     <div className="basic">
-      <List>{list}</List>
+      <L.List>{list}</L.List>
     </div>
   )
 }
