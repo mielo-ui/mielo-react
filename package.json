@@ -1,11 +1,15 @@
 {
-  "name": "mielo-react",
+  "name": "@mielo-ui/mielo-react",
   "version": "1.0.0",
   "main": "dist/cjs/index.js",
   "types": "dist/types.d.ts",
   "module": "dist/esm/index.js",
+  "repository": {
+    "url": "https://github.com/mielo-ui/mielo-react"
+  },
+  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/friktor/mielo-react/issues"
+    "url": "https://github.com/mielo-ui/mielo-react/issues"
   },
   "keywords": [
     "gnome",
@@ -24,7 +28,8 @@
   "files": [
     "README.md",
     "LICENSE",
-    "dist"
+    "dist",
+    "src"
   ],
   "scripts": {
     "style": "prettier --config .prettierrc '{src,lib}/**/*.{ts,tsx,scss,css}' --write",

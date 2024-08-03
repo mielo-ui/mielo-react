@@ -18,7 +18,7 @@ Mielo is constantly in development! Try it out now:
 ### NPM
 
 ```sh
-npm install mielo mielo-react
+npm install @mielo-ui/mielo @mielo-ui/mielo-react
 ```
 
 **or**
@@ -26,7 +26,7 @@ npm install mielo mielo-react
 ### Yarn
 
 ```sh
-npm install mielo mielo-react
+npm install @mielo-ui/mielo @mielo-ui/mielo-react
 ```
 
 ### Import
@@ -40,7 +40,7 @@ After installation, you can import the CSS file into your project using this sni
 And usage react components like
 
 ``` typescript
-import * as Mie from "mielo-react"
+import * as Mie from "@mielo-ui/mielo-react"
 
 <Mie.Button label="Success" accent="success" />
 ```
@@ -58,13 +58,13 @@ Mielo is compatible with **recent** versions of:
 Internet Explorer is not supported.
 
 ## Documentation
-Browse the [online documentation here.](#todo)
+Browse the [online documentation here.](https://mielo-ui.github.io/)
 
 # Development
 For build library from source:
 
 ``` sh
-git clone https://github.com/friktor/mielo-react
+git clone https://github.com/mielo-ui/mielo-react
 cd mielo-react
 
 npm install # or "yarn"
