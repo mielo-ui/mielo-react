@@ -1,25 +1,28 @@
-import { ReactNode } from "react"
-
-import { ProgressBar } from "./Bar"
+import { forwardRef } from "react"
 import clsx from "clsx"
 
-export interface ProgressProps {
-  accent?: boolean | "warning" | "error" | "success"
-  size?: "small" | "large"
-  multiple?: boolean
+import { ProgressProps } from "./Props"
+import { ProgressBar } from "./Bar"
 
-  children?: ReactNode
-}
-
-function Progress({ multiple, children, accent, size }: ProgressProps) {
+const Progress = forwardRef<HTMLDivElement, ProgressProps>(function Progress(
+  { className: _className, multiple, children, accent, size },
+  ref,
+) {
   const accentClassName = accent && (accent === true ? "accent" : accent)
+  const className = clsx(
+    "mie progress",
+    accentClassName,
+    size,
+    { multiple },
+    _className,
+  )
 
   return (
-    <div className={clsx("mie progress", accentClassName, size, { multiple })}>
+    <div ref={ref} className={className}>
       {children}
     </div>
   )
-}
+})
 
 Progress.displayName = "Mie.Progress"
 

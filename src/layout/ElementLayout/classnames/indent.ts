@@ -30,9 +30,7 @@ export interface LayoutIndentMargin {
   ml?: IndentSize // left
 }
 
-export interface LayoutIndentProps
-  extends LayoutIndentMargin,
-    LayoutIndentPadding {}
+export interface LayoutIndentProps extends LayoutIndentMargin, LayoutIndentPadding {}
 
 export function indent(indentProps: LayoutIndentMargin | LayoutIndentPadding) {
   const names: string[] = []

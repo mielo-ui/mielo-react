@@ -1,10 +1,12 @@
-import { ButtonProps, Button } from "../../components/Button"
+import { forwardRef } from "react"
 
-export interface DialogActionProps
-  extends Pick<ButtonProps, "size" | "label" | "accent" | "icon" | "onClick"> {}
+import { Button } from "../../components/Button"
+import { DialogActionProps } from "./Props"
 
-export function DialogAction(props: DialogActionProps) {
-  return <Button {...props} transparent tertiary center />
-}
+export const DialogAction = forwardRef<HTMLButtonElement, DialogActionProps>(
+  function DialogAction(props, ref) {
+    return <Button ref={ref} {...props} transparent tertiary center />
+  },
+)
 
 DialogAction.displayName = "Mie.Dialog.Action"

@@ -1,2 +1,2 @@
-export type { ClampProps } from "./Clamp"
+export type { ClampProps } from "./Props"
 export { Clamp } from "./Clamp"

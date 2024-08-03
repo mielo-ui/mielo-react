@@ -1,14 +1,6 @@
 import clsx from "clsx"
 
-import { TabsAccent } from "./Raw"
-
-export interface TabBackgroundProps {
-  height: number | string
-  offset: number | string
-  width: number | string
-  accent?: TabsAccent
-  className?: string
-}
+import { TabBackgroundProps } from "./Props"
 
 export function TabBackground({
   className: _className,

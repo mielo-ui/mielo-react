@@ -1,37 +1,27 @@
-import { ChangeEventHandler, ReactNode } from "react"
+import { forwardRef } from "react"
 import clsx from "clsx"
 
-export interface RadioProps {
-  accent?: "warning" | "error" | "success"
-  size?: "large" | "small"
-  className?: string
+import { RadioProps } from "./Props"
 
-  label?: string | ReactNode
-  value?: string
-  children?: string | ReactNode
-
-  disabled?: boolean
-  checked?: boolean
-  name?: string
-
-  onChange?: ChangeEventHandler<HTMLInputElement>
-}
-
-export function Radio({
-  className: _className,
-  children,
-  disabled,
-  onChange,
-  checked,
-  accent,
-  value,
-  label,
-  size,
-  name,
-}: RadioProps) {
+export const Radio = forwardRef<HTMLInputElement, RadioProps>(function Radio(
+  {
+    className: _className,
+    children,
+    disabled,
+    onChange,
+    checked,
+    accent,
+    value,
+    label,
+    size,
+    name,
+  },
+  ref,
+) {
   const radioId = `radio_${name}`
 
-  const className = clsx("mie radio", accent, size, { disabled }, _className)
+  const accentClassName = accent && (accent === true ? "accent" : accent)
+  const className = clsx("mie radio", accentClassName, size, { disabled }, _className)
 
   return (
     <div className={className}>
@@ -41,9 +31,10 @@ export function Radio({
         checked={checked}
         className="input"
         value={value}
-        name={name}
         id={radioId}
+        name={name}
         type="radio"
+        ref={ref}
       />
 
       <label className="label" htmlFor={`#${radioId}`}>
@@ -55,6 +46,6 @@ export function Radio({
       </label>
     </div>
   )
-}
+})
 
 Radio.displayName = "Mie.Radio"

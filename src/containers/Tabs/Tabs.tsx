@@ -10,39 +10,13 @@ import {
   useMemo,
 } from "react"
 
-import { Tab, TabOption, TabProps } from "./Tab"
-import { RawTabs, TabsAccent } from "./Raw"
 import { TabBackground } from "./Active"
+import { RawTabs } from "./Raw"
+import { Tab } from "./Tab"
 
-import {
-  LayoutIndentProps,
-  LayoutRoundedProps,
-  LayoutShadowProps,
-  collectClassnames,
-  extractProps,
-} from "../../layout"
+import { collectClassnames, extractProps } from "../../layout"
 
-export interface TabsProps
-  extends LayoutIndentProps,
-    LayoutRoundedProps,
-    LayoutShadowProps {
-  onChange?: (name: string) => void
-
-  transparent?: boolean
-  animated?: boolean
-
-  className?: string
-  accent?: TabsAccent
-
-  tabs: TabOption[] | Record<string, TabOption>
-  selected: string
-
-  tabProps?: Omit<TabProps, "transparent" | "selected" | "index" | "onClick">
-}
-
-export interface TabsHandles {
-  // @PASS
-}
+import { TabOption, TabsHandles, TabsProps } from "./Props"
 
 const Tabs = forwardRef<TabsHandles, TabsProps>(function Tabs(props, ref) {
   const tabRef = useRef<HTMLDivElement>(null)

@@ -1,54 +1,49 @@
-import { ReactNode } from "react"
+import { forwardRef } from "react"
 import clsx from "clsx"
 
-import { InnerHeaderProp, InnerHeader } from "./InnerHeader"
+import { InnerHeader } from "./InnerHeader"
+import { HeaderBarProps } from "./Props"
 
-export type HeaderBarAccent = boolean | "warning" | "error" | "success"
+export const HeaderBar = forwardRef<HTMLDivElement, HeaderBarProps>(
+  function HeaderBar(
+    {
+      className: _className,
+      transparent,
+      bordered,
+      controls,
+      accent,
+      header,
+      left,
+      right,
+      ...rest
+    },
+    ref,
+  ) {
+    const accentClassName = accent && (accent === true ? "accent" : accent)
 
-export interface HeaderBarProps {
-  accent?: HeaderBarAccent
-  className?: string
+    const className = clsx(
+      "mie headerbar",
+      accentClassName,
+      { transparent, bordered },
+      _className,
+    )
 
-  transparent?: boolean
-  bordered?: boolean
+    return (
+      <div ref={ref} {...rest} className={className}>
+        <div className="left">{left}</div>
 
-  header?: InnerHeaderProp
-  right?: ReactNode
-  left?: ReactNode
+        <div className="center">
+          <InnerHeader header={header} />
+        </div>
 
-  attached?: "splitview"
-}
+        <div className="right">
+          <div className="content">{right}</div>
 
-export function HeaderBar({
-  className: _className,
-  transparent,
-  bordered,
-  attached,
-  accent,
-  header,
-  left,
-  right,
-}: HeaderBarProps) {
-  const attachedClassName = attached && `attached attached-${attached}`
-  const accentClassName = accent && (accent === true ? "accent" : accent)
-
-  const className = clsx(
-    "mie headerbar",
-    accentClassName,
-    _className,
-    { transparent, bordered },
-    attachedClassName,
-  )
-
-  return (
-    <div className={className}>
-      <div className="left">{left}</div>
-      <div className="center">
-        <InnerHeader header={header} />
+          {controls}
+        </div>
       </div>
-      <div className="right">{right}</div>
-    </div>
-  )
-}
+    )
+  },
+)
 
 HeaderBar.displayName = "Mie.HeaderBar"

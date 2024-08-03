@@ -1,23 +1,7 @@
-import { forwardRef, ReactNode } from "react"
+import { forwardRef } from "react"
 import clsx from "clsx"
 
-import { TabsAccent } from "./Raw"
-
-export interface TabOption {
-  accent?: TabsAccent
-  icon?: JSX.Element
-  title: ReactNode
-  name: string
-}
-
-export interface TabProps extends TabOption {
-  onClick?: (event: any) => void
-  className?: string
-
-  transparent?: boolean
-  selected: string
-  index: number
-}
+import { TabProps } from "./Props"
 
 export const Tab = forwardRef<HTMLDivElement, TabProps>(function Tab(
   {

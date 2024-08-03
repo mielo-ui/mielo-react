@@ -11,9 +11,7 @@ export interface LayoutRoundedProps {
 export function rounded(roundProps: LayoutRoundedProps) {
   const names: string[] = []
 
-  for (const [key, size] of Object.entries(
-    roundProps as Record<string, RoundSize>,
-  )) {
+  for (const [key, size] of Object.entries(roundProps as Record<string, RoundSize>)) {
     if (size) {
       const className = size === true ? key : `${key}-${size}`
       names.push(className)

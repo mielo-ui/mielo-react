@@ -1,6 +1,4 @@
-export type { ButtonProps, ButtonAccent, ButtonSize } from "./Button"
-export type { ButtonGroupProps } from "./ButtonGroup"
-export { default as Button } from "./Button"
+export type { ButtonAccent, ButtonSize, ButtonProps, ButtonGroupProps } from "./Props"
 
-export { default as ButtonBase } from "./Button"
+export { default as Button } from "./Button"
 export { ButtonGroup } from "./ButtonGroup"

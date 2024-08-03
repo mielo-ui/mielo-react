@@ -1,30 +1,11 @@
-import { ReactNode, createElement, useCallback } from "react"
+import { createElement, forwardRef, useCallback } from "react"
 import { Tooltip } from "react-tooltip"
 import clsx from "clsx"
 
-import * as Icons from "../Icons/icons"
+import { EntryProps } from "./Props"
+
+import * as Icons from "../Icon/icons"
 import { Button } from "../Button"
-
-export type EntryAccent = boolean | "warning" | "error" | "success"
-export type EntryType = "text" | "password" | "number"
-export type EntrySize = "small" | "large"
-
-export interface EntryProps {
-  onChange?: (value: string) => void
-  placeholder?: string
-  className?: string
-  disabled?: boolean
-  value?: string
-  name: string
-  id?: string
-
-  accent?: EntryAccent
-  type?: EntryType
-  size?: EntrySize
-
-  messageIcon?: JSX.Element
-  message?: ReactNode
-}
 
 const MessageIcons = {
   accent: Icons.Dialog.Question,
@@ -33,20 +14,23 @@ const MessageIcons = {
   success: Icons.EmblemOk,
 }
 
-export function Entry({
-  className: _className,
-  onChange: _onChange,
-  placeholder,
-  messageIcon,
-  disabled,
-  message,
-  accent,
-  value,
-  size,
-  type,
-  name,
-  id,
-}: EntryProps) {
+export const Entry = forwardRef<HTMLInputElement, EntryProps>(function Entry(
+  {
+    className: _className,
+    onChange: _onChange,
+    placeholder,
+    messageIcon,
+    disabled,
+    message,
+    accent,
+    value,
+    size,
+    type,
+    name,
+    id,
+  },
+  ref,
+) {
   const accentClassName = accent && (accent === true ? "accent" : accent)
 
   const inputId = `entry_${name}`
@@ -85,13 +69,7 @@ export function Entry({
     </>
   )
 
-  const className = clsx(
-    "mie entry",
-    accentClassName,
-    size,
-    { disabled },
-    _className,
-  )
+  const className = clsx("mie entry", accentClassName, size, { disabled }, _className)
 
   return (
     <div id={id} className={className}>
@@ -103,6 +81,7 @@ export function Entry({
         id={inputId}
         name={name}
         type={type}
+        ref={ref}
       />
 
       <label htmlFor={inputId}>{placeholder}</label>
@@ -110,6 +89,6 @@ export function Entry({
       {tooltip}
     </div>
   )
-}
+})
 
 Entry.displayName = "Mie.Entry"

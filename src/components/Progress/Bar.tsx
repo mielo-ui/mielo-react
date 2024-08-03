@@ -1,50 +1,52 @@
-import { ReactNode } from "react"
 import clsx from "clsx"
 
-export interface ProgressBarProps {
-  indeterminate?: "pulsating" | "filling" | "sliding" | "swinging"
-  accent?: boolean | "warning" | "error" | "success"
+import { ProgressBarProps } from "./Props"
+import { forwardRef } from "react"
 
-  progressVisible?: boolean
-  progress?: number
-  transparent?: boolean
+export const ProgressBar = forwardRef<HTMLDivElement, ProgressBarProps>(
+  function ProgressBar(
+    {
+      className: _className,
+      progressVisible,
+      indeterminate,
+      transparent,
+      children,
+      progress,
+      accent,
+    },
+    ref,
+  ) {
+    const indeterminateClassName = indeterminate && `indeterminate ${indeterminate}`
+    const accentClassName = accent && (accent === true ? "accent" : accent)
 
-  children?: ReactNode
-}
+    const className = clsx(
+      "mie progress-bar",
+      indeterminateClassName,
+      accentClassName,
+      {
+        transparent,
+      },
+      _className,
+    )
 
-export function ProgressBar({
-  progressVisible,
-  indeterminate,
-  transparent,
-  children,
-  progress,
-  accent,
-}: ProgressBarProps) {
-  const accentClassName = accent && (accent === true ? "accent" : accent)
-  const indeterminateClassName =
-    indeterminate && `indeterminate ${indeterminate}`
+    const barProps = {
+      style: progress ? { width: `${progress}%` } : {},
+      className,
+      ref,
+    }
 
-  return (
-    <div
-      style={progress ? { width: `${progress}%` } : {}}
-      className={clsx(
-        "mie progress-bar",
-        indeterminateClassName,
-        accentClassName,
-        {
-          transparent,
-        },
-      )}
-    >
-      {children ? (
-        children
-      ) : (
-        <div className={clsx("label", { visible: progressVisible })}>
-          {progress}%
-        </div>
-      )}
-    </div>
-  )
-}
+    return (
+      <div {...barProps}>
+        {children ? (
+          children
+        ) : (
+          <div className={clsx("label", { visible: progressVisible })}>
+            {progress}%
+          </div>
+        )}
+      </div>
+    )
+  },
+)
 
 ProgressBar.displayName = "Mie.Progress.Bar"

@@ -1,11 +1,14 @@
+import { forwardRef } from "react"
 import clsx from "clsx"
 
-import { Entry, EntryProps } from "../../components/Entry"
+import { Entry } from "../../components/Entry"
+import { EntryRowProps } from "./Props"
 
-export interface EntryRowProps extends EntryProps {}
-
-export function EntryRow({ className, ...props }: EntryRowProps) {
-  return <Entry className={clsx("row", className)} {...props} />
-}
+export const EntryRow = forwardRef<HTMLInputElement, EntryRowProps>(function EntryRow(
+  { className, ...props },
+  ref,
+) {
+  return <Entry ref={ref} className={clsx("row", className)} {...props} />
+})
 
 EntryRow.displayName = "Mie.Entry.Row"

@@ -1,50 +1,14 @@
-import {
-  useImperativeHandle,
-  ForwardedRef,
-  useCallback,
-  forwardRef,
-  useState,
-} from "react"
+import { useImperativeHandle, useCallback, forwardRef, useState } from "react"
 
 import toPairs from "lodash.topairs"
 import pick from "lodash.pick"
 
-import { Header } from "../../components/Header"
-import Dialog, { DialogProps } from "./Dialog"
-import { DialogAction } from "./Action"
+import { Header } from "../../../components/Header"
+import { DialogAction } from "../Action"
+import Dialog from "../Dialog"
 
-export interface ConfirmAction<N = string> {
-  accent?: boolean | "warning" | "error" | "success"
-  label?: string
-  name: N
-}
-
-export interface ConfirmResult {
-  isCustomAction: boolean
-  isConfirmed: boolean
-  isCanceled: boolean
-  isRejected: boolean
-
-  action: string
-}
-
-export interface ConfirmMethods {
-  confirm(): Promise<ConfirmResult>
-}
-
-export interface ConfirmProps {
-  subtitle?: string
-  title?: string
-
-  accent?: boolean | "warning" | "error" | "success"
-  size?: "small" | "large"
-  theme?: "dark" | "light"
-
-  // Default actions with labels - ok, cancel, reject
-  actions?: Record<string, ConfirmAction>
-  // Disable close modal on click overlay
-  disableOverlayClose?: boolean
-}
+import { ConfirmAction, ConfirmHandles, ConfirmProps, ConfirmResult } from "./Props"
+import { DialogProps } from "../Props"
 
 const CONFIRM_ACTIONS: Record<string, ConfirmAction> = {
   reject: {
@@ -65,16 +29,16 @@ const CONFIRM_ACTIONS: Record<string, ConfirmAction> = {
 
 const DEFAULT_CONFIRM_ACTIONS = pick(CONFIRM_ACTIONS, ["confirm", "cancel"])
 
-export const Confirm = forwardRef(function Confirm(
+export const Confirm = forwardRef<ConfirmHandles, ConfirmProps>(function Confirm(
   {
     actions: _actions = DEFAULT_CONFIRM_ACTIONS,
-    theme = "dark",
     subtitle,
     accent,
     title,
     size,
-  }: ConfirmProps,
-  ref: ForwardedRef<any>,
+    ...rest
+  },
+  ref,
 ) {
   const [promise, setPromise] = useState<any>(null)
 
@@ -139,7 +103,7 @@ export const Confirm = forwardRef(function Confirm(
     attached: "modal",
     actions,
     accent,
-    theme,
+    ...rest,
   }
 
   return (

@@ -1,17 +1,14 @@
-import { forwardRef, ReactNode, useEffect, useRef, useState } from "react"
+import { forwardRef, useEffect, useRef, useState } from "react"
 import clsx from "clsx"
 
-export interface CollapsibleProps {
-  children?: ReactNode
-  className?: string
-  open?: boolean
-}
+import { CollapsibleProps } from "./Props"
 
 export const Collapsible = forwardRef<HTMLDivElement, CollapsibleProps>(
-  function Collapsible({ className: _className, children, open }, rootRef) {
-    const [height, setHeight] = useState<number | undefined>(
-      open ? undefined : 0,
-    )
+  function Collapsible(
+    { className: _className, style: _style, children, open, ...rest },
+    ref,
+  ) {
+    const [height, setHeight] = useState<number | undefined>(open ? undefined : 0)
     const contentRef = useRef<HTMLDivElement>(null)
 
     useEffect(() => {
@@ -34,9 +31,10 @@ export const Collapsible = forwardRef<HTMLDivElement, CollapsibleProps>(
     }, [open])
 
     const className = clsx("mie collapsible", _className)
+    const style = Object.assign({}, { height }, _style || {})
 
     return (
-      <div ref={rootRef} className={className} style={{ height }}>
+      <div ref={ref} className={className} style={style} {...rest}>
         <div ref={contentRef}>{children}</div>
       </div>
     )

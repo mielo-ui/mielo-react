@@ -1,15 +1,7 @@
 import { createPortal } from "react-dom"
+import { PortalProps } from "./Props"
 
-export interface PortalProps {
-  children: React.ReactNode
-  onRequestClose?: () => void
-  isOpen?: boolean
-}
-
-function makePortal(
-  id: string,
-  parent: HTMLElement = document.body,
-): HTMLElement {
+function makePortal(id: string, parent: HTMLElement = document.body): HTMLElement {
   const exists = document.getElementById(id)
   if (exists) {
     return exists

@@ -1,55 +1,39 @@
-import { useRef, ReactNode } from "react"
+import { forwardRef, useRef } from "react"
 import clsx from "clsx"
 
-import { Dropdown, DropdownContentProps, DropdownHandles } from "./Dropdown"
-import { BasicMenu, OptionValue } from "./BasicMenu"
+import {
+  DropdownContentProps,
+  DropdownHandles,
+  Dropdown,
+} from "../../containers/Dropdown"
+
 import { SelectButton } from "./SelectButton"
+import { BasicMenu } from "./BasicMenu"
+import { SelectProps } from "./Props"
 
-export type SelectAccent = boolean | "error" | "warning" | "success"
-export type SelectSize = "small" | "large"
+export const Select = forwardRef<any, SelectProps>(function Select(
+  {
+    className: _className,
+    options,
+    label,
+    value,
+    name,
 
-export interface SelectProps {
-  options: OptionValue[]
-  value?: OptionValue
-  label?: string
-  name: string
+    disabled,
+    compact,
+    opened,
 
-  className?: string
-  disabled?: boolean
-  compact?: boolean
-  opened?: boolean
+    messageIcon,
+    message,
+    accent,
 
-  accent?: SelectAccent
-  size?: SelectSize
-
-  messageIcon?: JSX.Element
-  message?: ReactNode
-
-  onChange: (option: OptionValue) => void
-  onClose?: () => void
-  onOpen?: () => void
-}
-
-export function Select({
-  className: _className,
-  options,
-  label,
-  value,
-  name,
-
-  disabled,
-  compact,
-  opened,
-
-  messageIcon,
-  message,
-  accent,
-
-  onChange,
-  onClose,
-  onOpen,
-  size,
-}: SelectProps) {
+    onChange,
+    onClose,
+    onOpen,
+    size,
+  },
+  ref,
+) {
   const dropdownRef = useRef<DropdownHandles>(null)
 
   const accentClassName = accent && (accent === true ? "accent" : accent)
@@ -115,6 +99,6 @@ export function Select({
   }
 
   return <Dropdown {...dropdownProps} />
-}
+})
 
 Select.displayName = "Mie.Select"

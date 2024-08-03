@@ -1,36 +1,25 @@
-import { ReactNode } from "react"
+import { forwardRef } from "react"
 import clsx from "clsx"
 
 import { MessageContent } from "./Content"
+import { MessageProps } from "./Props"
 
-export interface MessageProps {
-  size?: "tiny" | "small" | "large" | "big" | "huge" | "massive"
-  accent?: boolean | "warning" | "error" | "success"
-  marked?: boolean
-  banner?: boolean
-
-  attached?: "headerbar"
-  children?: ReactNode
-
-  title?: string | ReactNode
-  description?: string | ReactNode
-  icon?: ReactNode
-
-  onClose?: () => void
-}
-
-function Message({
-  accent,
-  marked,
-  banner,
-  attached,
-  onClose,
-  title,
-  description,
-  size,
-  icon,
-  children,
-}: MessageProps) {
+const Message = forwardRef<HTMLDivElement, MessageProps>(function Message(
+  {
+    description,
+    attached,
+    children,
+    onClose,
+    accent,
+    marked,
+    banner,
+    title,
+    size,
+    icon,
+    ...rest
+  },
+  ref,
+) {
   const accentClassName = accent === true ? "accent" : accent
 
   const className = clsx(
@@ -46,17 +35,17 @@ function Message({
 
   const contentProps = {
     description,
+    onClose,
     title,
     icon,
-    onClose,
   }
 
   return (
-    <div className={className}>
+    <div ref={ref} className={className} {...rest}>
       {children ? children : <MessageContent {...contentProps} />}
     </div>
   )
-}
+})
 
 Message.displayName = "Mie.Message"
 

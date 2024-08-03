@@ -1,8 +1,19 @@
-export type { DialogActionProps } from "./Action"
-export { DialogAction } from "./Action"
+export type {
+  DialogActionProps,
+  DialogAccent,
+  DialogSize,
+  DialogProps,
+} from "./Props"
 
-export type { DialogProps } from "./Dialog"
+export type {
+  ConfirmHandles,
+  ConfirmAction,
+  ConfirmAccent,
+  ConfirmResult,
+  ConfirmProps,
+  ConfirmSize,
+} from "./Confirm"
+
 export { default as Dialog } from "./Dialog"
-
-export type { ConfirmProps, ConfirmAction, ConfirmMethods } from "./Confirm"
+export { DialogAction } from "./Action"
 export { Confirm } from "./Confirm"

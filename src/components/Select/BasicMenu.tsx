@@ -1,28 +1,8 @@
 import { ReactNode, useCallback, useEffect, useRef } from "react"
 import isEqual from "lodash.isequal"
 
-import { DropdownContentProps } from "./Dropdown"
 import * as L from "../../layout"
-
-export interface OptionValue {
-  label: string
-  value: any
-}
-
-export interface CustomItemProps {
-  option: OptionValue
-  isSelected: boolean
-
-  onSelect(option: OptionValue): void
-}
-
-export interface BasicMenuProps extends DropdownContentProps {
-  selected?: OptionValue
-  options: OptionValue[]
-
-  customItem?: (props: CustomItemProps) => ReactNode
-  onSelect(option: OptionValue): void
-}
+import { BasicMenuProps, CustomItemProps, OptionValue } from "./Props"
 
 function BasicListItem({ isSelected, onSelect, option }: CustomItemProps) {
   const itemRef = useRef<HTMLLIElement>(null)

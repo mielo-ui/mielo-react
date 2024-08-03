@@ -1,46 +1,7 @@
 import clsx from "clsx"
 
-import {
-  createElement,
-  useCallback,
-  forwardRef,
-  MouseEvent,
-  ReactNode,
-} from "react"
-
-type OnClick = (
-  event: MouseEvent<HTMLAnchorElement | HTMLDivElement | HTMLLIElement>,
-) => void
-
-export type ItemAccent = boolean | "error" | "warning" | "success"
-export type ItemSize = "small" | "large"
-
-export interface ItemProps {
-  onClick?: OnClick
-
-  description?: ReactNode
-  content?: ReactNode
-  title?: ReactNode
-  link?: string
-
-  icon?: ReactNode
-  side?: ReactNode
-
-  activatable?: boolean
-  active?: boolean
-
-  inverted?: boolean
-  vertical?: boolean
-  center?: boolean
-
-  accent?: ItemAccent
-  size?: ItemSize
-
-  disableSidePropagation?: boolean
-  className?: string
-
-  tabIndex?: number
-}
+import { createElement, useCallback, forwardRef, MouseEvent } from "react"
+import { ItemProps } from "./Props"
 
 export const Item = forwardRef<any, ItemProps>(function Item(
   {
@@ -52,6 +13,7 @@ export const Item = forwardRef<any, ItemProps>(function Item(
     vertical,
     onClick,
     content,
+    label,
     active,
     accent,
     center,
@@ -85,6 +47,7 @@ export const Item = forwardRef<any, ItemProps>(function Item(
 
   const body = (
     <>
+      {label && label}
       {icon && <div className="indicator">{icon}</div>}
 
       <div className={clsx("content", { inverted })}>

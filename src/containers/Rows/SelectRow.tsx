@@ -1,11 +1,13 @@
+import { forwardRef } from "react"
 import clsx from "clsx"
 
-import { Select, SelectProps } from "../../components/Select"
+import { Select } from "../../components/Select"
+import { SelectRowProps } from "./Props"
 
-export interface SelectRowProps extends SelectProps {}
-
-export function SelectRow({ className, ...props }: SelectRowProps) {
-  return <Select className={clsx("row", className)} {...props} />
-}
+export const SelectRow = forwardRef<HTMLDivElement, SelectRowProps>(
+  function SelectRow({ className, ...props }, ref) {
+    return <Select ref={ref} className={clsx("row", className)} {...props} />
+  },
+)
 
 SelectRow.displayName = "Mie.Select.Row"

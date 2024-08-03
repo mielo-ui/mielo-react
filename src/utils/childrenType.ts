@@ -1,9 +1,6 @@
 import { ReactNode } from "react"
 
-export function isCorrectChildrenType(
-  element: any,
-  allowed: string[] | string,
-) {
+export function isCorrectChildrenType(element: any, allowed: string[] | string) {
   return typeof element.type === "function" &&
     element.type.displayName &&
     Array.isArray(allowed)

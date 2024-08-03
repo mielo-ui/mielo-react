@@ -1,28 +1,14 @@
+import { MouseEventHandler, useCallback, useEffect } from "react"
 import { CSSTransition } from "react-transition-group"
 
-import {
-  MouseEventHandler,
-  ReactNode,
-  useCallback,
-  useEffect,
-  useRef,
-} from "react"
-
+import { ModalProps } from "./Props"
 import { Portal } from "./Portal"
 
-export interface ModalProps {
-  onRequestClose?: () => void
-  isOpen?: boolean
-
-  theme?: "light" | "dark"
-  children?: ReactNode
-}
-
-export function Modal({ children, theme, ...props }: ModalProps) {
+export function Modal({ children, isOpen, onRequestClose, ...rest }: ModalProps) {
   useEffect(() => {
     const onPressEscape = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
-        props.onRequestClose?.()
+        onRequestClose?.()
       }
     }
 
@@ -31,23 +17,20 @@ export function Modal({ children, theme, ...props }: ModalProps) {
     return () => {
       window.removeEventListener("keydown", onPressEscape)
     }
-  }, [props.onRequestClose])
+  }, [onRequestClose])
 
   // Protect content container from clickOutside exit trigger
-  const onClickWindow: MouseEventHandler<HTMLDivElement> = useCallback(
-    event => {
-      event.stopPropagation()
-      event.preventDefault()
-    },
-    [],
-  )
+  const onClickWindow: MouseEventHandler<HTMLDivElement> = useCallback(event => {
+    event.stopPropagation()
+    event.preventDefault()
+  }, [])
 
   return (
-    <Portal {...props}>
+    <Portal isOpen={isOpen} onRequestClose={onRequestClose}>
       <CSSTransition
         mountOnEnter
         unmountOnExit
-        in={props.isOpen}
+        in={isOpen}
         timeout={{ enter: 300, exit: 300 }}
         classNames="modal"
       >
@@ -55,7 +38,7 @@ export function Modal({ children, theme, ...props }: ModalProps) {
           If change className with multiple names like "mie modal"
           CssTransition failed to change animation-state
         */}
-        <div className="mie modal" data-theme={theme || "light"}>
+        <div className="mie modal" {...rest}>
           <div className="window" onClick={onClickWindow}>
             {children}
           </div>

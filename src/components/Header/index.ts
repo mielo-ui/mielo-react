@@ -1,2 +1,2 @@
-export type { HeaderProps } from "./Header"
+export type { HeaderProps, HeaderSize } from "./Props"
 export { Header } from "./Header"

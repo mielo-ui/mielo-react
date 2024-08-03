@@ -1,33 +1,8 @@
-import { ButtonHTMLAttributes, forwardRef, ReactNode } from "react"
+import { forwardRef } from "react"
 import clsx from "clsx"
 
 import { ButtonGroup } from "./ButtonGroup"
-
-export type ButtonAccent = boolean | "success" | "warning" | "error"
-export type ButtonSize = "small" | "medium" | "large"
-
-export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  id?: string
-
-  children?: ReactNode
-  label?: ReactNode
-
-  accent?: ButtonAccent
-  size?: ButtonSize
-
-  iconLabeled?: boolean
-  icon?: ReactNode
-
-  transparent?: boolean
-  circular?: boolean
-  tertiary?: boolean
-  filled?: boolean
-  center?: boolean
-  pilled?: boolean
-
-  active?: boolean
-  hover?: boolean
-}
+import { ButtonProps } from "./Props"
 
 const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button(
   {

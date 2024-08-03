@@ -1,14 +1,16 @@
+import { forwardRef } from "react"
 import clsx from "clsx"
 
-import { Item, ItemProps } from "../../components/Item"
+import { Item } from "../../components/Item"
+import { RowProps } from "./Props"
 
-export interface RowProps extends ItemProps {
-  className?: string
-}
-
-export function Row({ className: _className, ...rest }: RowProps) {
+export const Row = forwardRef<HTMLDivElement, RowProps>(function Row(
+  { className: _className, ...rest },
+  ref,
+) {
   const className = clsx("row property", _className)
-  return <Item className={clsx("row property", className)} {...rest} />
-}
+
+  return <Item ref={ref} className={clsx("row property", className)} {...rest} />
+})
 
 Row.displayName = "Mie.Row"

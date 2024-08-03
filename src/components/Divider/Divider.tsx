@@ -1,10 +1,6 @@
-import { ReactNode } from "react"
 import clsx from "clsx"
 
-export interface DividerProps {
-  children?: ReactNode
-  className?: string
-}
+import { DividerProps } from "./Props"
 
 export function Divider({ className, children }: DividerProps) {
   return (

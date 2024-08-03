@@ -1,28 +1,11 @@
-import { ReactNode, createElement, useCallback } from "react"
+import { createElement, useCallback } from "react"
 import { Tooltip } from "react-tooltip"
 import clsx from "clsx"
 
-import { DropdownContentProps } from "./Dropdown"
-import { OptionValue } from "./BasicMenu"
+import { SelectButtonProps } from "./Props"
+import * as Icons from "../Icon/icons"
 import { ChevronDown } from "./Icons"
-
-import * as Icons from "../Icons/icons"
 import { Button } from "../Button"
-
-export type SelectButtonAccent = boolean | "warning" | "error" | "success"
-export type SelectButtonSize = "small" | "large"
-
-export interface SelectButtonProps extends DropdownContentProps {
-  selected?: OptionValue
-  label?: string
-  name?: string
-
-  accent?: SelectButtonAccent
-  size?: SelectButtonSize
-
-  messageIcon?: JSX.Element
-  message?: ReactNode
-}
 
 const MessageIcons = {
   accent: Icons.Dialog.Question,

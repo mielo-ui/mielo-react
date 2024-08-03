@@ -1,2 +1,2 @@
-export type { ItemProps } from "./Item"
+export type { ItemAccent, ItemSize, ItemProps } from "./Props"
 export { Item } from "./Item"

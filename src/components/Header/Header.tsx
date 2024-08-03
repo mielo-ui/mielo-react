@@ -1,39 +1,22 @@
+import { forwardRef } from "react"
 import clsx from "clsx"
 
-export type HeaderSize =
-  | "tiny"
-  | "small"
-  | "small"
-  | "large"
-  | "big"
-  | "huge"
-  | "massive"
+import { HeaderProps } from "./Props"
 
-export interface HeaderProps {
-  icon?: JSX.Element
-  subtitle?: string
-  title?: string
-
-  className?: string
-  size?: HeaderSize
-
-  iconSided?: boolean
-  flattened?: boolean
-  inverted?: boolean
-  center?: boolean
-}
-
-export function Header({
-  className: _className,
-  inverted,
-  iconSided,
-  subtitle,
-  flattened,
-  center,
-  title,
-  size,
-  icon,
-}: HeaderProps) {
+export const Header = forwardRef<HTMLDivElement, HeaderProps>(function Header(
+  {
+    className: _className,
+    inverted,
+    iconSided,
+    subtitle,
+    flattened,
+    center,
+    title,
+    size,
+    icon,
+  },
+  ref,
+) {
   const className = clsx(
     "mie header",
     size,
@@ -42,7 +25,7 @@ export function Header({
   )
 
   return (
-    <div className={className}>
+    <div ref={ref} className={className}>
       {icon && iconSided && icon}
 
       <div className="heading">
@@ -52,6 +35,6 @@ export function Header({
       </div>
     </div>
   )
-}
+})
 
 Header.displayName = "Mie.Header"

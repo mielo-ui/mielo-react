@@ -1,12 +1,12 @@
-export type { SelectProps } from "./Select"
-export { Select } from "./Select"
-
-export type { OptionValue as Option } from "./BasicMenu"
-
 export type {
-  DropdownProps,
-  DropdownContentProps,
-  DropdownHandles,
-} from "./Dropdown"
+  SelectButtonAccent,
+  SelectButtonProps,
+  SelectButtonSize,
+  CustomItemProps,
+  SelectAccent,
+  OptionValue,
+  SelectProps,
+  SelectSize,
+} from "./Props"
 
-export { Dropdown } from "./Dropdown"
+export { Select } from "./Select"

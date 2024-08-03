@@ -1,21 +1,14 @@
-import { ReactNode } from "react"
+import * as Icons from "../../components/Icon/icons"
 
-import * as Icons from "../../components/Icons/icons"
 import { Button } from "../../components/Button"
-import { Icon } from "../../components/Icons"
+import { Icon } from "../../components/Icon"
 
-export interface MessageContentProps {
-  title?: string | ReactNode
-  description?: string | ReactNode
-  icon?: ReactNode
-
-  onClose?: () => void
-}
+import { MessageContentProps } from "./Props"
 
 export function MessageContent({
-  title,
   description,
   onClose,
+  title,
   icon,
 }: MessageContentProps) {
   return (

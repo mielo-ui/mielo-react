@@ -1,2 +1,2 @@
-export type { RadioProps } from "./Radio"
+export type { RadioAccent, RadioSize, RadioProps } from "./Props"
 export { Radio } from "./Radio"

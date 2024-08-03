@@ -1,33 +1,18 @@
-import { ReactNode } from "react"
+import { forwardRef } from "react"
 import clsx from "clsx"
 
 import { DialogAction } from "./Action"
+import { DialogProps } from "./Props"
 import { Modal } from "../Modal"
 
-export interface DialogProps {
-  onRequestClose?: () => void
-  isOpen?: boolean
-
-  accent?: boolean | "warning" | "error" | "success"
-  size?: "small" | "large"
-
-  theme?: "dark" | "light"
-  attached?: "modal"
-
-  children?: ReactNode
-  actions?: ReactNode
-}
-
-function Dialog({
-  onRequestClose,
+const Dialog = forwardRef<HTMLElement, DialogProps>(function Dialog({
   attached,
   children,
   actions,
-  isOpen,
   accent,
-  theme,
   size,
-}: DialogProps) {
+  ...rest
+}) {
   const attachedClassName = attached && `attached attached-${attached}`
   const accentClassName = accent && accent === true ? "accent" : accent
 
@@ -40,14 +25,8 @@ function Dialog({
     </div>
   )
 
-  return attached !== "modal" ? (
-    content
-  ) : (
-    <Modal theme={theme} isOpen={isOpen} onRequestClose={onRequestClose}>
-      {content}
-    </Modal>
-  )
-}
+  return attached !== "modal" ? content : <Modal {...rest}>{content}</Modal>
+})
 
 Dialog.displayName = "Mie.Dialog"
 

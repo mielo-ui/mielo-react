@@ -1,5 +1,9 @@
-export type { MessageProps } from "./Message"
-export { default as Message } from "./Message"
+export type {
+  MessageContentProps,
+  MessageAccent,
+  MessageProps,
+  MessageSize,
+} from "./Props"
 
-export type { MessageContentProps } from "./Content"
+export { default as Message } from "./Message"
 export { MessageContent } from "./Content"

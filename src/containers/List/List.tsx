@@ -1,18 +1,21 @@
-import { ReactNode } from "react"
-
-import { ListItem } from "./Item"
+import { forwardRef } from "react"
 import clsx from "clsx"
 
-export interface ListProps {
-  children?: ReactNode
-  className?: string
-}
+import { ListProps } from "./Props"
+import { ListItem } from "./Item"
 
-function List({ className: _className, children }: ListProps) {
+const List = forwardRef<HTMLDivElement, ListProps>(function List(
+  { className: _className, children, ...rest },
+  ref,
+) {
   const className = clsx("mie list", _className)
 
-  return <div className={className}>{children}</div>
-}
+  return (
+    <div ref={ref} className={className} {...rest}>
+      {children}
+    </div>
+  )
+})
 
 List.displayName = "Mie.List"
 

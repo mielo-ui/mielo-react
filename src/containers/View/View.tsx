@@ -1,58 +1,39 @@
-import { ReactNode } from "react"
+import { forwardRef } from "react"
 import clsx from "clsx"
 
-export type ViewAccent = boolean | "warning" | "error" | "success"
+import { ViewProps } from "./Props"
 
-export interface ViewProps {
-  accent?: ViewAccent
-  className?: string
-  style?: any
-
-  // Background style
-  activatable?: boolean
-  sidebar?: boolean
-  window?: boolean
-  content?: boolean
-  osd?: boolean
-
-  // Content
-  scrollable?: boolean
-  children?: ReactNode
-}
-
-export function View({
-  className: _className,
-  activatable,
-  scrollable,
-  children,
-  sidebar,
-  content,
-  accent,
-  window,
-  style,
-  osd,
-}: ViewProps) {
+export const View = forwardRef<HTMLDivElement, ViewProps>(function View(
+  {
+    className: _className,
+    activatable,
+    scrollable,
+    children,
+    accent,
+    style,
+    bg,
+    ...rest
+  },
+  ref,
+) {
   const accentClassName = accent && (accent === true ? "accent" : accent)
 
   const className = clsx(
     "mie view",
+    bg,
     accentClassName,
     {
       activatable,
       scrollable,
-      sidebar,
-      content,
-      window,
-      osd,
     },
     _className,
   )
 
   return (
-    <div style={style} className={className}>
+    <div ref={ref} {...rest} className={className}>
       {children}
     </div>
   )
-}
+})
 
 View.displayName = "Mie.View"

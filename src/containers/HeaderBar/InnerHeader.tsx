@@ -1,15 +1,8 @@
-import { ReactNode, cloneElement, isValidElement } from "react"
+import { cloneElement, isValidElement } from "react"
 
 import { isCorrectChildrenType, isPlainObject } from "../../utils"
-import { Header, HeaderProps } from "../../components/Header"
-
-export type InnerHeaderProp =
-  | ReactNode
-  | Pick<HeaderProps, "title" | "subtitle" | "icon">
-
-export interface InnerHeaderProps {
-  header?: InnerHeaderProp
-}
+import { Header } from "../../components/Header"
+import { InnerHeaderProps } from "./Props"
 
 export function InnerHeader({ header }: InnerHeaderProps) {
   if (!header) {

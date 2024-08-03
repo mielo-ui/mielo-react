@@ -1,9 +1,8 @@
 import { ForwardedRef, forwardRef } from "react"
 import clsx from "clsx"
 
-import { Item, ItemProps } from "../../components/Item"
-
-export interface ListItemProps extends ItemProps {}
+import { Item } from "../../components/Item"
+import { ListItemProps } from "./Props"
 
 export const ListItem = forwardRef(function ListItem(
   { className: _className, ...props }: ListItemProps,

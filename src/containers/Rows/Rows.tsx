@@ -1,20 +1,23 @@
-import { ReactNode } from "react"
+import { forwardRef, ReactNode } from "react"
 import clsx from "clsx"
 
 import { SelectRow } from "./SelectRow"
 import { EntryRow } from "./EntryRow"
+import { RowsProps } from "./Props"
 import { Row } from "./Row"
 
-export interface RowsProps {
-  children: ReactNode
-  className?: string
-}
-
-function Rows({ className: _className, children }: RowsProps) {
+const Rows = forwardRef<HTMLDivElement, RowsProps>(function Rows(
+  { className: _className, children, ...rest },
+  ref,
+) {
   const className = clsx("mie rows", _className)
 
-  return <div className={className}>{children}</div>
-}
+  return (
+    <div ref={ref} className={className} {...rest}>
+      {children}
+    </div>
+  )
+})
 
 Rows.displayName = "Mie.Rows"
 

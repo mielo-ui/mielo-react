@@ -1,11 +1,7 @@
-export type { SelectRowProps } from "./SelectRow"
+export type { SelectRowProps, EntryRowProps, RowsProps, RowProps } from "./Props"
+
 export { SelectRow } from "./SelectRow"
-
-export type { EntryRowProps } from "./EntryRow"
 export { EntryRow } from "./EntryRow"
-
-export type { RowsProps } from "./Rows"
-export { default as Rows } from "./Rows"
-
-export type { RowProps } from "./Row"
 export { Row } from "./Row"
+
+export { default as Rows } from "./Rows"

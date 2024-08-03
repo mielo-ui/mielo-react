@@ -1,34 +1,30 @@
-import { ReactNode } from "react"
-
-import { TextParagraph } from "./Paragraph"
+import { createElement, forwardRef } from "react"
 import clsx from "clsx"
 
-export interface TextProps {
-  accent?: boolean | "success" | "warning" | "error"
-  center?: boolean
+import { TextProps } from "./Props"
 
-  children?: ReactNode
-}
+export const Text = forwardRef<HTMLDivElement, TextProps>(function Text(
+  { className: _className, accent, center, size, children, element },
+  ref,
+) {
+  const accentClassName = accent && (accent === true ? "accent" : accent)
 
-function Text({ accent, center, children }: TextProps) {
-  return (
-    <div
-      className={clsx(
-        "mie text",
-        {
-          center,
-          accent,
-        },
-        typeof accent !== "boolean" && accent,
-      )}
-    >
-      {children}
-    </div>
+  const className = clsx(
+    "mie text",
+    accentClassName,
+    size,
+    {
+      center,
+    },
+    _className,
   )
-}
+
+  const textProps = {
+    className,
+    ref,
+  }
+
+  return createElement(element || "div", textProps, children)
+})
 
 Text.displayName = "Mie.Text"
-
-export default Object.assign(Text, {
-  Paragraph: TextParagraph,
-})

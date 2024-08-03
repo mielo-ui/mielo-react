@@ -1,5 +1,9 @@
-export type { ProgressProps } from "./Progress"
-export { default as Progress } from "./Progress"
+export type {
+  ProgressBarProps,
+  ProgressAccent,
+  ProgressProps,
+  ProgressSize,
+} from "./Props"
 
-export type { ProgressBarProps } from "./Bar"
+export { default as Progress } from "./Progress"
 export { ProgressBar } from "./Bar"
