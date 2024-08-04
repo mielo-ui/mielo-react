@@ -4,7 +4,7 @@ import clsx from "clsx"
 import { TextProps } from "./Props"
 
 export const Text = forwardRef<HTMLDivElement, TextProps>(function Text(
-  { className: _className, accent, center, size, children, element },
+  { className: _className, accent, center, size, children, element, semibold, bold },
   ref,
 ) {
   const accentClassName = accent && (accent === true ? "accent" : accent)
@@ -14,6 +14,8 @@ export const Text = forwardRef<HTMLDivElement, TextProps>(function Text(
     accentClassName,
     size,
     {
+      semibold,
+      bold,
       center,
     },
     _className,

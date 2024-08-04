@@ -10,13 +10,12 @@ type DivProps = DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement
 export type SplitViewAccent = boolean | "warning" | "error" | "success"
 
 export interface SplitViewProps extends DivProps {
-  headerbar?: FunctionComponent<{ scrollTop: number }>
-  sidebar?: FunctionComponent<{ open?: boolean }>
-  sidebarOpen?: boolean
-
   accent?: SplitViewAccent
   className?: string
 
-  overlay?: MouseEventHandler<HTMLDivElement>
+  headerbar?: ReactNode
   children?: ReactNode
+  sidebar?: ReactNode
+
+  overlay?: MouseEventHandler<HTMLDivElement>
 }

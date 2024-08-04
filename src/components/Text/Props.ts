@@ -8,6 +8,9 @@ export interface TextProps {
   accent?: TextAccent
   size?: TextSize
 
+  semibold?: boolean
+  bold?: boolean
+
   element?: "div" | "p" | "a"
   children?: ReactNode
   center?: boolean
