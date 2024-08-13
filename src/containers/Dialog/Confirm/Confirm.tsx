@@ -4,11 +4,11 @@ import toPairs from "lodash.topairs"
 import pick from "lodash.pick"
 
 import { Header } from "../../../components/Header"
-import { DialogAction } from "../Action"
-import Dialog from "../Dialog"
+import { Dialog } from "../Dialog"
 
 import { ConfirmAction, ConfirmHandles, ConfirmProps, ConfirmResult } from "./Props"
 import { DialogProps } from "../Props"
+import * as L from "../../../layout"
 
 const CONFIRM_ACTIONS: Record<string, ConfirmAction> = {
   reject: {
@@ -32,9 +32,9 @@ const DEFAULT_CONFIRM_ACTIONS = pick(CONFIRM_ACTIONS, ["confirm", "cancel"])
 export const Confirm = forwardRef<ConfirmHandles, ConfirmProps>(function Confirm(
   {
     actions: _actions = DEFAULT_CONFIRM_ACTIONS,
-    subtitle,
+    children,
+    header,
     accent,
-    title,
     size,
     ...rest
   },
@@ -87,11 +87,14 @@ export const Confirm = forwardRef<ConfirmHandles, ConfirmProps>(function Confirm
       const label = _label || CONFIRM_ACTIONS?.[action]?.label
 
       return (
-        <DialogAction
+        <L.Button
           onClick={onAction(action)}
           key={`action-${key}`}
           accent={accent}
           label={label}
+          pv="small"
+          transparent
+          tertiary
         />
       )
     },
@@ -108,7 +111,8 @@ export const Confirm = forwardRef<ConfirmHandles, ConfirmProps>(function Confirm
 
   return (
     <Dialog {...dialogProps}>
-      <Header subtitle={subtitle} title={title} size={size} center />
+      {header && <L.Header {...header} />}
+      {children}
     </Dialog>
   )
 })

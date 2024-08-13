@@ -1,4 +1,4 @@
-import { FunctionComponent } from "react"
+import { ForwardRefExoticComponent, FunctionComponent, forwardRef } from "react"
 
 import {
   ElementLayout,
@@ -20,18 +20,16 @@ type ComponentLayoutProps = LayoutRoundedProps &
 export function layoutElement<P, L = ComponentLayoutProps>(
   component: FunctionComponent<P>,
   options?: ElementLayoutOptions,
-): FunctionComponent<P & L> {
-  function LayoutComponent(
-    props: any, // P & L,
-  ) {
-    const layoutProps: ElementLayoutProps<P> = {
+) {
+  const LayoutComponent = forwardRef(function LayoutComponent(props, ref) {
+    const layoutProps = {
       component,
       options,
       props,
     }
 
-    return <ElementLayout {...layoutProps} />
-  }
+    return <ElementLayout ref={ref} {...layoutProps} />
+  }) as ForwardRefExoticComponent<P & L>
 
   LayoutComponent.displayName = `${component.displayName}.Layout`
   return LayoutComponent

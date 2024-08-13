@@ -1,20 +1,13 @@
-import { ChangeEventHandler, ReactNode } from "react"
+import { ReactNode } from "react"
 
 export type RadioAccent = boolean | "warning" | "error" | "success"
 export type RadioSize = "large" | "small"
 
-export interface RadioProps {
+type RadioInput = Omit<React.InputHTMLAttributes<HTMLInputElement>, "size">
+
+export interface RadioProps extends RadioInput {
   accent?: RadioAccent
   size?: RadioSize
-  className?: string
 
   children?: ReactNode
-  label?: ReactNode
-  value?: string
-
-  disabled?: boolean
-  checked?: boolean
-  name?: string
-
-  onChange?: ChangeEventHandler<HTMLInputElement>
 }

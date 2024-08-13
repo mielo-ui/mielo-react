@@ -2,15 +2,16 @@ export * from "./components"
 export * from "./containers"
 
 export type {
+  ElementLayoutOptions,
   LayoutClassNameProps,
+  LayoutIndentPadding,
+  ElementLayoutProps,
   LayoutRoundedProps,
   LayoutIndentMargin,
-  LayoutIndentPadding,
   LayoutIndentProps,
   LayoutShadowProps,
   LayoutFlexProps,
-  ElementLayoutProps,
-  ElementLayoutOptions,
+  LayoutProps,
 } from "./ElementLayout"
 
 export { ElementLayout, extractProps, collectClassnames } from "./ElementLayout"

@@ -1,92 +1,80 @@
-import { createElement, forwardRef, useCallback } from "react"
-import { Tooltip } from "react-tooltip"
+import {
+  ChangeEventHandler,
+  FocusEventHandler,
+  useCallback,
+  forwardRef,
+  useState,
+} from "react"
+
 import clsx from "clsx"
 
 import { EntryProps } from "./Props"
-
-import * as Icons from "../Icon/icons"
-import { Button } from "../Button"
-
-const MessageIcons = {
-  accent: Icons.Dialog.Question,
-  warning: Icons.Dialog.Warning,
-  error: Icons.Dialog.Error,
-  success: Icons.EmblemOk,
-}
 
 export const Entry = forwardRef<HTMLInputElement, EntryProps>(function Entry(
   {
     className: _className,
     onChange: _onChange,
+    onFocus: _onFocus,
+    onBlur: _onBlur,
     placeholder,
-    messageIcon,
     disabled,
-    message,
     accent,
+    label,
+    postfix,
+    prefix,
     value,
     size,
-    type,
-    name,
+    containerId,
     id,
+    ...rest
   },
   ref,
 ) {
   const accentClassName = accent && (accent === true ? "accent" : accent)
+  const [focused, setFocused] = useState(false)
 
-  const inputId = `entry_${name}`
-  const tooltipId = `${inputId}_tooltip`
-
-  const onChange = useCallback(
-    (event: React.FormEvent<HTMLInputElement>) => {
-      const value = event.currentTarget.value
-      _onChange?.(value)
+  const onChange: ChangeEventHandler<HTMLInputElement> = useCallback(
+    event => {
+      _onChange?.(event)
     },
     [_onChange],
   )
 
-  const _messageIcon = accent
-    ? typeof accent === "boolean"
-      ? MessageIcons.accent
-      : MessageIcons[accent]
-    : false
+  const onFocus: FocusEventHandler<HTMLInputElement> = useCallback(event => {
+    setFocused(true)
+    _onFocus?.(event)
+  }, [])
 
-  const messageIndicatorIcon = !messageIcon
-    ? _messageIcon && createElement(_messageIcon)
-    : messageIcon
-
-  const tooltip = !!message && (
-    <>
-      <Button
-        icon={messageIndicatorIcon}
-        className="indicator"
-        id={tooltipId}
-        size={size}
-        transparent
-        circular
-      />
-
-      <Tooltip anchorSelect={"#" + tooltipId}>{message}</Tooltip>
-    </>
-  )
+  const onBlur: FocusEventHandler<HTMLInputElement> = useCallback(event => {
+    setFocused(false)
+    _onBlur?.(event)
+  }, [])
 
   const className = clsx("mie entry", accentClassName, size, { disabled }, _className)
 
+  const inputProps = {
+    className: clsx({ filled: value && value.length > 0 }),
+    placeholder: focused ? placeholder : "",
+    onChange,
+    disabled,
+    onFocus,
+    onBlur,
+    value,
+    ref,
+    id,
+    ...rest,
+  }
+
   return (
-    <div id={id} className={className}>
-      <input
-        className={clsx({ filled: value && value.length > 0 })}
-        onChange={onChange}
-        disabled={disabled}
-        value={value}
-        id={inputId}
-        name={name}
-        type={type}
-        ref={ref}
-      />
+    <div id={containerId} className={className}>
+      {prefix}
 
-      <label htmlFor={inputId}>{placeholder}</label>
+      <div className="field">
+        <input {...inputProps} />
+        <label htmlFor={id}>{label}</label>
+      </div>
 
-      {tooltip}
+      {postfix}
     </div>
   )
 })

@@ -2,9 +2,11 @@ import clsx from "clsx"
 
 import { DividerProps } from "./Props"
 
-export function Divider({ className, children }: DividerProps) {
+export function Divider({ className: _className, children, ...rest }: DividerProps) {
+  const className = clsx("mie divider", { content: !!children }, _className)
+
   return (
-    <div className={clsx("mie divider", { content: !!children }, className)}>
+    <div className={className} {...rest}>
       {children}
     </div>
   )

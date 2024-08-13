@@ -14,6 +14,7 @@ export const Header = forwardRef<HTMLDivElement, HeaderProps>(function Header(
     title,
     size,
     icon,
+    ...rest
   },
   ref,
 ) {
@@ -25,7 +26,7 @@ export const Header = forwardRef<HTMLDivElement, HeaderProps>(function Header(
   )
 
   return (
-    <div ref={ref} className={className}>
+    <div ref={ref} className={className} {...rest}>
       {icon && iconSided && icon}
 
       <div className="heading">

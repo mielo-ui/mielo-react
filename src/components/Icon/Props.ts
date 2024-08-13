@@ -1,6 +1,7 @@
-import { ReactNode } from "react"
+import { HTMLAttributes, ReactNode } from "react"
 
 export type IconAccent = true | "success" | "warning" | "error"
+type DivProps = HTMLAttributes<HTMLDivElement>
 
 export type IconSize =
   | "mini"
@@ -11,7 +12,7 @@ export type IconSize =
   | "huge"
   | "massive"
 
-export interface IconProps {
+export interface IconProps extends DivProps {
   accent?: IconAccent
   size?: IconSize
 

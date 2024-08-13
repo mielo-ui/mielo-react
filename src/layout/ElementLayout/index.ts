@@ -9,10 +9,10 @@ export type {
   LayoutFlexProps,
 } from "./classnames"
 
-export type { ElementLayoutProps } from "./ElementLayout"
-export { ElementLayout } from "./ElementLayout"
-
 export type { ElementLayoutOptions } from "./collectClassnames"
-export { collectClassnames } from "./collectClassnames"
+export type { ElementLayoutProps } from "./ElementLayout"
+export type { LayoutProps } from "./extractProps"
 
+export { collectClassnames } from "./collectClassnames"
+export { ElementLayout } from "./ElementLayout"
 export { extractProps } from "./extractProps"

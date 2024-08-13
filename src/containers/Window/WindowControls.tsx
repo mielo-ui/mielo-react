@@ -32,7 +32,7 @@ export const WindowControls = forwardRef<HTMLDivElement, WindowControlsProps>(
         {controls.map((control, idx) => (
           <Button
             onClick={event => onClickControl?.(event, control)}
-            icon={<Icon size="small" icon={icons[control]} />}
+            icon={<Icon icon={icons[control]} />}
             transparent={control !== "close"}
             key={`${control}-${idx}`}
             className={control}

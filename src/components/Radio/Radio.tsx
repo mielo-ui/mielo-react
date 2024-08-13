@@ -8,41 +8,36 @@ export const Radio = forwardRef<HTMLInputElement, RadioProps>(function Radio(
     className: _className,
     children,
     disabled,
-    onChange,
     checked,
     accent,
     value,
-    label,
     size,
-    name,
+    id,
+    ...rest
   },
   ref,
 ) {
-  const radioId = `radio_${name}`
-
   const accentClassName = accent && (accent === true ? "accent" : accent)
   const className = clsx("mie radio", accentClassName, size, { disabled }, _className)
 
+  const inputProps = {
+    className: "input",
+    type: "radio",
+    disabled,
+    checked,
+    ref,
+    id,
+    ...rest,
+  }
+
   return (
     <div className={className}>
-      <input
-        onChange={onChange}
-        disabled={disabled}
-        checked={checked}
-        className="input"
-        value={value}
-        id={radioId}
-        name={name}
-        type="radio"
-        ref={ref}
-      />
+      <input {...inputProps} />
 
-      <label className="label" htmlFor={`#${radioId}`}>
+      <label className="label" htmlFor={id}>
         <div className="indicator" />
 
-        {(children || label) && (
-          <div className="content">{children ? children : label}</div>
-        )}
+        {children && <div className="content">{children}</div>}
       </label>
     </div>
   )

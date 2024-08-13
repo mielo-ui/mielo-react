@@ -1,64 +1,27 @@
-import { createElement, useCallback } from "react"
-import { Tooltip } from "react-tooltip"
+import { useCallback } from "react"
 import clsx from "clsx"
 
 import { SelectButtonProps } from "./Props"
-import * as Icons from "../Icon/icons"
 import { ChevronDown } from "./Icons"
-import { Button } from "../Button"
-
-const MessageIcons = {
-  accent: Icons.Dialog.Question,
-  warning: Icons.Dialog.Warning,
-  error: Icons.Dialog.Error,
-  success: Icons.EmblemOk,
-}
 
 export function SelectButton({
   selected,
   label,
-  name,
 
-  size,
+  postfix,
+  prefix,
 
   isOpen,
   close,
   open,
 
-  messageIcon,
-  message,
   accent,
+  name,
+  size,
 }: SelectButtonProps) {
-  const tooltipId = `${name}_tooltip`
-
   const onClick = useCallback(() => {
     isOpen ? close() : open()
   }, [isOpen])
-
-  const _messageIcon = accent
-    ? typeof accent === "boolean"
-      ? MessageIcons.accent
-      : MessageIcons[accent]
-    : false
-
-  const messageIndicatorIcon = !messageIcon
-    ? _messageIcon && createElement(_messageIcon)
-    : messageIcon
-
-  const tooltip = !!message && (
-    <>
-      <Button
-        icon={messageIndicatorIcon}
-        className="indicator"
-        id={tooltipId}
-        size={size}
-        transparent
-        circular
-      />
-
-      <Tooltip anchorSelect={"#" + tooltipId}>{message}</Tooltip>
-    </>
-  )
 
   return (
     <div
@@ -67,15 +30,19 @@ export function SelectButton({
       role="button"
       tabIndex={0}
     >
+      {prefix}
+
       <div className="header">
         <div className="label">{label}</div>
-        {selected && <div className="value">{selected.label}</div>}
+        {selected && <div className="value">{selected.title}</div>}
       </div>
 
-      {tooltip}
+      <div className="right">
+        {postfix}
 
-      <div className="arrow">
-        <ChevronDown />
+        <div className="arrow">
+          <ChevronDown />
+        </div>
       </div>
     </div>
   )

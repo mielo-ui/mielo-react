@@ -10,7 +10,7 @@ export const Row = forwardRef<HTMLDivElement, RowProps>(function Row(
 ) {
   const className = clsx("row property", _className)
 
-  return <Item ref={ref} className={clsx("row property", className)} {...rest} />
+  return <Item ref={ref} className={className} {...rest} />
 })
 
 Row.displayName = "Mie.Row"

@@ -1,4 +1,4 @@
-import { createElement, FunctionComponent } from "react"
+import { createElement, forwardRef, FunctionComponent } from "react"
 import clsx from "clsx"
 
 import { LayoutClassNameProps } from "./classnames"
@@ -10,26 +10,25 @@ import {
   DEFAULT_OPTIONS,
 } from "./collectClassnames"
 
-export interface ElementLayoutProps<P> {
-  component: FunctionComponent<P>
+interface ElementLayoutComponentProps extends LayoutClassNameProps {
+  [key: string]: any
+}
+
+export interface ElementLayoutProps {
+  component: FunctionComponent<any>
   options?: ElementLayoutOptions
-  props?: LayoutClassNameProps
+  props?: ElementLayoutComponentProps
 }
 
-export function ElementLayout<P>({
-  options = DEFAULT_OPTIONS,
-  component,
-  props: rest,
-}: ElementLayoutProps<P>) {
-  const { props, ...layout } = extractProps<P>(rest as any)
+export const ElementLayout = forwardRef<any, any>(function ElementLayout(
+  { options = DEFAULT_OPTIONS, props: rest, component },
+  ref,
+) {
+  const { props, ...layout } = extractProps(rest || {})
+  props.ref = ref
 
-  const className = clsx(
-    (props as any)?.className,
-    collectClassnames(layout, options),
-  )
+  props.className = clsx(props.className, collectClassnames(layout, options))
 
-  ;(props as any).className = className
-
-  return createElement(component as any, props as any)
-}
+  return createElement(component, props)
+})
 

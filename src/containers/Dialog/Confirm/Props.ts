@@ -1,6 +1,8 @@
 import { DetailedHTMLProps, HTMLAttributes, ReactNode } from "react"
+import { HeaderProps } from "../../../components"
+import { LayoutProps } from "../../../layout"
 
-type DivProps = DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>
+type DivProps = HTMLAttributes<HTMLDivElement>
 
 export type ConfirmAccent = boolean | "warning" | "error" | "success"
 export type ConfirmSize = "small" | "large"
@@ -25,8 +27,8 @@ export interface ConfirmHandles {
 }
 
 export interface ConfirmProps extends DivProps {
-  subtitle?: string
-  title?: string
+  header?: LayoutProps<HeaderProps>
+  children?: ReactNode
 
   accent?: ConfirmAccent
   size?: ConfirmSize

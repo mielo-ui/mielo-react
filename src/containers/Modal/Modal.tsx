@@ -1,10 +1,13 @@
-import { MouseEventHandler, useCallback, useEffect } from "react"
+import { forwardRef, MouseEventHandler, useCallback, useEffect } from "react"
 import { CSSTransition } from "react-transition-group"
 
 import { ModalProps } from "./Props"
 import { Portal } from "./Portal"
 
-export function Modal({ children, isOpen, onRequestClose, ...rest }: ModalProps) {
+export const Modal = forwardRef<HTMLDivElement, ModalProps>(function Modal(
+  { children, isOpen, onRequestClose, ...rest },
+  ref,
+) {
   useEffect(() => {
     const onPressEscape = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
@@ -38,7 +41,7 @@ export function Modal({ children, isOpen, onRequestClose, ...rest }: ModalProps)
           If change className with multiple names like "mie modal"
           CssTransition failed to change animation-state
         */}
-        <div className="mie modal" {...rest}>
+        <div ref={ref} className="mie modal" {...rest}>
           <div className="window" onClick={onClickWindow}>
             {children}
           </div>
@@ -46,4 +49,6 @@ export function Modal({ children, isOpen, onRequestClose, ...rest }: ModalProps)
       </CSSTransition>
     </Portal>
   )
-}
+})
+
+Modal.displayName = "Mie.Modal"

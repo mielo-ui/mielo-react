@@ -1,9 +1,16 @@
 import clsx from "clsx"
 
-import { createElement, useCallback, forwardRef, MouseEvent } from "react"
+import {
+  createElement,
+  useCallback,
+  forwardRef,
+  MouseEvent,
+  ForwardedRef,
+} from "react"
+
 import { ItemProps } from "./Props"
 
-export const Item = forwardRef<any, ItemProps>(function Item(
+function ItemBase(
   {
     disableSidePropagation = true,
     className: _className,
@@ -23,8 +30,8 @@ export const Item = forwardRef<any, ItemProps>(function Item(
     icon,
     side,
     ...rest
-  },
-  ref,
+  }: ItemProps<HTMLDivElement>,
+  ref: ForwardedRef<HTMLDivElement>,
 ) {
   const accentClassName = accent && (accent === true ? "accent" : accent)
 
@@ -48,7 +55,7 @@ export const Item = forwardRef<any, ItemProps>(function Item(
   const body = (
     <>
       {label && label}
-      {icon && <div className="indicator">{icon}</div>}
+      {icon && icon}
 
       <div className={clsx("content", { inverted })}>
         {content ? (
@@ -69,17 +76,18 @@ export const Item = forwardRef<any, ItemProps>(function Item(
     </>
   )
 
-  const itemProps: any = Object.assign(
+  return createElement(
+    link ? "a" : "div",
     {
-      ...rest,
+      href: link,
       className,
       onClick,
       ref,
+      ...rest,
     },
-    link && { href: link },
+    body,
   )
+}
 
-  return createElement(link ? "a" : "div", itemProps, body)
-})
-
+export const Item = forwardRef(ItemBase)
 Item.displayName = "Mie.Item"

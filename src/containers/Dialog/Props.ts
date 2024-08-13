@@ -1,7 +1,7 @@
-import { DetailedHTMLProps, HTMLAttributes, ReactNode } from "react"
+import { HTMLAttributes, ReactNode } from "react"
 import { ButtonProps } from "../../components/Button"
 
-type DivProps = DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>
+type DivProps = HTMLAttributes<HTMLDivElement>
 
 export type DialogAccent = boolean | "warning" | "error" | "success"
 export type DialogSize = "small" | "large"

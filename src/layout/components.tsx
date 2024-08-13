@@ -1,6 +1,7 @@
 import * as components from "../components"
 import { layoutElement } from "./builder"
 
+export const Divider = layoutElement(components.Divider, { flex: false })
 export const Header = layoutElement(components.Header, { flex: false })
 export const Select = layoutElement(components.Select, { flex: false })
 export const Entry = layoutElement(components.Entry, { flex: false })
@@ -15,15 +16,12 @@ export const Checkbox = layoutElement(components.Checkbox, {
   flex: false,
 })
 
-export const ButtonGroup = layoutElement(components.Button, {
+export const ButtonGroup = layoutElement(components.ButtonGroup, {
   flex: false,
 })
-export const Button = Object.assign(
-  layoutElement(components.Button, { flex: false }),
-  {
-    Group: ButtonGroup,
-  },
-)
+export const Button = Object.assign(layoutElement(components.Button), {
+  Group: ButtonGroup,
+})
 
 export const ProgressBar = layoutElement(components.ProgressBar)
 export const Progress = Object.assign(

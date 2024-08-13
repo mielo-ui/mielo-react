@@ -1,4 +1,4 @@
-import { forwardRef, useRef } from "react"
+import { forwardRef, useImperativeHandle, useRef } from "react"
 import clsx from "clsx"
 
 import {
@@ -7,11 +7,11 @@ import {
   Dropdown,
 } from "../../containers/Dropdown"
 
+import { SelectHandles, SelectProps } from "./Props"
 import { SelectButton } from "./SelectButton"
 import { BasicMenu } from "./BasicMenu"
-import { SelectProps } from "./Props"
 
-export const Select = forwardRef<any, SelectProps>(function Select(
+export const Select = forwardRef<SelectHandles, SelectProps>(function Select(
   {
     className: _className,
     options,
@@ -19,36 +19,38 @@ export const Select = forwardRef<any, SelectProps>(function Select(
     value,
     name,
 
+    transparent,
     disabled,
-    compact,
     opened,
 
-    messageIcon,
-    message,
+    postfix,
+    prefix,
     accent,
 
+    customItem,
     onChange,
     onClose,
     onOpen,
     size,
+
+    ...rest
   },
   ref,
 ) {
   const dropdownRef = useRef<DropdownHandles>(null)
-
   const accentClassName = accent && (accent === true ? "accent" : accent)
 
-  const dropdownProps = {
-    ref: dropdownRef,
+  useImperativeHandle(ref, () => ({}))
 
+  const dropdownProps = {
     onClose: onClose,
     onOpen: onOpen,
     opened,
 
     content: (props: DropdownContentProps) => {
       const buttonProps = {
-        messageIcon,
-        message,
+        postfix,
+        prefix,
         accent,
 
         selected: value,
@@ -64,6 +66,8 @@ export const Select = forwardRef<any, SelectProps>(function Select(
     menu: (props: DropdownContentProps) => {
       const menuProps = {
         onSelect: onChange,
+        selected: value,
+        customItem,
         options,
         ...props,
       }
@@ -77,9 +81,9 @@ export const Select = forwardRef<any, SelectProps>(function Select(
         accentClassName,
         size,
         {
-          selected: !!value?.value,
+          selected: !!value,
+          transparent,
           disabled,
-          compact,
         },
         _className,
       ),
@@ -88,6 +92,7 @@ export const Select = forwardRef<any, SelectProps>(function Select(
     props: {
       container: {
         "data-name": name,
+        ...rest,
       },
       content: {
         "data-selected": !!value?.value,
@@ -98,7 +103,7 @@ export const Select = forwardRef<any, SelectProps>(function Select(
     },
   }
 
-  return <Dropdown {...dropdownProps} />
+  return <Dropdown ref={dropdownRef} {...dropdownProps} />
 })
 
 Select.displayName = "Mie.Select"

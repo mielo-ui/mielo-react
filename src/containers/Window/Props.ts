@@ -2,7 +2,7 @@ import { DetailedHTMLProps, HTMLAttributes, ReactNode, MouseEvent } from "react"
 import { HeaderBarProps } from "../HeaderBar"
 import { SplitViewProps } from "../SplitView"
 
-type DivProps = DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>
+type DivProps = HTMLAttributes<HTMLDivElement>
 export type WindowAccent = boolean | "warning" | "error" | "success"
 
 export interface WindowProps extends DivProps {

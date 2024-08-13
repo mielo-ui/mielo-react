@@ -1,5 +1,6 @@
 import { layoutElement } from "./builder"
 import * as containers from "../containers"
+import { Item } from "./components"
 
 export const Window = layoutElement(containers.Window, {
   spaceBetween: true,
@@ -33,13 +34,12 @@ export const Message = Object.assign(
   },
 )
 
-export const ListItem = layoutElement(containers.ListItem)
 export const List = Object.assign(
   layoutElement(containers.List, {
     spaceBetween: true,
   }),
   {
-    Item: ListItem,
+    Item: Item,
   },
 )
 

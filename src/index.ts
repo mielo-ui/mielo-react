@@ -25,7 +25,7 @@ export type {
 
 export type {
   LabelAccent, LabelFloating, LabelSize, LabelProps,
-  EntryAccent, EntryType, EntrySize, EntryProps,
+  EntryAccent, EntrySize, EntryProps,
   ImageAccent, ImageSize, ImageProps,
   RadioAccent, RadioSize, RadioProps,
   IconAccent, IconSize, IconProps,
@@ -50,8 +50,6 @@ export type {
 
 export type {
   HeaderBarAccent,
-  InnerHeaderProp,
-  InnerHeaderProps,
   HeaderBarProps,
 } from "./containers"
 
@@ -87,10 +85,10 @@ export type {
   ActivatableAccent, ActivatableProps,
   SplitViewAccent, SplitViewProps,
   ViewAccent, ViewBg, ViewProps,
-  ListItemProps, ListProps,
   ModalProps, PortalProps,
   CollapsibleProps,
   ClampProps,
+  ListProps,
 } from "./containers"
 
 export {
@@ -109,21 +107,21 @@ export {
 } from "./components"
 
 export {
-  Dialog, Confirm, DialogAction,
   Rows, Row, SelectRow, EntryRow,
   Message, MessageContent,
   Window, WindowControls,
   Tabs, RawTabs, Tab,
+  Dialog, Confirm,
+  Modal, Portal,
   Collapsible,
   Activatable,
   HeaderBar,
-  Modal, Portal,
-  ListItem, List,
   SplitView,
   Dropdown,
   Sidebar,
   Clamp,
   View,
+  List,
 } from "./containers"
 
 export * as Icons from "./components/Icon/icons"

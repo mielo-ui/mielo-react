@@ -1,15 +1,10 @@
-import { ReactNode, MouseEvent } from "react"
+import { ReactNode, HTMLAttributes } from "react"
 
-type OnClick = (
-  event: MouseEvent<HTMLAnchorElement | HTMLDivElement | HTMLLIElement>,
-) => void
-
+type DivProps<E = HTMLDivElement> = Omit<HTMLAttributes<E>, "title" | "content">
 export type ItemAccent = boolean | "error" | "warning" | "success"
 export type ItemSize = "small" | "large"
 
-export interface ItemProps {
-  onClick?: OnClick
-
+export interface ItemProps<E> extends DivProps<E> {
   description?: ReactNode
   content?: ReactNode
   title?: ReactNode

@@ -14,6 +14,5 @@ export type {
   ConfirmSize,
 } from "./Confirm"
 
-export { default as Dialog } from "./Dialog"
-export { DialogAction } from "./Action"
+export { Dialog } from "./Dialog"
 export { Confirm } from "./Confirm"

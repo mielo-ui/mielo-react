@@ -1,20 +1,26 @@
 import clsx from "clsx"
 
 import { TabBackgroundProps } from "./Props"
+import { collectClassnames, extractProps } from "../../layout"
 
-export function TabBackground({
-  className: _className,
-  height,
-  offset,
-  accent,
-  width,
-}: TabBackgroundProps) {
+export function TabBackground(props: TabBackgroundProps) {
+  const {
+    props: { className: _className, height, offset, accent, width },
+    ...layoutProps
+  } = extractProps(props)
+
+  const layoutClassNames = collectClassnames(layoutProps, {
+    flex: false,
+  })
+
   const accentClassName = accent && (accent === true ? "accent" : accent)
 
-  return (
-    <div
-      className={clsx("mie tab background", accentClassName, _className)}
-      style={{ height, width, left: offset }}
-    />
+  const className = clsx(
+    "mie tab background",
+    accentClassName,
+    ...layoutClassNames,
+    _className,
   )
+
+  return <div className={className} style={{ height, width, left: offset }} />
 }

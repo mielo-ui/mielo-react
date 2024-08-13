@@ -1,7 +1,6 @@
 import { forwardRef } from "react"
 import clsx from "clsx"
 
-import { InnerHeader } from "./InnerHeader"
 import { HeaderBarProps } from "./Props"
 
 export const HeaderBar = forwardRef<HTMLDivElement, HeaderBarProps>(
@@ -32,9 +31,7 @@ export const HeaderBar = forwardRef<HTMLDivElement, HeaderBarProps>(
       <div ref={ref} {...rest} className={className}>
         <div className="left">{left}</div>
 
-        <div className="center">
-          <InnerHeader header={header} />
-        </div>
+        <div className="center">{header}</div>
 
         <div className="right">
           <div className="content">{right}</div>

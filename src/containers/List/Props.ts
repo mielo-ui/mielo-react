@@ -1,9 +1,6 @@
-import { DetailedHTMLProps, HTMLAttributes, ReactNode } from "react"
-import { ItemProps } from "../../components/Item"
+import { HTMLAttributes, ReactNode } from "react"
 
-type DivProps = DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>
-
-export interface ListItemProps extends ItemProps {}
+type DivProps = HTMLAttributes<HTMLDivElement>
 
 export interface ListProps extends DivProps {
   children?: ReactNode

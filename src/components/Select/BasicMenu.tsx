@@ -1,11 +1,13 @@
 import { ReactNode, useCallback, useEffect, useRef } from "react"
 import isEqual from "lodash.isequal"
 
-import * as L from "../../layout"
 import { BasicMenuProps, CustomItemProps, OptionValue } from "./Props"
+import { LayoutProps } from "../../layout/ElementLayout"
+import { ItemProps } from "../Item"
+import * as L from "../../layout"
 
 function BasicListItem({ isSelected, onSelect, option }: CustomItemProps) {
-  const itemRef = useRef<HTMLLIElement>(null)
+  const itemRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     const item = itemRef.current
@@ -24,20 +26,22 @@ function BasicListItem({ isSelected, onSelect, option }: CustomItemProps) {
     }
   }, [option, onSelect])
 
-  return (
-    <L.ListItem
-      onClick={() => onSelect(option)}
-      title={option.label}
-      active={isSelected}
-      ref={itemRef}
-      tabIndex={0}
-      activatable
-      ph="large"
-      mh="small"
-      pv
-      r
-    />
-  )
+  const itemProps: ItemProps<HTMLDivElement> & LayoutProps<any> = {
+    onClick: () => onSelect(option),
+    tabIndex: 0,
+
+    active: isSelected,
+    activatable: true,
+
+    pv: "small",
+    ph: "small",
+    mh: "tiny",
+    r: true,
+
+    ...option,
+  }
+
+  return <L.List.Item ref={itemRef} {...itemProps} />
 }
 
 export function BasicMenu({
@@ -54,8 +58,10 @@ export function BasicMenu({
   }, [])
 
   const list: ReactNode = options.map((option, idx) => {
+    const isSelected = isEqual(option.value, selected?.value)
+
     const itemProps = {
-      isSelected: isEqual(option.value, selected),
+      isSelected,
       onSelect,
       option,
     }

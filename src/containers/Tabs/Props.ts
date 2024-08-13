@@ -14,7 +14,10 @@ export interface RawTabsProps {
   className?: string
 }
 
-export interface TabBackgroundProps {
+export interface TabBackgroundProps
+  extends LayoutIndentProps,
+    LayoutRoundedProps,
+    LayoutShadowProps {
   height: number | string
   offset: number | string
   width: number | string
@@ -29,7 +32,11 @@ export interface TabOption {
   name: string
 }
 
-export interface TabProps extends TabOption {
+export interface TabProps
+  extends TabOption,
+    LayoutIndentProps,
+    LayoutRoundedProps,
+    LayoutShadowProps {
   onClick?: (event: any) => void
   className?: string
 

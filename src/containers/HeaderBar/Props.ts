@@ -1,16 +1,6 @@
 import { ReactNode } from "react"
 
-import { HeaderProps } from "../../components"
-
 export type HeaderBarAccent = boolean | "warning" | "error" | "success"
-
-export type InnerHeaderProp =
-  | ReactNode
-  | Pick<HeaderProps, "title" | "subtitle" | "icon">
-
-export interface InnerHeaderProps {
-  header?: InnerHeaderProp
-}
 
 export interface HeaderBarProps {
   accent?: HeaderBarAccent
@@ -19,7 +9,7 @@ export interface HeaderBarProps {
   transparent?: boolean
   bordered?: boolean
 
-  header?: InnerHeaderProp
+  header?: ReactNode
   right?: ReactNode
   left?: ReactNode
 

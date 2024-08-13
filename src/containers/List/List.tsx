@@ -1,8 +1,8 @@
 import { forwardRef } from "react"
 import clsx from "clsx"
 
+import { Item } from "../../components"
 import { ListProps } from "./Props"
-import { ListItem } from "./Item"
 
 const List = forwardRef<HTMLDivElement, ListProps>(function List(
   { className: _className, children, ...rest },
@@ -20,5 +20,5 @@ const List = forwardRef<HTMLDivElement, ListProps>(function List(
 List.displayName = "Mie.List"
 
 export default Object.assign(List, {
-  Item: ListItem,
+  Item,
 })

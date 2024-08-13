@@ -1,7 +1,15 @@
 import { ButtonHTMLAttributes, ReactNode } from "react"
 
 export type ButtonAccent = boolean | "success" | "warning" | "error"
-export type ButtonSize = "tiny" | "small" | "medium" | "large"
+
+export type ButtonSize =
+  | "tiny"
+  | "small"
+  | "medium"
+  | "large"
+  | "big"
+  | "huge"
+  | "massive"
 
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   id?: string
@@ -12,7 +20,6 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   accent?: ButtonAccent
   size?: ButtonSize
 
-  iconLabeled?: boolean
   icon?: ReactNode
 
   transparent?: boolean

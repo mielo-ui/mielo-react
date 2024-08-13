@@ -32,7 +32,7 @@ export type {
 } from "./Select"
 
 export type { LabelAccent, LabelFloating, LabelSize, LabelProps } from "./Label"
-export type { EntryAccent, EntryType, EntrySize, EntryProps } from "./Entry"
+export type { EntryAccent, EntrySize, EntryProps } from "./Entry"
 export type { ImageAccent, ImageSize, ImageProps } from "./Image"
 export type { RadioAccent, RadioSize, RadioProps } from "./Radio"
 export type { IconAccent, IconSize, IconProps } from "./Icon"

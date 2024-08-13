@@ -1,6 +1,6 @@
 import { DetailedHTMLProps, HTMLAttributes, ReactNode } from "react"
 
-type DivProps = DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>
+type DivProps = HTMLAttributes<HTMLDivElement>
 
 export interface CollapsibleProps extends DivProps {
   children?: ReactNode

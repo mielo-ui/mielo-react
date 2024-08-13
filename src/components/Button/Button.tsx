@@ -8,7 +8,6 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button(
   {
     className: _className,
     transparent,
-    iconLabeled,
     children,
     tertiary,
     circular,
@@ -29,7 +28,6 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button(
   const accentClassName = accent && (accent === true ? "accent" : accent)
 
   const className = clsx("mie button", accentClassName, size, _className, {
-    labeled: icon && iconLabeled,
     content: icon && label,
     transparent,
     tertiary,
@@ -48,9 +46,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button(
     content = (
       <>
         {icon && icon}
-        {iconLabeled
-          ? label && <div className="content">{label}</div>
-          : label && label}
+        {label && label}
       </>
     )
   }

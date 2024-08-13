@@ -88,14 +88,13 @@ const Tabs = forwardRef<TabsHandles, TabsProps>(function Tabs(props, ref) {
         onClick: onChangeTab(idx, tab.name),
         transparent: animated,
         selected: selected,
-        key: tab.name,
         index: idx,
 
         ..._tabProps,
         ...tab,
       }
 
-      return <Tab {...tabProps} />
+      return <Tab key={tab.name} {...tabProps} />
     },
     [selected, animated, _tabProps],
   )
@@ -107,9 +106,9 @@ const Tabs = forwardRef<TabsHandles, TabsProps>(function Tabs(props, ref) {
   const className = clsx(
     "mie tabs",
     accentClassName,
-    _className,
     { transparent },
     ...layoutClassNames,
+    _className,
   )
 
   return (

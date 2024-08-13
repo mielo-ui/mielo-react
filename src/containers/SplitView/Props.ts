@@ -6,7 +6,7 @@ import {
   ReactNode,
 } from "react"
 
-type DivProps = DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>
+type DivProps = HTMLAttributes<HTMLDivElement>
 export type SplitViewAccent = boolean | "warning" | "error" | "success"
 
 export interface SplitViewProps extends DivProps {
