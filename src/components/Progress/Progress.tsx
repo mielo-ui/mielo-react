@@ -5,13 +5,14 @@ import { ProgressProps } from "./Props"
 import { ProgressBar } from "./Bar"
 
 const Progress = forwardRef<HTMLDivElement, ProgressProps>(function Progress(
-  { className: _className, multiple, children, accent, size },
+  { className: _className, multiple, children, accent, color, size },
   ref,
 ) {
   const accentClassName = accent && (accent === true ? "accent" : accent)
   const className = clsx(
     "mie progress",
     accentClassName,
+    color,
     size,
     { multiple },
     _className,

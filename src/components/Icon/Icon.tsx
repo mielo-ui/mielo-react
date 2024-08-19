@@ -4,7 +4,7 @@ import clsx from "clsx"
 import { IconProps } from "./Props"
 
 export const Icon = forwardRef<HTMLDivElement, IconProps>(function Icon(
-  { className: _className, circular, filled, accent, icon, size, bg, ...rest },
+  { className: _className, circular, filled, accent, icon, size, color, bg, ...rest },
   ref,
 ) {
   const accentClassName = accent && (accent === true ? "accent" : accent)
@@ -12,6 +12,7 @@ export const Icon = forwardRef<HTMLDivElement, IconProps>(function Icon(
   const className = clsx(
     "mie icon",
     accentClassName,
+    color,
     size,
     { circular, filled, bg },
     _className,

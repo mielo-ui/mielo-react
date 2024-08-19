@@ -2,6 +2,22 @@ import { ButtonHTMLAttributes, ReactNode } from "react"
 
 export type ButtonAccent = boolean | "success" | "warning" | "error"
 
+export type ButtonColor =
+  | "blue"
+  | "green"
+  | "yellow"
+  | "orange"
+  | "red"
+  | "purple"
+  | "brown"
+  | "pink"
+  | "deeppurple"
+  | "indigo"
+  | "lightgreen"
+  | "deeporange"
+  | "light"
+  | "dark"
+
 export type ButtonSize =
   | "tiny"
   | "small"
@@ -18,6 +34,7 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   label?: ReactNode
 
   accent?: ButtonAccent
+  color?: ButtonColor
   size?: ButtonSize
 
   icon?: ReactNode

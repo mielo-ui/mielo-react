@@ -15,6 +15,7 @@ export const Image = forwardRef<HTMLElement, ImageProps>(function Image(
     bordered,
     onClick,
     accent,
+    color,
     size,
     src,
     ...rest
@@ -27,6 +28,7 @@ export const Image = forwardRef<HTMLElement, ImageProps>(function Image(
     "mie image",
     size,
     accentClassName,
+    color,
     { bordered, transparent, circular },
     _className,
   )

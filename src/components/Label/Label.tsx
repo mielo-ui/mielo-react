@@ -12,6 +12,7 @@ export const Label = forwardRef<HTMLDivElement, LabelProps>(function Label(
     bordered,
     children,
     accent,
+    color,
     size,
     ...rest
   },
@@ -26,6 +27,7 @@ export const Label = forwardRef<HTMLDivElement, LabelProps>(function Label(
     "mie label",
     size,
     accentClassName,
+    color,
     floatingClassName,
     { bordered, transparent, circular },
     _className,

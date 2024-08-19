@@ -4,8 +4,26 @@ export type ProgressIndeterminate = "pulsating" | "filling" | "sliding" | "swing
 export type ProgressAccent = boolean | "warning" | "error" | "success"
 export type ProgressSize = "small" | "large"
 
+export type ProgressColor =
+  | "blue"
+  | "green"
+  | "yellow"
+  | "orange"
+  | "red"
+  | "purple"
+  | "brown"
+  | "pink"
+  | "deeppurple"
+  | "indigo"
+  | "lightgreen"
+  | "deeporange"
+  | "light"
+  | "dark"
+
 export interface ProgressProps {
   accent?: ProgressAccent
+  color?: ProgressColor
+
   size?: ProgressSize
   className?: string
 
@@ -14,8 +32,10 @@ export interface ProgressProps {
 }
 
 export interface ProgressBarProps {
-  indeterminate?: ProgressIndeterminate
   accent?: ProgressAccent
+  color?: ProgressColor
+
+  indeterminate?: ProgressIndeterminate
   className?: string
 
   progressVisible?: boolean

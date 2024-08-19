@@ -22,6 +22,7 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(function Che
     disabled,
     toggle,
     accent,
+    color,
     size,
     label,
     name,
@@ -56,6 +57,7 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(function Che
     "mie",
     toggle ? "toggle" : "checkbox",
     accentClassName,
+    color,
     size,
     {
       disabled,

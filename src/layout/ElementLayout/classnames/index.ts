@@ -2,6 +2,7 @@ import { LayoutSpaceBetweenProps, spaceBetween } from "./spaceBetween"
 import { LayoutRoundedProps, rounded } from "./rounded"
 import { LayoutShadowProps, shadow } from "./shadow"
 import { LayoutFlexProps, flex } from "./flex"
+import { LayoutGapProps, gap } from "./gap"
 
 import {
   LayoutIndentPadding,
@@ -12,10 +13,11 @@ import {
 
 interface LayoutClassNameProps
   extends LayoutRoundedProps,
+    LayoutSpaceBetweenProps,
     LayoutIndentProps,
     LayoutShadowProps,
     LayoutFlexProps,
-    LayoutSpaceBetweenProps {}
+    LayoutGapProps {}
 
 export type {
   LayoutSpaceBetweenProps,
@@ -26,6 +28,7 @@ export type {
   LayoutIndentProps,
   LayoutShadowProps,
   LayoutFlexProps,
+  LayoutGapProps,
 }
 
-export { rounded, indent, shadow, flex, spaceBetween }
+export { rounded, indent, shadow, flex, spaceBetween, gap }

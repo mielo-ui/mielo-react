@@ -1,2 +1,2 @@
-export type { TextSize, TextAccent, TextProps } from "./Props"
+export type { TextSize, TextAccent, TextColor, TextProps } from "./Props"
 export { Text } from "./Text"

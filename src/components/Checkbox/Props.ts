@@ -3,6 +3,22 @@ import { ChangeEventHandler, ReactNode } from "react"
 export type CheckboxAccent = boolean | "warning" | "error" | "success"
 export type CheckboxSize = "large" | "small"
 
+export type CheckboxColor =
+  | "blue"
+  | "green"
+  | "yellow"
+  | "orange"
+  | "red"
+  | "purple"
+  | "brown"
+  | "pink"
+  | "deeppurple"
+  | "indigo"
+  | "lightgreen"
+  | "deeporange"
+  | "light"
+  | "dark"
+
 export interface CheckboxIndicatorIcon {
   indicator?: {
     unchecked?: ReactNode
@@ -21,6 +37,8 @@ export interface LayoutIconProps {
 
 export interface CheckboxProps {
   accent?: CheckboxAccent
+  color?: CheckboxColor
+
   size?: CheckboxSize
   className?: string
 

@@ -3,6 +3,7 @@ export type {
   ButtonAccent,
   ButtonProps,
   ButtonSize,
+  ButtonColor,
 } from "./Button"
 
 export type {
@@ -11,6 +12,7 @@ export type {
   CheckboxAccent,
   CheckboxSize,
   CheckboxProps,
+  CheckboxColor,
 } from "./Checkbox"
 
 export type {
@@ -18,6 +20,7 @@ export type {
   ProgressAccent,
   ProgressProps,
   ProgressSize,
+  ProgressColor,
 } from "./Progress"
 
 export type {
@@ -28,17 +31,24 @@ export type {
   SelectAccent,
   OptionValue,
   SelectProps,
+  SelectColor,
   SelectSize,
 } from "./Select"
 
-export type { LabelAccent, LabelFloating, LabelSize, LabelProps } from "./Label"
-export type { EntryAccent, EntrySize, EntryProps } from "./Entry"
-export type { ImageAccent, ImageSize, ImageProps } from "./Image"
-export type { RadioAccent, RadioSize, RadioProps } from "./Radio"
-export type { IconAccent, IconSize, IconProps } from "./Icon"
-export type { ItemAccent, ItemSize, ItemProps } from "./Item"
-export type { TextSize, TextAccent, TextProps } from "./Text"
-export type { HeaderProps, HeaderSize } from "./Header"
+export type {
+  LabelAccent,
+  LabelFloating,
+  LabelSize,
+  LabelProps,
+  LabelColor,
+} from "./Label"
+export type { HeaderProps, HeaderAccent, HeaderSize, HeaderColor } from "./Header"
+export type { EntryAccent, EntrySize, EntryProps, EntryColor } from "./Entry"
+export type { ImageAccent, ImageSize, ImageProps, ImageColor } from "./Image"
+export type { RadioAccent, RadioSize, RadioProps, RadioColor } from "./Radio"
+export type { IconAccent, IconSize, IconProps, IconColor } from "./Icon"
+export type { ItemAccent, ItemSize, ItemProps, ItemColor } from "./Item"
+export type { TextSize, TextAccent, TextProps, TextColor } from "./Text"
 export type { DividerProps } from "./Divider"
 
 export { Progress, ProgressBar } from "./Progress"

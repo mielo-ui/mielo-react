@@ -1,12 +1,12 @@
 import { ReactNode, useCallback, useEffect, useRef } from "react"
 import isEqual from "lodash.isequal"
 
-import { BasicMenuProps, CustomItemProps, OptionValue } from "./Props"
+import { SelectMenuProps, CustomItemProps, OptionValue } from "./Props"
 import { LayoutProps } from "../../layout/ElementLayout"
 import { ItemProps } from "../Item"
 import * as L from "../../layout"
 
-function BasicListItem({ isSelected, onSelect, option }: CustomItemProps) {
+function SelectMenuItem({ isSelected, onSelect, option }: CustomItemProps) {
   const itemRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
@@ -44,14 +44,15 @@ function BasicListItem({ isSelected, onSelect, option }: CustomItemProps) {
   return <L.List.Item ref={itemRef} {...itemProps} />
 }
 
-export function BasicMenu({
+export function SelectMenu({
+  customItem: CustomMenuItem,
   onSelect: _onSelect,
-  customItem,
+  isOpen: _isOpen,
+  listProps,
   selected,
   options,
-  isOpen,
   close,
-}: BasicMenuProps) {
+}: SelectMenuProps) {
   const onSelect = useCallback((option: OptionValue) => {
     _onSelect(option)
     close()
@@ -66,16 +67,16 @@ export function BasicMenu({
       option,
     }
 
-    if (customItem) {
-      return customItem(itemProps)
+    if (CustomMenuItem) {
+      return <CustomMenuItem key={`item-${idx}`} {...itemProps} />
     } else {
-      return <BasicListItem key={`item-${idx}`} {...itemProps} />
+      return <SelectMenuItem key={`item-${idx}`} {...itemProps} />
     }
   })
 
   return (
-    <div className="basic">
-      <L.List>{list}</L.List>
-    </div>
+    <L.List pv="mini" gr="mini" {...listProps}>
+      {list}
+    </L.List>
   )
 }

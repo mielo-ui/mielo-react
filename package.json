@@ -1,6 +1,6 @@
 {
   "name": "@mielo-ui/mielo-react",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "main": "dist/cjs/index.js",
   "types": "dist/types.d.ts",
   "module": "dist/esm/index.js",

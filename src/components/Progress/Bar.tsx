@@ -13,6 +13,7 @@ export const ProgressBar = forwardRef<HTMLDivElement, ProgressBarProps>(
       children,
       progress,
       accent,
+      color,
     },
     ref,
   ) {
@@ -23,6 +24,7 @@ export const ProgressBar = forwardRef<HTMLDivElement, ProgressBarProps>(
       "mie progress-bar",
       indeterminateClassName,
       accentClassName,
+      color,
       {
         transparent,
       },

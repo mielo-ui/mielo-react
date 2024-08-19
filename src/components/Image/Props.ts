@@ -2,6 +2,22 @@ import { HTMLAttributes, ReactNode } from "react"
 
 export type ImageAccent = true | "success" | "warning" | "error"
 
+export type ImageColor =
+  | "blue"
+  | "green"
+  | "yellow"
+  | "orange"
+  | "red"
+  | "purple"
+  | "brown"
+  | "pink"
+  | "deeppurple"
+  | "indigo"
+  | "lightgreen"
+  | "deeporange"
+  | "light"
+  | "dark"
+
 export type ImageSize =
   | "mini"
   | "tiny"
@@ -17,6 +33,7 @@ export interface ImageProps extends HTMLAttributes<HTMLElement> {
   className?: string
 
   accent?: ImageAccent
+  color?: ImageColor
   size?: ImageSize
 
   transparent?: boolean

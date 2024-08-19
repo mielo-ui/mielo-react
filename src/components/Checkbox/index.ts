@@ -4,6 +4,7 @@ export type {
   CheckboxAccent,
   CheckboxSize,
   CheckboxProps,
+  CheckboxColor,
 } from "./Props"
 
 export { Checkbox } from "./Checkbox"

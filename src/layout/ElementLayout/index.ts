@@ -7,6 +7,7 @@ export type {
   LayoutIndentProps,
   LayoutShadowProps,
   LayoutFlexProps,
+  LayoutGapProps,
 } from "./classnames"
 
 export type { ElementLayoutOptions } from "./collectClassnames"

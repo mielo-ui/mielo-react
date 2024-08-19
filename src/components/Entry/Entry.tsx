@@ -1,3 +1,5 @@
+import clsx from "clsx"
+
 import {
   ChangeEventHandler,
   FocusEventHandler,
@@ -5,8 +7,6 @@ import {
   forwardRef,
   useState,
 } from "react"
-
-import clsx from "clsx"
 
 import { EntryProps } from "./Props"
 
@@ -16,15 +16,17 @@ export const Entry = forwardRef<HTMLInputElement, EntryProps>(function Entry(
     onChange: _onChange,
     onFocus: _onFocus,
     onBlur: _onBlur,
+    containerId,
     placeholder,
+    transparent,
     disabled,
     accent,
+    color,
     label,
     postfix,
     prefix,
     value,
     size,
-    containerId,
     id,
     ...rest
   },
@@ -50,7 +52,14 @@ export const Entry = forwardRef<HTMLInputElement, EntryProps>(function Entry(
     _onBlur?.(event)
   }, [])
 
-  const className = clsx("mie entry", accentClassName, size, { disabled }, _className)
+  const className = clsx(
+    "mie entry",
+    accentClassName,
+    color,
+    size,
+    { disabled, transparent },
+    _className,
+  )
 
   const inputProps = {
     className: clsx({ filled: value && value.length > 0 }),

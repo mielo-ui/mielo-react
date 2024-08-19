@@ -11,6 +11,7 @@ export const Radio = forwardRef<HTMLInputElement, RadioProps>(function Radio(
     checked,
     accent,
     value,
+    color,
     size,
     id,
     ...rest
@@ -18,7 +19,15 @@ export const Radio = forwardRef<HTMLInputElement, RadioProps>(function Radio(
   ref,
 ) {
   const accentClassName = accent && (accent === true ? "accent" : accent)
-  const className = clsx("mie radio", accentClassName, size, { disabled }, _className)
+
+  const className = clsx(
+    "mie radio",
+    accentClassName,
+    color,
+    size,
+    { disabled },
+    _className,
+  )
 
   const inputProps = {
     className: "input",

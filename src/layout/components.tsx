@@ -19,9 +19,15 @@ export const Checkbox = layoutElement(components.Checkbox, {
 export const ButtonGroup = layoutElement(components.ButtonGroup, {
   flex: false,
 })
-export const Button = Object.assign(layoutElement(components.Button), {
-  Group: ButtonGroup,
-})
+
+export const Button = Object.assign(
+  layoutElement(components.Button, {
+    rounded: true,
+  }),
+  {
+    Group: ButtonGroup,
+  },
+)
 
 export const ProgressBar = layoutElement(components.ProgressBar)
 export const Progress = Object.assign(

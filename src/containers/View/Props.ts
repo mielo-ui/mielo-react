@@ -1,4 +1,4 @@
-import { DetailedHTMLProps, HTMLAttributes, ReactNode } from "react"
+import { HTMLAttributes, ReactNode } from "react"
 
 type DivProps = HTMLAttributes<HTMLDivElement>
 

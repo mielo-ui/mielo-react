@@ -3,6 +3,22 @@ import { DetailedHTMLProps, InputHTMLAttributes, ReactNode } from "react"
 export type EntryAccent = boolean | "warning" | "error" | "success"
 export type EntrySize = "small" | "large"
 
+export type EntryColor =
+  | "blue"
+  | "green"
+  | "yellow"
+  | "orange"
+  | "red"
+  | "purple"
+  | "brown"
+  | "pink"
+  | "deeppurple"
+  | "indigo"
+  | "lightgreen"
+  | "deeporange"
+  | "light"
+  | "dark"
+
 export interface EntryCustomProps {
   postfix?: ReactNode
   prefix?: ReactNode
@@ -22,6 +38,9 @@ export interface EntryProps extends InputProps, EntryCustomProps {
   // Entry value
   value?: string
 
+  transparent?: boolean
   accent?: EntryAccent
+  color?: EntryColor
+
   size?: EntrySize
 }

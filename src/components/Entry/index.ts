@@ -1,2 +1,2 @@
-export type { EntryAccent, EntrySize, EntryProps } from "./Props"
+export type { EntryAccent, EntryColor, EntrySize, EntryProps } from "./Props"
 export { Entry } from "./Entry"

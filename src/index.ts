@@ -4,34 +4,35 @@ import * as Layout from "./layout"
 export type {
   ButtonGroupProps, ButtonAccent,
   ButtonProps, ButtonSize,
+  ButtonColor,
 } from "./components"
 
 export type {
   CheckboxIndicatorIcon, LayoutIconProps,
-  CheckboxAccent, CheckboxSize,
+  CheckboxAccent, CheckboxColor, CheckboxSize,
   CheckboxProps,
 } from "./components"
 
 export type {
-  ProgressBarProps, ProgressAccent,
+  ProgressBarProps, ProgressAccent, ProgressColor,
   ProgressProps, ProgressSize,
 } from "./components"
 
 export type {
-  SelectButtonAccent, SelectButtonProps, SelectButtonSize,
+  SelectButtonAccent, SelectColor, SelectButtonProps, SelectButtonSize,
   CustomItemProps, SelectAccent, OptionValue, SelectProps,
-  SelectSize,
+  SelectSize, 
 } from "./components"
 
 export type {
-  LabelAccent, LabelFloating, LabelSize, LabelProps,
-  EntryAccent, EntrySize, EntryProps,
-  ImageAccent, ImageSize, ImageProps,
-  RadioAccent, RadioSize, RadioProps,
-  IconAccent, IconSize, IconProps,
-  ItemAccent, ItemSize, ItemProps,
-  TextSize, TextAccent, TextProps,
-  HeaderProps, HeaderSize,
+  LabelAccent, LabelColor, LabelFloating, LabelSize, LabelProps,
+  EntryAccent, EntryColor, EntrySize, EntryProps,
+  ImageAccent, ImageColor, ImageSize, ImageProps,
+  RadioAccent, RadioColor, RadioSize, RadioProps,
+  IconAccent, IconColor, IconSize, IconProps,
+  ItemAccent, ItemColor, ItemSize, ItemProps,
+  TextAccent, TextColor, TextSize, TextProps,
+  HeaderAccent, HeaderColor, HeaderProps, HeaderSize,
   DividerProps,
 } from "./components"
 

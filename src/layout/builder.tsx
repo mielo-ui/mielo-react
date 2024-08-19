@@ -9,13 +9,15 @@ import {
   LayoutSpaceBetweenProps,
   LayoutRoundedProps,
   LayoutShadowProps,
+  LayoutGapProps,
 } from "./ElementLayout"
 
 type ComponentLayoutProps = LayoutRoundedProps &
   LayoutSpaceBetweenProps &
   LayoutIndentProps &
   LayoutShadowProps &
-  LayoutFlexProps
+  LayoutFlexProps &
+  LayoutGapProps
 
 export function layoutElement<P, L = ComponentLayoutProps>(
   component: FunctionComponent<P>,

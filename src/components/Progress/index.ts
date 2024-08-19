@@ -3,6 +3,7 @@ export type {
   ProgressAccent,
   ProgressProps,
   ProgressSize,
+  ProgressColor,
 } from "./Props"
 
 export { default as Progress } from "./Progress"

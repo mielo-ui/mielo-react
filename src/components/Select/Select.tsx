@@ -9,7 +9,7 @@ import {
 
 import { SelectHandles, SelectProps } from "./Props"
 import { SelectButton } from "./SelectButton"
-import { BasicMenu } from "./BasicMenu"
+import { SelectMenu } from "./SelectMenu"
 
 export const Select = forwardRef<SelectHandles, SelectProps>(function Select(
   {
@@ -25,9 +25,13 @@ export const Select = forwardRef<SelectHandles, SelectProps>(function Select(
 
     postfix,
     prefix,
+
     accent,
+    color,
 
     customItem,
+    menuHeight,
+    listProps,
     onChange,
     onClose,
     onOpen,
@@ -43,8 +47,9 @@ export const Select = forwardRef<SelectHandles, SelectProps>(function Select(
   useImperativeHandle(ref, () => ({}))
 
   const dropdownProps = {
-    onClose: onClose,
-    onOpen: onOpen,
+    menuHeight,
+    onClose,
+    onOpen,
     opened,
 
     content: (props: DropdownContentProps) => {
@@ -68,17 +73,19 @@ export const Select = forwardRef<SelectHandles, SelectProps>(function Select(
         onSelect: onChange,
         selected: value,
         customItem,
+        listProps,
         options,
         ...props,
       }
 
-      return <BasicMenu {...menuProps} />
+      return <SelectMenu {...menuProps} />
     },
 
     className: {
       container: clsx(
         "select",
         accentClassName,
+        color,
         size,
         {
           selected: !!value,
@@ -97,9 +104,7 @@ export const Select = forwardRef<SelectHandles, SelectProps>(function Select(
       content: {
         "data-selected": !!value?.value,
       },
-      menu: {
-        // @TODO
-      },
+      menu: {},
     },
   }
 

@@ -14,6 +14,7 @@ export interface DropdownContentProps {
 export interface DropdownProps {
   content: FunctionComponent<DropdownContentProps>
   menu: FunctionComponent<DropdownContentProps>
+  menuHeight?: string | number
 
   onClose?: () => void
   onOpen?: () => void

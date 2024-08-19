@@ -24,6 +24,8 @@ function ItemBase(
     active,
     accent,
     center,
+    hover,
+    color,
     title,
     size,
     link,
@@ -47,8 +49,9 @@ function ItemBase(
   const className = clsx(
     "mie item",
     accentClassName,
+    color,
     size,
-    { vertical, center, activatable, active },
+    { vertical, center, activatable, active, hover },
     _className,
   )
 

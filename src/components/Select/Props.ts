@@ -1,6 +1,8 @@
 import { FunctionComponent, HTMLAttributes, ReactNode } from "react"
 import { DropdownContentProps } from "../../containers/Dropdown"
 import { ItemProps } from "../Item"
+import { ListProps } from "../../containers/List"
+import { LayoutProps } from "../../layout"
 
 type DivProps = Omit<
   HTMLAttributes<HTMLDivElement>,
@@ -12,6 +14,25 @@ export type SelectSize = "small" | "large"
 
 export type SelectButtonAccent = boolean | "warning" | "error" | "success"
 export type SelectButtonSize = "small" | "large"
+
+export type SelectColor =
+  | "blue"
+  | "green"
+  | "yellow"
+  | "orange"
+  | "red"
+  | "purple"
+  | "brown"
+  | "pink"
+  | "deeppurple"
+  | "indigo"
+  | "lightgreen"
+  | "deeporange"
+  | "light"
+  | "dark"
+
+export type SelectMenuListProps = LayoutProps<ListProps> &
+  React.RefAttributes<HTMLDivElement>
 
 export interface OptionValue
   extends Omit<
@@ -28,12 +49,13 @@ export interface CustomItemProps {
   onSelect(option: OptionValue): void
 }
 
-export interface BasicMenuProps extends DropdownContentProps {
+export interface SelectMenuProps extends DropdownContentProps {
   selected?: OptionValue
   options: OptionValue[]
 
   customItem?: FunctionComponent<CustomItemProps>
   onSelect(option: OptionValue): void
+  listProps?: SelectMenuListProps
 }
 
 export interface SelectCustomProps {
@@ -65,11 +87,15 @@ export interface SelectProps extends DivProps, SelectCustomProps {
   opened?: boolean
 
   accent?: SelectAccent
+  color?: SelectColor
   size?: SelectSize
 
   customItem?: FunctionComponent<CustomItemProps>
+  listProps?: SelectMenuListProps
 
   onChange: (option: OptionValue) => void
   onClose?: () => void
   onOpen?: () => void
+
+  menuHeight?: number | string
 }

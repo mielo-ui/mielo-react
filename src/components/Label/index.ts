@@ -1,2 +1,8 @@
-export type { LabelAccent, LabelFloating, LabelSize, LabelProps } from "./Props"
+export type {
+  LabelAccent,
+  LabelColor,
+  LabelFloating,
+  LabelSize,
+  LabelProps,
+} from "./Props"
 export { Label } from "./Label"

@@ -6,6 +6,7 @@ export type {
   SelectAccent,
   OptionValue,
   SelectProps,
+  SelectColor,
   SelectSize,
 } from "./Props"
 

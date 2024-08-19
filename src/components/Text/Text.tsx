@@ -13,6 +13,7 @@ export const Text = forwardRef<HTMLDivElement, TextProps>(function Text(
     accent,
     center,
     invert,
+    color,
     muted,
     light,
     bold,
@@ -26,6 +27,7 @@ export const Text = forwardRef<HTMLDivElement, TextProps>(function Text(
   const className = clsx(
     "mie text",
     accentClassName,
+    color,
     size,
     {
       semibold,

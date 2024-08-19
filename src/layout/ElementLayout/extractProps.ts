@@ -1,11 +1,12 @@
 import * as cn from "./classnames"
 
 export type LayoutProps<T> = Partial<
-  cn.LayoutIndentProps &
+  cn.LayoutSpaceBetweenProps &
     cn.LayoutRoundedProps &
+    cn.LayoutIndentProps &
     cn.LayoutShadowProps &
     cn.LayoutFlexProps &
-    cn.LayoutSpaceBetweenProps
+    cn.LayoutGapProps
 > &
   T
 
@@ -18,6 +19,7 @@ export interface LayoutExtractedProps {
   shadow: cn.LayoutShadowProps
 
   flex: cn.LayoutFlexProps
+  gap: cn.LayoutGapProps
 }
 
 // prettier-ignore
@@ -32,7 +34,10 @@ export function extractProps<T>({
   
   p, ph, pv, pt, pr, pb, pl,
   m, mh, mv, mt, mr, mb, ml,
-  r, rt, rb, rl, rr,
+
+  r, rt, rb, rl, rr, rtl, rtr, rbl, rbr,
+
+  g, gr, gc,
 
   sbh,
   sbv,
@@ -54,7 +59,11 @@ export function extractProps<T>({
   }
 
   const roundedProps = {
-    r, rt, rb, rl, rr,
+    r, rt, rb, rl, rr, rtl, rtr, rbl, rbr,
+  }
+
+  const gapProps = {
+    g, gc, gr,
   }
 
   const shadowProps = {
@@ -70,6 +79,7 @@ export function extractProps<T>({
     spaceBetween: spaceBetweenProps,
     rounded: roundedProps,
     flex: flexProps,
+    gap: gapProps,
     
     padding: paddingProps,
     margin: marginProps,

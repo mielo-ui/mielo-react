@@ -1,2 +1,2 @@
-export type { ImageAccent, ImageSize, ImageProps } from "./Props"
+export type { ImageAccent, ImageColor, ImageSize, ImageProps } from "./Props"
 export { Image } from "./Image"

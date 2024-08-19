@@ -13,13 +13,14 @@ import { DropdownHandles, DropdownProps } from "./Props"
 
 export const Dropdown = forwardRef<DropdownHandles, DropdownProps>(function Dropdown(
   {
+    className: _className,
     onClose: _onClose,
     onOpen: _onOpen,
+    menuHeight,
     opened,
-
-    className,
-    content,
     props,
+
+    content,
     menu,
   },
   ref,
@@ -86,41 +87,31 @@ export const Dropdown = forwardRef<DropdownHandles, DropdownProps>(function Drop
     }
   })
 
-  const containerProps = Object.assign(
-    {
-      className: clsx("mie dropdown", className?.container, {
-        opened: isOpen || opened,
-      }),
+  const className = {
+    content: clsx("content", _className?.content),
+    container: clsx("mie dropdown", _className?.container, {
+      opened: isOpen || opened,
+    }),
+    menu: clsx("menu", _className?.menu, {
+      opened: isOpen || opened,
+    }),
+  }
 
-      style: Object.assign(
-        {},
-        isOpen && {
-          zIndex: 100,
-        },
-      ) as any,
-
-      "data-is-active": isOpen,
-      ref: containerRef,
+  const containerStyle = Object.assign(
+    {},
+    isOpen && {
+      zIndex: 100,
     },
-    props?.container,
+    props?.container?.style,
   )
 
-  const contentProps = Object.assign(
-    {
-      className: clsx("content", className?.content),
-      ref: contentRef,
-    },
-    props?.content,
-  )
-
-  const menuProps = Object.assign(
-    {
-      className: clsx("menu", className?.menu, {
-        opened: isOpen || opened,
-      }),
-      ref: menuRef,
-    },
-    props?.menu,
+  const menuStyle = Object.assign(
+    {},
+    menuHeight &&
+      isOpen && {
+        minHeight: menuHeight,
+      },
+    props?.menu?.style,
   )
 
   const renderContentProps = {
@@ -130,11 +121,24 @@ export const Dropdown = forwardRef<DropdownHandles, DropdownProps>(function Drop
   }
 
   return (
-    <div {...containerProps}>
-      <div {...menuProps}>
-        <div className="content">{menu(renderContentProps)}</div>
+    <div
+      {...(props?.container ? props?.container : {})}
+      className={className.container}
+      data-is-active={isOpen}
+      style={containerStyle}
+      ref={containerRef}
+    >
+      <div
+        {...(props?.menu ? props?.menu : {})}
+        className={className.menu}
+        style={menuStyle}
+        ref={menuRef}
+      >
+        {menu(renderContentProps)}
       </div>
-      <div {...contentProps}>{content(renderContentProps)}</div>
+      <div ref={contentRef} className={className.content} {...props?.content}>
+        {content(renderContentProps)}
+      </div>
     </div>
   )
 })

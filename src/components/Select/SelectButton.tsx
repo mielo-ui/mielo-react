@@ -15,21 +15,18 @@ export function SelectButton({
   close,
   open,
 
-  accent,
-  name,
-  size,
+  accent: _accent,
+  name: _name,
+  size: _size,
 }: SelectButtonProps) {
   const onClick = useCallback(() => {
     isOpen ? close() : open()
   }, [isOpen])
 
+  const className = clsx("base", { opened: isOpen, selected: !!selected })
+
   return (
-    <div
-      className={clsx("base", { opened: isOpen, selected: !!selected })}
-      onClick={onClick}
-      role="button"
-      tabIndex={0}
-    >
+    <div className={className} onClick={onClick} role="button" tabIndex={0}>
       {prefix}
 
       <div className="header">

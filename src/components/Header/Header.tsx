@@ -8,8 +8,10 @@ export const Header = forwardRef<HTMLDivElement, HeaderProps>(function Header(
     className: _className,
     inverted,
     iconSided,
+    accent,
     subtitle,
     flattened,
+    color,
     center,
     title,
     size,
@@ -18,9 +20,13 @@ export const Header = forwardRef<HTMLDivElement, HeaderProps>(function Header(
   },
   ref,
 ) {
+  const accentClassName = accent && (accent === true ? "accent" : accent)
+
   const className = clsx(
     "mie header",
     size,
+    accentClassName,
+    color,
     { center, inverted, flattened },
     _className,
   )
