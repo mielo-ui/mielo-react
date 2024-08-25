@@ -1,15 +1,7 @@
-<p align="center">
-  <img src="https://raw.githubusercontent.com/mielo-ui/mielo.css/main/logo.png" />
-</p>
+## Mielo React
+React components & wrappers around mielo.css framework.
 
-<h1 align="center">
-  Mielo React
-</h1>
-
-<p align="center">
-  React components & wrappers around mielo.css framework.
-</p>
-
+![logo](https://raw.githubusercontent.com/mielo-ui/mielo.css/main/logo.png)
 
 ## Quick install
 
