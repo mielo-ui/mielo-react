@@ -1,41 +1,24 @@
 import { HTMLAttributes } from "react"
 import { ReactNode } from "react"
 
+import { CoreAccent, CoreColor, CoreSize } from "../../types"
+
 type DivProps = Omit<HTMLAttributes<HTMLDivElement>, "title" | "content">
-
-export type TextSize = "tiny" | "mini" | "small" | "large" | "big" | "massive"
-export type TextAccent = boolean | "success" | "warning" | "error"
-
-export type TextColor =
-  | "blue"
-  | "green"
-  | "yellow"
-  | "orange"
-  | "red"
-  | "purple"
-  | "brown"
-  | "pink"
-  | "deeppurple"
-  | "indigo"
-  | "lightgreen"
-  | "deeporange"
-  | "light"
-  | "dark"
 
 export interface TextProps extends DivProps {
   className?: string
 
-  accent?: TextAccent
-  color?: TextColor
+  size?: false | CoreSize
+  accent?: CoreAccent
+  color?: CoreColor | string
 
-  size?: TextSize
   muted?: boolean
   invert?: boolean
 
-  semibold?: boolean
-  regular?: boolean
-  light?: boolean
-  bold?: boolean
+  fsemibold?: boolean
+  fregular?: boolean
+  flight?: boolean
+  fbold?: boolean
 
   element?: "div" | "p" | "a"
   children?: ReactNode

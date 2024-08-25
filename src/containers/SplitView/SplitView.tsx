@@ -5,11 +5,21 @@ import { SplitViewProps } from "./Props"
 import { Sidebar } from "../Sidebar"
 
 const SplitView = forwardRef<HTMLDivElement, SplitViewProps>(function SplitView(
-  { className: _className, headerbar, children, sidebar, overlay, accent, ...rest },
+  {
+    className: _className,
+    contentClassName,
+    headerbar,
+    children,
+    sidebar,
+    overlay,
+    accent,
+    color,
+    ...rest
+  },
   ref,
 ) {
   const accentClassName = accent && (accent === true ? "accent" : accent)
-  const className = clsx("mie splitview", accentClassName, _className)
+  const className = clsx("mie splitview", accentClassName, color, _className)
 
   return (
     <div ref={ref} {...rest} className={className}>
@@ -18,7 +28,7 @@ const SplitView = forwardRef<HTMLDivElement, SplitViewProps>(function SplitView(
 
       <div className="container">
         {headerbar}
-        <div className="content">{children}</div>
+        <div className={clsx("content", contentClassName)}>{children}</div>
       </div>
     </div>
   )

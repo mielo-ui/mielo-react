@@ -1,10 +1,3 @@
-export type {
-  CheckboxIndicatorIcon,
-  LayoutIconProps,
-  CheckboxAccent,
-  CheckboxSize,
-  CheckboxProps,
-  CheckboxColor,
-} from "./Props"
+export type { CheckboxIndicatorIcon, LayoutIconProps, CheckboxProps } from "./Props"
 
 export { Checkbox } from "./Checkbox"

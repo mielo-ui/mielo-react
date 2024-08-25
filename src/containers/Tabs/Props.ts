@@ -1,16 +1,17 @@
 import { ReactNode } from "react"
 
+import { CoreAccent, CoreColor } from "../../types"
+
 import {
   LayoutRoundedProps,
   LayoutIndentProps,
   LayoutShadowProps,
 } from "../../layout"
 
-export type TabsAccent = boolean | "warning" | "error" | "success"
-
 export interface RawTabsProps {
   children?: ReactNode
-  accent?: TabsAccent
+  accent?: CoreAccent
+  color?: CoreColor | string
   className?: string
 }
 
@@ -21,12 +22,14 @@ export interface TabBackgroundProps
   height: number | string
   offset: number | string
   width: number | string
-  accent?: TabsAccent
+  accent?: CoreAccent
+  color?: CoreColor | string
   className?: string
 }
 
 export interface TabOption {
-  accent?: TabsAccent
+  accent?: CoreAccent
+  color?: CoreColor | string
   icon?: JSX.Element
   title: ReactNode
   name: string
@@ -55,7 +58,8 @@ export interface TabsProps
   animated?: boolean
 
   className?: string
-  accent?: TabsAccent
+  accent?: CoreAccent
+  color?: CoreColor | string
 
   tabs: TabOption[] | Record<string, TabOption>
   selected: string

@@ -1,40 +1,13 @@
 import { HTMLAttributes, ReactNode } from "react"
-
-export type ImageAccent = true | "success" | "warning" | "error"
-
-export type ImageColor =
-  | "blue"
-  | "green"
-  | "yellow"
-  | "orange"
-  | "red"
-  | "purple"
-  | "brown"
-  | "pink"
-  | "deeppurple"
-  | "indigo"
-  | "lightgreen"
-  | "deeporange"
-  | "light"
-  | "dark"
-
-export type ImageSize =
-  | "mini"
-  | "tiny"
-  | "small"
-  | "medium"
-  | "large"
-  | "big"
-  | "huge"
-  | "massive"
+import { CoreAccent, CoreColor, CoreSize } from "../../types"
 
 export interface ImageProps extends HTMLAttributes<HTMLElement> {
   children?: ReactNode
   className?: string
 
-  accent?: ImageAccent
-  color?: ImageColor
-  size?: ImageSize
+  size?: false | CoreSize
+  accent?: CoreAccent
+  color?: CoreColor | string
 
   transparent?: boolean
   container?: boolean

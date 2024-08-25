@@ -1,11 +1,11 @@
 import { ReactNode } from "react"
-
-export type HeaderBarAccent = boolean | "warning" | "error" | "success"
+import { CoreAccent, CoreColor } from "../../types"
 
 export interface HeaderBarProps {
-  accent?: HeaderBarAccent
-  className?: string
+  accent?: CoreAccent
+  color?: CoreColor | string
 
+  className?: string
   transparent?: boolean
   bordered?: boolean
 

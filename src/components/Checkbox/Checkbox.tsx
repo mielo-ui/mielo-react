@@ -38,8 +38,6 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(function Che
   }, [_checked])
 
   const onChange: ChangeEventHandler<HTMLInputElement> = useCallback(event => {
-    event.stopPropagation()
-
     setChecked(event.target.checked)
     _onChange?.(event)
   }, [])

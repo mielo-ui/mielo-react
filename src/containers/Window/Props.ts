@@ -1,12 +1,14 @@
-import { DetailedHTMLProps, HTMLAttributes, ReactNode, MouseEvent } from "react"
+import { HTMLAttributes, ReactNode, MouseEvent } from "react"
+import { CoreAccent, CoreColor } from "../../types"
 import { HeaderBarProps } from "../HeaderBar"
 import { SplitViewProps } from "../SplitView"
 
 type DivProps = HTMLAttributes<HTMLDivElement>
-export type WindowAccent = boolean | "warning" | "error" | "success"
 
 export interface WindowProps extends DivProps {
-  accent?: WindowAccent
+  accent?: CoreAccent
+  color?: CoreColor
+
   headerbar?: HeaderBarProps
   split?: SplitViewProps
   children?: ReactNode

@@ -2,7 +2,6 @@ export type {
   TabBackgroundProps,
   RawTabsProps,
   TabsHandles,
-  TabsAccent,
   TabsProps,
   TabOption,
   TabProps,

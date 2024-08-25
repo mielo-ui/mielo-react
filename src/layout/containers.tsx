@@ -1,12 +1,19 @@
 import { layoutElement } from "./builder"
+
 import * as containers from "../containers"
 import { Item } from "./components"
 
 export const Window = layoutElement(containers.Window, {
   spaceBetween: true,
+  gap: true,
 })
 
 export const View = layoutElement(containers.View, {
+  spaceBetween: true,
+  gap: true,
+})
+
+export const Dialog = layoutElement(containers.Dialog, {
   spaceBetween: true,
   gap: true,
 })

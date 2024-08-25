@@ -5,7 +5,7 @@ import { collectClassnames, extractProps } from "../../layout"
 
 export function TabBackground(props: TabBackgroundProps) {
   const {
-    props: { className: _className, height, offset, accent, width },
+    props: { className: _className, height, offset, accent, color, width },
     ...layoutProps
   } = extractProps(props)
 
@@ -18,6 +18,7 @@ export function TabBackground(props: TabBackgroundProps) {
   const className = clsx(
     "mie tab background",
     accentClassName,
+    color,
     ...layoutClassNames,
     _className,
   )

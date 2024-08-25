@@ -1,28 +1,12 @@
-import { DetailedHTMLProps, HTMLAttributes, ReactNode } from "react"
+import { HTMLAttributes, ReactNode } from "react"
+import { CoreAccent, CoreColor, CoreSize } from "../../types"
 
 type DivProps = HTMLAttributes<HTMLDivElement>
 
-export type ActivatableAccent = boolean | "warning" | "error" | "success"
-
-export type ActivatableColor =
-  | "blue"
-  | "green"
-  | "yellow"
-  | "orange"
-  | "red"
-  | "purple"
-  | "brown"
-  | "pink"
-  | "deeppurple"
-  | "indigo"
-  | "lightgreen"
-  | "deeporange"
-  | "light"
-  | "dark"
-
 export interface ActivatableProps extends DivProps {
-  accent?: ActivatableAccent
-  color?: ActivatableColor
+  accent?: CoreAccent
+  color?: CoreColor | string
+
   children?: ReactNode
   active?: boolean
   hover?: boolean

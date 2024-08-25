@@ -5,13 +5,31 @@ import { DialogProps } from "./Props"
 import { Modal } from "../Modal"
 
 export const Dialog = forwardRef<HTMLDivElement, DialogProps>(function Dialog(
-  { attached, children, actions, accent, size, onRequestClose, isOpen, ...rest },
+  {
+    className: _className,
+    onRequestClose,
+    attached,
+    children,
+    actions,
+    accent,
+    isOpen,
+    color,
+    size,
+    ...rest
+  },
   ref,
 ) {
   const attachedClassName = attached && `attached attached-${attached}`
   const accentClassName = accent && accent === true ? "accent" : accent
 
-  const className = clsx("mie dialog", size, accentClassName, attachedClassName)
+  const className = clsx(
+    "mie dialog",
+    size,
+    accentClassName,
+    color,
+    _className,
+    attachedClassName,
+  )
 
   const content = (
     <div className={className} {...rest}>

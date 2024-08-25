@@ -1,7 +1,5 @@
 export type {
   DialogActionProps,
-  DialogAccent,
-  DialogSize,
   DialogProps,
   ConfirmHandles,
   ConfirmAction,
@@ -11,18 +9,12 @@ export type {
   ConfirmSize,
 } from "./Dialog"
 
-export type {
-  MessageContentProps,
-  MessageProps,
-  MessageAccent,
-  MessageSize,
-} from "./Message"
+export type { MessageContentProps, MessageProps } from "./Message"
 
 export type {
   TabBackgroundProps,
   RawTabsProps,
   TabsHandles,
-  TabsAccent,
   TabsProps,
   TabOption,
   TabProps,
@@ -32,17 +24,16 @@ export type {
   WindowControlsProps,
   WindowControlIcons,
   WindowControlType,
-  WindowAccent,
   WindowProps,
 } from "./Window"
 
 export type { DropdownHandles, DropdownContentProps, DropdownProps } from "./Dropdown"
 export type { RowsProps, RowProps, EntryRowProps, SelectRowProps } from "./Rows"
-export type { SidebarAccent, SidebarSize, SidebarProps } from "./Sidebar"
-export type { ActivatableAccent, ActivatableProps } from "./Activatable"
-export type { SplitViewAccent, SplitViewProps } from "./SplitView"
-export type { HeaderBarAccent, HeaderBarProps } from "./HeaderBar"
-export type { ViewAccent, ViewBg, ViewProps } from "./View"
+export type { SidebarProps } from "./Sidebar"
+export type { ActivatableProps } from "./Activatable"
+export type { SplitViewProps } from "./SplitView"
+export type { HeaderBarProps } from "./HeaderBar"
+export type { ViewBg, ViewProps } from "./View"
 export type { ModalProps, PortalProps } from "./Modal"
 export type { CollapsibleProps } from "./Collapsible"
 export type { ClampProps } from "./Clamp"

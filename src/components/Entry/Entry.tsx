@@ -20,6 +20,7 @@ export const Entry = forwardRef<HTMLInputElement, EntryProps>(function Entry(
     placeholder,
     transparent,
     disabled,
+    bordered,
     accent,
     color,
     label,
@@ -57,7 +58,7 @@ export const Entry = forwardRef<HTMLInputElement, EntryProps>(function Entry(
     accentClassName,
     color,
     size,
-    { disabled, transparent },
+    { disabled, transparent, bordered },
     _className,
   )
 

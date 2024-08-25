@@ -1,9 +1,4 @@
-export type {
-  DialogActionProps,
-  DialogAccent,
-  DialogSize,
-  DialogProps,
-} from "./Props"
+export type { DialogActionProps, DialogProps } from "./Props"
 
 export type {
   ConfirmHandles,

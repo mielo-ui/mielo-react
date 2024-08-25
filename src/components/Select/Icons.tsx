@@ -1,7 +1,7 @@
 export interface IconProps {
   strokeWidth?: number
   color?: string
-  size?: number
+  size?: false | number
 }
 
 export const ChevronDown = ({

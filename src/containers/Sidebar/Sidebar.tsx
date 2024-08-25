@@ -7,10 +7,11 @@ export const Sidebar = forwardRef<HTMLDivElement, SidebarProps>(function Sidebar
   {
     className: _className,
     animateStyle = "width",
+    opened = false,
     headerbar,
     children,
     accent,
-    opened,
+    color,
     size,
     ...rest
   },
@@ -22,6 +23,7 @@ export const Sidebar = forwardRef<HTMLDivElement, SidebarProps>(function Sidebar
     "mie sidebar",
     size,
     accentClassName,
+    color,
     animateStyle,
     { opened },
     _className,
@@ -29,8 +31,10 @@ export const Sidebar = forwardRef<HTMLDivElement, SidebarProps>(function Sidebar
 
   return (
     <div ref={ref} {...rest} className={className}>
-      {headerbar && headerbar}
-      {children}
+      <div className="content">
+        {headerbar && headerbar}
+        {children}
+      </div>
     </div>
   )
 })

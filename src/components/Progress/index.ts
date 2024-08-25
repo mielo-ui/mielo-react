@@ -1,10 +1,3 @@
-export type {
-  ProgressBarProps,
-  ProgressAccent,
-  ProgressProps,
-  ProgressSize,
-  ProgressColor,
-} from "./Props"
-
+export type { ProgressBarProps, ProgressProps } from "./Props"
 export { default as Progress } from "./Progress"
 export { ProgressBar } from "./Bar"

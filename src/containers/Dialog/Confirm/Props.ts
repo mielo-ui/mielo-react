@@ -31,7 +31,7 @@ export interface ConfirmProps extends DivProps {
   children?: ReactNode
 
   accent?: ConfirmAccent
-  size?: ConfirmSize
+  size?: false | ConfirmSize
 
   // Default actions with labels - ok, cancel, reject
   actions?: Record<string, ConfirmAction>

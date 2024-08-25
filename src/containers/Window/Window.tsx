@@ -8,11 +8,26 @@ import { WindowControls } from "./WindowControls"
 import { WindowProps } from "./Props"
 
 const Window = forwardRef<HTMLDivElement, WindowProps>(function Window(
-  { className: _className, transparent, children, headerbar, split, accent, ...rest },
+  {
+    className: _className,
+    transparent,
+    children,
+    headerbar,
+    split,
+    accent,
+    color,
+    ...rest
+  },
   ref,
 ) {
   const accentClassName = accent && (accent === true ? "accent" : accent)
-  const className = clsx("mie window", accentClassName, { transparent }, _className)
+  const className = clsx(
+    "mie window",
+    accentClassName,
+    color,
+    { transparent },
+    _className,
+  )
 
   return (
     <div ref={ref} {...rest} className={className}>

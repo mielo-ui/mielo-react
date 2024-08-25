@@ -20,6 +20,7 @@ export const Select = forwardRef<SelectHandles, SelectProps>(function Select(
     name,
 
     transparent,
+    bordered,
     disabled,
     opened,
 
@@ -91,6 +92,7 @@ export const Select = forwardRef<SelectHandles, SelectProps>(function Select(
           selected: !!value,
           transparent,
           disabled,
+          bordered,
         },
         _className,
       ),

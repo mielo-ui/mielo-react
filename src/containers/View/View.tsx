@@ -9,7 +9,9 @@ export const View = forwardRef<HTMLDivElement, ViewProps>(function View(
     activatable,
     scrollable,
     children,
+    bordered,
     accent,
+    color,
     style,
     bg,
     ...rest
@@ -22,9 +24,11 @@ export const View = forwardRef<HTMLDivElement, ViewProps>(function View(
     "mie view",
     bg,
     accentClassName,
+    color,
     {
       activatable,
       scrollable,
+      bordered,
     },
     _className,
   )

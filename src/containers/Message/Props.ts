@@ -1,11 +1,11 @@
 import { ReactNode } from "react"
-
-export type MessageSize = "tiny" | "small" | "large" | "big" | "huge" | "massive"
-export type MessageAccent = boolean | "warning" | "error" | "success"
+import { CoreAccent, CoreColor, CoreSize } from "../../types"
 
 export interface MessageProps {
-  accent?: MessageAccent
-  size?: MessageSize
+  size?: false | CoreSize
+  accent?: CoreAccent
+  color?: CoreColor | string
+
   marked?: boolean
   banner?: boolean
 

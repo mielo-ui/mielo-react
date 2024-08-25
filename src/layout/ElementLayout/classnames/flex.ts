@@ -10,18 +10,19 @@ export interface LayoutFlexProps {
   fr?: boolean
 }
 
-export function flex({ fjc, fai, f1, f, fc, fr, fw }: LayoutFlexProps) {
-  const names: any[] = []
+export function flex(opts: LayoutFlexProps) {
+  // prettier-ignore
+  const toggles: Array<"f1" | "f" | "fc" | "fr" | "fw"> = ["f1", "f", "fc", "fr", "fw"]
+  const mapped: Array<"fjc" | "fai"> = ["fjc", "fai"]
+  const out: string[] = []
 
-  if (!f) {
-    return names
-  }
+  toggles.forEach(pk => {
+    opts[pk] && out.push(pk)
+  })
 
-  names.push("f", { fc, fr, fw })
-  f1 && names.push("f1")
+  mapped.forEach(pk => {
+    opts[pk] && out.push(`${pk}-${opts[pk]}`)
+  })
 
-  fjc && names.push(`fjc-${fjc}`)
-  fai && names.push(`fai-${fai}`)
-
-  return names
+  return out
 }

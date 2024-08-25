@@ -1,0 +1,26 @@
+export type CoreSize =
+  | "mini"
+  | "tiny"
+  | "small"
+  | "large"
+  | "big"
+  | "huge"
+  | "massive"
+export type CoreAccent = boolean | "warning" | "error" | "success"
+
+export type CoreColor =
+  | "blue"
+  | "green"
+  | "yellow"
+  | "orange"
+  | "red"
+  | "purple"
+  | "brown"
+  | "pink"
+  | "deeppurple"
+  | "indigo"
+  | "lightgreen"
+  | "deeporange"
+  | "light"
+  | "dark"
+

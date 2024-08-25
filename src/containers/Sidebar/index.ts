@@ -1,2 +1,2 @@
-export type { SidebarAccent, SidebarSize, SidebarProps } from "./Props"
+export type { SidebarProps } from "./Props"
 export { Sidebar } from "./Sidebar"

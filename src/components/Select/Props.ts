@@ -1,35 +1,15 @@
 import { FunctionComponent, HTMLAttributes, ReactNode } from "react"
+
 import { DropdownContentProps } from "../../containers/Dropdown"
-import { ItemProps } from "../Item"
+import { CoreAccent, CoreColor, CoreSize } from "../../types"
 import { ListProps } from "../../containers/List"
 import { LayoutProps } from "../../layout"
+import { ItemProps } from "../Item"
 
 type DivProps = Omit<
   HTMLAttributes<HTMLDivElement>,
   "prefix" | "postfix" | "onChange"
 >
-
-export type SelectAccent = boolean | "error" | "warning" | "success"
-export type SelectSize = "small" | "large"
-
-export type SelectButtonAccent = boolean | "warning" | "error" | "success"
-export type SelectButtonSize = "small" | "large"
-
-export type SelectColor =
-  | "blue"
-  | "green"
-  | "yellow"
-  | "orange"
-  | "red"
-  | "purple"
-  | "brown"
-  | "pink"
-  | "deeppurple"
-  | "indigo"
-  | "lightgreen"
-  | "deeporange"
-  | "light"
-  | "dark"
 
 export type SelectMenuListProps = LayoutProps<ListProps> &
   React.RefAttributes<HTMLDivElement>
@@ -68,8 +48,8 @@ export interface SelectButtonProps extends SelectCustomProps, DropdownContentPro
   label?: string
   name?: string
 
-  accent?: SelectButtonAccent
-  size?: SelectButtonSize
+  size?: false | CoreSize
+  accent?: CoreAccent
 }
 
 export interface SelectHandles {}
@@ -83,12 +63,13 @@ export interface SelectProps extends DivProps, SelectCustomProps {
   className?: string
 
   transparent?: boolean
+  bordered?: boolean
   disabled?: boolean
   opened?: boolean
 
-  accent?: SelectAccent
-  color?: SelectColor
-  size?: SelectSize
+  size?: false | CoreSize
+  accent?: CoreAccent
+  color?: CoreColor | string
 
   customItem?: FunctionComponent<CustomItemProps>
   listProps?: SelectMenuListProps

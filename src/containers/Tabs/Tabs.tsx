@@ -47,6 +47,7 @@ const Tabs = forwardRef<TabsHandles, TabsProps>(function Tabs(props, ref) {
       animated,
       selected,
       accent,
+      color,
       tabs,
     },
     ...layoutProps
@@ -106,6 +107,7 @@ const Tabs = forwardRef<TabsHandles, TabsProps>(function Tabs(props, ref) {
   const className = clsx(
     "mie tabs",
     accentClassName,
+    color,
     { transparent },
     ...layoutClassNames,
     _className,
@@ -119,6 +121,7 @@ const Tabs = forwardRef<TabsHandles, TabsProps>(function Tabs(props, ref) {
         <TabBackground
           {..._tabProps}
           accent={tab.accent}
+          color={tab.color}
           offset={offset}
           height={height}
           width={width}

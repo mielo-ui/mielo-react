@@ -1,45 +1,40 @@
-// prettier-ignore
 import * as Layout from "./layout"
 
-export type {
-  ButtonGroupProps, ButtonAccent,
-  ButtonProps, ButtonSize,
-  ButtonColor,
-} from "./components"
+export type { CoreAccent, CoreColor, CoreSize } from "./types"
+export type { ButtonGroupProps, ButtonProps } from "./components"
+export type { ProgressBarProps, ProgressProps } from "./components"
 
 export type {
-  CheckboxIndicatorIcon, LayoutIconProps,
-  CheckboxAccent, CheckboxColor, CheckboxSize,
+  CheckboxIndicatorIcon,
+  LayoutIconProps,
   CheckboxProps,
 } from "./components"
 
 export type {
-  ProgressBarProps, ProgressAccent, ProgressColor,
-  ProgressProps, ProgressSize,
+  SelectButtonProps,
+  CustomItemProps,
+  OptionValue,
+  SelectProps,
 } from "./components"
 
 export type {
-  SelectButtonAccent, SelectColor, SelectButtonProps, SelectButtonSize,
-  CustomItemProps, SelectAccent, OptionValue, SelectProps,
-  SelectSize, 
-} from "./components"
-
-export type {
-  LabelAccent, LabelColor, LabelFloating, LabelSize, LabelProps,
-  EntryAccent, EntryColor, EntrySize, EntryProps,
-  ImageAccent, ImageColor, ImageSize, ImageProps,
-  RadioAccent, RadioColor, RadioSize, RadioProps,
-  IconAccent, IconColor, IconSize, IconProps,
-  ItemAccent, ItemColor, ItemSize, ItemProps,
-  TextAccent, TextColor, TextSize, TextProps,
-  HeaderAccent, HeaderColor, HeaderProps, HeaderSize,
+  LabelFloating,
+  LabelProps,
+  EntryProps,
+  ImageProps,
+  RadioProps,
+  IconProps,
+  ItemProps,
+  TextProps,
+  HeaderProps,
   DividerProps,
 } from "./components"
 
+export type { MessageContentProps, MessageProps } from "./containers"
+export type { HeaderBarProps } from "./containers"
+
 export type {
   DialogActionProps,
-  DialogAccent,
-  DialogSize,
   DialogProps,
   ConfirmHandles,
   ConfirmAction,
@@ -50,22 +45,9 @@ export type {
 } from "./containers"
 
 export type {
-  HeaderBarAccent,
-  HeaderBarProps,
-} from "./containers"
-
-export type {
-  MessageContentProps,
-  MessageProps,
-  MessageAccent,
-  MessageSize,
-} from "./containers"
-
-export type {
   TabBackgroundProps,
   RawTabsProps,
   TabsHandles,
-  TabsAccent,
   TabsProps,
   TabOption,
   TabProps,
@@ -75,27 +57,36 @@ export type {
   WindowControlsProps,
   WindowControlIcons,
   WindowControlType,
-  WindowAccent,
   WindowProps,
 } from "./containers"
 
 export type {
-  DropdownHandles, DropdownContentProps, DropdownProps,
-  RowsProps, RowProps, EntryRowProps, SelectRowProps,
-  SidebarAccent, SidebarSize, SidebarProps,
-  ActivatableAccent, ActivatableProps,
-  SplitViewAccent, SplitViewProps,
-  ViewAccent, ViewBg, ViewProps,
-  ModalProps, PortalProps,
+  DropdownHandles,
+  DropdownContentProps,
+  DropdownProps,
+  RowsProps,
+  RowProps,
+  EntryRowProps,
+  SelectRowProps,
+  SidebarProps,
+  ActivatableProps,
+  SplitViewProps,
+  ViewBg,
+  ViewProps,
+  ModalProps,
+  PortalProps,
   CollapsibleProps,
   ClampProps,
   ListProps,
 } from "./containers"
 
 export {
-  Progress, ProgressBar,
-  ButtonGroup, Button,
-  Select, Item,
+  Progress,
+  ProgressBar,
+  ButtonGroup,
+  Button,
+  Select,
+  Item,
   Checkbox,
   Divider,
   Header,
@@ -108,12 +99,21 @@ export {
 } from "./components"
 
 export {
-  Rows, Row, SelectRow, EntryRow,
-  Message, MessageContent,
-  Window, WindowControls,
-  Tabs, RawTabs, Tab,
-  Dialog, Confirm,
-  Modal, Portal,
+  Rows,
+  Row,
+  SelectRow,
+  EntryRow,
+  Message,
+  MessageContent,
+  Window,
+  WindowControls,
+  Tabs,
+  RawTabs,
+  Tab,
+  Dialog,
+  Confirm,
+  Modal,
+  Portal,
   Collapsible,
   Activatable,
   HeaderBar,

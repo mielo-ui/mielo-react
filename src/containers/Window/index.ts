@@ -2,7 +2,6 @@ export type {
   WindowControlsProps,
   WindowControlIcons,
   WindowControlType,
-  WindowAccent,
   WindowProps,
 } from "./Props"
 

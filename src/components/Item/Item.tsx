@@ -39,9 +39,7 @@ function ItemBase(
 
   const onClickSide = useCallback(
     (event: MouseEvent<HTMLElement>) => {
-      if (disableSidePropagation) {
-        event.stopPropagation()
-      }
+      event.stopPropagation()
     },
     [disableSidePropagation],
   )

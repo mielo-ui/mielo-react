@@ -1,55 +1,30 @@
-export type {
-  ButtonGroupProps,
-  ButtonAccent,
-  ButtonProps,
-  ButtonSize,
-  ButtonColor,
-} from "./Button"
+export type { ButtonGroupProps, ButtonProps } from "./Button"
 
 export type {
   CheckboxIndicatorIcon,
   LayoutIconProps,
-  CheckboxAccent,
-  CheckboxSize,
   CheckboxProps,
-  CheckboxColor,
 } from "./Checkbox"
 
-export type {
-  ProgressBarProps,
-  ProgressAccent,
-  ProgressProps,
-  ProgressSize,
-  ProgressColor,
-} from "./Progress"
+export type { ProgressBarProps, ProgressProps } from "./Progress"
 
 export type {
-  SelectButtonAccent,
   SelectButtonProps,
-  SelectButtonSize,
   CustomItemProps,
-  SelectAccent,
   OptionValue,
   SelectProps,
-  SelectColor,
-  SelectSize,
 } from "./Select"
 
-export type {
-  LabelAccent,
-  LabelFloating,
-  LabelSize,
-  LabelProps,
-  LabelColor,
-} from "./Label"
-export type { HeaderProps, HeaderAccent, HeaderSize, HeaderColor } from "./Header"
-export type { EntryAccent, EntrySize, EntryProps, EntryColor } from "./Entry"
-export type { ImageAccent, ImageSize, ImageProps, ImageColor } from "./Image"
-export type { RadioAccent, RadioSize, RadioProps, RadioColor } from "./Radio"
-export type { IconAccent, IconSize, IconProps, IconColor } from "./Icon"
-export type { ItemAccent, ItemSize, ItemProps, ItemColor } from "./Item"
-export type { TextSize, TextAccent, TextProps, TextColor } from "./Text"
+export type { LabelFloating, LabelProps } from "./Label"
+
 export type { DividerProps } from "./Divider"
+export type { HeaderProps } from "./Header"
+export type { EntryProps } from "./Entry"
+export type { ImageProps } from "./Image"
+export type { RadioProps } from "./Radio"
+export type { IconProps } from "./Icon"
+export type { ItemProps } from "./Item"
+export type { TextProps } from "./Text"
 
 export { Progress, ProgressBar } from "./Progress"
 export { Button, ButtonGroup } from "./Button"

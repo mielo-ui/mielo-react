@@ -1,2 +1,2 @@
-export type { HeaderBarAccent, HeaderBarProps } from "./Props"
+export type { HeaderBarProps } from "./Props"
 export { HeaderBar } from "./HeaderBar"

@@ -13,6 +13,7 @@ const Message = forwardRef<HTMLDivElement, MessageProps>(function Message(
     accent,
     marked,
     banner,
+    color,
     title,
     size,
     icon,
@@ -25,6 +26,7 @@ const Message = forwardRef<HTMLDivElement, MessageProps>(function Message(
   const className = clsx(
     "mie message",
     accentClassName,
+    color,
     size,
     {
       banner,

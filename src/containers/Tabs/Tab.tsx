@@ -1,8 +1,8 @@
 import { forwardRef } from "react"
 import clsx from "clsx"
 
-import { TabProps } from "./Props"
 import { collectClassnames, extractProps } from "../../layout"
+import { TabProps } from "./Props"
 
 export const Tab = forwardRef<HTMLDivElement, TabProps>(function Tab(props, ref) {
   const {
@@ -12,6 +12,7 @@ export const Tab = forwardRef<HTMLDivElement, TabProps>(function Tab(props, ref)
       selected,
       onClick,
       accent,
+      color,
       title,
       icon,
       name,
@@ -29,6 +30,7 @@ export const Tab = forwardRef<HTMLDivElement, TabProps>(function Tab(props, ref)
   const className = clsx(
     "mie tab",
     accentClassName,
+    color,
     _className,
     { active, transparent },
     ...layoutClassNames,

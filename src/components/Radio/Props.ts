@@ -1,30 +1,12 @@
 import { ReactNode } from "react"
-
-export type RadioAccent = boolean | "warning" | "error" | "success"
-export type RadioSize = "large" | "small"
-
-export type RadioColor =
-  | "blue"
-  | "green"
-  | "yellow"
-  | "orange"
-  | "red"
-  | "purple"
-  | "brown"
-  | "pink"
-  | "deeppurple"
-  | "indigo"
-  | "lightgreen"
-  | "deeporange"
-  | "light"
-  | "dark"
+import { CoreAccent, CoreColor, CoreSize } from "../../types"
 
 type RadioInput = Omit<React.InputHTMLAttributes<HTMLInputElement>, "size">
 
 export interface RadioProps extends RadioInput {
-  accent?: RadioAccent
-  color?: RadioColor
+  size?: false | CoreSize
+  accent?: CoreAccent
+  color?: CoreColor | string
 
   children?: ReactNode
-  size?: RadioSize
 }
