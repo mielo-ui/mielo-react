@@ -1,7 +1,9 @@
-import { ReactNode } from "react"
+import { HTMLAttributes, ReactNode } from "react"
 import { CoreAccent, CoreColor } from "../../types"
 
-export interface HeaderBarProps {
+type DivProps = HTMLAttributes<HTMLDivElement>
+
+export interface HeaderBarProps extends DivProps {
   accent?: CoreAccent
   color?: CoreColor | string
 
@@ -14,4 +16,7 @@ export interface HeaderBarProps {
   left?: ReactNode
 
   controls?: ReactNode
+
+  // For tauri & electron window drag
+  "data-desktop-drag"?: boolean
 }

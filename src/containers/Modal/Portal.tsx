@@ -15,7 +15,7 @@ function makePortal(id: string, parent: HTMLElement = document.body): HTMLElemen
 }
 
 function Overlay({ isOpen, onRequestClose }: Omit<PortalProps, "children">) {
-  return isOpen && <div className="mie overlay" onClick={onRequestClose}></div>
+  return isOpen && <div className="mie modal-overlay" onClick={onRequestClose}></div>
 }
 
 const OVERLAY_ID = "overlay-root"

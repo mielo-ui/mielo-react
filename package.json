@@ -1,9 +1,14 @@
 {
   "name": "@mielo-ui/mielo-react",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "main": "dist/cjs/index.js",
   "types": "dist/types.d.ts",
   "module": "dist/esm/index.js",
+  "author": {
+    "name": "Anton Shramko",
+    "email": "antonshramko@yandex.ru"
+  },
+  "homepage": "https://mielo-ui.github.io",
   "repository": {
     "url": "https://github.com/mielo-ui/mielo-react"
   },

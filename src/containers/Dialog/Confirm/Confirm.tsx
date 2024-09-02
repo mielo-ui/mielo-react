@@ -94,7 +94,6 @@ export const Confirm = forwardRef<ConfirmHandles, ConfirmProps>(function Confirm
           label={label}
           pv="small"
           transparent
-          tertiary
         />
       )
     },

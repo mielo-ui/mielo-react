@@ -21,6 +21,7 @@ export const Dialog = forwardRef<HTMLDivElement, DialogProps>(function Dialog(
 ) {
   const attachedClassName = attached && `attached attached-${attached}`
   const accentClassName = accent && accent === true ? "accent" : accent
+  const theme = (rest as any)["data-theme"] || "light"
 
   const className = clsx(
     "mie dialog",
@@ -32,7 +33,7 @@ export const Dialog = forwardRef<HTMLDivElement, DialogProps>(function Dialog(
   )
 
   const content = (
-    <div className={className} {...rest}>
+    <div className={className} {...rest} data-theme={theme}>
       <div className="content">{children}</div>
       {actions && <div className="mie buttons relaxed actions">{actions}</div>}
     </div>
