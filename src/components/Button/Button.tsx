@@ -53,7 +53,11 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button(
     )
   }
 
-  return createElement(link ? "a" : "button", { ref, className, ...rest }, content)
+  return createElement(
+    link ? "a" : "button",
+    { ref, href: link ? link : undefined, className, ...rest },
+    content,
+  )
 })
 
 Button.displayName = "Mie.Button"
