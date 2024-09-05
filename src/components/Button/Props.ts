@@ -6,6 +6,7 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 
   children?: ReactNode
   label?: ReactNode
+  link?: string
 
   size?: false | CoreSize
   accent?: CoreAccent

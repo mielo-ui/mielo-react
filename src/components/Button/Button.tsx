@@ -1,4 +1,4 @@
-import { forwardRef } from "react"
+import { createElement, forwardRef } from "react"
 import clsx from "clsx"
 
 import { ButtonGroup } from "./ButtonGroup"
@@ -19,6 +19,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button(
     color,
     hover,
     label,
+    link,
     icon,
     size,
 
@@ -52,11 +53,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button(
     )
   }
 
-  return (
-    <button ref={ref} className={className} {...rest}>
-      {content}
-    </button>
-  )
+  return createElement(link ? "a" : "button", { ref, className, ...rest }, content)
 })
 
 Button.displayName = "Mie.Button"

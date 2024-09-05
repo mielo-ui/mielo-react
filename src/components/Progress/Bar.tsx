@@ -21,7 +21,7 @@ export const ProgressBar = forwardRef<HTMLDivElement, ProgressBarProps>(
     const accentClassName = accent && (accent === true ? "accent" : accent)
 
     const className = clsx(
-      "mie progress-bar",
+      "mie progressbar",
       indeterminateClassName,
       accentClassName,
       color,
