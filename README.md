@@ -3,7 +3,9 @@ React components & wrappers around mielo.css framework.
 
 ![logo](https://raw.githubusercontent.com/mielo-ui/mielo.css/main/logo.png)
 
-![logo](https://raw.githubusercontent.com/mielo-ui/mielo.css/main/media/preview.webp)
+![preview](https://raw.githubusercontent.com/mielo-ui/mielo.css/main/media/preview.webp)
+
+![dark](https://raw.githubusercontent.com/mielo-ui/mielo.css/main/media/Mielo.Dark.png)
 
 ## Quick install
 
