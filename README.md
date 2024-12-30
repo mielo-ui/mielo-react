@@ -11,18 +11,8 @@ React components & wrappers around mielo.css framework.
 
 Mielo is constantly in development! Try it out now:
 
-### NPM
-
 ```sh
-npm install @mielo-ui/mielo @mielo-ui/mielo-react
-```
-
-**or**
-
-### Yarn
-
-```sh
-npm install @mielo-ui/mielo @mielo-ui/mielo-react
+npm install @mielo-ui/mielo @mielo-ui/mielo-react # or use "yarn add" instead
 ```
 
 ### Import
